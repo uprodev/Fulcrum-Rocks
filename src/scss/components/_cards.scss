@@ -1,0 +1,603 @@
+.card-type-01 {
+  width: 100%;
+  padding: 89.55% 0 0;
+  position: relative;
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+    @include card-borders();
+
+    .card-inner {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      overflow: hidden;
+      @include card-borders();
+
+      .card-image {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 84.3%;
+        height: 70.4%;
+        z-index: 2;
+        transform: translate3d(0, -50%, 0);
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .card-top {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 19px 0;
+        flex: 0 0 auto;
+
+        .card-number {
+          font-size: 12px;
+          letter-spacing: -0.02em;
+          color: $headline-color;
+        }
+      }
+
+      .card-text {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5px 19px 19px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 122.73% 0 0;
+
+    .card {
+      .card-inner {
+        .card-text {
+          p {
+            min-height: 4.2em;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        .card-top {
+          padding: 40px 40px 6px;
+
+          .card-number {
+            font-size: 14px;
+            letter-spacing: 0.01em;
+            color: $text-color;
+          }
+        }
+
+        .card-text {
+          padding: 0 40px 37px;
+        }
+      }
+    }
+  }
+}
+
+.card-type-02 {
+  width: 100%;
+  padding: 119.4% 0 0;
+  position: relative;
+  @include card-effect-02();
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    @include card-borders(10px, 31px, 20px, 156px, 22px, 130px);
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      overflow: hidden;
+      @include card-borders(10px, 31px, 20px, 156px, 22px, 130px);
+
+      .card-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 74%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+
+        &:after {
+          content: "";
+          @include abs;
+          background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.9) 100%);
+          border-radius: 10px;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          object-position: center;
+        }
+      }
+
+      .card-top {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 19px 0;
+
+        .card-arrow {
+          flex: 0 0 auto;
+        }
+      }
+
+      .card-text {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 300px;
+
+        p {
+          margin: 10px 0 0;
+        }
+      }
+
+      .card-tabs {
+        position: absolute;
+        z-index: 3;
+        left: 19px;
+        right: 19px;
+        bottom: 19px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 118.92% 0 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        .card-top {
+          padding: 40px 40px 0;
+
+          .card-number {
+            font-size: 14px;
+            letter-spacing: 0.01em;
+            color: $text-color;
+          }
+        }
+        .card-text {
+          h2 {
+            margin: 9px 0 0;
+          }
+          p {
+            margin: 2px 0 0;
+          }
+        }
+        .card-tabs {
+          left: 39px;
+          right: 39px;
+          bottom: 39px;
+
+          .tab-nav li a > span {
+            padding: 14px 29px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-type-03 {
+  width: 100%;
+  padding: 71.6% 0 0;
+  position: relative;
+  @include card-borders();
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      @include card-borders();
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 123% 0 0;
+
+    .card {
+      .card-inner {
+        padding: 29px;
+
+        h2 {
+          letter-spacing: -0.01em;
+          font-size: 1.714rem;
+          line-height: 1.25;
+        }
+        p {
+          min-height: 4.2em;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .card {
+      .card-inner {
+        padding: 42px 39px 36px;
+
+        h2 {
+          font-size: 1.555rem;
+        }
+      }
+    }
+  }
+}
+
+.card-type-04 {
+  width: 100%;
+  padding: 71.64% 0 0;
+  position: relative;
+  @include card-effect-02(-20%);
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    @include card-borders();
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      overflow: hidden;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include card-borders();
+
+      .card-top {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card-text {
+        position: relative;
+        z-index: 3;
+        p {
+          margin: 8px 0 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 123% 0 0;
+    @include card-effect-02();
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        padding: 39px 39px 34px;
+
+        .card-top {
+          .card-number {
+            font-size: 14px;
+            letter-spacing: 0.01em;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-type-05 {
+  width: 100%;
+  padding: 128.5% 0 0;
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    @include card-borders();
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      @include card-borders();
+
+      .text {
+        p {
+          margin: 0;
+          font-size: 0.714rem;
+          line-height: 120%;
+          letter-spacing: 0.02em;
+          color: $headline-color;
+        }
+      }
+
+      .label {
+        position: absolute;
+        bottom: 19px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $headline-color;
+        padding: 8px 15px;
+        border-radius: 15px;
+        font-size: 0.714rem;
+        line-height: 140%;
+        letter-spacing: 0.01em;
+        color: $dark;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 123% 0 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        padding: 39px 39px 27px;
+
+        .text {
+          p {
+            font-size: 1rem;
+            line-height: 140%;
+            letter-spacing: 0;
+            margin: 20px 0 0;
+          }
+        }
+
+        .label {
+          bottom: 39px;
+          padding: 14px 29px;
+          border-radius: 25px;
+          font-size: 0.89rem;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+}
+
+.card-type-06 {
+  width: 100%;
+  padding: 128.5% 0 0;
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    @include card-borders();
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include card-borders();
+
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 15px;
+      }
+
+      .card-text {
+        font-weight: 500;
+      }
+
+      .card-author {
+        margin-top: auto;
+        display: flex;
+
+        figure {
+          margin: 0 10px 0 0;
+          flex: 0 0 auto;
+          width: 40px;
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+          }
+        }
+
+        p {
+          margin: 0;
+          color: $headline-color;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 123% 0 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        padding: 39px;
+
+        .card-top {
+          margin: 0 0 11px;
+        }
+
+        .card-text {
+          line-height: 1.22;
+          font-size: 1.555rem;
+        }
+
+        .card-author {
+          figure {
+            width: 50px;
+
+            img {
+              border-radius: 10px;
+            }
+          }
+
+          div {
+            font-size: 0.78rem;
+
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-type-07 {
+  width: 100%;
+  padding: 71.6% 0 0;
+  position: relative;
+  @include card-borders();
+
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      padding: 19px;
+      overflow: hidden;
+      @include card-borders();
+
+      .card-icon {
+        display: none;
+      }
+
+      .card-text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 120% 0 0;
+    border-radius: 20px;
+    clip-path: none;
+    overflow: hidden;
+
+    .card {
+      &:before {
+        display: none;
+      }
+
+      .card-inner {
+        padding: 20px;
+        border-radius: 0;
+        clip-path: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card-icon {
+          display: block;
+        }
+
+        .card-text {
+          height: auto;
+          display: block;
+
+          p {
+            margin: 6px 0 0;
+            min-height: 4.2em;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+  }
+}

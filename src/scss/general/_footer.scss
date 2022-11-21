@@ -1,0 +1,379 @@
+.page-footer {
+  padding: 20px 0;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-title {
+    font-weight: 400;
+    font-size: 10.43rem;
+    line-height: 80%;
+    letter-spacing: -0.05em;
+    margin: 0 0 30px;
+
+    background: linear-gradient(90deg, $blue 0%, $lightblue 100%) repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-position: 0;
+    background-size: 100%;
+
+    &:hover {
+      background: linear-gradient(90deg, $blue 0%, $lightblue 50%, $blue 100%) repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  address {
+    margin: 0 0 30px;
+    display: block;
+    font-style: normal;
+
+    p {
+      margin: 0 0 10px;
+      font-size: 2.286rem;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      color: $headline-color;
+
+      a {
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    margin: 0 0 30px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px 0 0;
+      border: 0.5px solid $headline-color;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  nav {
+    margin: 0 0 30px;
+
+    strong {
+      display: block;
+      font-weight: 500;
+      color: #434343;
+      line-height: 1.3;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 10px 0 0;
+        display: flex;
+        align-items: center;
+
+        a {
+          letter-spacing: 0.01em;
+          color: $headline-color;
+        }
+
+        div {
+          margin-left: 10px;
+          display: inline-block;
+          @include gradient-base(90deg);
+          border-radius: 14px;
+          padding: 6px 12px;
+          color: #1e1e1e;
+          font-size: 10px;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .footer-logo-1 {
+    margin: 0 0 30px;
+    display: flex;
+    align-items: flex-start;
+
+    span {
+      display: inline-block;
+      background: #2a2a2a;
+      border-radius: 14px;
+      padding: 6px 9px;
+      color: $headline-color;
+      font-size: 10px;
+      line-height: 1.2;
+      margin: 4px 0 0 10px;
+    }
+  }
+
+  .copyright {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+
+  .footer-main {
+    .wrapper-inner {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+
+      .col-3 {
+        width: 50%;
+        padding: 0 10px;
+
+        &:last-child {
+          width: 100%;
+          display: flex;
+
+          nav {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+
+    .col {
+      &:first-child {
+        order: 1;
+      }
+    }
+
+    .wrapper-inner {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+
+      .col-3 {
+        width: 50%;
+        padding: 0 10px;
+
+        &:first-child {
+          width: 100%;
+          display: flex;
+        }
+      }
+    }
+
+    p {
+      margin: 0;
+      color: #434343;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: #434343;
+      letter-spacing: 0.01em;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .footer-title {
+      margin-left: -20px;
+      margin-right: -20px;
+      white-space: nowrap;
+    }
+
+    .footer-logo-1 {
+      margin: 0;
+    }
+
+    .footer-main {
+      .wrapper-inner {
+        .col-3 {
+          width: 33.3333%;
+
+          &:last-child {
+            width: 33.3333%;
+            display: block;
+
+            nav {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      .wrapper-inner {
+        align-items: center;
+
+        .col-3 {
+          width: 33.3333%;
+
+          &:first-child {
+            width: 33.3333%;
+          }
+        }
+      }
+
+      p {
+        color: $text-color;
+      }
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: #1e1e1e;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+
+    .footer-wrapper {
+      height: auto;
+      padding: 114px 0 20px;
+    }
+
+    .footer-main {
+      display: flex;
+      margin: 0 -10px;
+
+      .col {
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      align-items: center;
+      margin: 0 -10px;
+
+      .col {
+        width: 50%;
+        padding: 0 10px;
+
+        &:first-child {
+          order: -1;
+        }
+      }
+
+      p,
+      a {
+        font-size: 0.78rem;
+      }
+    }
+
+    .block-number {
+      margin: 0 0 8px;
+    }
+
+    .footer-title {
+      font-size: 13.5rem;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .footer-logo {
+      display: block;
+      margin: 0 0 30px;
+    }
+
+    .copyright {
+      margin: 0;
+      text-align: left;
+    }
+
+    .socials {
+      margin: 0 0 30px;
+
+      a {
+        border: none;
+        background: #2a2a2a;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    nav {
+      margin: 0 0 40px;
+
+      strong {
+        color: $headline-color;
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+
+      ul {
+        li {
+          margin: 19.3px 0 0;
+          font-size: 0.78rem;
+
+          a {
+            letter-spacing: 0.01em;
+            color: $text-color;
+          }
+
+          div {
+            padding: 7px 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .footer-title {
+      font-size: 16.5rem;
+    }
+
+    address {
+      margin: 0 0 44px;
+
+      p {
+        font-size: 2.667rem;
+        font-weight: 500;
+        margin: 0 0 20px;
+      }
+    }
+
+    .socials {
+      margin: 0 0 66px;
+    }
+  }
+}

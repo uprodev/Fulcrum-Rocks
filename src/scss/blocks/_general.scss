@@ -1,0 +1,72 @@
+.block-number {
+  position: relative;
+  margin: 0 0 15px;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 4px;
+    border: 1px solid $lightgray;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .block-number-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:after {
+      content: "";
+      background: $lightgray;
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+    }
+
+    span {
+      font-size: 10px;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 0 0 20px;
+
+    &:before {
+      margin: 0 0 10px;
+    }
+
+    .block-number-main {
+      &:after {
+        width: 6px;
+        height: 6px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.block-text {
+  p {
+    margin: 10px 0 30px;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    margin: 0 -10px 29px;
+
+    .col {
+      width: 50%;
+      padding: 0 10px;
+    }
+
+    p {
+      margin: 0.45em 0 0;
+      max-width: 555px;
+    }
+  }
+}

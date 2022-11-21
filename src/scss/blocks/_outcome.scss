@@ -1,0 +1,64 @@
+.block-outcome {
+  padding: 20px 0 34px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    right: -174px;
+    top: -224px;
+    background: #001625;
+    filter: blur(250px);
+    border-radius: 100%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    left: -194px;
+    top: -70px;
+    background: #001f1e;
+    filter: blur(250px);
+    border-radius: 100%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 54px 0 60px;
+
+    &:before {
+      width: 82%;
+      height: 82%;
+      top: -20.3vw;
+      right: -17.4vw;
+    }
+
+    &:after {
+      width: 52.8%;
+      height: 52.8%;
+      top: auto;
+      bottom: -39.5vw;
+      left: -24.7vw;
+    }
+
+    .image {
+      margin: -50px 0 0;
+    }
+  }
+}
