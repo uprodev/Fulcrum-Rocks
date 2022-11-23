@@ -41,6 +41,15 @@
     padding: 10px 0 0;
   }
 
+  @include media-breakpoint-down(lg) {
+    .wrapper {
+      &:before,
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+
   @include media-breakpoint-up(sm) {
     .wrapper {
       display: flex;
@@ -119,8 +128,14 @@
       }
     }
 
-    .wrapper {
-      margin: 0;
+    .card-effect-03:not(.wrapper) {
+      &:before,
+      &:after {
+        display: none !important;
+      }
+    }
+
+    .bg {
       position: relative;
 
       &:before {
@@ -140,6 +155,10 @@
         background-color: $black;
         @include card-borders();
       }
+    }
+
+    .wrapper {
+      margin: 0;
 
       .col {
         width: 25%;
