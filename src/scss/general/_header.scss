@@ -37,21 +37,38 @@
 
     .logo {
       width: 140px;
+      flex: 0 0 auto;
+
+      a {
+        width: 117px;
+      }
     }
 
     .header-buttons {
       width: 140px;
+      flex: 0 0 auto;
 
       .button {
         display: block;
         width: 140px;
         height: 42px;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+        border-radius: 5px 5px 12px 5px;
+
+        &:before,
+        &:after,
+        .btn-wrap,
+        .btn-wrap:before,
+        .btn-wrap:after {
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+          border-radius: 5px 5px 12px 5px;
+        }
 
         .btn-inner {
           font-size: 12px;
           line-height: 1.2;
           font-weight: 400;
-          padding: 13px 18px 13px 14px;
+          padding: 13px 15px 13px 14px;
         }
 
         .btn-icon {

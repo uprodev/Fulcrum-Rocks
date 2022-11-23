@@ -9,9 +9,9 @@
     height: 473px;
     right: -220px;
     top: 198px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001625;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   &:after {
@@ -21,9 +21,9 @@
     height: 473px;
     left: -217px;
     top: 449px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001f1e;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   .container {
@@ -49,15 +49,14 @@
     }
   }
   @include media-breakpoint-up(lg) {
-    padding: 60px 0;
+    padding: 37px 0 60px;
 
     &:before {
       width: 511px;
       height: 511px;
       right: -267px;
       top: 65px;
-      background: rgba(13, 153, 255, 0.1);
-      filter: blur(150px);
+      // background: rgba(13, 153, 255, 0.1);
     }
 
     &:after {

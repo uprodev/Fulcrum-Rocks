@@ -26,9 +26,9 @@
     input,
     textarea {
       width: 100%;
-      background: $gray;
+      background: $tab-bg;
       border-radius: 5px;
-      border: 1px solid $gray;
+      border: 1px solid $tab-bg;
       height: 40px;
       padding: 13px 18px;
       font-size: 12px;
@@ -91,6 +91,9 @@
         padding: 14px 19px;
         font-size: 0.78rem;
         line-height: 1.4;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
       }
 
       .form-add-file {

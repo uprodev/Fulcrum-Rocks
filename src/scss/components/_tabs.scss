@@ -84,18 +84,6 @@
       }
     }
 
-    label {
-      background-color: $gray;
-
-      & > span {
-        background-color: $gray;
-
-        &:before {
-          background-color: $black;
-        }
-      }
-    }
-
     input {
       display: none;
       visibility: hidden;
@@ -140,6 +128,15 @@
 
         & > span {
           padding: 14px 19px;
+        }
+      }
+
+      label {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        background-color: transparent;
+        & > span {
+          background-color: transparent;
         }
       }
     }

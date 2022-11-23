@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  background-color: $dark;
   padding: 0;
   margin: 0;
+  height: 100%;
+  background-color: $dark;
 }
 
 .container {
@@ -19,6 +21,7 @@ body {
 }
 
 .page-wrapper {
+  width: 100%;
   overflow: hidden;
 }
 
@@ -26,18 +29,25 @@ body {
   padding: 50px 0 0;
   background-color: $dark;
   position: relative;
+  z-index: 1;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 34px);
+    left: 0;
+    width: 100%;
+    background-color: $dark;
+    height: 60px;
+    border-radius: 0px 0px 20px 20px;
+  }
 
   @include media-breakpoint-up(lg) {
     padding: 60px 0 0;
     z-index: 1;
 
     &:after {
-      content: "";
-      position: absolute;
       top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: $dark;
       height: 80px;
       border-radius: 0px 0px 40px 40px;
     }
@@ -52,12 +62,6 @@ a {
     color: $link-hover-color;
     text-decoration: none;
   }
-}
-
-.txt-gradient {
-  @include gradient-base(90deg);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .btn-centered {

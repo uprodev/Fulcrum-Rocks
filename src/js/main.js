@@ -25,6 +25,9 @@ jQuery(document).ready(function ($) {
         loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
         on: {
           init: function () {
             swiper1Init = true;
@@ -48,6 +51,9 @@ jQuery(document).ready(function ($) {
     loop: false,
     slidesPerView: "auto",
     spaceBetween: 10,
+    mousewheel: {
+      releaseOnEdges: true,
+    },
     scrollbar: {
       el: ".swiper-02-scrollbar",
       draggable: true,

@@ -19,11 +19,11 @@ function animateHeadlines(splits) {
         toggleActions: "restart pause resume reverse",
         start: "top 85%",
       },
-      duration: 0.2,
+      duration: 0.3,
       ease: "linear",
-      y: "-0.1em",
+      y: "0",
       opacity: 1,
-      stagger: 0.01,
+      stagger: 0.04,
     });
   });
   splitsSet = true;
@@ -50,6 +50,7 @@ cardEffect3Wrappers.forEach((wrap) => {
   };
 });
 
+// block why-rocks animations
 ScrollTrigger.create({
   trigger: ".block-why-rocks",
   start: "top top",
@@ -128,6 +129,7 @@ gsap.utils.toArray(listItems).forEach((li, i) => {
   });
 });
 
+// lines animations
 var lines = document.querySelectorAll(".line-animated");
 gsap.utils.toArray(lines).forEach((line, i) => {
   gsap.to(line, {
@@ -145,8 +147,28 @@ gsap.utils.toArray(lines).forEach((line, i) => {
   });
 });
 
-window.addEventListener("load", function () {
-  ScrollTrigger.refresh();
+// image mask overlay
+var overlayContainer = document.querySelector(".block-hello .image");
+var overlay = document.querySelector(".block-hello .image .overlay");
+overlayContainer.onmousemove = (e) => {
+  const rect = overlayContainer.getBoundingClientRect(),
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top;
+
+  overlay.style.setProperty("--mouse-x", `${x}px`);
+  overlay.style.setProperty("--mouse-y", `${y}px`);
+};
+
+// footer visibility
+ScrollTrigger.create({
+  trigger: ".page-content",
+  start: "bottom bottom",
+  onEnter: function () {
+    document.querySelector(".page-footer").classList.add("is-active");
+  },
+  onLeaveBack: function () {
+    document.querySelector(".page-footer").classList.remove("is-active");
+  },
 });
 
 // footer title
@@ -171,14 +193,6 @@ function moveMouse(evt) {
   followMouse.style.backgroundPosition = pos.x - followMouseX + "px " + "0px";
 }
 
-// image overlay
-var overlayContainer = document.querySelector(".block-hello .image");
-var overlay = document.querySelector(".block-hello .image .overlay");
-overlayContainer.onmousemove = (e) => {
-  const rect = overlayContainer.getBoundingClientRect(),
-    x = e.clientX - rect.left,
-    y = e.clientY - rect.top;
-
-  overlay.style.setProperty("--mouse-x", `${x}px`);
-  overlay.style.setProperty("--mouse-y", `${y}px`);
-};
+window.addEventListener("load", function () {
+  ScrollTrigger.refresh();
+});

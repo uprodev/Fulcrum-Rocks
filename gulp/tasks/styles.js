@@ -10,6 +10,12 @@ module.exports = function styles() {
   return gulp
     .src("src/scss/*.scss")
     .pipe(plumber())
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 4 version"],
+        cascade: false,
+      })
+    )
     .pipe(scss())
     .pipe(
       gulpif(

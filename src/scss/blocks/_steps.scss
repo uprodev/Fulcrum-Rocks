@@ -9,9 +9,9 @@
     height: 473px;
     right: -117px;
     top: -258px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001625;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   &:after {
@@ -21,9 +21,9 @@
     height: 473px;
     left: -161px;
     top: 265px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001f1e;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   .container {
@@ -94,6 +94,7 @@
     .card-effect-03-wrapper {
       overflow: hidden;
       @include card-borders();
+      margin: 40px 0 0;
 
       &:before {
         content: "";
@@ -103,8 +104,7 @@
         height: 594px;
         top: -177px;
         left: -199px;
-        background: rgba(13, 153, 255, 0.15);
-        filter: blur(250px);
+        // background: rgba(13, 153, 255, 0.15);
       }
 
       &:after {
@@ -115,8 +115,7 @@
         height: 594px;
         top: 11px;
         right: -189px;
-        background: rgba(13, 153, 255, 0.15);
-        filter: blur(250px);
+        // background: rgba(13, 153, 255, 0.15);
       }
     }
 

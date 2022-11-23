@@ -9,9 +9,9 @@
     height: 473px;
     right: -138px;
     top: -338px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001625;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   &:after {
@@ -21,9 +21,9 @@
     height: 473px;
     left: -227px;
     top: 158px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
+    // background: #001f1e;
+    // filter: blur(250px);
+    // border-radius: 100%;
   }
 
   .container {
@@ -49,7 +49,7 @@
     }
   }
   @include media-breakpoint-up(lg) {
-    padding: 54px 0 60px;
+    padding: 54px 0;
 
     &:before,
     &:after {

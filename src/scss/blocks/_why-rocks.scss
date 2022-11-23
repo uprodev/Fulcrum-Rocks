@@ -64,8 +64,8 @@
         height: 460px;
         left: -125px;
         top: 40%;
-        background: rgba(255, 255, 255, 0.1);
-        filter: blur(250px);
+        // background: rgba(255, 255, 255, 0.1);
+        // filter: blur(250px);
       }
 
       &:after {
@@ -75,9 +75,9 @@
         height: 473px;
         left: -140px;
         bottom: -13%;
-        background: #001625;
-        filter: blur(250px);
-        opacity: 0.8;
+        // background: #001625;
+        // filter: blur(250px);
+        // opacity: 0.8;
       }
     }
   }
@@ -92,13 +92,35 @@
     right: 0;
     z-index: 9 !important;
 
-    .btn-wrap {
+    .btn-centered {
       position: absolute;
       left: 0;
       right: 0;
       padding: 0 20px;
       bottom: 10%;
       z-index: 9;
+
+      .button {
+        width: 163px;
+
+        &:before,
+        &:after {
+          display: none;
+        }
+
+        .btn-wrap {
+          background: #0c283c;
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+
+        .btn-inner {
+          justify-content: center;
+          color: #0d99ff;
+        }
+      }
     }
 
     .h1 {
@@ -144,8 +166,25 @@
   }
 
   @include media-breakpoint-up(md) {
+    &.pinned {
+      .bg {
+        top: 54px;
+      }
+    }
+
+    &.pinned-top {
+      .bg {
+        top: 54px;
+      }
+    }
+
     .bg {
       background-image: url(../img/bg/circles.png);
+      background-position: 50%;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      height: calc(100vh - 54px);
+      top: 54px;
     }
     .text {
       .btn-wrap {
@@ -163,8 +202,7 @@
           left: auto;
           right: -12.57vw;
           top: -4.6%;
-          background: rgba(149, 247, 245, 0.1);
-          filter: blur(250px);
+          // background: rgba(149, 247, 245, 0.1);
         }
 
         &:after {
