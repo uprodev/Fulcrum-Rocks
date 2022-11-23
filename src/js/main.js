@@ -28,9 +28,21 @@ jQuery(document).ready(function ($) {
         mousewheel: {
           releaseOnEdges: true,
         },
+        navigation: {
+          nextEl: ".swiper-01 .swiper-button-next",
+          prevEl: ".swiper-01 .swiper-button-prev",
+        },
         on: {
           init: function () {
             swiper1Init = true;
+          },
+          reachBeginning: function () {
+            $(".swiper-01 .swiper-button-prev").addClass("disabled");
+            $(".swiper-01 .swiper-button-next").removeClass("disabled");
+          },
+          reachEnd: function () {
+            $(".swiper-01 .swiper-button-next").addClass("disabled");
+            $(".swiper-01 .swiper-button-prev").removeClass("disabled");
           },
         },
         breakpoints: {
@@ -59,9 +71,23 @@ jQuery(document).ready(function ($) {
       draggable: true,
       hide: false,
     },
+    navigation: {
+      nextEl: ".swiper-02 .swiper-button-next",
+      prevEl: ".swiper-02 .swiper-button-prev",
+    },
     breakpoints: {
       768: {
         spaceBetween: 20,
+      },
+    },
+    on: {
+      reachBeginning: function () {
+        $(".swiper-02 .swiper-button-prev").addClass("disabled");
+        $(".swiper-02 .swiper-button-next").removeClass("disabled");
+      },
+      reachEnd: function () {
+        $(".swiper-02 .swiper-button-next").addClass("disabled");
+        $(".swiper-02 .swiper-button-prev").removeClass("disabled");
       },
     },
   });

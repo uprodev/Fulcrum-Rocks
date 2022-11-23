@@ -11,35 +11,3 @@
     padding: 60px 0 54px;
   }
 }
-
-.swiper-02 {
-  .swiper-slide {
-    width: 250px;
-
-    @include media-breakpoint-up(sm) {
-      width: 340px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      width: 440px;
-    }
-  }
-
-  .swiper-scrollbar-horizontal {
-    background: #242424;
-    margin: 20px 0 0;
-    height: 4px;
-    border-radius: 4px;
-
-    .swiper-scrollbar-drag {
-      @include gradient-base(90deg);
-      height: 100%;
-      border-radius: inherit;
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin: 40px 0 0;
-      height: 6px;
-    }
-  }
-}

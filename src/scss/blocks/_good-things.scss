@@ -74,33 +74,3 @@
     }
   }
 }
-
-.swiper-01 {
-  @include media-breakpoint-down(sm) {
-    .swiper-wrapper {
-      display: block;
-    }
-    .swiper-slide {
-      margin: 0 0 10px;
-    }
-  }
-
-  @include media-breakpoint-up(sm) {
-    .swiper-slide {
-      width: 340px;
-      margin: 0 0 12px;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    .swiper-slide {
-      width: 450px;
-    }
-  }
-
-  @include media-breakpoint-up(xl) {
-    .swiper-slide {
-      width: 555px;
-    }
-  }
-}

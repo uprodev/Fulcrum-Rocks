@@ -2119,6 +2119,95 @@ button {
   height: 5px;
   transform: scaleX(0); }
 
+.swiper-initialized {
+  position: relative; }
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none; }
+  @media (min-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      z-index: 19;
+      transform: translateY(-50%); }
+      .swiper-button-prev img,
+      .swiper-button-next img {
+        display: block;
+        position: relative;
+        z-index: 1; }
+      .swiper-button-prev:before,
+      .swiper-button-next:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #e9eef1;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        transform: translate3d(-50%, -50%, 0) scale(1);
+        transition: all 0.3s; }
+      .swiper-button-prev.disabled,
+      .swiper-button-next.disabled {
+        display: none; }
+      .swiper-button-prev:hover:before,
+      .swiper-button-next:hover:before {
+        transform: translate3d(-50%, -50%, 0) scale(0.8); }
+      .swiper-button-prev:focus,
+      .swiper-button-next:focus {
+        border: 1px solid #050505; }
+      .swiper-button-prev:active:before, .swiper-button-prev:target:before,
+      .swiper-button-next:active:before,
+      .swiper-button-next:target:before {
+        transform: translate3d(-50%, -50%, 0) scale(0.8); } }
+
+@media (max-width: 639.98px) {
+  .swiper-01 .swiper-wrapper {
+    display: block; }
+  .swiper-01 .swiper-slide {
+    margin: 0 0 10px; } }
+
+@media (min-width: 640px) {
+  .swiper-01 .swiper-slide {
+    width: 340px;
+    margin: 0 0 12px; } }
+
+@media (min-width: 1024px) {
+  .swiper-01 .swiper-slide {
+    width: 450px; } }
+
+@media (min-width: 1440px) {
+  .swiper-01 .swiper-slide {
+    width: 555px; } }
+
+.swiper-02 .swiper-slide {
+  width: 250px; }
+  @media (min-width: 640px) {
+    .swiper-02 .swiper-slide {
+      width: 340px; } }
+  @media (min-width: 1024px) {
+    .swiper-02 .swiper-slide {
+      width: 440px; } }
+
+.swiper-02 .swiper-scrollbar-horizontal {
+  background: #242424;
+  margin: 20px 0 0;
+  height: 4px;
+  border-radius: 4px; }
+  .swiper-02 .swiper-scrollbar-horizontal .swiper-scrollbar-drag {
+    background: -webkit-linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
+    background: linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
+    height: 100%;
+    border-radius: inherit; }
+  @media (min-width: 1024px) {
+    .swiper-02 .swiper-scrollbar-horizontal {
+      margin: 40px 0 0;
+      height: 6px; } }
+
 .block-number {
   position: relative;
   margin: 0 0 15px; }
@@ -2388,25 +2477,6 @@ button {
       .block-good-things .wrapper .col {
         width: 33.3333%;
         padding: 0 10px; } }
-
-@media (max-width: 639.98px) {
-  .swiper-01 .swiper-wrapper {
-    display: block; }
-  .swiper-01 .swiper-slide {
-    margin: 0 0 10px; } }
-
-@media (min-width: 640px) {
-  .swiper-01 .swiper-slide {
-    width: 340px;
-    margin: 0 0 12px; } }
-
-@media (min-width: 1024px) {
-  .swiper-01 .swiper-slide {
-    width: 450px; } }
-
-@media (min-width: 1440px) {
-  .swiper-01 .swiper-slide {
-    width: 555px; } }
 
 .block-work-code {
   padding: 20px 0 34px;
@@ -2684,30 +2754,6 @@ button {
   @media (min-width: 1024px) {
     .block-they-said {
       padding: 60px 0 54px; } }
-
-.swiper-02 .swiper-slide {
-  width: 250px; }
-  @media (min-width: 640px) {
-    .swiper-02 .swiper-slide {
-      width: 340px; } }
-  @media (min-width: 1024px) {
-    .swiper-02 .swiper-slide {
-      width: 440px; } }
-
-.swiper-02 .swiper-scrollbar-horizontal {
-  background: #242424;
-  margin: 20px 0 0;
-  height: 4px;
-  border-radius: 4px; }
-  .swiper-02 .swiper-scrollbar-horizontal .swiper-scrollbar-drag {
-    background: -webkit-linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
-    background: linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
-    height: 100%;
-    border-radius: inherit; }
-  @media (min-width: 1024px) {
-    .swiper-02 .swiper-scrollbar-horizontal {
-      margin: 40px 0 0;
-      height: 6px; } }
 
 .block-steps {
   padding: 20px 0 34px;
