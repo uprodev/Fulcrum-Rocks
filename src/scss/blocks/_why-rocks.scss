@@ -12,11 +12,13 @@
   &.pinned-top {
     .bg {
       top: 0;
+      bottom: auto;
     }
   }
 
   &.pinned-bottom {
     .bg {
+      top: auto;
       bottom: 0;
     }
   }
@@ -64,8 +66,10 @@
         height: 460px;
         left: -125px;
         top: 40%;
-        // background: rgba(255, 255, 255, 0.1);
-        // filter: blur(250px);
+        background: rgba(255, 255, 255, 0.1);
+        filter: blur(250px);
+        border-radius: 100%;
+        will-change: transform;
       }
 
       &:after {
@@ -75,9 +79,11 @@
         height: 473px;
         left: -140px;
         bottom: -13%;
-        // background: #001625;
-        // filter: blur(250px);
-        // opacity: 0.8;
+        background: #001625;
+        filter: blur(250px);
+        opacity: 0.8;
+        border-radius: 100%;
+        will-change: transform;
       }
     }
   }
@@ -202,7 +208,7 @@
           left: auto;
           right: -12.57vw;
           top: -4.6%;
-          // background: rgba(149, 247, 245, 0.1);
+          background: rgba(149, 247, 245, 0.1);
         }
 
         &:after {

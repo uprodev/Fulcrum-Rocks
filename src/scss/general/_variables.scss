@@ -12,6 +12,7 @@ $text-color: #91999e;
 $headline-color: #e9eef1;
 
 $placeholder-color: $text-color;
+$error: #ef4335;
 
 $blue: #0d99ff;
 $lightblue: #99faf4;
@@ -19,7 +20,7 @@ $lightblue: #99faf4;
 $gray: #191919;
 $lightgray: #9a9a9a;
 
-$link-color: #9a9a9a;
+$link-color: $lightgray;
 $link-hover-color: $link-color;
 $border-color: rgba(black, 0.1);
 
@@ -47,9 +48,3 @@ $line-height-base: 1.4;
 
 $h3-font-size: 1.75rem;
 $h4-font-size: 1.25rem;
-
-// Buttons
-
-// navbar
-
-// forms

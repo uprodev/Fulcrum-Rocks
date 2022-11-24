@@ -869,7 +869,9 @@
               </div>
               <div class="block-text">
                 <div class="col">
-                  <div class="h1 split">Why Fulcrum Rocks?</div>
+                  <div class="h1">
+                    <span class="split txt-gradient">Why</span><span class="split"> Fulcrum <br />Rocks?</span>
+                  </div>
                 </div>
               </div>
 
@@ -1205,7 +1207,7 @@
               <div class="col">
                 <div class="contact-form">
                   <p>Describe your idea. The more details the better. Here’s what will happen next: We reply within 3 business hours; Discuss your project on a quick call; Quote from Fulcrum.</p>
-                  <form action="#">
+                  <form id="contactForm" action="#" novalidate>
                     <h3 class="split">Services</h3>
                     <ul class="tab-nav">
                       <li>
@@ -1290,27 +1292,31 @@
                     <div class="form-wrapper">
                       <div class="form-col">
                         <div class="field">
-                          <input type="text" placeholder="Name" />
+                          <input type="text" placeholder="Name*" required />
+                          <span class="error-msg">Please complete this required field.</span>
                         </div>
                       </div>
                       <div class="form-col">
                         <div class="field">
-                          <input type="text" placeholder="Company" />
+                          <input type="text" placeholder="Company*" required />
+                          <span class="error-msg">Please complete this required field.</span>
                         </div>
                       </div>
                       <div class="form-col">
                         <div class="field">
-                          <input type="email" placeholder="Your email" />
+                          <input type="email" placeholder="Your email*" required />
+                          <span class="error-msg">Please complete this required field.</span>
                         </div>
                       </div>
                       <div class="form-col">
                         <div class="field">
-                          <input type="tel" placeholder="Phone number" />
+                          <input type="tel" placeholder="Phone number*" required />
+                          <span class="error-msg">Please complete this required field.</span>
                         </div>
                       </div>
                     </div>
                     <div class="field">
-                      <textarea placeholder="Tell about your project" rows="1"></textarea>
+                      <textarea id="contactFormMessage" placeholder="Tell about your project" rows="1"></textarea>
                       <!-- <div class="form-add-file"><input type="file" /></div> -->
                     </div>
                     <button type="submit" class="button">
@@ -1452,9 +1458,12 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
 
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/gsap.js"></script>
     <script src="assets/js/ScrollTrigger.js"></script>
     <script src="assets/js/splitting.min.js"></script>
+    <script src="assets/js/jquery.maskedinput.js"></script>
+    <script src="assets/js/jquery.jstyling.js"></script>
 
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/cursor.js"></script>

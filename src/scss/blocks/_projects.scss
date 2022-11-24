@@ -1,0 +1,136 @@
+.block-projects {
+  padding: 20px 0 24px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    right: -208px;
+    top: 224px;
+    background: #001625;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    left: -192px;
+    top: 734px;
+    background: #001f1e;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .block-text {
+    margin-bottom: 20px;
+  }
+
+  .projects-filter {
+    .tab-nav {
+      margin-bottom: 20px;
+    }
+
+    .projects-filter-sort {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 20px;
+    }
+  }
+
+  .wrapper {
+    .col {
+      margin: 0 0 10px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .projects-filter {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 38px;
+
+      .tab-nav {
+        margin-bottom: 0;
+      }
+
+      .projects-filter-sort {
+        margin: 0;
+        padding: 10px 0 0 10px;
+
+        .jstyling-select {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+      .col {
+        width: 50%;
+        padding: 0 10px;
+        margin: 0 0 20px;
+
+        &:nth-child(2n) {
+          transform: translateY(50px);
+        }
+
+        .card-type-02 {
+          padding: 99% 0 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 44px 0 120px;
+
+    &:before {
+      width: 82%;
+      height: 82%;
+      top: 414px;
+      right: -48.3vw;
+    }
+
+    &:after {
+      background: #001625;
+      width: 82%;
+      height: 82%;
+      top: auto;
+      bottom: -283px;
+      left: -21.9vw;
+    }
+
+    .block-text {
+      margin-bottom: 8px;
+    }
+
+    .wrapper {
+      .col {
+        margin: 0 0 37px;
+
+        &:nth-child(2n) {
+          transform: translateY(80px);
+        }
+
+        .card-type-02 {
+          max-width: 555px;
+        }
+      }
+    }
+  }
+}

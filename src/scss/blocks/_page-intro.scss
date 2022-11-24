@@ -17,9 +17,10 @@
       height: 473px;
       right: -232px;
       top: -223px;
-      // background: #001625;
-      // filter: blur(250px);
-      // border-radius: 100%;
+      background: #001625;
+      filter: blur(250px);
+      border-radius: 100%;
+      will-change: transform;
     }
 
     &:after {
@@ -29,9 +30,10 @@
       height: 473px;
       left: -208px;
       top: 274px;
-      // background: #001f1e;
-      // filter: blur(250px);
-      // border-radius: 100%;
+      background: #001f1e;
+      filter: blur(250px);
+      border-radius: 100%;
+      will-change: transform;
     }
   }
 
@@ -40,6 +42,7 @@
       mix-blend-mode: screen;
       position: relative;
       z-index: 1;
+      display: block;
     }
   }
 
@@ -208,6 +211,45 @@
       }
       .txt-lg {
         margin-bottom: 245px;
+      }
+    }
+  }
+
+  &.page-intro-projects {
+    .image {
+      margin: -30px 20px -15px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .image {
+        margin: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .txt-lg {
+        margin-bottom: 150px;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .image {
+        margin: -49px 0 0;
+        padding: 0 26px 0 0;
+
+        img {
+          width: auto;
+          max-width: none;
+          float: right;
+        }
+      }
+      .txt-lg {
+        margin-bottom: 220px;
       }
     }
   }

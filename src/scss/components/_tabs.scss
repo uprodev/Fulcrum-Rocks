@@ -16,7 +16,7 @@
       line-height: 140%;
       letter-spacing: 0.01em;
       color: $link-color;
-      background-color: $tab-bg;
+      // background-color: $tab-bg;
       border-radius: 5px;
       padding: 1px;
       position: relative;
@@ -50,7 +50,7 @@
           top: 100%;
           width: 300px;
           height: 300px;
-          background-color: #191919;
+          background: rgba(255, 255, 255, 0.2);
           transform: translate3d(-50%, -40%, 0) scale(0);
           transform-origin: center;
           border-radius: 100%;
@@ -71,8 +71,7 @@
         }
       }
 
-      &:focus,
-      &:active {
+      &:focus {
         &:before {
           background: $tab-border-focus;
           opacity: 1;
@@ -80,6 +79,20 @@
 
         & > span {
           overflow: hidden;
+          background: #505050;
+        }
+      }
+
+      &:active {
+        &:before {
+          background: none;
+          @include gradient-base;
+          opacity: 1;
+        }
+
+        & > span {
+          overflow: hidden;
+          background-color: #3a3a3a;
         }
       }
     }
@@ -91,6 +104,8 @@
       position: absolute;
       z-index: -999;
       &:checked + label {
+        color: $headline-color;
+
         &:before {
           opacity: 1;
         }
@@ -119,6 +134,20 @@
         }
       }
     }
+
+    &.disabled {
+      a {
+        pointer-events: none;
+        color: #2a2a2a;
+        & > span {
+          // background: $tab-bg-active;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   @include media-breakpoint-up(lg) {
@@ -128,14 +157,16 @@
 
         & > span {
           padding: 14px 19px;
+          // background-color: rgba(255, 255, 255, 0.1);
+          // backdrop-filter: blur(10px);
+          background-color: #3a3a3a;
         }
       }
 
       label {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
         & > span {
-          background-color: transparent;
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
         }
       }
     }

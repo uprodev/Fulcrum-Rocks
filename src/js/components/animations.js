@@ -37,127 +37,136 @@ animateHeadlines(splits);
 
 var cardEffect3Wrappers = document.querySelectorAll(".card-effect-03-wrapper");
 
-cardEffect3Wrappers.forEach((wrap) => {
-  wrap.onmousemove = (e) => {
-    for (const card of wrap.querySelectorAll(".card-effect-03")) {
-      const rect = card.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top;
+if (cardEffect3Wrappers) {
+  cardEffect3Wrappers.forEach((wrap) => {
+    wrap.onmousemove = (e) => {
+      for (const card of wrap.querySelectorAll(".card-effect-03")) {
+        const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
 
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    }
-  };
-});
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      }
+    };
+  });
+}
 
 // block why-rocks animations
-ScrollTrigger.create({
-  trigger: ".block-why-rocks",
-  start: "top top",
-  end: "bottom bottom",
-  toggleClass: "pinned",
-  onEnter: function () {
-    document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
-    document.querySelector(".block-why-rocks").classList.remove("pinned-top");
-  },
-  onEnterBack: function () {
-    document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
-    document.querySelector(".block-why-rocks").classList.add("pinned-top");
-  },
-  onLeave: function () {
-    document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
-    document.querySelector(".block-why-rocks").classList.remove("pinned-top");
-  },
-  onLeaveBack: function () {
-    document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
-    document.querySelector(".block-why-rocks").classList.add("pinned-top");
-  },
-});
-ScrollTrigger.create({
-  trigger: ".block-why-rocks",
-  start: "top top",
-  end: "bottom bottom",
-  pin: ".block-why-rocks .text",
-});
-
-var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
-
-gsap.utils.toArray(listItems).forEach((li, i) => {
-  gsap.to(li.querySelector(".txt-lg"), {
-    keyframes: {
-      scale: [1, 1, 1, 1, 1, 1, 1, 1.1, 1.2, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7],
-      opacity: [0, 0.1, 0.2, 0.3, 0.5, 1, 0.6, 0.4, 0, 0, 0, 0, 0, 0, 0],
+if (document.querySelector(".block-why-rocks")) {
+  ScrollTrigger.create({
+    trigger: ".block-why-rocks",
+    start: "top top",
+    end: "bottom bottom",
+    toggleClass: "pinned",
+    onEnter: function () {
+      document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
+      document.querySelector(".block-why-rocks").classList.remove("pinned-top");
     },
-    transformOrigin: "center",
-    ease: "none",
-    pin: li,
-    pinSpacing: false,
-    scrollTrigger: {
-      trigger: li,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-      snap: {
-        snapTo: li,
-        // inertia: false,
-        duration: 1,
-        delay: 0,
-      },
+    onEnterBack: function () {
+      document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
+      document.querySelector(".block-why-rocks").classList.add("pinned-top");
+    },
+    onLeave: function () {
+      document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
+      document.querySelector(".block-why-rocks").classList.remove("pinned-top");
+    },
+    onLeaveBack: function () {
+      document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
+      document.querySelector(".block-why-rocks").classList.add("pinned-top");
     },
   });
-
-  gsap.to(li.querySelector("p"), {
-    keyframes: {
-      opacity: [0, 0.5, 1, 0.8, 0.4, 0.3, 0, 0, 0, 0],
-    },
-    transformOrigin: "center",
-    ease: "none",
-    pin: li,
-    pinSpacing: false,
-    scrollTrigger: {
-      trigger: li,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-      snap: {
-        snapTo: li,
-        // inertia: false,
-        duration: 0.3,
-        delay: 0,
-      },
-    },
+  ScrollTrigger.create({
+    trigger: ".block-why-rocks",
+    start: "top top",
+    end: "bottom bottom",
+    pin: ".block-why-rocks .text",
   });
-});
+
+  var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
+
+  gsap.utils.toArray(listItems).forEach((li, i) => {
+    gsap.to(li.querySelector(".txt-lg"), {
+      keyframes: {
+        scale: [1, 1, 1, 1, 1, 1, 1, 1.1, 1.2, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7],
+        opacity: [0, 0.1, 0.2, 0.3, 0.5, 1, 0.6, 0.4, 0, 0, 0, 0, 0, 0, 0],
+      },
+      transformOrigin: "center",
+      ease: "none",
+      // pin: li,
+      // pinSpacing: false,
+      scrollTrigger: {
+        trigger: li,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        snap: {
+          snapTo: li,
+          // inertia: false,
+          duration: 1,
+          delay: 0,
+        },
+      },
+    });
+
+    gsap.to(li.querySelector("p"), {
+      keyframes: {
+        opacity: [0, 0.5, 1, 0.8, 0.4, 0.3, 0, 0, 0, 0],
+      },
+      transformOrigin: "center",
+      ease: "none",
+      // pin: li,
+      // pinSpacing: false,
+      scrollTrigger: {
+        trigger: li,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        snap: {
+          snapTo: li,
+          // inertia: false,
+          duration: 0.1,
+          delay: 0,
+        },
+      },
+    });
+  });
+}
 
 // lines animations
 var lines = document.querySelectorAll(".line-animated");
-gsap.utils.toArray(lines).forEach((line, i) => {
-  gsap.to(line, {
-    keyframes: {
-      scaleX: [0, 1],
-    },
-    transformOrigin: "center",
-    ease: "none",
-    scrollTrigger: {
-      trigger: line,
-      start: "top 80%",
-      duration: 0.2,
-      toggleActions: "restart pause resume reverse",
-    },
+if (lines) {
+  gsap.utils.toArray(lines).forEach((line, i) => {
+    gsap.to(line, {
+      keyframes: {
+        scaleX: [0, 1],
+      },
+      transformOrigin: "center",
+      ease: "none",
+      scrollTrigger: {
+        trigger: line,
+        start: "top 80%",
+        duration: 0.2,
+        toggleActions: "restart pause resume reverse",
+      },
+    });
   });
-});
+}
 
 // image mask overlay
-var overlayContainer = document.querySelector(".block-hello .image");
-var overlay = document.querySelector(".block-hello .image .overlay");
-overlayContainer.onmousemove = (e) => {
-  const rect = overlayContainer.getBoundingClientRect(),
-    x = e.clientX - rect.left,
-    y = e.clientY - rect.top;
+if (document.querySelector(".block-hello")) {
+  var overlayContainer = document.querySelector(".block-hello .image");
+  var overlay = document.querySelector(".block-hello .image .overlay");
 
-  overlay.style.setProperty("--mouse-x", `${x}px`);
-  overlay.style.setProperty("--mouse-y", `${y}px`);
-};
+  overlayContainer.onmousemove = (e) => {
+    const rect = overlayContainer.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    overlay.style.setProperty("--mouse-x", `${x}px`);
+    overlay.style.setProperty("--mouse-y", `${y}px`);
+  };
+}
 
 // footer visibility
 ScrollTrigger.create({
@@ -194,5 +203,9 @@ function moveMouse(evt) {
 }
 
 window.addEventListener("load", function () {
+  ScrollTrigger.refresh();
+});
+
+imagesLoaded("body", function () {
   ScrollTrigger.refresh();
 });

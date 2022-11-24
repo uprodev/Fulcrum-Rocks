@@ -9,9 +9,10 @@
     height: 473px;
     right: -174px;
     top: -224px;
-    // background: #001625;
-    // filter: blur(250px);
-    // border-radius: 100%;
+    background: #001625;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
   }
 
   &:after {
@@ -21,9 +22,10 @@
     height: 473px;
     left: -194px;
     top: -70px;
-    // background: #001f1e;
-    // filter: blur(250px);
-    // border-radius: 100%;
+    background: #001f1e;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
   }
 
   .container {

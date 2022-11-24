@@ -9,6 +9,12 @@
   z-index: 9999;
   padding: 6px 20px 6px 6px;
 
+  &:focus-within {
+    &:before {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
   &:before {
     content: "";
     @include abs;
@@ -174,7 +180,7 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     ul {
       li {
         margin: 0 47px;
@@ -185,6 +191,42 @@
 
 .main-navigation,
 .stick-navigation {
+  & > ul > li,
+  & > nav > ul > li {
+    & > a {
+      position: relative;
+
+      @include media-breakpoint-up(lg) {
+        &:before {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 100%;
+          background: $headline-color;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin: 4px 0 0 -2px;
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+
+        &:hover {
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        &:active {
+          &:before {
+            @include gradient-base(90deg);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   ul {
     li {
       &.parent {

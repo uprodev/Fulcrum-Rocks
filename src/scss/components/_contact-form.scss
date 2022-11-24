@@ -22,20 +22,46 @@
     position: relative;
     margin: 0 0 10px;
     width: 100%;
+    background: $tab-bg;
+    border-radius: 5px;
+
+    &.error {
+      margin-bottom: 23px;
+    }
 
     input,
     textarea {
       width: 100%;
-      background: $tab-bg;
-      border-radius: 5px;
-      border: 1px solid $tab-bg;
       height: 40px;
       padding: 13px 18px;
       font-size: 12px;
       line-height: 14px;
       color: $text-color;
       @include placeholder-text($placeholder-color, 1);
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 5px;
       resize: none;
+      overflow: hidden;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: transparent;
+      }
+
+      &:not(:placeholder-shown) {
+        color: $headline-color;
+      }
+
+      &.error {
+        border-color: $error;
+        @include placeholder-text($error, 1);
+
+        & + .error-msg {
+          display: block;
+        }
+      }
     }
 
     .form-add-file {
@@ -52,6 +78,17 @@
         height: 100%;
         opacity: 0;
       }
+    }
+
+    .error-msg {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      font-size: 10px;
+      color: $error;
+      letter-spacing: 0.01em;
+      padding: 2px 0 0;
+      display: none;
     }
   }
 
@@ -85,15 +122,15 @@
     }
 
     .field {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+
       input,
       textarea {
         height: 50px;
         padding: 14px 19px;
         font-size: 0.78rem;
         line-height: 1.4;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
       }
 
       .form-add-file {
