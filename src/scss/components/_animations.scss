@@ -342,7 +342,7 @@
     }
   }
 
-  .card {
+  & > .card {
     &:before {
       content: "";
       @include abs;
@@ -409,6 +409,173 @@
         animation: spin 2.5s linear infinite;
       }
     }
+  }
+}
+
+:root {
+  --gradient-start: #30db74;
+  --overlay: #0b2516;
+}
+
+.card-effect-05 {
+  --border-angle: 0turn;
+
+  .card {
+    &:before {
+      content: "";
+      @include abs;
+      @include gradient-y(rgba(218, 218, 218, 0.8), rgba(90, 90, 90, 0.8));
+      @include card-borders();
+    }
+
+    &:after {
+      content: "";
+      @include abs;
+      background-image: conic-gradient(from var(--border-angle), var(--gradient-start), $white, var(--gradient-start));
+      @include card-borders();
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 264px;
+        height: 264px;
+        border-radius: 100%;
+        background-color: var(--overlay);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        filter: blur(45px);
+        will-change: transform;
+      }
+
+      &:before {
+        left: -96px;
+        top: -100px;
+      }
+
+      &:after {
+        right: -85px;
+        bottom: -75px;
+      }
+
+      .card-image {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        mix-blend-mode: screen;
+      }
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+
+      .card-inner {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      .card-image {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      &:before {
+        background: $headline-color;
+      }
+
+      .card-inner {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      .card-image {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      &:after {
+        opacity: 1;
+      }
+
+      .card-inner {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      .card-image {
+        opacity: 1;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      &:before {
+        background: $dark;
+      }
+      h3,
+      p {
+        color: #434343;
+      }
+      .arrow-icon-wrapper {
+        display: none;
+      }
+      .card-image {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--color-green {
+    --gradient-start: #30db74;
+    --overlay: #0b2516;
+  }
+
+  &--color-blue {
+    --gradient-start: #0d99ff;
+    --overlay: #061b2a;
+  }
+
+  &--color-purple {
+    --gradient-start: #695cff;
+    --overlay: #14122a;
+  }
+
+  &--color-yellow {
+    --gradient-start: #ffae33;
+    --overlay: #2a1e0c;
+  }
+
+  &--color-red {
+    --gradient-start: #ff544b;
+    --overlay: #2a110f;
+  }
+
+  &--color-lightblue {
+    --gradient-start: #62d3ff;
+    --overlay: #13242a;
+  }
+
+  &--color-lightyellow {
+    --gradient-start: #ffd426;
+    --overlay: #2a240a;
   }
 }
 

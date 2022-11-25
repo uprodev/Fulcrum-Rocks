@@ -61,6 +61,7 @@
     z-index: 1;
     p {
       margin: 0 0 1.4rem;
+      color: #d6d6d6;
     }
   }
 
@@ -89,7 +90,7 @@
       clear: left;
       float: left;
       width: 40%;
-      max-width: 440px;
+      max-width: 24rem;
       margin: 0 -50px 0 0;
     }
   }
@@ -234,6 +235,45 @@
     @include media-breakpoint-up(lg) {
       .txt-lg {
         margin-bottom: 150px;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .image {
+        margin: -49px 0 0;
+        padding: 0 26px 0 0;
+
+        img {
+          width: auto;
+          max-width: none;
+          float: right;
+        }
+      }
+      .txt-lg {
+        margin-bottom: 220px;
+      }
+    }
+  }
+
+  &.page-intro-services {
+    .image {
+      margin: -69px 0px -40px -44px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .image {
+        margin: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .txt-lg {
+        margin-bottom: 70px;
       }
     }
 
