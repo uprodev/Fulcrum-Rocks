@@ -1,0 +1,165 @@
+.block-way {
+  padding: 25px 0 0;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    right: -194px;
+    top: 30px;
+    background: #001625;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    left: -206px;
+    top: 530px;
+    background: #001f1e;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .block-text {
+    margin-bottom: 41px;
+
+    h1 {
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .about-box {
+    margin: 0 0 23px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    .about-box-title {
+      font-size: 8.714rem;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: -0.05em;
+    }
+
+    .about-box-image {
+      width: 42vw;
+      max-width: 325px;
+      margin: 0 auto -5.2rem;
+      transform: translateY(-5.2rem);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        @include card-borders();
+      }
+    }
+
+    .about-box-image-animated {
+      transform: translateY(0);
+      will-change: transform;
+    }
+  }
+
+  .wrapper {
+    margin-bottom: 43px;
+
+    p {
+      margin-bottom: 21px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .about-box {
+      .about-box-title {
+        font-size: 15rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 -10px;
+
+      .col {
+        padding: 0 10px;
+        width: 50%;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 54px 0;
+
+    &:before {
+      width: 58.6vw;
+      height: 58.6vw;
+      right: auto;
+      left: -219px;
+      top: 150px;
+    }
+
+    &:after {
+      width: 58.6vw;
+      height: 58.6vw;
+      left: auto;
+      right: -267px;
+      top: auto;
+      bottom: 450px;
+    }
+
+    .block-text {
+      h1 {
+        br {
+          display: block;
+        }
+      }
+    }
+
+    .about-box {
+      margin: 0 0 82px;
+
+      .about-box-title {
+        font-size: 32.43vw;
+      }
+
+      .about-box-image {
+        margin: 0 auto -14.7vw;
+        transform: translateY(-14.7vw);
+      }
+    }
+
+    .wrapper {
+      margin-bottom: 20px;
+
+      p {
+        margin-bottom: 24.5px;
+        max-width: 555px;
+      }
+    }
+  }
+}

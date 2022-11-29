@@ -100,6 +100,65 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if ($(".swiper-03").length) {
+    const swiper3 = new Swiper(".swiper-03", {
+      loop: false,
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+      scrollbar: {
+        el: ".swiper-03-scrollbar",
+        draggable: true,
+        hide: false,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 20,
+        },
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+  }
+
+  if ($(".swiper-04").length) {
+    const swiper4 = new Swiper(".swiper-04", {
+      loop: false,
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 20,
+        },
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+  }
+
   $(".block-why-rocks .btn-wrap .button").on("click", function (e) {
     e.preventDefault();
     var dest = $(".block-why-rocks").next();
@@ -180,6 +239,45 @@ jQuery(document).ready(function ($) {
         .parents(".block-stages")
         .removeClass("color-" + color);
     });
+
+  //tabs
+  $(".industries-tabs .tab-panel.active").show();
+  $(".industries-tab-menu a").on("click", function (e) {
+    e.preventDefault();
+
+    if (!$(this).parent().hasClass("active")) {
+      var $activeTab = $(".industries-tabs .tab-panel.active");
+      var $nextTab = $($(this).attr("href"));
+      $(".industries-tab-menu li.active").removeClass("active");
+      $(this).parent().addClass("active");
+      $activeTab.removeClass("active").hide();
+      $nextTab.addClass("active").fadeIn(400);
+    }
+  });
+
+  function switchPos() {
+    var top = $(".header").outerHeight() + $(".page-intro").outerHeight();
+    $(".switch").css("top", top);
+  }
+  switchPos();
+
+  $(window).on("resize", function () {
+    switchPos();
+  });
+
+  $(".switch").on("click", function () {
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      $(".blackout").fadeIn(200);
+      $("html").css({ overflow: "scroll" });
+      $("body").css({ overflow: "hidden" });
+    } else {
+      $(this).removeClass("active");
+      $(".blackout").fadeOut(200);
+      $("html").removeAttr("style");
+      $("body").removeAttr("style");
+    }
+  });
 });
 
 if (document.getElementById("contactFormMessage")) {

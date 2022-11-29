@@ -202,6 +202,25 @@ function moveMouse(evt) {
   followMouse.style.backgroundPosition = pos.x - followMouseX + "px " + "0px";
 }
 
+// block fulcrum way animations
+if (document.querySelector(".block-way")) {
+  var images = document.querySelectorAll(".about-box-image-animated");
+
+  gsap.utils.toArray(images).forEach((item, i) => {
+    gsap.to(item, {
+      transformOrigin: "center",
+      ease: "none",
+      y: "-80%",
+      scrollTrigger: {
+        trigger: item,
+        start: "top bottom",
+        end: "top 20%",
+        scrub: 1,
+      },
+    });
+  });
+}
+
 window.addEventListener("load", function () {
   ScrollTrigger.refresh();
 });
@@ -209,3 +228,22 @@ window.addEventListener("load", function () {
 imagesLoaded("body", function () {
   ScrollTrigger.refresh();
 });
+
+if (document.querySelector(".animated-input")) {
+  var n = [];
+  document.querySelectorAll(".animated-input").forEach((el, i) => {
+    n[i] = bodymovin.loadAnimation({
+      container: el, // required
+      path: "data.json", // required
+      renderer: "svg", // required
+      loop: false, // optional
+      autoplay: false, // optional
+      name: "input" + n, // optional
+    });
+
+    el.querySelector("input").addEventListener("focus", () => {
+      n[i].playSegments([0, 225], true);
+    });
+  });
+  console.log(n[1]);
+}

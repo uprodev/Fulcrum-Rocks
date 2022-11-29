@@ -54,6 +54,14 @@ body {
   }
 }
 
+.page-no-footer {
+  .page-content {
+    &:after {
+      display: none;
+    }
+  }
+}
+
 a {
   color: $link-color;
   text-decoration: none;

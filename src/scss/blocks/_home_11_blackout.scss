@@ -1,0 +1,70 @@
+.switch {
+  display: none;
+  position: absolute;
+  width: 180px;
+  height: auto;
+  top: 0;
+  right: 20px;
+  z-index: 99;
+  transform: translateY(-150%);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .switch-on {
+    display: block;
+  }
+
+  .switch-off {
+    display: none;
+  }
+
+  &.active {
+    .switch-on {
+      display: none;
+    }
+    .switch-off {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: auto;
+  }
+}
+
+.blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 98;
+  background: $dark;
+  display: none;
+
+  .text {
+    width: 86.8vw;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 12.36vw;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #373737;
+  }
+
+  .overlay {
+    background: url(../img/bg/blackout.png) 50% no-repeat;
+    background-size: 100% auto;
+    @include abs;
+  }
+}

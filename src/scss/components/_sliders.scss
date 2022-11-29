@@ -56,6 +56,24 @@
   }
 }
 
+.swiper-scrollbar-horizontal {
+  background: #242424;
+  margin: 20px 0 0;
+  height: 4px;
+  border-radius: 4px;
+
+  .swiper-scrollbar-drag {
+    @include gradient-base(90deg);
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 40px 0 0;
+    height: 6px;
+  }
+}
+
 .swiper-01 {
   @include media-breakpoint-down(sm) {
     .swiper-wrapper {
@@ -98,22 +116,11 @@
       width: 440px;
     }
   }
+}
 
-  .swiper-scrollbar-horizontal {
-    background: #242424;
-    margin: 20px 0 0;
-    height: 4px;
-    border-radius: 4px;
-
-    .swiper-scrollbar-drag {
-      @include gradient-base(90deg);
-      height: 100%;
-      border-radius: inherit;
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin: 40px 0 0;
-      height: 6px;
-    }
+.swiper-03,
+.swiper-04 {
+  .swiper-slide {
+    width: 249px;
   }
 }

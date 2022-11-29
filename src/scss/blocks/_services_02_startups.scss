@@ -1,0 +1,210 @@
+.block-startups {
+  padding: 20px 0 34px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 473px;
+    height: 473px;
+    left: -200px;
+    top: 52px;
+    background: #001f1e;
+    filter: blur(250px);
+    border-radius: 100%;
+    will-change: transform;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .block-number {
+    margin: 0 0 22px;
+  }
+
+  .block-text {
+    margin-bottom: 17px;
+  }
+
+  .graph {
+    position: relative;
+
+    figure {
+      margin: 0;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .legend {
+      @include abs;
+
+      .legend-text {
+        position: absolute;
+        color: $headline-color;
+        line-height: 1;
+
+        &:before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          background: #96f8f5;
+          position: absolute;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .graph {
+      .legend {
+        .legend-text {
+          &.legend-text-ideation {
+            left: 0%;
+            top: 0%;
+
+            &:before {
+              left: 0%;
+              top: 0%;
+            }
+          }
+
+          &.legend-text-mvp {
+            left: 0%;
+            top: 0%;
+
+            &:before {
+              left: 0%;
+              top: 0%;
+            }
+          }
+
+          &.legend-text-market {
+            left: 0%;
+            top: 0%;
+
+            &:before {
+              left: 0%;
+              top: 0%;
+            }
+          }
+
+          &.legend-text-scale {
+            right: -2.6%;
+            top: -1.7%;
+
+            &:before {
+              right: 0%;
+              top: 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .graph {
+      margin: 93px 40px 0;
+
+      .legend-text {
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        padding: 0 0 92px;
+        line-height: 1.2;
+        width: 24px;
+
+        span {
+          display: block;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          width: fit-content;
+          white-space: nowrap;
+        }
+
+        &:before {
+          width: 24px;
+          height: 24px;
+          left: 50%;
+          top: auto;
+          bottom: 0;
+          transform: translateX(-50%);
+          z-index: 2;
+        }
+
+        &:after {
+          content: "";
+          width: 1px;
+          height: 92px;
+          background-color: $headline-color;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+        }
+
+        &.legend-text-ideation {
+          left: 0;
+          bottom: 0;
+        }
+
+        &.legend-text-mvp {
+          left: 26.6%;
+          bottom: 19.5%;
+        }
+
+        &.legend-text-market {
+          left: 53.5%;
+          bottom: 33.5%;
+        }
+
+        &.legend-text-scale {
+          right: -10px;
+          top: -100px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 64px 0 60px;
+
+    &:after {
+      display: none;
+    }
+
+    .graph {
+      margin: 93px 40px 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .graph {
+      margin: 95px 80px 0;
+
+      .legend {
+        .legend-text {
+          font-size: 28px;
+          padding: 0 0 96px;
+
+          &:before {
+            width: 30px;
+            height: 30px;
+          }
+
+          &.legend-text-ideation {
+            left: 3px;
+            bottom: -9px;
+          }
+        }
+      }
+    }
+  }
+}

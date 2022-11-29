@@ -23,7 +23,7 @@
   object-position: center;
 }
 
-@mixin placeholder-text($color, $opacity) {
+@mixin placeholder-text($color: $placeholder-color, $opacity: 1) {
   &::-webkit-input-placeholder {
     color: $color;
     opacity: $opacity;
@@ -72,7 +72,10 @@
 
 @mixin card-borders($r1: 10px, $r2: 31px, $r3: 20px, $r4: 50px, $clip1: 22px, $clip2: 35px) {
   border-radius: $r1 $r1 $r2 $r1;
-  // clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$clip1}), calc(100% - #{$clip1}) 100%, 0 100%);
+
+  @include media-breakpoint-up(lg) {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$clip1}), calc(100% - #{$clip1}) 100%, 0 100%);
+  }
 
   @include media-breakpoint-up(xl) {
     border-radius: $r3 $r3 $r4 $r3;

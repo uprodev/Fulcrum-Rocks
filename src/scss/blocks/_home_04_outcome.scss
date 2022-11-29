@@ -63,4 +63,20 @@
       margin: -50px 0 0;
     }
   }
+
+  &.block-outcome-last {
+    &:before {
+      width: 52.8%;
+      height: 52.8%;
+      top: 0;
+      right: -164px;
+    }
+    &:after {
+      width: 82%;
+      height: 82%;
+      top: auto;
+      bottom: 10%;
+      left: -442px;
+    }
+  }
 }

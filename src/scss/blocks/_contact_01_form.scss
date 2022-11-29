@@ -1,0 +1,152 @@
+.contact-form-01 {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .field {
+    display: flex;
+    align-items: center;
+
+    &.field-input {
+      height: 44px;
+    }
+
+    &.field-tabs {
+      display: block;
+      padding: 10px 0;
+    }
+
+    &.field-message {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+
+  .contact-message {
+    height: 34px;
+    display: flex;
+    align-items: center;
+  }
+
+  label,
+  .label {
+    font-size: 1.714rem;
+    font-weight: 500;
+    color: $headline-color;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin: 0 10px 0 0;
+  }
+
+  .animated-input {
+    width: 100%;
+    position: relative;
+    padding: 30px 0 0;
+
+    svg {
+      transform: scale(1.5, 0.7) !important;
+
+      & > g {
+        width: 100%;
+        height: 100%;
+        clip-path: none !important;
+
+        & > g {
+          &:nth-child(1),
+          &:nth-child(3),
+          &:nth-child(4) {
+            display: none !important;
+          }
+        }
+      }
+    }
+
+    input {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      padding: 0;
+      background: none;
+      border: none;
+      color: $text-color;
+      @include placeholder-text();
+      z-index: 2;
+      transform: translateY(-50%);
+      font-size: 12px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: transparent;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .field {
+      &.field-input {
+        height: 44px;
+      }
+
+      &.field-tabs {
+        display: flex;
+        padding: 0;
+        height: 44px;
+
+        .tab-nav {
+          li {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &.field-message {
+        display: flex;
+        padding: 0;
+        height: 44px;
+      }
+    }
+
+    .button {
+      margin: 27px 0 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    label,
+    .label {
+      font-size: 48px;
+    }
+
+    .field {
+      height: 68px !important;
+    }
+
+    .animated-input {
+      max-width: 510px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .form-wrapper {
+      display: flex;
+
+      .col {
+        width: 50%;
+        overflow: hidden;
+      }
+    }
+
+    .animated-input {
+      padding: 50px 0 0;
+
+      input {
+        font-size: 18px;
+        transform: translateY(-30%);
+      }
+    }
+  }
+}

@@ -610,15 +610,64 @@
 
     .card-icon {
       display: none;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(180deg, rgba(13, 153, 255, 0.7) 0%, rgba(123, 226, 249, 0.7) 100%);
+      border-radius: 10px;
+      margin: 0 0 60px;
+
+      img {
+        display: block;
+      }
     }
 
     .card-text {
       h2 {
         margin: 0 0 8px;
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(xl) {
           font-size: 1.714rem;
           letter-spacing: -0.01em;
+        }
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .card-inner {
+      padding: 20px;
+
+      .card-icon {
+        display: flex;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card-inner {
+      .card-icon {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card-inner {
+      padding: 40px;
+      .card-icon {
+        margin: 0 0 120px;
+      }
+
+      .card-text {
+        h2 {
+          margin: 0 0 4px;
         }
       }
     }
@@ -684,41 +733,157 @@
     }
   }
 
-  // @include media-breakpoint-up(sm) {
-  //   padding: 122.73% 0 0;
+  @include media-breakpoint-up(lg) {
+    padding: 123.07% 0 0;
 
-  //   .card {
-  //     .card-inner {
-  //       .card-text {
-  //         p {
-  //           min-height: 4.2em;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+    .card {
+      .card-inner {
+        .card-image {
+          top: 60px;
+          bottom: 60px;
+          left: 50px;
+        }
+      }
+    }
+  }
 
-  // @include media-breakpoint-up(md) {
-  //   padding: 122.73% 0 0;
-  // }
+  @include media-breakpoint-up(xl) {
+    .card {
+      .card-inner {
+        padding: 38px 37px 40px 32px;
 
-  // @include media-breakpoint-up(lg) {
-  //   .card {
-  //     .card-inner {
-  //       .card-top {
-  //         padding: 40px 40px 0px;
+        .card-top {
+          padding: 0 3px 0 8px;
+        }
+      }
+    }
+  }
+}
 
-  //         .card-number {
-  //           font-size: 14px;
-  //           letter-spacing: 0.01em;
-  //           color: $text-color;
-  //         }
-  //       }
+.card-type-10 {
+  width: 249px;
+  height: 320px;
+  position: relative;
+  @include card-borders();
 
-  //       .card-text {
-  //         padding: 0 40px 37px;
-  //       }
-  //     }
-  //   }
-  // }
+  .card {
+    @include abs;
+    padding: 1px;
+    text-decoration: none;
+
+    .card-inner {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      @include card-borders();
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    height: auto;
+    padding: 123% 0 0;
+
+    .card {
+      .card-inner {
+        h3 {
+          font-size: 1.4rem;
+        }
+        p {
+          min-height: 4.2em;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .card {
+      .card-inner {
+        padding: 41px 39px 37px;
+
+        h3 {
+          font-size: 1.555rem;
+        }
+      }
+    }
+  }
+}
+
+.card-type-11 {
+  width: 100%;
+
+  .card-image {
+    margin: 0 0 10px;
+    @include card-borders();
+    background: linear-gradient(#e9eef1 0%, #1e1e1e 100%);
+    padding: 1px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      @include card-borders();
+    }
+  }
+
+  .card-inner {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card-inner {
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card-inner {
+      h3 {
+        font-size: 1.555rem;
+      }
+    }
+  }
+}
+
+.card-type-12 {
+  width: 100%;
+  padding: 100% 0 0;
+
+  .card {
+    @include abs;
+    @include card-borders();
+    background: linear-gradient(#e9eef1 0%, #1e1e1e 100%);
+
+    .card-image {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        @include card-borders();
+      }
+    }
+  }
 }

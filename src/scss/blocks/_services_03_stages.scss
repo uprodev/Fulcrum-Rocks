@@ -1,8 +1,15 @@
 .block-stages {
   padding: 35px 0 0;
 
+  .block-number,
+  .block-text,
+  .filter {
+    position: relative;
+    z-index: 5;
+  }
+
   .block-text {
-    margin: 0 0 5px;
+    margin-bottom: 5px;
   }
 
   .filter {
@@ -117,7 +124,7 @@
     .stage-list {
       padding: 0 0 38px;
 
-      .card-type-09 {
+      .item {
         margin-bottom: 10px;
       }
     }
@@ -182,6 +189,157 @@
       &:before,
       &:after {
         background-color: #2a240a !important;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .stage-box {
+      .wrapper {
+        display: flex;
+        margin: 0 -10px;
+
+        .col {
+          padding: 0 10px;
+          width: 50%;
+        }
+      }
+
+      .h1 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .block-text {
+      margin-bottom: 8px;
+    }
+
+    .filter {
+      margin: 0 0 40px;
+      overflow: auto;
+
+      .tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 59px 0 0;
+
+    .stage-box {
+      .h1 {
+        margin: 0;
+      }
+
+      .wrapper {
+        .col {
+          &:first-child {
+            width: 35%;
+          }
+          &:last-child {
+            width: 65%;
+          }
+        }
+      }
+
+      .stage-description {
+        max-width: 555px;
+        margin: 0 0 40px;
+      }
+
+      .stage-list {
+        display: flex;
+        margin: 0 -10px;
+        flex-wrap: wrap;
+
+        .item {
+          padding: 0 10px;
+          width: 50%;
+          margin: 0 0 20px;
+        }
+      }
+
+      &.stage-box-01 {
+        &:before {
+          content: "";
+          width: 59.3vw;
+          height: 59.3vw;
+          left: -306px;
+          top: -264px;
+          background-color: #001625;
+        }
+      }
+
+      &.stage-box-02 {
+        &:before {
+          content: "";
+          width: 69.1vw;
+          height: 69.1vw;
+          left: auto;
+          right: -317px;
+          top: 50px;
+          background-color: #001f1e;
+        }
+        &:after {
+          display: none;
+        }
+      }
+
+      &.stage-box-03 {
+        &:before {
+          content: "";
+          width: 69.1vw;
+          height: 69.1vw;
+          left: -325px;
+          top: 308px;
+          background-color: #001625;
+        }
+        &:after {
+          display: none;
+        }
+      }
+
+      &.stage-box-04 {
+        &:before {
+          content: "";
+          width: 69.1vw;
+          height: 69.1vw;
+          right: -193px;
+          top: -429px;
+          background-color: #001625;
+        }
+        &:after {
+          content: "";
+          width: 69.1vw;
+          height: 69.1vw;
+          left: -265px;
+          bottom: -230px;
+          background-color: #001f1e;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .stage-box {
+      .wrapper {
+        .col {
+          &:first-child {
+            width: 50%;
+          }
+          &:last-child {
+            width: 50%;
+          }
+        }
+      }
+
+      .stage-list {
+        padding: 0 0 58.5px;
       }
     }
   }
