@@ -278,6 +278,20 @@ jQuery(document).ready(function ($) {
       $("body").removeAttr("style");
     }
   });
+
+  $(".filter-show-more").on("click", function (e) {
+    e.preventDefault();
+    var txt1 = "See more +";
+    var txt2 = "See less +";
+
+    if ($(this).hasClass("shown")) {
+      $(this).removeClass("shown").find("span span").text(txt1);
+      $(".projects-filter .tab-nav li.hidden").hide();
+    } else {
+      $(this).addClass("shown").find("span span").text(txt2);
+      $(".projects-filter .tab-nav li.hidden").show();
+    }
+  });
 });
 
 if (document.getElementById("contactFormMessage")) {

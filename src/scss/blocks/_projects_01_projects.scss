@@ -40,6 +40,12 @@
   .projects-filter {
     .tab-nav {
       margin-bottom: 20px;
+
+      li {
+        &.hidden {
+          display: none;
+        }
+      }
     }
 
     .projects-filter-sort {

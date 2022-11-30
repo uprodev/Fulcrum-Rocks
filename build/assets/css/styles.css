@@ -3933,6 +3933,8 @@ button {
     margin-bottom: 20px; }
   .block-projects .projects-filter .tab-nav {
     margin-bottom: 20px; }
+    .block-projects .projects-filter .tab-nav li.hidden {
+      display: none; }
   .block-projects .projects-filter .projects-filter-sort {
     display: flex;
     align-items: center;
@@ -4082,7 +4084,7 @@ button {
         width: 32.4%; } }
 
 .block-startups {
-  padding: 20px 0 34px;
+  padding: 37px 0 34px;
   position: relative; }
   .block-startups:after {
     content: "";
@@ -4127,32 +4129,47 @@ button {
           background: #96f8f5;
           position: absolute;
           border-radius: 100%; }
-  @media (max-width: 767.98px) {
-    .block-startups .graph .legend .legend-text.legend-text-ideation {
-      left: 0%;
-      top: 0%; }
-      .block-startups .graph .legend .legend-text.legend-text-ideation:before {
-        left: 0%;
-        top: 0%; }
-    .block-startups .graph .legend .legend-text.legend-text-mvp {
-      left: 0%;
-      top: 0%; }
-      .block-startups .graph .legend .legend-text.legend-text-mvp:before {
-        left: 0%;
-        top: 0%; }
-    .block-startups .graph .legend .legend-text.legend-text-market {
-      left: 0%;
-      top: 0%; }
-      .block-startups .graph .legend .legend-text.legend-text-market:before {
-        left: 0%;
-        top: 0%; }
-    .block-startups .graph .legend .legend-text.legend-text-scale {
-      right: -2.6%;
-      top: -1.7%; }
-      .block-startups .graph .legend .legend-text.legend-text-scale:before {
-        right: 0%;
-        top: 0%; } }
-  @media (min-width: 768px) {
+  @media (max-width: 639.98px) {
+    .block-startups .graph .legend .legend-text {
+      width: 18px;
+      padding: 0 0 72px; }
+      .block-startups .graph .legend .legend-text span {
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        white-space: nowrap; }
+      .block-startups .graph .legend .legend-text:before {
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%); }
+      .block-startups .graph .legend .legend-text.legend-text-ideation {
+        left: -5px;
+        bottom: -7px; }
+        .block-startups .graph .legend .legend-text.legend-text-ideation span {
+          transform: translateX(-9px); }
+      .block-startups .graph .legend .legend-text.legend-text-mvp {
+        padding: 0 0 51px;
+        left: 29.5%;
+        bottom: 22.5%; }
+      .block-startups .graph .legend .legend-text.legend-text-market {
+        left: 58.5%;
+        bottom: 48%; }
+      .block-startups .graph .legend .legend-text.legend-text-scale {
+        right: -11px;
+        top: -8px;
+        padding: 2px 56px 0 0;
+        width: auto; }
+        .block-startups .graph .legend .legend-text.legend-text-scale span {
+          transform: none; }
+        .block-startups .graph .legend .legend-text.legend-text-scale:before {
+          right: 0;
+          top: 0;
+          left: auto;
+          bottom: auto;
+          transform: none; } }
+  @media (min-width: 640px) {
     .block-startups .graph {
       margin: 93px 40px 0; }
       .block-startups .graph .legend-text {

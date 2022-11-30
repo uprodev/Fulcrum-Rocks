@@ -1,5 +1,5 @@
 .block-startups {
-  padding: 20px 0 34px;
+  padding: 37px 0 34px;
   position: relative;
 
   &:after {
@@ -61,47 +61,64 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     .graph {
       .legend {
         .legend-text {
-          &.legend-text-ideation {
-            left: 0%;
-            top: 0%;
+          width: 18px;
+          padding: 0 0 72px;
 
-            &:before {
-              left: 0%;
-              top: 0%;
+          span {
+            display: block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            white-space: nowrap;
+          }
+
+          &:before {
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+          }
+
+          &.legend-text-ideation {
+            left: -5px;
+            bottom: -7px;
+
+            span {
+              transform: translateX(-9px);
             }
           }
 
           &.legend-text-mvp {
-            left: 0%;
-            top: 0%;
-
-            &:before {
-              left: 0%;
-              top: 0%;
-            }
+            padding: 0 0 51px;
+            left: 29.5%;
+            bottom: 22.5%;
           }
 
           &.legend-text-market {
-            left: 0%;
-            top: 0%;
-
-            &:before {
-              left: 0%;
-              top: 0%;
-            }
+            left: 58.5%;
+            bottom: 48%;
           }
 
           &.legend-text-scale {
-            right: -2.6%;
-            top: -1.7%;
+            right: -11px;
+            top: -8px;
+            padding: 2px 56px 0 0;
+            width: auto;
+
+            span {
+              transform: none;
+            }
 
             &:before {
-              right: 0%;
-              top: 0%;
+              right: 0;
+              top: 0;
+              left: auto;
+              bottom: auto;
+              transform: none;
             }
           }
         }
@@ -109,7 +126,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     .graph {
       margin: 93px 40px 0;
 
