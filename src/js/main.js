@@ -159,12 +159,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  $(".block-why-rocks .btn-wrap .button").on("click", function (e) {
-    e.preventDefault();
-    var dest = $(".block-why-rocks").next();
-    $("html,body").animate({ scrollTop: dest.offset().top }, 500);
-  });
-
   function stickMenu() {
     var scrollWin = $(window).scrollTop();
     var top = $(".page-intro").outerHeight() + $(".header").outerHeight();

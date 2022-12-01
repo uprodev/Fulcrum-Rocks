@@ -136,13 +136,13 @@
   }
 
   .scroller {
+    overflow: hidden;
     ul {
       margin: 0;
       padding: 50vh 0;
       list-style: none;
 
       li {
-        // height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -157,6 +157,7 @@
           font-size: 12rem;
           font-weight: 400;
           opacity: 0;
+          letter-spacing: 0;
         }
         p {
           position: relative;

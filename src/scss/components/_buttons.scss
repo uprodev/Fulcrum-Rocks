@@ -5,6 +5,7 @@ button {
   transition: all 0.5s;
   -webkit-appearance: none;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: none;

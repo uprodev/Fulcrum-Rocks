@@ -22,6 +22,9 @@
 
   .image {
     position: relative;
+    overflow: hidden;
+    background-color: $dark;
+
     img {
       display: block;
       max-width: 100%;
@@ -37,6 +40,23 @@
         width: 100%;
         z-index: 1;
       }
+    }
+
+    .overlay {
+      --mouse-x: 0;
+      --mouse-y: 0;
+
+      background: #ffd600;
+      -webkit-filter: blur(70px);
+      filter: blur(70px);
+      width: 83.25%;
+      height: 54.25%;
+      position: absolute;
+      left: var(--mouse-x);
+      top: var(--mouse-y);
+      mix-blend-mode: color;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 2;
     }
   }
 
@@ -103,25 +123,6 @@
     .image {
       float: left;
       margin: 41px 0 0 16px;
-      position: relative;
-      overflow: hidden;
-      background-color: $dark;
-
-      .overlay {
-        --mouse-x: 0;
-        --mouse-y: 0;
-
-        background: #ffd600;
-        filter: blur(70px);
-        width: 83.25%;
-        height: 54.25%;
-        position: absolute;
-        left: var(--mouse-x);
-        top: var(--mouse-y);
-        mix-blend-mode: color;
-        transform: translate3d(-50%, -50%, 0);
-        z-index: 2;
-      }
     }
 
     ul {

@@ -1,3 +1,9 @@
+.card {
+  .arrow-icon-wrapper {
+    flex: 0 0 auto;
+  }
+}
+
 .card-type-01 {
   width: 100%;
   padding: 89.55% 0 0;
@@ -72,7 +78,6 @@
     padding: 122.73% 0 0;
 
     .card {
-      // height: 340px;
       .card-inner {
         .card-text {
           p {
@@ -336,11 +341,19 @@
   }
 
   @include media-breakpoint-up(lg) {
+    padding: 0;
+    height: 100%;
     .card {
+      position: relative;
+      height: 100%;
+
       .card-inner {
         padding: 39px 39px 40px;
+        height: 100%;
+        display: block;
 
         .card-top {
+          margin: 0 0 170px;
           .card-number {
             font-size: 14px;
             letter-spacing: 0.01em;
