@@ -54,7 +54,7 @@
       position: absolute;
       left: var(--mouse-x);
       top: var(--mouse-y);
-      mix-blend-mode: color;
+      mix-blend-mode: darken;
       transform: translate3d(-50%, -50%, 0);
       z-index: 2;
     }
