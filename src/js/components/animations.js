@@ -200,40 +200,42 @@ jQuery(document).ready(function ($) {
   }
 
   // footer visibility
-  ScrollTrigger.create({
-    trigger: ".page-content",
-    start: "bottom bottom",
-    onEnter: function () {
-      document.querySelector(".page-footer").classList.add("is-active");
-    },
-    onLeaveBack: function () {
-      document.querySelector(".page-footer").classList.remove("is-active");
-    },
-  });
+  if (document.querySelector(".page-footer")) {
+    ScrollTrigger.create({
+      trigger: ".page-content",
+      start: "bottom bottom",
+      onEnter: function () {
+        document.querySelector(".page-footer").classList.add("is-active");
+      },
+      onLeaveBack: function () {
+        document.querySelector(".page-footer").classList.remove("is-active");
+      },
+    });
 
-  // footer title
-  function getMousePos(e) {
-    var doc = document.documentElement || document.body;
-    if (e.type == "touchstart" || e.type == "touchmove" || e.type == "touchend" || e.type == "touchcancel") {
-      var touch = e.touches[0] || e.changedTouches[0];
-      var pos = {
-        x: touch.clientX,
-      };
-    } else if (e.type == "mousedown" || e.type == "mouseup" || e.type == "mousemove" || e.type == "mouseover" || e.type == "mouseout" || e.type == "mouseenter" || e.type == "mouseleave") {
-      var pos = {
-        x: e ? e.pageX : window.event.clientX + doc.scrollLeft - doc.clientLeft,
-      };
+    // footer title
+    function getMousePos(e) {
+      var doc = document.documentElement || document.body;
+      if (e.type == "touchstart" || e.type == "touchmove" || e.type == "touchend" || e.type == "touchcancel") {
+        var touch = e.touches[0] || e.changedTouches[0];
+        var pos = {
+          x: touch.clientX,
+        };
+      } else if (e.type == "mousedown" || e.type == "mouseup" || e.type == "mousemove" || e.type == "mouseover" || e.type == "mouseout" || e.type == "mouseenter" || e.type == "mouseleave") {
+        var pos = {
+          x: e ? e.pageX : window.event.clientX + doc.scrollLeft - doc.clientLeft,
+        };
+      }
+
+      console.log(pos.x);
+      return pos;
     }
 
-    console.log(pos.x);
-    return pos;
+    document.querySelector(".footer-title").onmousemove = moveMouse;
+    document.querySelector(".footer-title").ontouchmove = moveMouse;
+    document.querySelector(".footer-title").onmouseleave = function () {
+      this.removeAttribute("style");
+    };
   }
-
-  document.querySelector(".footer-title").onmousemove = moveMouse;
-  document.querySelector(".footer-title").ontouchmove = moveMouse;
-  document.querySelector(".footer-title").onmouseleave = function () {
-    this.removeAttribute("style");
-  };
 
   function moveMouse(evt) {
     var pos = getMousePos(evt),

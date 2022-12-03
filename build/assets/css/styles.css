@@ -365,8 +365,6 @@ p {
         .main-navigation ul li {
           margin: 0 25px; }
       .main-navigation > ul > li > a .arrow-icon-wrapper {
-        display: none; }
-      .main-navigation > ul > li:last-child {
         display: none; } }
   @media (min-width: 1440px) {
     .main-navigation ul li {
@@ -2095,6 +2093,9 @@ button {
       background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px); } }
 
+.tabs .tab-panel {
+  display: none; }
+
 .word {
   overflow: hidden;
   display: inline-flex;
@@ -2999,7 +3000,8 @@ button {
         z-index: 5; } }
     @media (min-width: 1024px) {
       .page-intro.page-intro-thank {
-        min-height: calc(100vh - 60px); }
+        min-height: calc(100vh - 60px);
+        padding-bottom: 50px; }
         .page-intro.page-intro-thank .wrapper {
           position: relative; }
         .page-intro.page-intro-thank .txt-lg {
@@ -4167,7 +4169,7 @@ button {
       display: inline-flex;
       flex-wrap: nowrap;
       white-space: nowrap;
-      padding: 0 10px 0 0; }
+      padding: 0 10px 10px 0; }
   .block-stages .stage-box {
     position: relative; }
     .block-stages .stage-box:before, .block-stages .stage-box:after {
@@ -4544,7 +4546,7 @@ button {
             border-radius: 20px 20px 50px 20px;
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 35px), calc(100% - 35px) 100%, 0 100%); } }
     .block-way .about-box .about-box-image-animated {
-      transform: translateY(0);
+      transform: translateY(50%);
       will-change: transform; }
   .block-way .wrapper {
     margin-bottom: 43px; }
@@ -4986,8 +4988,12 @@ button {
     .contact-form-01 .form-wrapper {
       display: flex; }
       .contact-form-01 .form-wrapper .col {
-        width: 50%;
+        width: calc(50% - 20px);
         overflow: hidden; }
+        .contact-form-01 .form-wrapper .col:first-child {
+          margin-right: 20px; }
+        .contact-form-01 .form-wrapper .col:last-child {
+          margin-left: 20px; }
     .contact-form-01 .animated-input {
       padding: 50px 0 0; }
       .contact-form-01 .animated-input input {

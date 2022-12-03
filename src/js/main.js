@@ -235,17 +235,19 @@ jQuery(document).ready(function ($) {
     });
 
   //tabs
-  $(".industries-tabs .tab-panel.active").show();
-  $(".industries-tab-menu a").on("click", function (e) {
+  $(".tabs .tab-panel.active").show();
+  $(".tab-menu a").on("click", function (e) {
     e.preventDefault();
 
-    if (!$(this).parent().hasClass("active")) {
-      var $activeTab = $(".industries-tabs .tab-panel.active");
-      var $nextTab = $($(this).attr("href"));
-      $(".industries-tab-menu li.active").removeClass("active");
-      $(this).parent().addClass("active");
-      $activeTab.removeClass("active").hide();
-      $nextTab.addClass("active").fadeIn(400);
+    if (!$(this).hasClass("filter-show-more")) {
+      if (!$(this).parent().hasClass("active")) {
+        var $activeTab = $(".tabs .tab-panel.active");
+        var $nextTab = $($(this).attr("href"));
+        $(".tab-menu li.active").removeClass("active");
+        $(this).parent().addClass("active");
+        $activeTab.removeClass("active").hide();
+        $nextTab.addClass("active").fadeIn(400);
+      }
     }
   });
 

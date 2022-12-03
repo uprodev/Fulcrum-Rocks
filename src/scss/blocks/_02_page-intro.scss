@@ -393,6 +393,7 @@
 
     @include media-breakpoint-up(lg) {
       min-height: calc(100vh - 60px);
+      padding-bottom: 50px;
 
       .wrapper {
         position: relative;
