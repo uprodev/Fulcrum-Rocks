@@ -263,6 +263,14 @@
     }
   }
 
+  &:hover {
+    .card {
+      .card-inner {
+        background-color: #061b2a;
+      }
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     padding: 123% 0 0;
 
@@ -387,6 +395,11 @@
       text-align: center;
       @include card-borders();
 
+      &:before,
+      &:after {
+        display: none !important;
+      }
+
       .text {
         p {
           margin: 0;
@@ -409,6 +422,14 @@
         line-height: 140%;
         letter-spacing: 0.01em;
         color: $dark;
+      }
+    }
+  }
+
+  &:hover {
+    .card {
+      .card-inner {
+        background-color: #061b2a;
       }
     }
   }
@@ -463,6 +484,11 @@
       justify-content: center;
       @include card-borders();
 
+      &:before,
+      &:after {
+        display: none !important;
+      }
+
       .card-top {
         display: flex;
         justify-content: space-between;
@@ -494,6 +520,14 @@
           margin: 0;
           color: $headline-color;
         }
+      }
+    }
+  }
+
+  &:hover {
+    .card {
+      .card-inner {
+        background-color: #061b2a;
       }
     }
   }

@@ -120,8 +120,8 @@ button {
 
   &:hover {
     &:before {
-      opacity: 1;
-      filter: blur(5px);
+      opacity: 0.7;
+      filter: blur(8px);
     }
 
     .btn-wrap {
@@ -242,6 +242,74 @@ button {
         &:before {
           width: 42px;
           height: 42px;
+        }
+      }
+    }
+  }
+
+  &.btn-small {
+    width: 140px;
+    height: 42px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+    border-radius: 5px 5px 12px 5px;
+
+    &:before,
+    &:after {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+      border-radius: 5px 5px 12px 5px;
+    }
+
+    .btn-wrap {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+      border-radius: 5px 5px 12px 5px;
+
+      &:before {
+        background: linear-gradient(90deg, #050505 0%, #242424 100%);
+      }
+
+      &:before,
+      &:after {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+        border-radius: 5px 5px 12px 5px;
+      }
+    }
+
+    .btn-inner {
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 400;
+      padding: 13px 15px 13px 14px;
+    }
+
+    .btn-icon {
+      display: block;
+      position: relative;
+
+      &:before {
+        width: 4px;
+        height: 4px;
+      }
+
+      img {
+        width: 7px;
+        height: 7px;
+      }
+    }
+
+    &:hover {
+      .btn-icon {
+        &:before {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &:active {
+      .btn-icon {
+        &:before {
+          width: 24px;
+          height: 24px;
         }
       }
     }

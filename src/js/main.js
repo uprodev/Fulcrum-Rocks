@@ -288,6 +288,10 @@ jQuery(document).ready(function ($) {
       $(".projects-filter .tab-nav li.hidden").show();
     }
   });
+
+  $(".accordion-toggler").on("click", function () {
+    $(this).toggleClass("accordion-active").next(".accordion-panel").slideToggle(300);
+  });
 });
 
 if (document.getElementById("contactFormMessage")) {

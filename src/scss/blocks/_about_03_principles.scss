@@ -60,6 +60,54 @@
         right: 0;
       }
 
+      .accordion-panel {
+        display: none;
+        padding: 20px 0 10px;
+
+        p {
+          font-weight: 500;
+          font-size: 1.286rem;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          color: $headline-color;
+          margin-bottom: 40px;
+
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+
+      .accordion-toggler {
+        cursor: pointer;
+
+        .toggler {
+          position: absolute;
+          right: 0;
+          top: 14px;
+          border: 1px solid $text-color;
+          border-radius: 100%;
+          background: none;
+          padding: 0;
+          width: 24px;
+          height: 24px;
+          transform: rotate(0);
+          will-change: transform;
+          transition: transform 0.3s ease;
+
+          svg {
+            display: block;
+            margin: auto;
+          }
+        }
+
+        &.accordion-active {
+          .toggler {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+
       .num {
         position: absolute;
         left: 0;
@@ -67,23 +115,6 @@
         letter-spacing: 0.01em;
         font-size: 0.857rem;
         color: $headline-color;
-      }
-
-      .toggler {
-        position: absolute;
-        right: 0;
-        top: 14px;
-        border: 1px solid $text-color;
-        border-radius: 100%;
-        background: none;
-        padding: 0;
-        width: 24px;
-        height: 24px;
-
-        svg {
-          display: block;
-          margin: auto;
-        }
       }
 
       .title {
@@ -143,7 +174,34 @@
       li {
         padding: 24px 0 20px;
         min-height: 0;
-        display: flex;
+
+        .accordion-toggler {
+          display: flex;
+
+          .toggler {
+            position: static;
+            width: 41px;
+            height: 41px;
+            flex: 0 0 auto;
+            margin-left: 50px;
+
+            svg {
+              width: 14px;
+              height: auto;
+            }
+          }
+        }
+
+        .accordion-panel {
+          width: 50%;
+          padding-left: 10px;
+          padding-right: 25px;
+          transform: translateX(100%);
+
+          p {
+            margin: 0 0 30px;
+          }
+        }
 
         .col {
           width: 50%;
@@ -167,19 +225,6 @@
           flex: 0 0 auto;
         }
 
-        .toggler {
-          position: static;
-          width: 41px;
-          height: 41px;
-          flex: 0 0 auto;
-          margin-left: 50px;
-
-          svg {
-            width: 14px;
-            height: auto;
-          }
-        }
-
         .title {
           padding: 0;
           margin: 0;
@@ -197,6 +242,21 @@
           p {
             max-width: 440px;
             line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .principles-list {
+      li {
+        .accordion-panel {
+          transform: translate3d(100%, -20px, 0);
+          padding: 0 25px 0 10px;
+
+          p {
+            font-size: 1.556;
           }
         }
       }
