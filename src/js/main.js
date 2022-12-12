@@ -140,6 +140,11 @@ jQuery(document).ready(function ($) {
       mousewheel: {
         releaseOnEdges: true,
       },
+      scrollbar: {
+        el: ".swiper-04-scrollbar",
+        draggable: true,
+        hide: false,
+      },
       breakpoints: {
         768: {
           spaceBetween: 20,

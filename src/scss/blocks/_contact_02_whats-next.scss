@@ -51,6 +51,14 @@
         }
       }
     }
+
+    &:hover {
+      .bg {
+        &:after {
+          background-color: #001625;
+        }
+      }
+    }
   }
 
   .card-type-08 {

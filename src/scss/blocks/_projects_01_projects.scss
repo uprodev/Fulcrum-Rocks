@@ -97,11 +97,23 @@
         }
 
         .card-type-02 {
-          padding: 99% 0 0;
+          padding: 0;
+          height: 400px;
         }
       }
     }
   }
+
+  @include media-breakpoint-up(md) {
+    .wrapper {
+      .col {
+        .card-type-02 {
+          height: 450px;
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     padding: 44px 0 120px;
 
@@ -135,6 +147,17 @@
 
         .card-type-02 {
           max-width: 555px;
+          height: 580px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .wrapper {
+      .col {
+        .card-type-02 {
+          height: 630px;
         }
       }
     }

@@ -12,28 +12,23 @@ module.exports = function stylesmin() {
     gulp
       .src("src/scss/*.scss")
       .pipe(plumber())
-      .pipe(
-        autoprefixer({
-          overrideBrowserslist: ["last 4 version"],
-          cascade: false,
-        })
-      )
-      // .pipe(rename({ suffix: ".min" }))
+
       .pipe(scss({ outputStyle: "compressed" }))
-      .pipe(
-        gulpif(
-          argv.prod,
-          cleanCSS(
-            {
-              debug: true,
-              compatibility: "*",
-            },
-            (details) => {
-              console.log(`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`);
-            }
-          )
-        )
-      )
+      //   .pipe(
+      //     gulpif(
+      //       argv.prod,
+      //       cleanCSS(
+      //         {
+      //           debug: true,
+      //           compatibility: "*",
+      //         },
+      //         (details) => {
+      //           console.log(`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`);
+      //         }
+      //       )
+      //     )
+      // )
+      .pipe(autoprefixer("last 2 version"))
       .pipe(gulp.dest("build/assets/css"))
   );
 };

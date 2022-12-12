@@ -154,6 +154,16 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  // svg animation
+  if (document.getElementById("svg")) {
+    ScrollTrigger.create({
+      trigger: "#svg",
+      start: "top 90%",
+      end: "bottom top",
+      toggleClass: "active",
+    });
+  }
+
   // lines animations
   var lines = document.querySelectorAll(".line-animated");
   if (lines) {

@@ -11,7 +11,7 @@ const serve = require("./gulp/tasks/serve");
 require("events").EventEmitter.prototype._maxListeners = 2000;
 
 const dev = gulp.parallel(script, styles, images, fonts);
-const build = gulp.series(clean, styles, images, fonts, scriptmin);
+const build = gulp.series(clean, stylesmin, images, fonts, scriptmin);
 
 module.exports.start = gulp.series(dev, serve);
 module.exports.build = gulp.series(build);

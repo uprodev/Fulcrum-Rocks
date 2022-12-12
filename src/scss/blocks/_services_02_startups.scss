@@ -53,9 +53,27 @@
           content: "";
           width: 18px;
           height: 18px;
-          background: #96f8f5;
+          background: #97f9f5;
           position: absolute;
           border-radius: 100%;
+        }
+
+        &.legend-text-ideation {
+          &:before {
+            background: #129dff;
+          }
+        }
+
+        &.legend-text-mvp {
+          &:before {
+            background: #36b5fc;
+          }
+        }
+
+        &.legend-text-market {
+          &:before {
+            background: #58cdf9;
+          }
         }
       }
     }
@@ -219,6 +237,14 @@
           &.legend-text-ideation {
             left: 3px;
             bottom: -9px;
+          }
+
+          &.legend-text-market {
+            padding: 0 0 135px;
+
+            &:after {
+              height: 120px;
+            }
           }
         }
       }
