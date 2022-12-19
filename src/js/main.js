@@ -38,14 +38,6 @@ jQuery(document).ready(function ($) {
               swiper1Init = true;
               ScrollTrigger.refresh();
             },
-            reachBeginning: function () {
-              $(".swiper-01 .swiper-button-prev").addClass("disabled");
-              $(".swiper-01 .swiper-button-next").removeClass("disabled");
-            },
-            reachEnd: function () {
-              $(".swiper-01 .swiper-button-next").addClass("disabled");
-              $(".swiper-01 .swiper-button-prev").removeClass("disabled");
-            },
           },
           breakpoints: {
             768: {
@@ -87,14 +79,6 @@ jQuery(document).ready(function ($) {
       on: {
         init: function () {
           ScrollTrigger.refresh();
-        },
-        reachBeginning: function () {
-          $(".swiper-02 .swiper-button-prev").addClass("disabled");
-          $(".swiper-02 .swiper-button-next").removeClass("disabled");
-        },
-        reachEnd: function () {
-          $(".swiper-02 .swiper-button-next").addClass("disabled");
-          $(".swiper-02 .swiper-button-prev").removeClass("disabled");
         },
       },
     });
@@ -144,6 +128,42 @@ jQuery(document).ready(function ($) {
         el: ".swiper-04-scrollbar",
         draggable: true,
         hide: false,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 20,
+        },
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+  }
+
+  if ($(".swiper-05").length) {
+    const swiper5 = new Swiper(".swiper-05", {
+      loop: false,
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+      scrollbar: {
+        el: ".swiper-05-scrollbar",
+        draggable: true,
+        hide: false,
+      },
+      navigation: {
+        nextEl: ".swiper-05 .swiper-button-next",
+        prevEl: ".swiper-05 .swiper-button-prev",
       },
       breakpoints: {
         768: {
@@ -225,19 +245,19 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".card-effect-05")
-    .on("mouseenter", function () {
-      var color = $(this).attr("data-color");
-      $(this)
-        .parents(".block-stages")
-        .addClass("color-" + color);
-    })
-    .on("mouseleave", function () {
-      var color = $(this).attr("data-color");
-      $(this)
-        .parents(".block-stages")
-        .removeClass("color-" + color);
-    });
+  // $(".card-effect-05")
+  //   .on("mouseenter", function () {
+  //     var color = $(this).attr("data-color");
+  //     $(this)
+  //       .parents(".block-stages")
+  //       .addClass("color-" + color);
+  //   })
+  //   .on("mouseleave", function () {
+  //     var color = $(this).attr("data-color");
+  //     $(this)
+  //       .parents(".block-stages")
+  //       .removeClass("color-" + color);
+  //   });
 
   //tabs
   $(".tabs .tab-panel.active").show();

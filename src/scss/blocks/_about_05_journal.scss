@@ -3,17 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -144px;
-    top: -133px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-green;
   }
+  @include bg-before(600px, -233px, -321px);
 
   .container {
     position: relative;
@@ -28,10 +20,7 @@
     padding: 50px 0;
 
     &:before {
-      width: 58.6vw;
-      height: 58.6vw;
-      right: -504px;
-      top: -190px;
+      display: none;
     }
 
     .block-text {

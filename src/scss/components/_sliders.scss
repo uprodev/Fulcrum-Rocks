@@ -2,56 +2,74 @@
   position: relative;
 }
 
+.swiper-slide {
+  height: auto;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 19;
+  transform: translateY(-50%);
+
+  img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $headline-color;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      transform: translate3d(-50%, -50%, 0) scale(0.8);
+    }
+  }
+
+  &:focus {
+    border: 1px solid $dark;
+  }
+
+  &:active,
+  &:target {
+    &:before {
+      transform: translate3d(-50%, -50%, 0) scale(0.8);
+    }
+  }
+
+  &.swiper-button-disabled {
+    display: none !important;
+  }
 
   @include media-breakpoint-up(md) {
     display: block;
-    position: absolute;
     right: 40px;
-    top: 50%;
-    z-index: 19;
-    transform: translateY(-50%);
-
-    img {
-      display: block;
-      position: relative;
-      z-index: 1;
-    }
 
     &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background-color: $headline-color;
       width: 100px;
       height: 100px;
-      border-radius: 100%;
-      transform: translate3d(-50%, -50%, 0) scale(1);
-      transition: all 0.3s;
     }
 
-    &.disabled {
-      display: none;
-    }
-
-    &:hover {
-      &:before {
-        transform: translate3d(-50%, -50%, 0) scale(0.8);
-      }
-    }
-
-    &:focus {
-      border: 1px solid $dark;
-    }
-
-    &:active,
-    &:target {
-      &:before {
-        transform: translate3d(-50%, -50%, 0) scale(0.8);
-      }
+    img {
+      width: auto;
+      height: auto;
     }
   }
 }
@@ -122,5 +140,22 @@
 .swiper-04 {
   .swiper-slide {
     width: 249px;
+  }
+}
+
+.swiper-05 {
+  .swiper-slide {
+    width: 335px;
+
+    .card-type-10 {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+    transform: translateY(calc(-50% - 12px));
   }
 }

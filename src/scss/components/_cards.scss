@@ -1,4 +1,5 @@
 .card {
+  display: block;
   .arrow-icon-wrapper {
     flex: 0 0 auto;
   }
@@ -130,7 +131,6 @@
       z-index: 1;
       width: 100%;
       height: 100%;
-      background-color: $black;
       overflow: hidden;
       @include card-borders();
 
@@ -235,56 +235,30 @@
 
 .card-type-03 {
   width: 100%;
-  padding: 71.6% 0 0;
-  position: relative;
-  @include card-borders();
+  height: 100%;
 
   .card {
-    @include abs;
-    padding: 1px;
-    text-decoration: none;
+    width: 100%;
+    height: 100%;
 
     .card-inner {
-      position: relative;
-      z-index: 5;
-      width: 100%;
-      height: 100%;
-      background-color: $black;
       padding: 19px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      @include card-borders();
-
+      h2 {
+        margin: 0 0 72px;
+      }
       p {
         margin: 0;
       }
     }
   }
 
-  &:hover {
-    .card {
-      .card-inner {
-        background-color: #061b2a;
-      }
-    }
-  }
-
   @include media-breakpoint-up(lg) {
-    padding: 123% 0 0;
-
     .card {
       .card-inner {
-        padding: 29px;
-
         h2 {
           letter-spacing: -0.01em;
           font-size: 1.714rem;
           line-height: 1.25;
-        }
-        p {
-          min-height: 4.2em;
         }
       }
     }
@@ -292,10 +266,11 @@
   @include media-breakpoint-up(xl) {
     .card {
       .card-inner {
-        padding: 35px 39px 40px;
+        padding: 39px;
 
         h2 {
           font-size: 1.555rem;
+          margin: 0 0 177px;
         }
       }
     }
@@ -356,17 +331,28 @@
       height: 100%;
 
       .card-inner {
-        padding: 39px 39px 40px;
         height: 100%;
         display: block;
 
         .card-top {
-          margin: 0 0 170px;
+          margin: 0 0 60px;
           .card-number {
             font-size: 14px;
             letter-spacing: 0.01em;
             color: $text-color;
           }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card {
+      .card-inner {
+        padding: 39px 39px 40px;
+
+        .card-top {
+          margin: 0 0 181px;
         }
       }
     }
@@ -385,6 +371,7 @@
     @include card-borders();
 
     .card-inner {
+      height: 100%;
       position: relative;
       z-index: 5;
       padding: 19px;
@@ -398,6 +385,12 @@
       &:before,
       &:after {
         display: none !important;
+      }
+
+      .card-arrow {
+        position: absolute;
+        top: 19px;
+        right: 19px;
       }
 
       .text {
@@ -426,14 +419,6 @@
     }
   }
 
-  &:hover {
-    .card {
-      .card-inner {
-        background-color: #061b2a;
-      }
-    }
-  }
-
   @include media-breakpoint-up(sm) {
     padding: 123% 0 0;
   }
@@ -442,6 +427,11 @@
     .card {
       .card-inner {
         padding: 39px 39px 27px;
+
+        .card-arrow {
+          top: 39px;
+          right: 39px;
+        }
 
         .text {
           p {
@@ -476,6 +466,7 @@
     @include card-borders();
 
     .card-inner {
+      height: 100%;
       position: relative;
       z-index: 5;
       padding: 19px;
@@ -483,11 +474,6 @@
       flex-direction: column;
       justify-content: center;
       @include card-borders();
-
-      &:before,
-      &:after {
-        display: none !important;
-      }
 
       .card-top {
         display: flex;
@@ -574,27 +560,25 @@
 
 .card-type-07 {
   width: 100%;
-  padding: 71.6% 0 0;
+  height: 100%;
   position: relative;
-  @include card-borders();
 
   .card {
-    @include abs;
-    padding: 1px;
+    height: 100%;
     text-decoration: none;
 
     .card-inner {
-      position: relative;
-      z-index: 5;
       width: 100%;
       height: 100%;
-      background-color: $black;
       padding: 19px;
       overflow: hidden;
-      @include card-borders();
 
       .card-icon {
-        display: none;
+        width: 60px;
+        height: 60px;
+        margin: 0 0 86px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
       }
 
       .card-text {
@@ -612,27 +596,15 @@
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 120% 0 0;
-    border-radius: 20px;
-    clip-path: none;
-    overflow: hidden;
-
     .card {
-      &:before {
-        display: none;
-      }
-
       .card-inner {
         padding: 20px;
-        border-radius: 0;
-        clip-path: none;
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
 
         .card-icon {
-          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+          margin: 0 0 121px;
         }
 
         .card-text {
@@ -641,29 +613,44 @@
 
           p {
             margin: 6px 0 0;
-            min-height: 4.2em;
           }
         }
       }
     }
   }
   @include media-breakpoint-up(xl) {
+    .card {
+      .card-inner {
+        padding: 40px 40px 39px;
+
+        .card-icon {
+          margin: 0 0 122px;
+        }
+
+        .card-text {
+          p {
+            margin: 9px 0 0;
+          }
+        }
+      }
+    }
   }
 }
 
 .card-type-08 {
+  height: 100%;
   .card-inner {
     padding: 20px;
+    height: 100%;
 
     .card-icon {
-      display: none;
       align-items: center;
       justify-content: center;
       width: 60px;
       height: 60px;
-      border: 1px solid $headline-color;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      margin: 0 0 60px;
+      margin: 0 0 10px;
 
       img {
         display: block;
@@ -671,27 +658,11 @@
     }
 
     .card-text {
-      h2 {
-        margin: 0 0 8px;
-
-        @include media-breakpoint-down(xl) {
-          font-size: 1.714rem;
-          letter-spacing: -0.01em;
-        }
+      h3 {
+        margin: 0 0 10px;
       }
       p {
         margin: 0;
-      }
-    }
-  }
-
-  @include media-breakpoint-up(md) {
-    .card-inner {
-      padding: 20px;
-
-      .card-icon {
-        display: flex;
-        border-radius: 20px;
       }
     }
   }
@@ -701,6 +672,7 @@
       .card-icon {
         width: 80px;
         height: 80px;
+        border-radius: 20px;
       }
     }
   }
@@ -709,13 +681,7 @@
     .card-inner {
       padding: 40px;
       .card-icon {
-        margin: 0 0 120px;
-      }
-
-      .card-text {
-        h2 {
-          margin: 0 0 4px;
-        }
+        margin: 0 0 87px;
       }
     }
   }
@@ -809,28 +775,20 @@
 }
 
 .card-type-10 {
-  width: 249px;
-  height: 320px;
-  position: relative;
-  @include card-borders();
-
+  height: 100%;
   .card {
-    @include abs;
-    padding: 1px;
-    text-decoration: none;
+    height: 100%;
 
     .card-inner {
       position: relative;
       z-index: 5;
       width: 100%;
       height: 100%;
-      background-color: $black;
       padding: 19px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      @include card-borders();
+
+      h3 {
+        margin: 0 0 92px;
+      }
 
       p {
         margin: 0;
@@ -838,18 +796,9 @@
     }
   }
 
-  &:hover {
-    .card {
-      .card-inner {
-        background-color: #001625;
-      }
-    }
-  }
-
   @include media-breakpoint-up(lg) {
     width: 100%;
     height: auto;
-    padding: 123% 0 0;
 
     .card {
       .card-inner {
@@ -869,6 +818,7 @@
 
         h3 {
           font-size: 1.555rem;
+          margin: 0 0 100px;
         }
       }
     }

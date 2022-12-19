@@ -3,30 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -153px;
-    top: -278px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-blue;
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -247px;
-    top: 218px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
+  @include bg-before(1000px, -186px, -145px);
 
   .container {
     position: relative;
@@ -45,15 +24,9 @@
     padding: 62px 0;
 
     &:before {
-      width: 58.6vw;
-      height: 58.6vw;
-      right: -190px;
-      top: 460px;
+      @include bg-green;
     }
-
-    &:after {
-      display: none;
-    }
+    @include bg-before(1400px, -168px, -580px);
 
     .block-text {
       margin-bottom: 37px;

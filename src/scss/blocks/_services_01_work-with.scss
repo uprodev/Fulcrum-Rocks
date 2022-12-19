@@ -2,18 +2,10 @@
   padding: 20px 0 25px;
   position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -200px;
-    top: 242px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+  &:before {
+    @include bg-blue;
   }
+  @include bg-before(1000px, 99px, -460px);
 
   .container {
     position: relative;
@@ -30,83 +22,67 @@
     }
   }
 
-  .card-effect-03-wrapper {
-    .bg {
+  .wrapper {
+    .col {
       position: relative;
+      z-index: 5;
+      margin: 0 0 40px;
 
-      &:before {
-        content: "";
-        @include abs;
-        @include gradient-y(rgba(218, 218, 218, 0.8), rgba(90, 90, 90, 0.8));
-        @include card-borders();
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        left: 1px;
-        top: 1px;
-        bottom: 1px;
-        right: 1px;
-        background-color: $black;
-        @include card-borders();
-      }
-    }
-
-    .wrapper {
-      .col {
-        position: relative;
-        z-index: 5;
-        margin: 0 0 40px;
-
-        &:last-child {
-          margin: 0;
-        }
-      }
-    }
-
-    &:hover {
-      .bg {
-        &:after {
-          background-color: #001625;
-        }
+      &:last-child {
+        margin: 0;
       }
     }
   }
 
   @include media-breakpoint-up(md) {
-    .card-effect-03-wrapper {
-      .wrapper {
-        display: flex;
-        .col {
-          margin: 0;
-          width: 33.3333%;
+    .wrapper {
+      display: flex;
+      border: 1px solid #434343;
+      @include card-borders();
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #434343;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: rotate(45deg) translate3d(45%, 0, 0);
+
+        @include media-breakpoint-up(xl) {
+          width: 40px;
+          height: 40px;
+          transform: rotate(45deg) translate3d(58%, 0, 0);
+        }
+      }
+
+      .col {
+        margin: 0;
+        width: 33.3333%;
+
+        .card-effect-06 {
+          height: 100%;
+
+          .card {
+            border: none;
+            clip-path: none;
+
+            &:before {
+              display: none;
+            }
+          }
         }
       }
     }
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 0 0 54px;
+    padding: 5px 0 54px;
 
-    &:before {
-      width: 44.7vw;
-      height: 44.7vw;
-      top: 196px;
-      right: 103px;
-    }
-
-    &:after {
-      content: "";
-      width: 50.83vw;
-      height: 50.83vw;
-      bottom: -230px;
-      left: -324px;
-      background: #001625;
-      filter: blur(250px);
-      border-radius: 100%;
-      will-change: transform;
-    }
+    @include bg-before(1800px, 0, -672px);
 
     .block-text {
       margin-bottom: 38px;

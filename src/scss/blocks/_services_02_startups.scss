@@ -2,19 +2,6 @@
   padding: 37px 0 34px;
   position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -200px;
-    top: 52px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
-
   .container {
     position: relative;
     z-index: 1;
@@ -210,10 +197,6 @@
 
   @include media-breakpoint-up(lg) {
     padding: 64px 0 60px;
-
-    &:after {
-      display: none;
-    }
 
     .graph {
       margin: 93px 40px 0;

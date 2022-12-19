@@ -1,3 +1,10 @@
+.split {
+  visibility: hidden;
+}
+.splitting {
+  visibility: visible;
+  line-height: 0 !important;
+}
 .word {
   overflow: hidden;
   display: inline-flex;
@@ -8,13 +15,15 @@
   opacity: 0;
   transform: translateY(100%);
   display: block;
+  line-height: 1;
 }
 .whitespace {
   display: none;
 }
 
 .txt-gradient {
-  @include gradient-base(90deg);
+  background-color: $white;
+  background-image: linear-gradient(180deg, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -22,6 +31,13 @@
   .char {
     transform: none !important;
   }
+}
+
+.txt-gradient-static {
+  @include gradient-base(90deg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .arrow-icon-wrapper {
@@ -289,6 +305,10 @@
       transition: all 0.3s;
       will-change: transform;
     }
+
+    .card-inner {
+      background: linear-gradient(180deg, #050505 0%, #191919 100%);
+    }
   }
 
   &:hover,
@@ -308,57 +328,39 @@
         opacity: 1;
         // animation: spin 2.5s linear infinite;
       }
-    }
-  }
-}
 
-.card-effect-03-wrapper {
-  position: relative;
-
-  &:hover {
-    .card-effect-03 {
-      &:after {
-        opacity: 1;
+      .card-inner {
+        background-color: $black;
       }
     }
   }
 }
+
 .card-effect-03 {
-  &:before,
-  &:after {
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    left: 0px;
-    opacity: 0;
-    position: absolute;
-    top: 0px;
-    transition: opacity 500ms;
-    width: 100%;
-  }
+  position: relative;
 
-  &:before {
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
-    z-index: 11;
-  }
+  .card {
+    border: 1px solid #434343;
+    @include card-borders();
+    position: relative;
+    overflow: hidden;
 
-  &:after {
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.2), transparent 40%);
-    z-index: 10;
-  }
-
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
-
-  & > .card {
     &:before {
       content: "";
-      @include abs;
-      @include gradient-y(#e9eef1, #1e1e1e);
-      @include card-borders();
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #434343;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: rotate(45deg) translate3d(45%, 0, 0);
+
+      @include media-breakpoint-up(xl) {
+        width: 40px;
+        height: 40px;
+        transform: rotate(45deg) translate3d(58%, 0, 0);
+      }
     }
   }
 }
@@ -403,6 +405,10 @@
       transition: all 0.3s;
       will-change: transform;
     }
+
+    .card-inner {
+      background: linear-gradient(180deg, #050505 0%, #191919 100%);
+    }
   }
 
   &:hover,
@@ -421,6 +427,10 @@
         filter: blur(50px);
         opacity: 1;
         // animation: spin 2.5s linear infinite;
+      }
+
+      .card-inner {
+        background: $black;
       }
     }
   }
@@ -661,4 +671,78 @@
   border-radius: 4px;
   height: 5px;
   transform: scaleX(0);
+}
+
+.card-effect-06 {
+  @extend .card-effect-03;
+
+  .card-icon {
+    overflow: hidden;
+
+    .card-icon-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .card-icon {
+      .card-icon-inner {
+        transform: translate3d(0, -100%, 0);
+      }
+    }
+  }
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --offset: 20vw;
+  --move-initial: calc(-20% + var(--offset));
+  --move-final: calc(-60% + var(--offset));
+  font-weight: 400;
+  font-size: 10.43rem;
+  line-height: 80%;
+  letter-spacing: -0.05em;
+  margin: 0 0 30px;
+
+  .marquee__wrap {
+    transform: translateX(0);
+    transition: all 1s ease-out;
+  }
+
+  .marquee__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 7s linear infinite;
+    animation-play-state: running;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  span {
+    padding: 0 2vw;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 21vw;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
 }

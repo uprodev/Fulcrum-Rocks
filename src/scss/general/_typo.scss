@@ -1,6 +1,6 @@
 html,
 body {
-  font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1440 - 375)));
+  font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1660 - 375)));
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 }
 
 .txt-lg {
-  line-height: 0.9;
+  line-height: 1.1;
   font-weight: 500;
   letter-spacing: -0.04em;
   font-size: 5.75rem;
@@ -27,7 +27,7 @@ body {
   }
 
   @include media-breakpoint-up(xl) {
-    font-size: 9.9rem;
+    font-size: 9.7rem;
 
     .txt-lg-last {
       margin-left: 6.4rem;
@@ -73,6 +73,14 @@ h2,
 
   @include media-breakpoint-up(xl) {
     font-size: 2.667rem;
+  }
+
+  .split {
+    display: block;
+  }
+
+  .char {
+    line-height: 1.2;
   }
 }
 

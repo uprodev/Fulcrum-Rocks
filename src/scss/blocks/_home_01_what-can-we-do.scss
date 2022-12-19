@@ -3,30 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -220px;
-    top: 198px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-blue;
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -217px;
-    top: 449px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
+  @include bg-before(1000px, 551px, -421px);
 
   .container {
     position: relative;
@@ -53,16 +32,9 @@
   @include media-breakpoint-up(lg) {
     padding: 37px 0 60px;
 
+    @include bg-before(1800px, -20px, auto);
     &:before {
-      width: 511px;
-      height: 511px;
-      right: -267px;
-      top: 65px;
-      // background: rgba(13, 153, 255, 0.1);
-    }
-
-    &:after {
-      display: none;
+      left: -869px;
     }
 
     .wrapper {

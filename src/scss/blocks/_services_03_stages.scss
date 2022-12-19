@@ -27,81 +27,47 @@
   .stage-box {
     position: relative;
 
-    &:before,
-    &:after {
-      position: absolute;
-      filter: blur(250px);
-      border-radius: 100%;
-      will-change: transform;
-      transition: background-color 0.3s;
-    }
-
     &.stage-box-01 {
-      &:before {
-        content: "";
-        width: 473px;
-        height: 473px;
-        right: -200px;
-        top: -175px;
-        background-color: #001625;
+      &:after {
+        @include bg-green;
       }
+      @include bg-after(600px, -362px, -281px);
     }
 
     &.stage-box-02 {
       &:before {
-        content: "";
-        width: 473px;
-        height: 473px;
-        left: -200px;
-        top: -153px;
-        background-color: #001f1e;
+        @include bg-blue;
       }
+      @include bg-before(1000px, -334px, -423px);
+
       &:after {
-        content: "";
-        width: 473px;
-        height: 473px;
-        right: -187px;
-        bottom: -230px;
-        background-color: #001625;
+        @include bg-green;
       }
+      @include bg-after(600px, 430px, -331px);
     }
 
     &.stage-box-03 {
       &:before {
-        content: "";
-        width: 473px;
-        height: 473px;
-        left: -213px;
-        top: 248px;
-        background-color: #001f1e;
+        @include bg-blue;
       }
+      @include bg-before(1000px, -196px, -436px);
+
       &:after {
-        content: "";
-        width: 473px;
-        height: 473px;
-        right: -160px;
-        bottom: 63px;
-        background-color: #001625;
+        @include bg-blue;
       }
+      @include bg-after(1000px, 794px, -392px);
     }
 
     &.stage-box-04 {
       &:before {
-        content: "";
-        width: 473px;
-        height: 473px;
-        left: -240px;
-        top: 26px;
-        background-color: #001f1e;
+        @include bg-green;
       }
+      @include bg-before(600px, -407px, -244px);
+
       &:after {
-        content: "";
-        width: 473px;
-        height: 473px;
-        left: -265px;
-        bottom: -110px;
-        background-color: #001625;
+        @include bg-blue;
       }
+      @include bg-after(1000px, 82px, -460px);
     }
 
     .wrapper {
@@ -267,25 +233,15 @@
 
       &.stage-box-01 {
         &:before {
-          content: "";
-          width: 59.3vw;
-          height: 59.3vw;
-          left: -306px;
-          top: -264px;
-          background-color: #001625;
+          @include bg-blue;
         }
+        @include bg-before(1800px, -100px, -655px);
+
+        @include bg-after(1400px, -540px, -520px);
       }
 
       &.stage-box-02 {
-        &:before {
-          content: "";
-          width: 69.1vw;
-          height: 69.1vw;
-          left: auto;
-          right: -317px;
-          top: 50px;
-          background-color: #001f1e;
-        }
+        &:before,
         &:after {
           display: none;
         }
@@ -293,35 +249,26 @@
 
       &.stage-box-03 {
         &:before {
-          content: "";
-          width: 69.1vw;
-          height: 69.1vw;
-          left: -325px;
-          top: 308px;
-          background-color: #001625;
+          @include bg-green;
         }
+        @include bg-before(1400px, 253px, -496px);
+
         &:after {
-          display: none;
+          @include bg-blue;
         }
+        @include bg-after(1800px, 673px, -960px);
       }
 
       &.stage-box-04 {
         &:before {
-          content: "";
-          width: 69.1vw;
-          height: 69.1vw;
-          right: -193px;
-          top: -429px;
-          background-color: #001625;
+          @include bg-blue;
         }
+        @include bg-before(1800px, 257px, -678px);
+
         &:after {
-          content: "";
-          width: 69.1vw;
-          height: 69.1vw;
-          left: -265px;
-          bottom: -230px;
-          background-color: #001f1e;
+          @include bg-green;
         }
+        @include bg-after(1400px, 673px, -595px);
       }
     }
   }

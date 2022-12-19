@@ -37,6 +37,10 @@
   @include media-breakpoint-up(xl) {
     width: auto;
   }
+
+  @include media-breakpoint-up(xxl) {
+    right: 150px;
+  }
 }
 
 .blackout {

@@ -2,6 +2,11 @@
   padding: 20px 0 34px;
   position: relative;
 
+  &:after {
+    @include bg-green;
+  }
+  @include bg-after(600px, 221px, -226px);
+
   .container {
     position: relative;
     z-index: 10;
@@ -9,5 +14,7 @@
 
   @include media-breakpoint-up(lg) {
     padding: 60px 0 54px;
+
+    @include bg-after(1400px, 463px, 31.6vw);
   }
 }

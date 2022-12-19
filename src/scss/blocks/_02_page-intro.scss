@@ -11,30 +11,13 @@
     position: relative;
 
     &:before {
-      content: "";
-      position: absolute;
-      width: 473px;
-      height: 473px;
-      right: -212px;
-      top: -223px;
-      background: #001625;
-      filter: blur(250px);
-      border-radius: 100%;
-      will-change: transform;
+      @include bg-blue;
     }
-
     &:after {
-      content: "";
-      position: absolute;
-      width: 473px;
-      height: 473px;
-      left: -188px;
-      top: 274px;
-      background: #001f1e;
-      filter: blur(250px);
-      border-radius: 100%;
-      will-change: transform;
+      @include bg-green;
     }
+    @include bg-before(1000px, -584px, -432px);
+    @include bg-after(600px, 57px, -269px);
   }
 
   .image {
@@ -98,18 +81,8 @@
     padding: 0;
 
     .container {
-      &:before {
-        width: 82vw;
-        height: 82vw;
-        right: -33.33vw;
-        top: -28vw;
-      }
-      &:after {
-        width: 52.8vw;
-        height: 52.8vw;
-        left: 31vw;
-        top: 25vw;
-      }
+      @include bg-before(1800px, -680px, -590px);
+      @include bg-after(1400px, 150px, -465px);
     }
 
     .txt-lg {
@@ -145,9 +118,6 @@
   &.page-intro-home {
     .image {
       margin: 0 -20px;
-      .switch {
-        display: none;
-      }
 
       .image01 {
         display: block;
@@ -180,38 +150,8 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
-      .image {
-        .switch {
-          width: 180px;
-          height: auto;
-          display: block;
-          position: absolute;
-          bottom: 0;
-          right: -15px;
-          cursor: pointer;
-
-          .switch-on {
-            display: block;
-          }
-
-          .switch-off {
-            display: none;
-          }
-
-          &.active {
-            .switch-on {
-              display: none;
-            }
-            .switch-off {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-
     @include media-breakpoint-up(xl) {
+      padding-bottom: 20px;
       .image {
         margin: 15px 0 0;
 
@@ -221,14 +161,9 @@
           max-width: none;
           margin: 0 -24px 0 0;
         }
-
-        .switch {
-          width: auto;
-          bottom: 115px;
-        }
       }
       .txt-lg {
-        margin-bottom: 245px;
+        margin-bottom: 266px;
       }
     }
   }
@@ -257,8 +192,8 @@
 
     @include media-breakpoint-up(xl) {
       .image {
-        margin: -49px 0 0;
-        padding: 0 26px 0 0;
+        margin: -28px 0 0;
+        padding: 0 37px 0 0;
 
         img {
           width: auto;
@@ -296,7 +231,7 @@
 
     @include media-breakpoint-up(xl) {
       .image {
-        margin: -114px -40px -5px 0;
+        margin: -100px -10px -5px 0;
 
         img {
           width: auto;
@@ -305,7 +240,7 @@
         }
       }
       .txt-lg {
-        margin-bottom: 245px;
+        margin-bottom: 265px;
       }
     }
   }
@@ -314,6 +249,7 @@
     .txt-lg {
       margin-top: -3px;
       margin-bottom: 83px;
+      line-height: 0.915;
 
       .word {
         margin: -2rem 0;
@@ -338,7 +274,13 @@
       padding-bottom: 60px;
 
       .txt-lg {
-        margin-bottom: 121px;
+        margin-bottom: 118px;
+        margin-right: -100px;
+
+        [data-word="choose"],
+        .txt-gradient {
+          margin-left: 6.4rem;
+        }
       }
     }
   }
@@ -406,12 +348,12 @@
     @include media-breakpoint-up(xl) {
       .txt-lg {
         width: 50rem;
-        margin-bottom: 122px;
+        margin-bottom: 93px;
       }
 
       .image {
         right: -12px;
-        transform: translateY(-43%);
+        transform: translate3d(13%, -44.6%, 0);
         width: 46vw;
       }
     }
@@ -421,6 +363,7 @@
     .txt-lg {
       margin-top: -3px;
       margin-bottom: 8px;
+      line-height: 0.915;
 
       .word {
         margin: -2rem 0;
@@ -435,20 +378,15 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
-      .container {
-        &:after {
-          left: -380px;
-          top: 429px;
-        }
-      }
-    }
-
     @include media-breakpoint-up(xl) {
       padding-bottom: 60px;
 
       .txt-lg {
-        margin-bottom: 66px;
+        margin-bottom: 117px;
+
+        .txt-gradient {
+          margin-left: 6.4rem;
+        }
       }
     }
   }

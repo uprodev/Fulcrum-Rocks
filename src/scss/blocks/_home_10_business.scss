@@ -3,30 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -119px;
-    top: -32px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-green;
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -171px;
-    top: 402px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
+  @include bg-before(600px, 119px, -300px);
 
   .container {
     position: relative;
@@ -52,19 +31,13 @@
   @include media-breakpoint-up(lg) {
     padding: 40px 0;
 
+    @include bg-before(1400px, auto, -574px);
     &:before {
-      width: 54.7vw;
-      height: 54.7vw;
-      right: -13.19vw;
-      top: -14.23vw;
+      bottom: 0;
     }
 
-    &:after {
-      width: 52.8%;
-      height: 52.8%;
-      left: -21.46vw;
-      top: -1.875vw;
-      // background: rgba(149, 247, 245, 0.1);
+    .contact-form {
+      max-width: 555px;
     }
   }
 }

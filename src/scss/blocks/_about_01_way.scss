@@ -3,30 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -194px;
-    top: 30px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-blue;
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -206px;
-    top: 530px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
+  @include bg-before(1000px, 753px, -393px);
 
   .container {
     position: relative;
@@ -113,24 +92,9 @@
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 54px 0;
+    padding: 54px 0 56px;
 
-    &:before {
-      width: 58.6vw;
-      height: 58.6vw;
-      right: auto;
-      left: -219px;
-      top: 150px;
-    }
-
-    &:after {
-      width: 58.6vw;
-      height: 58.6vw;
-      left: auto;
-      right: -267px;
-      top: auto;
-      bottom: 450px;
-    }
+    @include bg-before(1800px, 585px, -661px);
 
     .block-text {
       h1 {
@@ -144,11 +108,11 @@
       margin: 0 0 82px;
 
       .about-box-title {
-        font-size: 32.43vw;
+        font-size: 28.2vw;
       }
 
       .about-box-image {
-        margin: 0 auto -14.7vw;
+        margin: 0 auto -12.9vw;
         transform: translateY(-14.7vw);
       }
     }

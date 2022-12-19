@@ -6,6 +6,11 @@ jQuery(document).ready(function ($) {
         spl.anim.progress(1).kill();
       }
 
+      var delay = 0;
+      if (spl.dataset.delay) {
+        delay = spl.dataset.delay;
+      }
+
       Splitting({
         target: spl,
         by: "chars",
@@ -18,8 +23,9 @@ jQuery(document).ready(function ($) {
         scrollTrigger: {
           trigger: spl,
           toggleActions: "restart pause resume reverse",
-          start: "top 85%",
+          start: "top bottom",
         },
+        delay: delay,
         duration: 0.3,
         ease: "linear",
         y: "0",
@@ -36,22 +42,44 @@ jQuery(document).ready(function ($) {
   var splits = document.querySelectorAll(".split");
   animateHeadlines(splits);
 
-  var cardEffect3Wrappers = document.querySelectorAll(".card-effect-03-wrapper");
+  var gradients = document.querySelectorAll(".txt-gradient");
+  gsap.utils.toArray(gradients).forEach((gradient, i) => {
+    var delay = 0;
+    if (gradient.dataset.delay) {
+      delay = gradient.dataset.delay;
+    }
 
-  if (cardEffect3Wrappers) {
-    cardEffect3Wrappers.forEach((wrap) => {
-      wrap.onmousemove = (e) => {
-        for (const card of wrap.querySelectorAll(".card-effect-03")) {
-          const rect = card.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top;
-
-          card.style.setProperty("--mouse-x", `${x}px`);
-          card.style.setProperty("--mouse-y", `${y}px`);
-        }
-      };
+    gsap.to(gradient, {
+      scrollTrigger: {
+        markers: false,
+        trigger: gradient,
+        scrub: false,
+        toggleActions: "play reset play reset",
+        start: "top bottom",
+        end: "bottom top",
+      },
+      backgroundImage: "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)",
+      duration: 1,
+      delay: delay,
     });
-  }
+  });
+
+  // var cardEffect3Wrappers = document.querySelectorAll(".card-effect-03-wrapper");
+
+  // if (cardEffect3Wrappers) {
+  //   cardEffect3Wrappers.forEach((wrap) => {
+  //     wrap.onmousemove = (e) => {
+  //       for (const card of wrap.querySelectorAll(".card-effect-03")) {
+  //         const rect = card.getBoundingClientRect(),
+  //           x = e.clientX - rect.left,
+  //           y = e.clientY - rect.top;
+
+  //         card.style.setProperty("--mouse-x", `${x}px`);
+  //         card.style.setProperty("--mouse-y", `${y}px`);
+  //       }
+  //     };
+  //   });
+  // }
 
   // block why-rocks animations
   if (document.querySelector(".block-why-rocks")) {
@@ -114,8 +142,6 @@ jQuery(document).ready(function ($) {
         },
         transformOrigin: "center",
         ease: "none",
-        // pin: li,
-        // pinSpacing: false,
         scrollTrigger: {
           trigger: li,
           start: "top bottom",
@@ -123,7 +149,6 @@ jQuery(document).ready(function ($) {
           scrub: 1,
           snap: {
             snapTo: li,
-            // inertia: false,
             duration: 1,
             delay: 0,
           },
@@ -136,8 +161,6 @@ jQuery(document).ready(function ($) {
         },
         transformOrigin: "center",
         ease: "none",
-        // pin: li,
-        // pinSpacing: false,
         scrollTrigger: {
           trigger: li,
           start: "top bottom",
@@ -145,7 +168,6 @@ jQuery(document).ready(function ($) {
           scrub: 1,
           snap: {
             snapTo: li,
-            // inertia: false,
             duration: 0.1,
             delay: 0,
           },
@@ -236,7 +258,6 @@ jQuery(document).ready(function ($) {
         };
       }
 
-      console.log(pos.x);
       return pos;
     }
 
@@ -248,10 +269,12 @@ jQuery(document).ready(function ($) {
   }
 
   function moveMouse(evt) {
-    var pos = getMousePos(evt),
-      followMouse = document.querySelector(".footer-title");
-    followMouseX = followMouse.clientWidth / 2;
-    followMouse.style.backgroundPosition = pos.x - followMouseX + "px " + "0px";
+    if (window.screen.width >= 1024) {
+      var pos = getMousePos(evt),
+        followMouse = document.querySelector(".footer-title");
+      followMouseX = followMouse.clientWidth / 2;
+      followMouse.style.backgroundPosition = pos.x - followMouseX + "px " + "0px";
+    }
   }
 
   // block fulcrum way animations

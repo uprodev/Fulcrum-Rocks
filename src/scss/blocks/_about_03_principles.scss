@@ -2,32 +2,6 @@
   padding: 20px 0 30px;
   position: relative;
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -153px;
-    top: 424px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -243px;
-    top: -20px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
-
   .container {
     position: relative;
     z-index: 1;
@@ -130,6 +104,13 @@
               display: none;
             }
           }
+          .word {
+            line-height: 0;
+
+            .char {
+              line-height: 1;
+            }
+          }
         }
       }
 
@@ -146,19 +127,10 @@
   @include media-breakpoint-up(lg) {
     padding: 56px 0;
 
-    &:before {
-      width: 58.6vw;
-      height: 58.6vw;
-      right: -195px;
-      top: -4004px;
-    }
-
     &:after {
-      width: 58.6vw;
-      height: 58.6vw;
-      left: -302px;
-      top: 440px;
+      @include bg-blue;
     }
+    @include bg-after(1800px, 308px, -761px);
 
     .block-text {
       margin-bottom: 37px;
@@ -172,7 +144,7 @@
 
     .principles-list {
       li {
-        padding: 24px 0 20px;
+        padding: 28px 0 20px;
         min-height: 0;
 
         .accordion-toggler {

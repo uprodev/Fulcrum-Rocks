@@ -18,6 +18,9 @@ body {
   @include media-breakpoint-up(xl) {
     padding: 0 40px;
   }
+  @include media-breakpoint-up(xxl) {
+    padding: 0 150px;
+  }
 }
 
 .page-wrapper {

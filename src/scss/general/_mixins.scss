@@ -74,12 +74,44 @@
   border-radius: $r1 $r1 $r2 $r1;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$clip1}), calc(100% - #{$clip1}) 100%, 0 100%);
 
-  // @include media-breakpoint-up(lg) {
-  //   clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$clip1}), calc(100% - #{$clip1}) 100%, 0 100%);
-  // }
-
   @include media-breakpoint-up(xl) {
     border-radius: $r3 $r3 $r4 $r3;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$clip2}), calc(100% - #{$clip2}) 100%, 0 100%);
+  }
+}
+
+@mixin bg-blue {
+  background-image: url(../img/bg/gradient-blue.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin bg-green {
+  background-image: url(../img/bg/gradient-green.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin bg-before($size, $top, $right) {
+  &:before {
+    content: "";
+    position: absolute;
+    width: $size;
+    height: $size;
+    right: $right;
+    top: $top;
+  }
+}
+
+@mixin bg-after($size, $top, $left) {
+  &:after {
+    content: "";
+    position: absolute;
+    width: $size;
+    height: $size;
+    left: $left;
+    top: $top;
   }
 }

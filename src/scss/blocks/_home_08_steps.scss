@@ -3,30 +3,9 @@
   position: relative;
 
   &:before {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    right: -117px;
-    top: -258px;
-    background: #001625;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
+    @include bg-blue;
   }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 473px;
-    height: 473px;
-    left: -161px;
-    top: 265px;
-    background: #001f1e;
-    filter: blur(250px);
-    border-radius: 100%;
-    will-change: transform;
-  }
+  @include bg-before(1000px, -62px, -494px);
 
   .container {
     position: relative;
@@ -81,22 +60,10 @@
   @include media-breakpoint-up(lg) {
     padding: 62px 0 54px;
 
-    &:before {
-      width: 52.8%;
-      height: 52.8%;
-      top: -32vw;
-      right: -12.85vw;
-    }
-
-    &:after {
-      width: 82%;
-      height: 82%;
-      top: 21.4vw;
-      right: -26.67vw;
-    }
+    @include bg-before(1800px, -330px, -780px);
 
     .block-text {
-      margin-bottom: 34px;
+      margin-bottom: 40px;
 
       .col {
         &:last-child {
@@ -108,66 +75,39 @@
       }
     }
 
-    .card-effect-03-wrapper {
-      overflow: hidden;
+    .swiper-05 {
+      border: 1px solid #434343;
       @include card-borders();
-      margin: 40px 0 0;
-
-      &:before {
-        content: "";
-        position: absolute;
-        z-index: 4;
-        width: 594px;
-        height: 594px;
-        top: -177px;
-        left: -199px;
-        background: rgba(13, 153, 255, 0.15);
-        border-radius: 100%;
-        filter: blur(250px);
-        will-change: transform;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        z-index: 4;
-        width: 594px;
-        height: 594px;
-        top: 11px;
-        right: -189px;
-        background: rgba(13, 153, 255, 0.15);
-        border-radius: 100%;
-        filter: blur(250px);
-        will-change: transform;
-      }
-    }
-
-    .card-effect-03:not(.wrapper) {
-      &:before,
-      &:after {
-        display: none !important;
-      }
-    }
-
-    .bg {
       position: relative;
+      overflow: hidden;
 
       &:before {
         content: "";
-        @include abs;
-        @include gradient-y(rgba(218, 218, 218, 0.8), rgba(90, 90, 90, 0.8));
-        @include card-borders();
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #434343;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: rotate(45deg) translate3d(45%, 0, 0);
+
+        @include media-breakpoint-up(xl) {
+          width: 40px;
+          height: 40px;
+          transform: rotate(45deg) translate3d(58%, 0, 0);
+        }
       }
 
-      &:after {
-        content: "";
-        position: absolute;
-        left: 1px;
-        top: 1px;
-        bottom: 1px;
-        right: 1px;
-        background-color: $black;
-        @include card-borders();
+      .card-type-07 {
+        .card {
+          border: none;
+          clip-path: none;
+          overflow: visible;
+          &:before {
+            display: none;
+          }
+        }
       }
     }
 

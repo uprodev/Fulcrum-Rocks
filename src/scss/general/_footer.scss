@@ -13,17 +13,12 @@
     line-height: 80%;
     letter-spacing: -0.05em;
     margin: 0 0 30px;
-    background: linear-gradient(90deg, $blue 0%, $lightblue 50%, $blue 100%) repeat;
+    background: linear-gradient(90deg, $blue 0%, $lightblue 100%) repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-position: 0;
     background-size: 200% 100%;
-
-    &:hover {
-      background: linear-gradient(90deg, $blue 0%, $lightblue 50%, $blue 100%) repeat;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    display: none;
   }
 
   .footer-logo {
@@ -395,9 +390,25 @@
       margin: 0 0 8px;
     }
 
+    .marquee {
+      display: none;
+    }
+
     .footer-title {
+      display: block;
       text-align: center;
       margin-bottom: 25px;
+      background: linear-gradient(90deg, $blue 0%, $lightblue 50%, $blue 100%) repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-position: 0;
+      background-size: 200% 100%;
+
+      &:hover {
+        background: linear-gradient(90deg, $blue 0%, $lightblue 50%, $blue 100%) repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     .footer-logo {
@@ -423,13 +434,13 @@
       margin: 0 0 40px;
 
       strong {
-        font-size: 1rem;
-        line-height: 1.2;
+        font-size: 16px;
+        line-height: 1.5;
       }
 
       ul {
         li {
-          margin: 19.3px 0 0;
+          margin: 22px 0 0;
           font-size: 0.78rem;
 
           a {
@@ -443,7 +454,7 @@
 
   @include media-breakpoint-up(xl) {
     address {
-      margin: 0 0 44px;
+      margin: 0 0 35px;
 
       p {
         font-size: 2.667rem;
@@ -453,7 +464,14 @@
     }
 
     .socials {
-      margin: 0 0 66px;
+      margin: 0 0 58px;
+    }
+
+    .footer-title {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+      font-size: 18vw;
     }
   }
 
