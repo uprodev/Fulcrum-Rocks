@@ -167,30 +167,32 @@
       background-color: $black;
       position: relative;
 
-      &:before {
-        content: "";
-        position: absolute;
-        right: -69.77%;
-        top: -35.37%;
-        background-color: rgba(13, 153, 255, 0.1);
-        transition: background-color 0.3s ease;
-        filter: blur(150px);
-        width: 116%;
-        height: 94%;
-        will-change: transform;
-      }
-
+      &:before,
       &:after {
         content: "";
         position: absolute;
-        left: -32.95%;
-        bottom: -36.3%;
-        background-color: rgba(13, 153, 255, 0.1);
-        transition: background-color 0.3s ease;
-        filter: blur(150px);
-        width: 96%;
-        height: 78.7%;
-        will-change: transform;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:before {
+        background: url(../img/bg/service-bg-lg.svg) no-repeat;
+        background-size: cover;
+        width: 900px;
+        height: 900px;
+        left: 100%;
+        bottom: 100%;
+        transform: translate3d(-45%, 60%, 0);
+      }
+
+      &:after {
+        right: 100%;
+        top: 100%;
+        background: url(../img/bg/service-bg-lg.svg) no-repeat;
+        background-size: cover;
+        width: 800px;
+        height: 800px;
+        transform: translate3d(60%, -50%, 0);
       }
 
       .card-image {
@@ -209,11 +211,7 @@
       .card-inner {
         &:before,
         &:after {
-          background-color: rgba(112, 0, 255, 0.2);
-
-          @include media-breakpoint-up(lg) {
-            background-color: rgba(112, 0, 255, 0.15);
-          }
+          opacity: 1;
         }
       }
 
@@ -269,41 +267,110 @@
 
 .card-effect-02 {
   --rotate: 0deg;
-  &:before {
-    content: "";
-    @include abs;
-    @include gradient-y(rgba(218, 218, 218, 0.8), rgba(90, 90, 90, 0.8));
-    @include card-borders();
-  }
+
+  &:before,
   &:after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 900px;
+    height: 900px;
     opacity: 0;
-    // background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-    background-color: #0d99ff;
-    @include card-borders();
+  }
+
+  &:before {
+    background: url(../img/bg/effect-02-bg-blue.svg) no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    transform: translate3d(-35%, -35%, 0);
+  }
+
+  &:after {
+    background: url(../img/bg/effect-02-bg-green.svg) no-repeat;
+    background-size: cover;
+    left: 100%;
+    top: 100%;
+    transform: translate3d(-65%, -65%, 0);
+  }
+
+  @keyframes rotateBg1 {
+    0% {
+      left: 0;
+      top: 0;
+      transform: translate3d(-35%, -35%, 0);
+    }
+    25% {
+      left: 100%;
+      top: 0;
+      transform: translate3d(-65%, -35%, 0);
+    }
+    50% {
+      left: 100%;
+      top: 100%;
+      transform: translate3d(-65%, -65%, 0);
+    }
+    75% {
+      left: 0;
+      top: 100%;
+      transform: translate3d(-35%, -65%, 0);
+    }
+    100% {
+      left: 0;
+      top: 0;
+      transform: translate3d(-35%, -35%, 0);
+    }
+  }
+
+  @keyframes rotateBg2 {
+    0% {
+      left: 100%;
+      top: 100%;
+      transform: translate3d(-65%, -65%, 0);
+    }
+    25% {
+      left: 0;
+      top: 100%;
+      transform: translate3d(-35%, -65%, 0);
+    }
+    50% {
+      left: 0;
+      top: 0;
+      transform: translate3d(-35%, -35%, 0);
+    }
+    75% {
+      left: 100%;
+      top: 0;
+      transform: translate3d(-65%, -35%, 0);
+    }
+    100% {
+      left: 100%;
+      top: 100%;
+      transform: translate3d(-65%, -65%, 0);
+    }
   }
 
   .card {
+    z-index: 1;
+
     &:before {
-      position: absolute;
       content: "";
-      width: 628px;
-      height: 628px;
-      left: 160px;
-      top: 231px;
-      margin: 0 auto;
-      // background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-      background-color: #99faf4;
+      @include abs;
+      @include gradient-y(rgba(218, 218, 218, 0.8), rgba(90, 90, 90, 0.8));
+      @include card-borders();
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
       opacity: 0;
-      transition: all 0.3s;
-      will-change: transform;
+      background-image: linear-gradient(var(--rotate), #99faf4, #0d99ff);
+      background-color: #0d99ff;
+      @include card-borders();
     }
 
     .card-inner {
@@ -314,19 +381,23 @@
   &:hover,
   &:focus,
   &.active {
-    &:before {
-      opacity: 0;
-    }
+    &:before,
     &:after {
       opacity: 1;
-      // animation: spin 2.5s linear infinite;
     }
-
+    &:before {
+      animation: rotateBg1 2.5s linear 0s infinite forwards;
+    }
+    &:after {
+      animation: rotateBg2 2.5s linear 0s infinite forwards;
+    }
     .card {
       &:before {
-        filter: blur(50px);
+        opacity: 0;
+      }
+      &:after {
         opacity: 1;
-        // animation: spin 2.5s linear infinite;
+        animation: spin 2.5s linear infinite;
       }
 
       .card-inner {
@@ -531,24 +602,23 @@
       &:after {
         content: "";
         position: absolute;
-        width: 264px;
-        height: 264px;
-        border-radius: 100%;
-        background-color: var(--overlay);
         opacity: 0;
         transition: opacity 0.3s ease;
-        filter: blur(45px);
-        will-change: transform;
       }
 
       &:before {
-        left: -96px;
-        top: -100px;
+        left: 0;
+        top: 0;
+        background: url(../img/bg/service-green-top.svg) no-repeat;
+        width: 258px;
+        height: 254px;
       }
-
       &:after {
-        right: -85px;
-        bottom: -75px;
+        right: 0;
+        bottom: 0;
+        background: url(../img/bg/service-green-bottom.svg) no-repeat;
+        width: 267px;
+        height: 279px;
       }
 
       .card-image {
@@ -635,31 +705,97 @@
   &--color-blue {
     --gradient-start: #0d99ff;
     --overlay: #061b2a;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-blue-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-blue-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-purple {
     --gradient-start: #695cff;
     --overlay: #14122a;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-purple-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-purple-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-yellow {
     --gradient-start: #ffae33;
     --overlay: #2a1e0c;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-yellow-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-yellow-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-red {
     --gradient-start: #ff544b;
     --overlay: #2a110f;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-red-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-red-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-lightblue {
     --gradient-start: #62d3ff;
     --overlay: #13242a;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-lightblue-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-lightblue-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-lightyellow {
     --gradient-start: #ffd426;
     --overlay: #2a240a;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-lightyellow-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-lightyellow-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 }
 
