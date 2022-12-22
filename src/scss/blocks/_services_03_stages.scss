@@ -29,43 +29,64 @@
 
     &.stage-box-01 {
       &:after {
-        @include bg-green;
+        background-image: url(../img/bg/gradient-green.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-after(600px, -362px, -281px);
     }
 
     &.stage-box-02 {
       &:before {
-        @include bg-blue;
+        background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-before(1000px, -334px, -423px);
 
       &:after {
-        @include bg-green;
+        background-image: url(../img/bg/gradient-green.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-after(600px, 430px, -331px);
     }
 
     &.stage-box-03 {
       &:before {
-        @include bg-blue;
+        background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-before(1000px, -196px, -436px);
 
       &:after {
-        @include bg-blue;
+        background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-after(1000px, 794px, -392px);
     }
 
     &.stage-box-04 {
       &:before {
-        @include bg-green;
+        background-image: url(../img/bg/gradient-green.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-before(600px, -407px, -244px);
 
       &:after {
-        @include bg-blue;
+        background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
       }
       @include bg-after(1000px, 82px, -460px);
     }
@@ -100,7 +121,26 @@
     .stage-box {
       &:before,
       &:after {
-        background-color: #0b2516 !important;
+        animation: bgGreen 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgGreen {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 100%, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 100%, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
       }
     }
   }
@@ -109,7 +149,26 @@
     .stage-box {
       &:before,
       &:after {
-        background-color: #061b2a !important;
+        animation: bgBlue 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgBlue {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 100%, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 100%, 0, 0, 0, 0, 0;
+        opacity: 1;
       }
     }
   }
@@ -118,16 +177,54 @@
     .stage-box {
       &:before,
       &:after {
-        background-color: #2a1e0c !important;
+        animation: bgPurple 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgPurple {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 0, 100%, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 0, 100%, 0, 0, 0, 0;
+        opacity: 1;
       }
     }
   }
 
-  &.color-yellow {
+  &.color-orange {
     .stage-box {
       &:before,
       &:after {
-        background-color: #2a1e0c !important;
+        animation: bgOrange 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgOrange {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 0, 0, 100%, 0, 0, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 0, 0, 100%, 0, 0, 0;
+        opacity: 1;
       }
     }
   }
@@ -136,7 +233,26 @@
     .stage-box {
       &:before,
       &:after {
-        background-color: #2a110f !important;
+        animation: bgRed 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgRed {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 0, 0, 0, 100%, 0, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 0, 0, 0, 100%, 0, 0;
+        opacity: 1;
       }
     }
   }
@@ -145,16 +261,54 @@
     .stage-box {
       &:before,
       &:after {
-        background-color: #13242a !important;
+        animation: bgLightblue 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgLightblue {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 0, 0, 0, 0, 100%, 0;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 0, 0, 0, 0, 100%, 0;
+        opacity: 1;
       }
     }
   }
 
-  &.color-lightyellow {
+  &.color-yellow {
     .stage-box {
       &:before,
       &:after {
-        background-color: #2a240a !important;
+        animation: bgYellow 0.5s ease 0s forwards;
+      }
+    }
+
+    @keyframes bgYellow {
+      0% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 1;
+      }
+      50% {
+        background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
+        opacity: 0;
+      }
+      51% {
+        background-size: 0, 0, 0, 0, 0, 0, 0, 100%;
+        opacity: 0;
+      }
+      100% {
+        background-size: 0, 0, 0, 0, 0, 0, 0, 100%;
+        opacity: 1;
       }
     }
   }
@@ -233,7 +387,10 @@
 
       &.stage-box-01 {
         &:before {
-          @include bg-blue;
+          background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
         }
         @include bg-before(1800px, -100px, -655px);
 
@@ -249,24 +406,36 @@
 
       &.stage-box-03 {
         &:before {
-          @include bg-green;
+          background-image: url(../img/bg/gradient-green.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
         }
         @include bg-before(1400px, 253px, -496px);
 
         &:after {
-          @include bg-blue;
+          background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
         }
         @include bg-after(1800px, 673px, -960px);
       }
 
       &.stage-box-04 {
         &:before {
-          @include bg-blue;
+          background-image: url(../img/bg/gradient-blue.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
         }
         @include bg-before(1800px, 257px, -678px);
 
         &:after {
-          @include bg-green;
+          background-image: url(../img/bg/gradient-green.webp), url(../img/bg/services-green.webp), url(../img/bg/services-blue.webp), url(../img/bg/services-purple.webp), url(../img/bg/services-orange.webp), url(../img/bg/services-red.webp), url(../img/bg/services-lightblue.webp), url(../img/bg/services-yellow.webp);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 100%, 0, 0, 0, 0, 0, 0, 0;
         }
         @include bg-after(1400px, 673px, -595px);
       }
