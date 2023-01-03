@@ -188,6 +188,11 @@
       .txt-lg {
         margin-bottom: 150px;
       }
+      .image {
+        img {
+          max-width: 500px;
+        }
+      }
     }
 
     @include media-breakpoint-up(xl) {
@@ -270,17 +275,30 @@
       }
     }
 
+    @media (min-width: 1280px) {
+      .txt-lg {
+        max-width: 80%;
+      }
+    }
+
     @include media-breakpoint-up(xl) {
       padding-bottom: 60px;
 
       .txt-lg {
         margin-bottom: 118px;
         margin-right: -100px;
+        max-width: none;
 
         [data-word="choose"],
         .txt-gradient {
           margin-left: 6.4rem;
         }
+      }
+    }
+
+    @media (min-width: 1800px) {
+      .txt-lg {
+        max-width: 80vw;
       }
     }
   }
@@ -387,6 +405,62 @@
         .txt-gradient {
           margin-left: 6.4rem;
         }
+      }
+    }
+  }
+
+  &.page-intro-case {
+    padding: 0 0 38px;
+
+    .container {
+      &:after {
+        display: none;
+      }
+    }
+
+    .txt-lg {
+      margin-top: -3px;
+      margin-bottom: 0;
+      line-height: 0.9;
+
+      .word {
+        margin: -2rem 0;
+      }
+    }
+
+    .image {
+      margin: -25px 0 0 -32px;
+      position: relative;
+      z-index: 2;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .txt-lg {
+        float: none;
+        width: auto;
+        margin-right: 0;
+      }
+
+      .image {
+        float: none;
+        width: 61vw;
+        transform: translateX(-8vw);
+        margin: -60px auto 0;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding: 0 0 70px;
+
+      .image {
+        transform: translateX(-3.47vw);
+        margin: -123px auto 0;
       }
     }
   }

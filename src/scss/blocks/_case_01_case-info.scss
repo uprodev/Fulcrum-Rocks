@@ -1,0 +1,73 @@
+.block-case-info {
+  padding: 0 0 60px;
+
+  dl {
+    margin: 0;
+    padding: 0;
+
+    dt {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0 0 10px;
+      color: $headline-color;
+    }
+
+    dd {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1;
+      margin: 0 0 20px;
+      color: $headline-color;
+      letter-spacing: -0.01em;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      p {
+        margin: 0 0 10px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 -10px;
+
+      .col {
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 0 120px;
+
+    .block-number {
+      margin: 0 0 11px;
+    }
+
+    dl {
+      dt {
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+      }
+
+      dd {
+        font-size: 48px;
+        margin: 0 0 40px;
+        letter-spacing: -0.02em;
+      }
+    }
+  }
+}

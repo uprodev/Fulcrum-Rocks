@@ -245,20 +245,6 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // $(".card-effect-05")
-  //   .on("mouseenter", function () {
-  //     var color = $(this).attr("data-color");
-  //     $(this)
-  //       .parents(".block-stages")
-  //       .addClass("color-" + color);
-  //   })
-  //   .on("mouseleave", function () {
-  //     var color = $(this).attr("data-color");
-  //     $(this)
-  //       .parents(".block-stages")
-  //       .removeClass("color-" + color);
-  //   });
-
   //tabs
   $(".tabs .tab-panel.active").show();
   $(".tab-menu a").on("click", function (e) {

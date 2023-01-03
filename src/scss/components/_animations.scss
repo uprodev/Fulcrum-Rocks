@@ -378,8 +378,6 @@
     }
   }
 
-  &:hover,
-  &:focus,
   &.active {
     &:before,
     &:after {
@@ -391,6 +389,11 @@
     &:after {
       animation: rotateBg2 2.5s linear 0s infinite forwards;
     }
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
     .card {
       &:before {
         opacity: 0;

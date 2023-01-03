@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
     setupEventListeners: function () {
       var self = this;
 
-      document.querySelectorAll(".card-cursor").forEach(function (el) {
+      document.querySelectorAll(".card-cursor .card").forEach(function (el) {
         el.addEventListener("mouseenter", function (e) {
           self.$html.dataset.cursorType = "details";
         });

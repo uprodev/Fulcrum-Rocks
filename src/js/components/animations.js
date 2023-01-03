@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
       spl.anim = gsap.to(chars, {
         scrollTrigger: {
           trigger: spl,
-          toggleActions: "restart pause resume reverse",
+          toggleActions: "play resume resume resume",
           start: "top bottom",
         },
         delay: delay,
@@ -54,9 +54,8 @@ jQuery(document).ready(function ($) {
         markers: false,
         trigger: gradient,
         scrub: false,
-        toggleActions: "play reset play reset",
+        toggleActions: "play resume resume resume",
         start: "top bottom",
-        end: "bottom top",
       },
       backgroundImage: "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)",
       duration: 1,
@@ -78,23 +77,6 @@ jQuery(document).ready(function ($) {
         .removeClass("color-" + color);
     });
 
-  // var cardEffect3Wrappers = document.querySelectorAll(".card-effect-03-wrapper");
-
-  // if (cardEffect3Wrappers) {
-  //   cardEffect3Wrappers.forEach((wrap) => {
-  //     wrap.onmousemove = (e) => {
-  //       for (const card of wrap.querySelectorAll(".card-effect-03")) {
-  //         const rect = card.getBoundingClientRect(),
-  //           x = e.clientX - rect.left,
-  //           y = e.clientY - rect.top;
-
-  //         card.style.setProperty("--mouse-x", `${x}px`);
-  //         card.style.setProperty("--mouse-y", `${y}px`);
-  //       }
-  //     };
-  //   });
-  // }
-
   // block why-rocks animations
   if (document.querySelector(".block-why-rocks")) {
     $(".block-why-rocks .button").removeAttr("href");
@@ -104,6 +86,8 @@ jQuery(document).ready(function ($) {
       start: "top top",
       end: "bottom bottom",
       toggleClass: "pinned",
+      pin: ".block-why-rocks .text",
+      pinSpacing: false,
       onEnter: function () {
         document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
         document.querySelector(".block-why-rocks").classList.remove("pinned-top");
@@ -139,12 +123,12 @@ jQuery(document).ready(function ($) {
         $(".block-why-rocks .button").unbind("click");
       },
     });
-    ScrollTrigger.create({
-      trigger: ".block-why-rocks",
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".block-why-rocks .text",
-    });
+    // ScrollTrigger.create({
+    //   trigger: ".block-why-rocks",
+    //   start: "top top",
+    //   end: "bottom bottom",
+    //   pin: ".block-why-rocks .text",
+    // });
 
     var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
 
@@ -315,6 +299,7 @@ jQuery(document).ready(function ($) {
   });
 
   imagesLoaded("body", function () {
+    console.log("loaded");
     ScrollTrigger.refresh();
   });
 
@@ -323,7 +308,7 @@ jQuery(document).ready(function ($) {
     document.querySelectorAll(".animated-input").forEach((el, i) => {
       n[i] = bodymovin.loadAnimation({
         container: el, // required
-        path: "data.json", // required
+        path: "../data.json", // required
         renderer: "svg", // required
         loop: false, // optional
         autoplay: false, // optional
@@ -336,4 +321,12 @@ jQuery(document).ready(function ($) {
     });
     console.log(n[1]);
   }
+
+  $(".card-effect-02 .card")
+    .on("mouseenter", function () {
+      $(this).parent().addClass("active");
+    })
+    .on("mouseleave", function () {
+      $(this).parent().removeClass("active");
+    });
 });

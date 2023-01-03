@@ -59,12 +59,13 @@
     .image-inner {
       position: relative;
       width: 100%;
-    }
+      max-width: 448px;
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
     }
 
     .svg {
@@ -92,11 +93,6 @@
       width: 50%;
       order: -1;
       margin: 0;
-
-      .image-inner {
-        width: 100%;
-        max-width: 442px;
-      }
     }
 
     .wrapper {
@@ -127,6 +123,10 @@
       .tab-panel {
         max-width: 555px;
       }
+    }
+
+    .image {
+      padding: 0 140px 0 40px;
     }
   }
 

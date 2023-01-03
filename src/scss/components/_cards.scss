@@ -139,7 +139,7 @@
         bottom: 0;
         right: 0;
         left: 0;
-        height: 74%;
+        height: 64%;
         z-index: 2;
         display: flex;
         align-items: center;
@@ -889,6 +889,127 @@
         width: 100%;
         height: auto;
         @include card-borders();
+      }
+    }
+  }
+}
+
+.card-type-13 {
+  .card {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      padding: 1px;
+      background: #050505;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      @include card-borders;
+    }
+
+    .card-inner {
+      display: flex;
+      flex-direction: column;
+      padding: 19px;
+      min-height: 400px;
+
+      .card-text {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: $dark;
+        margin: 0 0 20px;
+      }
+
+      .card-bottom {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card-author {
+        display: flex;
+        color: $text-color;
+        font-size: 12px;
+        line-height: 1.4;
+        letter-spacing: 0;
+
+        figure {
+          margin: 0 10px 0 0;
+          flex: 0 0 auto;
+          width: 40px;
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+          }
+        }
+
+        p {
+          margin: 0;
+          font-weight: 500;
+          font-size: 14px;
+          color: $dark;
+          letter-spacing: 0.01em;
+        }
+      }
+
+      .arrow-icon-wrapper {
+        background: #f6f6f6;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .card {
+      &:before {
+        background: linear-gradient(180deg, rgba($case-border, 0.8), rgba(#5a5a5a, 0.8));
+      }
+
+      .card-inner {
+        .card-author {
+          color: $dark;
+          font-size: 14px;
+          letter-spacing: 0.01em;
+
+          figure {
+            width: 50px;
+
+            img {
+              border-radius: 10px;
+            }
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card {
+      .card-inner {
+        min-height: 340px;
+        padding: 39px;
+
+        .card-text {
+          font-size: 28px;
+          line-height: 1.2;
+        }
       }
     }
   }

@@ -1,7 +1,12 @@
 .block-why-rocks {
   position: relative;
+  background-image: url(../img/bg/circles-m.png), url(../img/bg/gradient-green.webp);
+  background-repeat: no-repeat;
+  background-position: 50%, top 54px right -336px;
+  background-size: auto, 600px 600px;
 
   &.pinned {
+    background-attachment: fixed;
     .bg {
       position: fixed;
       top: 0;
@@ -96,8 +101,8 @@
   .scroller {
     overflow: hidden;
     ul {
-      margin: 0;
-      padding: 50vh 0;
+      margin: 0 0 0;
+      padding: 50vh 0 0;
       list-style: none;
 
       li {
@@ -107,7 +112,11 @@
         align-content: center;
         justify-content: center;
         text-align: center;
-        margin: 0 0 150px;
+        margin: 0 0 50px;
+
+        &:last-child {
+          margin: 0;
+        }
 
         .txt-lg {
           position: relative;
@@ -131,6 +140,8 @@
   }
 
   @include media-breakpoint-up(md) {
+    background-image: url(../img/bg/circles.png), url(../img/bg/gradient-green.webp);
+
     &.pinned {
       .bg {
         top: 54px;
@@ -159,6 +170,10 @@
   }
 
   @include media-breakpoint-up(lg) {
+    background-image: url(../img/bg/gradient-green.webp), url(../img/bg/circles.png);
+    background-position: top 12px right -536px, 50% 54px;
+    background-size: 1400px 1400px, 100% auto;
+
     .bg {
       .bg-inner {
         @include bg-after(1400px, 12px, auto);

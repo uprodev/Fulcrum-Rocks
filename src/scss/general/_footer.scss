@@ -468,14 +468,18 @@
     }
 
     .footer-title {
-      margin-left: 0;
-      margin-right: 0;
-      text-align: left;
-      font-size: 18vw;
+      text-align: center;
+      font-size: 21vw;
     }
   }
 
-  @media (min-width: 1024px) and (max-height: 750px) {
+  @include media-breakpoint-up(xxl) {
+    .footer-title {
+      font-size: 18.5vw;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-height: 700px) {
     .block-number {
       margin: 0;
     }

@@ -17,6 +17,9 @@
   }
 
   .projects-filter {
+    position: relative;
+    z-index: 9;
+
     .tab-nav {
       margin-bottom: 20px;
 
