@@ -313,6 +313,30 @@ button {
       }
     }
   }
+
+  &.button-gradient {
+    .btn-wrap {
+      background: $white;
+
+      &:before {
+        background: linear-gradient(90deg, #0d99ff 0%, #e9eef1 100%);
+      }
+
+      &:after {
+        background: #e9eef1;
+      }
+    }
+
+    .btn-inner {
+      color: $dark;
+    }
+
+    .btn-icon {
+      &:before {
+        background-color: $dark;
+      }
+    }
+  }
 }
 
 .btn-small {

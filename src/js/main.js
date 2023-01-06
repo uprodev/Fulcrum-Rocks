@@ -55,32 +55,34 @@ jQuery(document).ready(function ($) {
   }
 
   if ($(".swiper-02").length) {
-    const swiper2 = new Swiper(".swiper-02", {
-      loop: false,
-      slidesPerView: "auto",
-      spaceBetween: 10,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
-      scrollbar: {
-        el: ".swiper-02-scrollbar",
-        draggable: true,
-        hide: false,
-      },
-      navigation: {
-        nextEl: ".swiper-02 .swiper-button-next",
-        prevEl: ".swiper-02 .swiper-button-prev",
-      },
-      breakpoints: {
-        768: {
-          spaceBetween: 20,
+    document.querySelectorAll(".swiper-02").forEach((el) => {
+      const swiper2 = new Swiper(el, {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        mousewheel: {
+          releaseOnEdges: true,
         },
-      },
-      on: {
-        init: function () {
-          ScrollTrigger.refresh();
+        scrollbar: {
+          el: el.querySelector(".swiper-02-scrollbar"),
+          draggable: true,
+          hide: false,
         },
-      },
+        navigation: {
+          nextEl: el.querySelector(".swiper-02 .swiper-button-next"),
+          prevEl: el.querySelector(".swiper-02 .swiper-button-prev"),
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 20,
+          },
+        },
+        on: {
+          init: function () {
+            ScrollTrigger.refresh();
+          },
+        },
+      });
     });
   }
 
@@ -133,8 +135,6 @@ jQuery(document).ready(function ($) {
         768: {
           spaceBetween: 20,
         },
-      },
-      breakpoints: {
         1024: {
           slidesPerView: 4,
           spaceBetween: 20,
@@ -149,7 +149,43 @@ jQuery(document).ready(function ($) {
   }
 
   if ($(".swiper-05").length) {
-    const swiper5 = new Swiper(".swiper-05", {
+    document.querySelectorAll(".swiper-05").forEach((el) => {
+      const swiper5 = new Swiper(el, {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+        scrollbar: {
+          el: el.querySelector(".swiper-05-scrollbar"),
+          draggable: true,
+          hide: false,
+        },
+        navigation: {
+          nextEl: el.querySelector(".swiper-05 .swiper-button-next"),
+          prevEl: el.querySelector(".swiper-05 .swiper-button-prev"),
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+        },
+        on: {
+          init: function () {
+            ScrollTrigger.refresh();
+          },
+        },
+      });
+    });
+  }
+
+  if ($(".swiper-06").length) {
+    const swiper6 = new Swiper(".swiper-06", {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
@@ -157,24 +193,46 @@ jQuery(document).ready(function ($) {
         releaseOnEdges: true,
       },
       scrollbar: {
-        el: ".swiper-05-scrollbar",
+        el: ".swiper-06-scrollbar",
         draggable: true,
         hide: false,
       },
       navigation: {
-        nextEl: ".swiper-05 .swiper-button-next",
-        prevEl: ".swiper-05 .swiper-button-prev",
+        nextEl: ".swiper-06 .swiper-button-next",
+        prevEl: ".swiper-06 .swiper-button-prev",
       },
       breakpoints: {
         768: {
-          spaceBetween: 20,
+          slidesPerView: 40,
+          spaceBetween: 0,
+          allowTouchMove: false,
         },
       },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 20,
+
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
         },
+      },
+    });
+  }
+
+  if ($(".swiper-07").length) {
+    const swiper7 = new Swiper(".swiper-07", {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 150,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
+      scrollbar: {
+        el: ".swiper-07-scrollbar",
+        draggable: true,
+        hide: false,
+      },
+      navigation: {
+        nextEl: ".swiper-07 .swiper-button-next",
+        prevEl: ".swiper-07 .swiper-button-prev",
       },
       on: {
         init: function () {
@@ -183,6 +241,16 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+
+  customScrollOptions = {
+    touchbehavior: true,
+    overflowx: true,
+    overflowy: false,
+    cursorcolor: "#E9EEF1",
+    cursorborder: "none",
+    cursorwidth: "4px",
+  };
+  $(".scroller").niceScroll(customScrollOptions);
 
   function stickMenu() {
     var scrollWin = $(window).scrollTop();

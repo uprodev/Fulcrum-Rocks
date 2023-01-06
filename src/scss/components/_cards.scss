@@ -464,6 +464,7 @@
     text-decoration: none;
     overflow: hidden;
     @include card-borders();
+    position: absolute !important;
 
     .card-inner {
       height: 100%;
@@ -1011,6 +1012,169 @@
           line-height: 1.2;
         }
       }
+    }
+  }
+}
+
+.card-type-14 {
+  height: 100%;
+  @include card-border;
+
+  .card-inner {
+    height: 100%;
+    padding: 20px;
+
+    h3 {
+      line-height: 1;
+      min-height: 2em;
+      margin: 0 0 35px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .card-inner {
+      padding: 40px 40px 65px;
+
+      h3 {
+        line-height: 1.2;
+        min-height: 2.4em;
+        margin: 0 0 100px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .card-inner {
+      h3 {
+        margin: 0 0 192px;
+      }
+    }
+  }
+}
+
+.card-type-15 {
+  height: 100%;
+
+  .card-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 400px;
+  }
+
+  h2 {
+    margin: 0 0 20px;
+  }
+
+  ul {
+    margin: 0 0 20px;
+    padding: 0 0 0 20px;
+  }
+
+  .card-icons {
+    margin-top: auto;
+    display: flex;
+
+    span {
+      margin: 0 5px 0 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card-inner {
+      padding: 40px 40px 32px;
+      min-height: 537px;
+    }
+    h2 {
+      margin: 0 0 37px;
+    }
+    ul {
+      padding: 0 0 0 15px;
+    }
+  }
+}
+
+.card-type-16 {
+  height: 400px;
+
+  .card,
+  .card-inner {
+    height: 100%;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.card-type-17 {
+  height: 260px;
+
+  .card {
+    height: 100%;
+  }
+
+  .card-inner {
+    height: 100%;
+    padding: 20px;
+    position: relative;
+  }
+
+  h4 {
+    color: var(--color-main);
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 10px;
+  }
+
+  h3 {
+    line-height: 1;
+    margin: 0 0 26px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 15px;
+  }
+
+  .term {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 400px;
+
+    .card-inner {
+      padding: 40px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin: 0 0 5px;
+    }
+
+    h3 {
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+
+    ul {
+      padding: 0 0 0 25px;
+    }
+
+    .term {
+      position: static;
+      display: block;
+      margin: 0 0 19px;
     }
   }
 }

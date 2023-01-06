@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+input,
+select,
+textarea {
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
 html,
 body {
   padding: 0;

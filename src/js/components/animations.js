@@ -49,6 +49,21 @@ jQuery(document).ready(function ($) {
       delay = gradient.dataset.delay;
     }
 
+    var bgEnd = "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)";
+
+    if ($(".page-services--green").length) {
+      bgEnd = "linear-gradient(90deg, #30db74 0%, #E9EEF1 100%)";
+    }
+    if ($(".page-services--purple").length) {
+      bgEnd = "linear-gradient(90deg, #695cff 0%, #E9EEF1 100%)";
+    }
+    if ($(".page-services--orange").length) {
+      bgEnd = "linear-gradient(90deg, #ffae33 0%, #E9EEF1 100%)";
+    }
+    if ($(".page-services--yellow").length) {
+      bgEnd = "linear-gradient(90deg, #ffd426 0%, #E9EEF1 100%)";
+    }
+
     gsap.to(gradient, {
       scrollTrigger: {
         markers: false,
@@ -57,7 +72,7 @@ jQuery(document).ready(function ($) {
         toggleActions: "play resume resume resume",
         start: "top bottom",
       },
-      backgroundImage: "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)",
+      backgroundImage: bgEnd,
       duration: 1,
       delay: delay,
     });
