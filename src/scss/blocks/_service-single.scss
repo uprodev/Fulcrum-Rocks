@@ -1,24 +1,501 @@
 .page-services {
   --color-main: #fff;
 
+  & > div {
+    position: relative;
+
+    &:before,
+    &:after {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:before,
+      &:after {
+        width: 132.5vw;
+        height: 132.5vw;
+      }
+    }
+  }
+
   &--green {
     --color-main: #30db74;
+
+    & > div {
+      &:before,
+      &:after {
+        background-image: url(../img/bg/green-services.webp);
+      }
+    }
+
+    .block-service-cards {
+      &:before {
+        content: "";
+        top: -213px;
+        left: -452px;
+      }
+    }
+
+    .block-service-details {
+      &:before {
+        content: "";
+        top: 58px;
+        right: -327px;
+      }
+    }
+
+    .block-service-vision {
+      &:before {
+        content: "";
+        top: -364px;
+        left: -460px;
+      }
+    }
+
+    .block-service-team {
+      &:before {
+        content: "";
+        top: 250px;
+        right: -347px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .block-service-cards {
+        &:before {
+          top: -41vw;
+          left: -46vw;
+        }
+      }
+
+      .block-service-details {
+        &:before {
+          top: -13.6vw;
+          right: -56.7vw;
+        }
+      }
+
+      .block-service-vision {
+        &:before {
+          top: -45.4vw;
+          left: -49.6vw;
+        }
+      }
+
+      .block-service-team {
+        &:before {
+          top: -63vw;
+          right: -71.2vw;
+        }
+      }
+
+      .block-service-accordion {
+        &:before {
+          content: "";
+          top: -19vw;
+          left: -46vw;
+        }
+      }
+    }
   }
 
   &--blue {
     --color-main: #0d99ff;
+
+    & > div {
+      &:before,
+      &:after {
+        background-image: url(../img/bg/blue-services.webp);
+      }
+    }
+
+    .block-service-cards {
+      &:before {
+        content: "";
+        top: -344px;
+        left: -445px;
+      }
+    }
+
+    .block-service-details {
+      &:before {
+        content: "";
+        top: 358px;
+        right: -363px;
+      }
+    }
+
+    .block-service-vision {
+      &:before {
+        content: "";
+        top: -372px;
+        left: -437px;
+      }
+      &:after {
+        content: "";
+        top: 48px;
+        right: -375px;
+      }
+    }
+
+    .block-service-accordion {
+      &:before {
+        content: "";
+        top: -264px;
+        left: -473px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .block-service-cards {
+        &:before {
+          top: -57.2vw;
+          left: -58.2vw;
+        }
+      }
+
+      .block-service-details {
+        &:before {
+          top: -32vw;
+          right: -44vw;
+        }
+      }
+
+      .block-service-vision {
+        &:before {
+          top: -27vw;
+          left: -54.8vw;
+        }
+        &:after {
+          content: "";
+          top: -52vw;
+          right: -44vw;
+        }
+      }
+
+      .block-service-accordion {
+        &:before {
+          content: "";
+          top: -53.8vw;
+          left: -65.4vw;
+        }
+      }
+    }
   }
 
   &--purple {
     --color-main: #695cff;
+
+    & > div {
+      &:before,
+      &:after {
+        background-image: url(../img/bg/purple-services.webp);
+      }
+    }
+
+    .block-service-details {
+      &:before {
+        content: "";
+        top: -344px;
+        left: -455px;
+      }
+    }
+
+    .block-service-cards-slider1 {
+      &:before {
+        content: "";
+        top: -602px;
+        right: -373px;
+      }
+    }
+
+    .block-service-cards-slider2 {
+      &:before {
+        content: "";
+        top: -397px;
+        left: -500px;
+      }
+    }
+
+    .block-outcome-service {
+      &:before {
+        content: "";
+        top: 0;
+        right: -351px;
+      }
+    }
+
+    .block-service-projects {
+      &:before {
+        content: "";
+        top: 173px;
+        left: -465px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .block-service-details {
+        &:before {
+          top: -66.3vw;
+          left: -69.9vw;
+        }
+      }
+
+      .block-service-cards-slider1 {
+        &:before {
+          top: -46.1vw;
+          right: -49vw;
+        }
+      }
+
+      .block-service-cards-slider2 {
+        &:before {
+          top: -53px;
+          left: -62vw;
+        }
+      }
+
+      .block-outcome-service {
+        &:before {
+          top: -28.3vw;
+          right: -45.2vw;
+        }
+      }
+
+      .block-service-projects {
+        &:before {
+          top: -30vw;
+          left: -58.4vw;
+        }
+      }
+    }
   }
 
   &--orange {
     --color-main: #ffae33;
+
+    & > div {
+      &:before,
+      &:after {
+        background-image: url(../img/bg/orange-services.webp);
+      }
+    }
+
+    .block-outcome-service {
+      &:before {
+        content: "";
+        top: -392px;
+        left: -480px;
+      }
+    }
+
+    .block-service-text {
+      &:before {
+        content: "";
+        top: 66px;
+        right: -390px;
+      }
+    }
+
+    .block-service-vision {
+      &:before {
+        content: "";
+        top: -164px;
+        left: -340px;
+      }
+    }
+
+    .block-service-team {
+      &:before {
+        content: "";
+        top: 209px;
+        left: -400px;
+      }
+    }
+
+    .block-service-details {
+      &:before {
+        content: "";
+        bottom: 0px;
+        right: -370px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .block-outcome-service {
+        &:before {
+          top: -54.2vw;
+          left: -58.7vw;
+        }
+      }
+
+      .block-service-text {
+        &:before {
+          top: -27.7vw;
+          right: -48.5vw;
+        }
+      }
+
+      .block-service-vision {
+        &:before {
+          top: -54.2vw;
+          left: -54.2vw;
+        }
+        &:after {
+          content: "";
+          top: -20.7vw;
+          right: -54.2vw;
+        }
+      }
+
+      .block-outcome-team {
+        &:before {
+          top: -33vw;
+          left: -50.3vw;
+        }
+      }
+
+      .block-service-details {
+        &:before {
+          top: -25.9vw;
+          right: -53vw;
+        }
+      }
+    }
   }
 
   &--yellow {
     --color-main: #ffd426;
+
+    & > div {
+      &:before,
+      &:after {
+        background-image: url(../img/bg/yellow-services.webp);
+      }
+    }
+
+    .block-service-cards {
+      &:before {
+        content: "";
+        top: -266px;
+        left: -264px;
+      }
+    }
+
+    .block-service-vision {
+      &:before {
+        content: "";
+        top: -184px;
+        left: -301px;
+      }
+    }
+
+    .block-service-details {
+      &:before {
+        content: "";
+        top: -86px;
+        right: -185px;
+      }
+    }
+
+    .block-service-list {
+      &:before {
+        content: "";
+        top: -382px;
+        right: -447px;
+      }
+    }
+
+    .block-service-icon-cards {
+      &:before {
+        content: "";
+        top: -62px;
+        left: -420px;
+      }
+    }
+
+    .block-service-packs {
+      &:before {
+        content: "";
+        top: 263px;
+        right: -386px;
+      }
+    }
+
+    .block-service-accordion {
+      &:before {
+        content: "";
+        top: -375px;
+        left: -445px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .block-service-cards {
+        &:before {
+          top: -58.4vw;
+          left: -63vw;
+        }
+      }
+
+      .block-service-vision {
+        &:before {
+          top: -10.8vw;
+          left: -59.4vw;
+        }
+        &:after {
+          content: "";
+          top: -51.2vw;
+          right: -51.2vw;
+        }
+      }
+
+      .block-service-details {
+        &:before {
+          top: -31px;
+          right: -43.4vw;
+        }
+      }
+
+      .block-service-list {
+        &:before {
+          top: 12vw;
+          right: auto;
+          left: -56.6vw;
+        }
+      }
+
+      .block-service-icon-cards {
+        &:before {
+          top: 19.2px;
+          left: auto;
+          right: -53.6vw;
+        }
+      }
+
+      .block-service-packs {
+        &:before {
+          top: 16.7vw;
+          right: auto;
+          left: -61.1vw;
+        }
+      }
+
+      .block-service-accordion {
+        &:before {
+          display: none;
+        }
+      }
+    }
   }
 
   .h1 {
@@ -93,6 +570,18 @@
 
 .page-intro-service {
   margin: 0 0 55px;
+  position: relative;
+
+  &:before {
+    content: "";
+    top: -363px;
+    right: -458px;
+
+    @include media-breakpoint-up(lg) {
+      top: -57.8vw;
+      right: -55.4vw;
+    }
+  }
 
   .wrapper {
     position: relative;
