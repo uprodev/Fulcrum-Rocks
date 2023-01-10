@@ -2,6 +2,7 @@ jQuery(document).ready(function ($) {
   // menu
   $(".navbar-toggler").on("click", function () {
     $(this).toggleClass("active");
+    $(".header").toggleClass("mob-menu-opened");
     $(".main-navigation").toggleClass("active");
   });
   $(".main-navigation li, .stick-navigation li").each(function () {
@@ -261,6 +262,12 @@ jQuery(document).ready(function ($) {
     } else {
       $(".stick-navigation").removeClass("active");
     }
+
+    if (scrollWin > 0) {
+      $(".header").addClass("fixed");
+    } else {
+      $(".header").removeClass("fixed");
+    }
   }
   stickMenu();
 
@@ -327,6 +334,45 @@ jQuery(document).ready(function ($) {
         $activeTab.removeClass("active").hide();
         $nextTab.addClass("active").fadeIn(400);
       }
+    }
+  });
+
+  function closeSelect(el) {
+    el.removeClass("opened");
+    el.find(".projects-filter-sort-dropdown-list").slideUp(0);
+    var checkedInputs = el.find("input:checked");
+    if (checkedInputs.length > 0) {
+      el.addClass("selected");
+      var selectedText = "";
+      for (var i = 0; i < checkedInputs.length; i++) {
+        selectedText = selectedText + checkedInputs[i].value;
+        if (i < checkedInputs.length - 1) {
+          selectedText = selectedText + ", ";
+        }
+      }
+      el.find(".projects-filter-sort-dropdown-selected span").text(selectedText);
+    } else {
+      el.removeClass("selected");
+      var selectedText = el.find(".projects-filter-sort-dropdown-selected span").attr("data-text");
+      el.find(".projects-filter-sort-dropdown-selected span").text(selectedText);
+    }
+  }
+
+  $(".projects-filter-sort-dropdown").on("click", function (e) {
+    e.stopPropagation();
+  });
+  $(".projects-filter-sort-dropdown-selected").on("click", function (e) {
+    e.stopPropagation();
+    if ($(this).parent().hasClass("opened")) {
+      closeSelect($(this).parent());
+    } else {
+      $(this).parent().addClass("opened");
+      $(this).next().slideDown(0);
+    }
+  });
+  $(document).on("click", function () {
+    if ($(".projects-filter-sort-dropdown.opened").length) {
+      closeSelect($(".projects-filter-sort-dropdown.opened"));
     }
   });
 

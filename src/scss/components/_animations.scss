@@ -570,11 +570,6 @@
 //   }
 // }
 
-:root {
-  --gradient-start: #30db74;
-  --overlay: #0b2516;
-}
-
 .card-effect-05 {
   --border-angle: 0turn;
 
@@ -598,7 +593,7 @@
     .card-inner {
       width: 100%;
       height: 100%;
-      background-color: $black;
+      background: linear-gradient(180deg, #050505 0%, #191919 100%);
       position: relative;
 
       &:before,
@@ -612,14 +607,12 @@
       &:before {
         left: 0;
         top: 0;
-        background: url(../img/bg/service-green-top.svg) no-repeat;
         width: 258px;
         height: 254px;
       }
       &:after {
         right: 0;
         bottom: 0;
-        background: url(../img/bg/service-green-bottom.svg) no-repeat;
         width: 267px;
         height: 279px;
       }
@@ -703,6 +696,17 @@
   &--color-green {
     --gradient-start: #30db74;
     --overlay: #0b2516;
+
+    .card {
+      .card-inner {
+        &:before {
+          background: url(../img/bg/service-green-top.svg) no-repeat;
+        }
+        &:after {
+          background: url(../img/bg/service-green-bottom.svg) no-repeat;
+        }
+      }
+    }
   }
 
   &--color-blue {
@@ -796,6 +800,21 @@
         }
         &:after {
           background: url(../img/bg/service-lightyellow-bottom.svg) no-repeat;
+        }
+      }
+    }
+  }
+
+  &.card-type-01 {
+    @include media-breakpoint-up(md) {
+      .card {
+        .card-inner {
+          &:before,
+          &:after {
+            width: 440px;
+            height: 540px;
+            background-size: cover;
+          }
         }
       }
     }

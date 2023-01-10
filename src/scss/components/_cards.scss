@@ -29,12 +29,11 @@
 
       .card-image {
         position: absolute;
-        top: 50%;
+        bottom: 0;
         right: 0;
-        width: 84%;
-        height: 70%;
+        width: 100%;
+        height: 81.5%;
         z-index: 2;
-        transform: translate3d(0, -50%, 0);
 
         img {
           display: block;
@@ -139,7 +138,7 @@
         bottom: 0;
         right: 0;
         left: 0;
-        height: 64%;
+        height: 78.5%;
         z-index: 2;
         display: flex;
         align-items: center;
@@ -191,12 +190,24 @@
         left: 19px;
         right: 19px;
         bottom: 19px;
+
+        .tab-nav li a > span {
+          background: rgba(255, 255, 255, 0.1);
+        }
       }
     }
   }
 
   @include media-breakpoint-up(sm) {
     padding: 118.92% 0 0;
+
+    .card {
+      .card-inner {
+        .card-image {
+          height: 94%;
+        }
+      }
+    }
   }
 
   @include media-breakpoint-up(lg) {
@@ -369,6 +380,7 @@
     text-decoration: none;
     overflow: hidden;
     @include card-borders();
+    z-index: 2;
 
     .card-inner {
       height: 100%;
@@ -399,7 +411,7 @@
           font-size: 0.714rem;
           line-height: 120%;
           letter-spacing: 0.02em;
-          color: $headline-color;
+          color: $error;
         }
       }
 
@@ -408,13 +420,13 @@
         bottom: 19px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: $headline-color;
-        padding: 8px 15px;
-        border-radius: 15px;
-        font-size: 0.714rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 11.5px 16px;
+        border-radius: 5px;
+        font-size: 12px;
         line-height: 140%;
         letter-spacing: 0.01em;
-        color: $dark;
+        color: $text-color;
       }
     }
   }
@@ -444,10 +456,9 @@
 
         .label {
           bottom: 39px;
-          padding: 14px 29px;
-          border-radius: 25px;
-          font-size: 0.89rem;
-          line-height: 140%;
+          padding: 15px 30px;
+          font-size: 14px;
+          color: $headline-color;
         }
       }
     }
@@ -754,9 +765,9 @@
     .card {
       .card-inner {
         .card-image {
-          top: 60px;
-          bottom: 60px;
-          left: 50px;
+          top: 40px;
+          bottom: 40px;
+          left: 40px;
         }
       }
     }

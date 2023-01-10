@@ -26,6 +26,7 @@
 
     &.error {
       margin-bottom: 23px;
+      border-color: $error;
     }
 
     input,
@@ -54,7 +55,6 @@
       }
 
       &.error {
-        border-color: $error;
         @include placeholder-text($error, 1);
 
         & + .error-msg {

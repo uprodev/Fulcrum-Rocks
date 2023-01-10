@@ -2,6 +2,23 @@
   padding: 20px 0 34px;
   position: relative;
 
+  .card-type-05,
+  .card-type-06 {
+    .card {
+      z-index: 2;
+      &:before {
+        content: "";
+        @include abs;
+        @include gradient-y(rgba(233, 238, 241, 0.5), rgba(30, 30, 30, 0.5));
+        @include card-borders();
+      }
+
+      .card-inner {
+        background: linear-gradient(180deg, #050505 0%, #191919 100%);
+      }
+    }
+  }
+
   &:after {
     @include bg-green;
   }
