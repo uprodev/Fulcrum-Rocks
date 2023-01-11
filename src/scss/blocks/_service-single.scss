@@ -1005,7 +1005,7 @@
     margin-bottom: 0;
 
     .image {
-      margin: 8px 0 21px;
+      margin: 20px 0;
 
       img {
         display: block;
@@ -1042,6 +1042,7 @@
     ul {
       @extend .list-marked;
       font-size: 18px;
+      margin: 20px 0 0;
     }
   }
 
@@ -1050,11 +1051,12 @@
 
     .block-text {
       .image {
-        margin: 80px 0 0 26px;
+        margin: 40px 0 0;
       }
 
       dl {
-        margin: 45px 0 0;
+        margin: 0;
+        max-width: 555px;
 
         dt {
           font-size: 28px;
@@ -1068,7 +1070,7 @@
 
       ul {
         font-size: 28px;
-        margin: 39px 0;
+        margin: 0;
         max-width: 555px;
 
         li {
@@ -1083,54 +1085,11 @@
           }
         }
       }
-    }
-  }
 
-  &--style-01 {
-    .block-text {
-      dl {
-        margin: 11px 0 0;
-      }
-    }
-
-    @include media-breakpoint-up(xl) {
-      .block-text {
-        dl {
-          max-width: 555px;
-          margin: 46px 0 0;
-        }
-      }
-    }
-  }
-
-  &--style-02 {
-    @include media-breakpoint-up(xl) {
-      .block-text {
-        .image {
-          margin: 35px 0 0 50px;
-        }
-      }
-    }
-  }
-
-  &--style-03 {
-    .block-text {
-      .image {
-        margin: 15px 26px 0px 23px;
-      }
-      dl {
-        margin: -10px 0 0;
-      }
-    }
-
-    @include media-breakpoint-up(xl) {
-      .block-text {
-        .image {
-          margin: 48px 26px 0px 83px;
-        }
-        dl {
-          margin: -4px 0 0;
-          max-width: 555px;
+      p {
+        & + dl,
+        & + ul {
+          margin: 40px 0 0;
         }
       }
     }
