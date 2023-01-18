@@ -1188,37 +1188,30 @@
         right: 28px;
       }
 
-      .icon-arrow {
-        margin: 0 auto 14px;
-        display: none;
-      }
-
       strong {
         display: block;
         font-weight: 500;
         font-size: 14px;
         line-height: 110%;
         color: $headline-color;
+        transition: all 0.3s;
       }
 
       span {
-        display: none;
-        font-size: 18px;
+        display: block;
+        font-size: 12px;
         line-height: 1.2;
-        color: #001625;
+        color: #91999e;
+        transition: all 0.3s;
+        margin: 4px 0 0;
       }
 
       &:hover {
         background-color: var(--color-main);
 
-        .icon-arrow {
-          display: block;
-        }
-        strong {
-          display: none;
-        }
+        strong,
         span {
-          display: block;
+          color: $dark;
         }
       }
     }
@@ -2063,7 +2056,6 @@
   .item {
     .card-type-02 {
       max-width: 555px;
-      padding: 98.5% 0 0;
     }
     .service-project-description {
       padding: 20px 0 0;
@@ -2112,6 +2104,10 @@
       .col {
         width: 50%;
         padding: 0 10px;
+      }
+
+      .card-type-02 {
+        padding: 98.5% 0 0;
       }
 
       .service-project-description {
