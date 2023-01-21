@@ -6,7 +6,7 @@
   top: 0;
   right: 20px;
   z-index: 99;
-  transform: translateY(-150%);
+  transform: translateY(-155%);
 
   img {
     max-width: 100%;
@@ -39,7 +39,7 @@
   }
 
   @include media-breakpoint-up(xxl) {
-    right: 150px;
+    right: 100px;
   }
 }
 
@@ -67,8 +67,15 @@
   }
 
   .overlay {
-    background: url(../img/bg/blackout.png) 50% no-repeat;
-    background-size: 100% auto;
-    @include abs;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 3000px;
+    height: 3000px;
+    margin: 1em auto;
+    background: radial-gradient(circle at center 50%, transparent, transparent 35vh, #010101 100px);
+    overflow: hidden;
+    transition: all 0.1s ease;
   }
 }

@@ -132,13 +132,14 @@
       height: 100%;
       overflow: hidden;
       @include card-borders();
+      padding: 19px;
 
       .card-image {
         position: absolute;
+        top: 86px;
         bottom: 0;
         right: 0;
         left: 0;
-        height: 78.5%;
         z-index: 2;
         display: flex;
         align-items: center;
@@ -163,7 +164,12 @@
         z-index: 3;
         display: flex;
         justify-content: space-between;
-        padding: 20px 19px 0;
+        margin: 0 0 7px;
+
+        h2 {
+          margin: -4px 0 0;
+          line-height: 1;
+        }
 
         .card-arrow {
           flex: 0 0 auto;
@@ -177,10 +183,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        max-width: 300px;
 
         p {
-          margin: 10px 0 0;
+          margin: 0;
         }
       }
 
@@ -204,7 +209,7 @@
     .card {
       .card-inner {
         .card-image {
-          height: 94%;
+          top: 39px;
         }
       }
     }
@@ -213,9 +218,8 @@
   @include media-breakpoint-up(lg) {
     .card {
       .card-inner {
+        padding: 40px;
         .card-top {
-          padding: 40px 40px 0;
-
           .card-number {
             font-size: 14px;
             letter-spacing: 0.01em;
@@ -334,19 +338,18 @@
     padding: 123% 0 0;
   }
 
-  @include media-breakpoint-up(lg) {
-    padding: 0;
-    height: 100%;
-    .card {
-      position: relative;
-      height: 100%;
+  @include media-breakpoint-up(md) {
+    .card .card-inner .card-text {
+      min-height: 20%;
+    }
+  }
 
+  @include media-breakpoint-up(lg) {
+    .card {
       .card-inner {
         height: 100%;
-        display: block;
 
         .card-top {
-          margin: 0 0 60px;
           .card-number {
             font-size: 14px;
             letter-spacing: 0.01em;
@@ -361,10 +364,6 @@
     .card {
       .card-inner {
         padding: 39px 39px 40px;
-
-        .card-top {
-          margin: 0 0 181px;
-        }
       }
     }
   }
@@ -595,7 +594,7 @@
 
       .card-text {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

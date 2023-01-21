@@ -104,6 +104,18 @@
     }
   }
 
+  @media (min-width: 1280px) and (max-width: 1359px) {
+    .txt-lg {
+      margin-bottom: 100px !important;
+    }
+  }
+
+  @media (min-width: 1360px) and (max-width: 1439px) {
+    .txt-lg {
+      margin-bottom: 150px !important;
+    }
+  }
+
   @include media-breakpoint-up(xl) {
     .txt-lg {
       margin: -0.1em 0 70px 0;
@@ -118,13 +130,58 @@
 
   &.page-intro-home {
     .image {
-      margin: 0 -20px;
+      margin: -35px -20px 0;
+      position: relative;
 
       .image01 {
         display: block;
-        width: 119%;
+        width: 100%;
         height: auto;
-        transform: translateX(-2.5%);
+      }
+
+      .img-animation {
+        position: absolute;
+        left: 32.27%;
+        top: 28.4%;
+        width: 18.75%;
+        height: 20.5%;
+        background: url(../img/bg/home-animation-bg.png) no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        svg {
+          width: 58.5%;
+          height: 58.33%;
+          margin: 0 0 2.5% 5%;
+
+          path {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+          }
+        }
+
+        &.animated {
+          opacity: 1;
+
+          svg {
+            path {
+              animation: stroke 3s linear 0.5s forwards;
+            }
+          }
+        }
+      }
+
+      @keyframes stroke {
+        0% {
+          stroke-dashoffset: 400;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
       }
     }
 
@@ -152,19 +209,28 @@
     }
 
     @include media-breakpoint-up(xl) {
-      padding-bottom: 20px;
+      padding-bottom: 73px;
       .image {
-        margin: 15px 0 0;
+        margin: 0;
+        width: auto;
+        position: absolute;
+        top: 58px;
+        right: 40px;
 
         .image01 {
           width: auto;
-          float: right;
           max-width: none;
-          margin: 0 -24px 0 0;
+          margin: 0;
         }
       }
       .txt-lg {
-        margin-bottom: 266px;
+        margin-bottom: 274px;
+      }
+    }
+    @include media-breakpoint-up(xxl) {
+      .image {
+        top: 90px;
+        right: 197px;
       }
     }
   }
@@ -247,6 +313,11 @@
       }
       .txt-lg {
         margin-bottom: 265px;
+      }
+      .text {
+        p {
+          max-width: 440px;
+        }
       }
     }
   }

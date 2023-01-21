@@ -34,49 +34,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
-    .wrapper {
-      display: flex;
-      border: 1px solid #434343;
-      @include card-borders();
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: #434343;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        transform: rotate(45deg) translate3d(45%, 0, 0);
-
-        @include media-breakpoint-up(xl) {
-          width: 40px;
-          height: 40px;
-          transform: rotate(45deg) translate3d(58%, 0, 0);
-        }
-      }
-
-      .col {
-        margin: 0;
-        width: 33.3333%;
-
-        .card-effect-06 {
-          height: 100%;
-
-          .card {
-            border: none;
-            clip-path: none;
-
-            &:before {
-              display: none;
-            }
-          }
-        }
-      }
-    }
+  @include media-breakpoint-up(lg) {
   }
 
   @include media-breakpoint-up(lg) {
@@ -90,14 +48,6 @@
       .h1 {
         br {
           display: block;
-        }
-      }
-    }
-
-    .card-effect-03-wrapper {
-      .wrapper {
-        .col {
-          width: 32.4%;
         }
       }
     }

@@ -7,7 +7,7 @@
     align-items: center;
 
     &.field-input {
-      height: 44px;
+      height: 51px;
     }
 
     &.field-tabs {
@@ -123,10 +123,14 @@
     }
   }
 
+  .button {
+    margin: 7px 0 0;
+  }
+
   @include media-breakpoint-up(md) {
     .field {
       &.field-input {
-        height: 44px;
+        height: 51px;
       }
 
       &.field-tabs {
@@ -137,6 +141,14 @@
         .tab-nav {
           li {
             margin-top: 0;
+
+            label {
+              font-size: 14px;
+
+              & > span {
+                padding: 14px 19px;
+              }
+            }
           }
         }
       }

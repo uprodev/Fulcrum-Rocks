@@ -15,6 +15,36 @@
 
       .card-inner {
         background: linear-gradient(180deg, #050505 0%, #191919 100%);
+        position: relative;
+        overflow: hidden;
+        @include card-borders();
+
+        &:before {
+          content: "";
+          @include abs;
+          background-color: $black;
+          opacity: 0;
+          transition: opacity 0.3s;
+          display: block !important;
+        }
+
+        .text,
+        .card-top,
+        .card-text,
+        .card-author {
+          position: relative;
+          z-index: 2;
+        }
+      }
+    }
+
+    &:hover {
+      .card {
+        .card-inner {
+          &:before {
+            opacity: 1;
+          }
+        }
       }
     }
   }

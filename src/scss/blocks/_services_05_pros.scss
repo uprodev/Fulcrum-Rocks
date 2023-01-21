@@ -37,4 +37,10 @@
       }
     }
   }
+
+  @include media-breakpoint-up(xl) {
+    .card-type-10 .card .card-inner h3 {
+      margin: 0 0 119px;
+    }
+  }
 }

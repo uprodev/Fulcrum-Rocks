@@ -2106,10 +2106,6 @@
         padding: 0 10px;
       }
 
-      .card-type-02 {
-        padding: 98.5% 0 0;
-      }
-
       .service-project-description {
         padding: 0;
         p {
@@ -2127,6 +2123,11 @@
     }
 
     .item {
+      .card-type-02 {
+        padding: 0;
+        height: 660px;
+      }
+
       .service-project-description {
         ul {
           margin: 42px 0 0;

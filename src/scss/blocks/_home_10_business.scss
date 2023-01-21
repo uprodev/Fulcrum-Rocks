@@ -37,7 +37,11 @@
     }
 
     .contact-form {
-      max-width: 555px;
+      p,
+      .form-wrapper,
+      .field {
+        max-width: 555px;
+      }
     }
   }
 }

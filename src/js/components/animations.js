@@ -138,12 +138,6 @@ jQuery(document).ready(function ($) {
         $(".block-why-rocks .button").unbind("click");
       },
     });
-    // ScrollTrigger.create({
-    //   trigger: ".block-why-rocks",
-    //   start: "top top",
-    //   end: "bottom bottom",
-    //   pin: ".block-why-rocks .text",
-    // });
 
     var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
 
@@ -318,6 +312,8 @@ jQuery(document).ready(function ($) {
     ScrollTrigger.refresh();
   });
 
+  $(".page-intro-home .img-animation").addClass("animated");
+
   if (document.querySelector(".animated-input")) {
     var n = [];
     document.querySelectorAll(".animated-input").forEach((el, i) => {
@@ -344,4 +340,12 @@ jQuery(document).ready(function ($) {
     .on("mouseleave", function () {
       $(this).parent().removeClass("active");
     });
+
+  const blackout = document.querySelector(".blackout .overlay");
+  if (blackout) {
+    blackout.addEventListener("mousemove", (e) => {
+      blackout.style.left = e.clientX + "px";
+      blackout.style.top = e.clientY + "px";
+    });
+  }
 });

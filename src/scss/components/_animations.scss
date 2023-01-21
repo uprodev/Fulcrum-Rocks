@@ -268,30 +268,30 @@
 .card-effect-02 {
   --rotate: 0deg;
 
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    width: 900px;
-    height: 900px;
-    opacity: 0;
-  }
+  // &:before,
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 900px;
+  //   height: 900px;
+  //   opacity: 0;
+  // }
 
-  &:before {
-    background: url(../img/bg/effect-02-bg-blue.svg) no-repeat;
-    background-size: cover;
-    left: 0;
-    top: 0;
-    transform: translate3d(-35%, -35%, 0);
-  }
+  // &:before {
+  //   background: url(../img/bg/effect-02-bg-blue.svg) no-repeat;
+  //   background-size: cover;
+  //   left: 0;
+  //   top: 0;
+  //   transform: translate3d(-35%, -35%, 0);
+  // }
 
-  &:after {
-    background: url(../img/bg/effect-02-bg-green.svg) no-repeat;
-    background-size: cover;
-    left: 100%;
-    top: 100%;
-    transform: translate3d(-65%, -65%, 0);
-  }
+  // &:after {
+  //   background: url(../img/bg/effect-02-bg-green.svg) no-repeat;
+  //   background-size: cover;
+  //   left: 100%;
+  //   top: 100%;
+  //   transform: translate3d(-65%, -65%, 0);
+  // }
 
   @keyframes rotateBg1 {
     0% {
@@ -578,7 +578,7 @@
       }
 
       .card-image {
-        opacity: 1;
+        opacity: 0.8;
       }
     }
 
@@ -595,7 +595,7 @@
       }
 
       .card-image {
-        opacity: 1;
+        opacity: 0.8;
       }
     }
 
@@ -612,7 +612,7 @@
       }
 
       .card-image {
-        opacity: 1;
+        opacity: 0.8;
       }
     }
 

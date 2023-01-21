@@ -8,10 +8,6 @@
     z-index: 5;
   }
 
-  .block-text {
-    margin-bottom: 5px;
-  }
-
   .filter {
     margin: 0 -20px 28px 0;
     overflow: auto;
@@ -332,10 +328,6 @@
   }
 
   @include media-breakpoint-up(md) {
-    .block-text {
-      margin-bottom: 8px;
-    }
-
     .filter {
       margin: 0 0 40px;
       overflow: auto;

@@ -100,6 +100,10 @@ jQuery(document).ready(function ($) {
         draggable: true,
         hide: false,
       },
+      navigation: {
+        nextEl: ".swiper-03 .swiper-button-next",
+        prevEl: ".swiper-03 .swiper-button-prev",
+      },
       breakpoints: {
         768: {
           spaceBetween: 20,
@@ -131,6 +135,10 @@ jQuery(document).ready(function ($) {
         el: ".swiper-04-scrollbar",
         draggable: true,
         hide: false,
+      },
+      navigation: {
+        nextEl: ".swiper-04 .swiper-button-next",
+        prevEl: ".swiper-04 .swiper-button-prev",
       },
       breakpoints: {
         768: {
@@ -164,8 +172,8 @@ jQuery(document).ready(function ($) {
           hide: false,
         },
         navigation: {
-          nextEl: el.querySelector(".swiper-05 .swiper-button-next"),
-          prevEl: el.querySelector(".swiper-05 .swiper-button-prev"),
+          nextEl: el.querySelector(".swiper-button-next"),
+          prevEl: el.querySelector(".swiper-button-prev"),
         },
         breakpoints: {
           768: {
@@ -218,28 +226,39 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  if ($(".swiper-07").length) {
-    const swiper7 = new Swiper(".swiper-07", {
-      loop: false,
-      slidesPerView: 1,
-      spaceBetween: 150,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
-      scrollbar: {
-        el: ".swiper-07-scrollbar",
-        draggable: true,
-        hide: false,
-      },
-      navigation: {
-        nextEl: ".swiper-07 .swiper-button-next",
-        prevEl: ".swiper-07 .swiper-button-prev",
-      },
-      on: {
-        init: function () {
-          ScrollTrigger.refresh();
+  if ($(".swiper-051").length) {
+    document.querySelectorAll(".swiper-051").forEach((el) => {
+      const swiper51 = new Swiper(el, {
+        loop: false,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        mousewheel: {
+          releaseOnEdges: true,
         },
-      },
+        scrollbar: {
+          el: el.querySelector(".swiper-051-scrollbar"),
+          draggable: true,
+          hide: false,
+        },
+        navigation: {
+          nextEl: el.querySelector(".swiper-button-next"),
+          prevEl: el.querySelector(".swiper-button-prev"),
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        },
+        on: {
+          init: function () {
+            ScrollTrigger.refresh();
+          },
+        },
+      });
     });
   }
 
@@ -345,7 +364,7 @@ jQuery(document).ready(function ($) {
       el.addClass("selected");
       var selectedText = "";
       for (var i = 0; i < checkedInputs.length; i++) {
-        selectedText = selectedText + checkedInputs[i].value;
+        selectedText = selectedText + checkedInputs[i].dataset.value;
         if (i < checkedInputs.length - 1) {
           selectedText = selectedText + ", ";
         }
@@ -376,6 +395,28 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  function getScrollBarWidth() {
+    var inner = document.createElement("p");
+    inner.style.width = "100%";
+    inner.style.height = "200px";
+    var outer = document.createElement("div");
+    outer.style.position = "absolute";
+    outer.style.top = "0px";
+    outer.style.left = "0px";
+    outer.style.visibility = "hidden";
+    outer.style.width = "100%";
+    outer.style.height = "150px";
+    outer.style.overflow = "hidden";
+    outer.appendChild(inner);
+    document.body.appendChild(outer);
+    var w1 = inner.offsetWidth;
+    outer.style.overflow = "scroll";
+    var w2 = inner.offsetWidth;
+    if (w1 == w2) w2 = outer.clientWidth;
+    document.body.removeChild(outer);
+    return w1 - w2;
+  }
+
   function switchPos() {
     var top = $(".header").outerHeight() + $(".page-intro").outerHeight();
     $(".switch").css("top", top);
@@ -387,16 +428,22 @@ jQuery(document).ready(function ($) {
   });
 
   $(".switch").on("click", function () {
+    var scrollbar = getScrollBarWidth();
+    var switchRight = $(".switch").css("right");
     if (!$(this).hasClass("active")) {
       $(this).addClass("active");
+      $("html, body").css({ overflow: "hidden" });
+      $(".header").css({ right: scrollbar });
+      $(".switch").css({ right: switchRight + scrollbar });
+      $(".page-content, .page-footer").hide();
       $(".blackout").fadeIn(200);
-      $("html").css({ overflow: "scroll" });
-      $("body").css({ overflow: "hidden" });
     } else {
       $(this).removeClass("active");
+      $("html, body").removeAttr("style");
+      $(".header").css({ right: 0 });
+      $(".switch").css({ right: switchRight });
+      $(".page-content, .page-footer").show();
       $(".blackout").fadeOut(200);
-      $("html").removeAttr("style");
-      $("body").removeAttr("style");
     }
   });
 
@@ -416,6 +463,25 @@ jQuery(document).ready(function ($) {
 
   $(".accordion-toggler").on("click", function () {
     $(this).toggleClass("accordion-active").next(".accordion-panel").slideToggle(300);
+  });
+
+  $(".accordion-toggler-panel .num, .accordion-toggler-panel .title, .accordion-toggler-panel .toggler").on("click", function () {
+    var parent = $(this).closest(".accordion-toggler-panel");
+    if (parent.hasClass("accordion-active")) {
+      parent
+        .removeClass("accordion-active")
+        .find(".accordion-panel")
+        .slideUp(300, function () {
+          parent.find(".accordion-base").slideDown(100);
+        });
+    } else {
+      parent
+        .addClass("accordion-active")
+        .find(".accordion-base")
+        .slideUp(100, function () {
+          parent.find(".accordion-panel").slideDown(300);
+        });
+    }
   });
 });
 

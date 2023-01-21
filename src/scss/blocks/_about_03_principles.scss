@@ -22,7 +22,7 @@
     padding: 0;
     list-style: none;
 
-    li {
+    & > li {
       position: relative;
       padding: 14px 0 12px;
       min-height: 123px;
@@ -50,18 +50,23 @@
             margin-bottom: 0 !important;
           }
         }
+
+        ul {
+          color: $headline-color;
+          @extend .list-marked;
+        }
       }
 
-      .accordion-toggler {
+      .accordion-toggler-panel {
         cursor: pointer;
 
         .toggler {
           position: absolute;
           right: 0;
           top: 14px;
-          border: 1px solid $text-color;
+          border: none;
+          background: rgba(255, 255, 255, 0.1);
           border-radius: 100%;
-          background: none;
           padding: 0;
           width: 24px;
           height: 24px;
@@ -143,11 +148,15 @@
     }
 
     .principles-list {
-      li {
+      & > li {
         padding: 28px 0 20px;
-        min-height: 0;
+        min-height: 140px;
 
-        .accordion-toggler {
+        .accordion-panel {
+          padding: 0 0 10px;
+        }
+
+        .accordion-toggler-panel {
           display: flex;
 
           .toggler {
@@ -161,17 +170,6 @@
               width: 14px;
               height: auto;
             }
-          }
-        }
-
-        .accordion-panel {
-          width: 50%;
-          padding-left: 10px;
-          padding-right: 25px;
-          transform: translateX(100%);
-
-          p {
-            margin: 0 0 30px;
           }
         }
 
@@ -222,13 +220,15 @@
 
   @include media-breakpoint-up(xl) {
     .principles-list {
-      li {
+      & > li {
         .accordion-panel {
-          transform: translate3d(100%, -20px, 0);
-          padding: 0 25px 0 10px;
+          ul {
+            font-size: 28px;
+            line-height: 1.2;
 
-          p {
-            font-size: 1.556;
+            li {
+              margin: 0 0 30px;
+            }
           }
         }
       }
