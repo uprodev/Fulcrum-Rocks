@@ -29,10 +29,10 @@
 
       .card-image {
         position: absolute;
-        bottom: 0;
+        top: 20px;
+        bottom: 20px;
         right: 0;
-        width: 100%;
-        height: 81.5%;
+        left: 20px;
         z-index: 2;
 
         img {

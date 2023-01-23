@@ -109,7 +109,6 @@ jQuery(document).ready(function ($) {
 
         $(".block-why-rocks .button").bind("click", function (e) {
           e.preventDefault();
-          console.log("click");
           var dest = $(".block-why-rocks").next();
           $("html,body").animate({ scrollTop: dest.offset().top }, 500);
         });
@@ -120,7 +119,6 @@ jQuery(document).ready(function ($) {
 
         $(".block-why-rocks .button").bind("click", function (e) {
           e.preventDefault();
-          console.log("click");
           var dest = $(".block-why-rocks").prev();
           $("html,body").animate({ scrollTop: dest.offset().top + dest.outerHeight() - $(window).height() }, 500);
         });
@@ -308,7 +306,6 @@ jQuery(document).ready(function ($) {
   });
 
   imagesLoaded("body", function () {
-    console.log("loaded");
     ScrollTrigger.refresh();
   });
 
@@ -330,7 +327,6 @@ jQuery(document).ready(function ($) {
         n[i].playSegments([0, 225], true);
       });
     });
-    console.log(n[1]);
   }
 
   $(".card-effect-02 .card")
