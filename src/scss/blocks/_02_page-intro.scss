@@ -380,9 +380,18 @@
 
     .txt-lg {
       margin-top: -3px;
+      margin-bottom: 215px;
 
       .word {
-        margin: -2rem 0;
+        .char {
+          line-height: 1.05;
+        }
+      }
+
+      .txt-lg-last {
+        @include media-breakpoint-down(lg) {
+          margin-left: 0;
+        }
       }
     }
 
@@ -438,13 +447,20 @@
     @include media-breakpoint-up(xl) {
       .txt-lg {
         width: 50rem;
-        margin-bottom: 93px;
+        margin-top: -20px;
+        margin-bottom: 110px;
       }
 
       .image {
         right: -12px;
         transform: translate3d(13%, -44.6%, 0);
         width: 46vw;
+      }
+
+      .text {
+        p {
+          max-width: 440px;
+        }
       }
     }
   }
