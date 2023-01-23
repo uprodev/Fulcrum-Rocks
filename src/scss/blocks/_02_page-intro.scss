@@ -100,7 +100,7 @@
 
     .text {
       margin: 0;
-      max-width: 555px;
+      max-width: 443px;
     }
   }
 
@@ -256,25 +256,25 @@
         margin-bottom: 150px;
       }
       .image {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 20px;
+        top: 29px;
+        width: 42vw;
+        max-width: 695px;
         img {
-          max-width: 500px;
+          max-width: 100%;
         }
       }
     }
 
     @include media-breakpoint-up(xl) {
-      .image {
-        margin: -28px 0 0;
-        padding: 0 37px 0 0;
-
-        img {
-          width: auto;
-          max-width: none;
-          float: right;
-        }
-      }
       .txt-lg {
-        margin-bottom: 220px;
+        margin-bottom: 250px;
+      }
+      .image {
+        right: 125px;
       }
     }
   }
@@ -344,6 +344,12 @@
         float: none;
         width: auto;
         margin: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .text {
+        max-width: 560px;
       }
     }
 
