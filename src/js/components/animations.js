@@ -301,6 +301,21 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if (document.querySelector(".page-intro-case .image")) {
+    var imageCase = document.querySelector(".page-intro-case .image");
+
+    gsap.to(imageCase, {
+      transformOrigin: "center",
+      ease: "none",
+      y: "-30%",
+      scrollTrigger: {
+        trigger: imageCase,
+        start: "top bottom",
+        scrub: 1,
+      },
+    });
+  }
+
   window.addEventListener("load", function () {
     ScrollTrigger.refresh();
   });

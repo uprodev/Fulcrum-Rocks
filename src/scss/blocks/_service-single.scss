@@ -2337,6 +2337,9 @@
         background: -webkit-linear-gradient(90deg, var(--color-main) 0%, $headline-color 100%);
         background: linear-gradient(90deg, var(--color-main) 0%, $headline-color 100%);
       }
+      &:after {
+        background-color: $headline-color;
+      }
     }
 
     .pack-item-inner {

@@ -121,7 +121,7 @@
         .txt-lg {
           position: relative;
           z-index: 4;
-          font-size: 11rem;
+          font-size: 9rem;
           font-weight: 400;
           opacity: 0;
           letter-spacing: 0;
@@ -168,6 +168,18 @@
     .text {
       .btn-wrap {
         display: none;
+      }
+    }
+    .scroller {
+      ul {
+        li {
+          margin: 0 0 150px;
+
+          .txt-lg {
+            font-size: 15rem;
+            letter-spacing: -0.06em;
+          }
+        }
       }
     }
   }
