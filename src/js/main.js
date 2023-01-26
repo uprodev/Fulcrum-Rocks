@@ -27,9 +27,6 @@ jQuery(document).ready(function ($) {
           loop: false,
           slidesPerView: "auto",
           spaceBetween: 10,
-          mousewheel: {
-            releaseOnEdges: true,
-          },
           navigation: {
             nextEl: ".swiper-01 .swiper-button-next",
             prevEl: ".swiper-01 .swiper-button-prev",
@@ -61,9 +58,6 @@ jQuery(document).ready(function ($) {
         loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
-        mousewheel: {
-          releaseOnEdges: true,
-        },
         scrollbar: {
           el: el.querySelector(".swiper-02-scrollbar"),
           draggable: true,
@@ -92,9 +86,6 @@ jQuery(document).ready(function ($) {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
       scrollbar: {
         el: ".swiper-03-scrollbar",
         draggable: true,
@@ -128,9 +119,6 @@ jQuery(document).ready(function ($) {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
       scrollbar: {
         el: ".swiper-04-scrollbar",
         draggable: true,
@@ -163,9 +151,6 @@ jQuery(document).ready(function ($) {
         loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
-        mousewheel: {
-          releaseOnEdges: true,
-        },
         scrollbar: {
           el: el.querySelector(".swiper-05-scrollbar"),
           draggable: true,
@@ -198,9 +183,6 @@ jQuery(document).ready(function ($) {
       loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
       scrollbar: {
         el: ".swiper-06-scrollbar",
         draggable: true,
@@ -232,9 +214,6 @@ jQuery(document).ready(function ($) {
         loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
-        mousewheel: {
-          releaseOnEdges: true,
-        },
         scrollbar: {
           el: el.querySelector(".swiper-051-scrollbar"),
           draggable: true,
@@ -418,33 +397,55 @@ jQuery(document).ready(function ($) {
   }
 
   function switchPos() {
-    var top = $(".header").outerHeight() + $(".page-intro").outerHeight();
-    $(".switch").css("top", top);
+    var posImage = $(".page-intro-home .image"),
+      imgW = posImage.outerWidth(),
+      imgH = posImage.outerHeight();
+    var top = posImage.offset().top + imgH;
+    var left = posImage.offset().left + imgW;
+    var switchW = imgW * 0.323,
+      switchH = imgH * 0.203;
+    $(".switch").width(switchW);
+    $(".switch").height(switchH);
+    $(".switch").css({ top: top - switchH - imgH * 0.07, left: left - imgW * 0.213 });
   }
-  switchPos();
 
-  $(window).on("resize", function () {
+  if ($(".switch").length) {
     switchPos();
-  });
 
-  $(".switch").on("click", function () {
-    var scrollbar = getScrollBarWidth();
-    var switchRight = $(".switch").css("right");
-    if (!$(this).hasClass("active")) {
-      $(this).addClass("active");
-      $("html, body").css({ overflow: "hidden" });
-      $(".header").css({ right: scrollbar });
-      $(".switch").css({ right: switchRight + scrollbar });
-      $(".page-content, .page-footer").hide();
-      $(".blackout").fadeIn(200);
-    } else {
-      $(this).removeClass("active");
-      $("html, body").removeAttr("style");
-      $(".header").css({ right: 0 });
-      $(".switch").css({ right: switchRight });
-      $(".page-content, .page-footer").show();
-      $(".blackout").fadeOut(200);
-    }
+    $(window).on("resize", function () {
+      switchPos();
+    });
+
+    $(".switch").on("click", function () {
+      var scrollbar = getScrollBarWidth();
+      // var switchRight = $(".switch").css("right");
+      if (!$(this).hasClass("active")) {
+        $(this).addClass("active");
+        $("html, body").css({ overflow: "hidden" });
+        $(".header").css({ right: scrollbar });
+        // $(".switch").css({ right: switchRight + scrollbar });
+        $(".page-content, .page-footer").hide();
+        $(".blackout").fadeIn(200);
+      } else {
+        $(this).removeClass("active");
+        $("html, body").removeAttr("style");
+        $(".header").css({ right: 0 });
+        // $(".switch").css({ right: switchRight });
+        $(".page-content, .page-footer").show();
+        $(".blackout").fadeOut(200);
+      }
+    });
+  }
+
+  $(".block-team .btn-centered .button").on("click", function (e) {
+    e.preventDefault();
+    $(this)
+      .parent()
+      .hide()
+      .next(".team-more-list")
+      .slideDown(400, function () {
+        ScrollTrigger.refresh();
+      });
   });
 
   $(".filter-show-more").on("click", function (e) {

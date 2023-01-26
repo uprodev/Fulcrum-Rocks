@@ -24,6 +24,10 @@
     width: 100%;
     border-bottom: 1px solid $text-color;
 
+    p {
+      margin: 0;
+    }
+
     &.error {
       margin-bottom: 23px;
       border-color: $error;

@@ -40,6 +40,15 @@ jQuery(document).ready(function ($) {
         });
       });
 
+      document.querySelectorAll(".stick-navigation").forEach(function (el) {
+        el.addEventListener("mouseenter", function (e) {
+          document.querySelector(".cursor").classList.add("cursor-over");
+        });
+        el.addEventListener("mouseleave", function () {
+          document.querySelector(".cursor").classList.remove("cursor-over");
+        });
+      });
+
       document.addEventListener("mousemove", function (e) {
         self.endX = e.clientX;
         self.endY = e.clientY;

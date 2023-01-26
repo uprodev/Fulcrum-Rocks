@@ -38,3 +38,20 @@
     }
   }
 }
+
+.team-more-list {
+  display: none;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    row-gap: 50px;
+    padding: 50px 0 0;
+
+    .col {
+      width: 25%;
+      padding: 0 10px;
+    }
+  }
+}

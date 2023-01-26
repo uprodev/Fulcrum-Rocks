@@ -27,6 +27,10 @@
   -moz-user-select: none;
   user-select: none;
   pointer-events: none;
+
+  &.cursor-over {
+    z-index: 10001;
+  }
 }
 
 .cursor,

@@ -4,9 +4,8 @@
   width: 180px;
   height: auto;
   top: 0;
-  right: 20px;
   z-index: 99;
-  transform: translateY(-155%);
+  // transform: translateY(-155%);
 
   img {
     max-width: 100%;
@@ -35,11 +34,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    width: auto;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    right: 100px;
+    max-width: 253px;
   }
 }
 

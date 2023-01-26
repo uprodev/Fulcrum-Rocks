@@ -186,6 +186,15 @@
     display: flex;
     align-items: flex-start;
 
+    a {
+      display: flex !important;
+      align-items: flex-start;
+
+      &:after {
+        display: none;
+      }
+    }
+
     span {
       display: inline-block;
       background: #2a2a2a;

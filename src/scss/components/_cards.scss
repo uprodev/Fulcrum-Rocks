@@ -911,6 +911,8 @@
 .card-type-13 {
   .card {
     position: relative;
+    @include card-borders();
+    overflow: hidden;
 
     &:before {
       content: "";
@@ -926,6 +928,19 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       @include card-borders;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: #000;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: rotate(45deg) translate3d(56%, 0, 0);
+      opacity: 1;
     }
 
     .card-inner {
@@ -1024,6 +1039,17 @@
           font-size: 28px;
           line-height: 1.2;
         }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card {
+      &:after {
+        background-color: #434343;
+        width: 40px;
+        height: 40px;
+        transform: rotate(45deg) translate3d(59%, 0, 0);
       }
     }
   }
