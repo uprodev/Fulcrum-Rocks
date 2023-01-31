@@ -138,6 +138,13 @@
         display: flex;
         align-items: center;
 
+        &.disabled {
+          a {
+            pointer-events: none;
+            color: #434343;
+          }
+        }
+
         a {
           letter-spacing: 0.01em;
           color: $text-color;

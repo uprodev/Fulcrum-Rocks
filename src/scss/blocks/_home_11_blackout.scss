@@ -29,10 +29,6 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    display: block;
-  }
-
   @include media-breakpoint-up(xl) {
     max-width: 253px;
   }

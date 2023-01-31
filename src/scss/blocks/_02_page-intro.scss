@@ -283,6 +283,7 @@
     }
 
     @include media-breakpoint-up(xl) {
+      padding-bottom: 94px;
       .txt-lg {
         margin-bottom: 250px;
       }

@@ -1,53 +1,45 @@
 .block-why-rocks {
   position: relative;
-  background-image: url(../img/bg/circles-m.png), url(../img/bg/gradient-green.webp);
-  background-repeat: no-repeat;
-  background-position: 50%, top 54px right -336px;
-  background-size: auto, 600px 600px;
 
-  &.pinned {
-    background-attachment: fixed;
-    .bg {
-      position: fixed;
-      top: 0;
-      bottom: 0;
+  .btn-centered {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    top: 85vh;
+    z-index: 9;
+
+    .button {
+      width: 163px;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      .btn-wrap {
+        background: #0c283c;
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+
+      .btn-inner {
+        justify-content: center;
+        color: #0d99ff;
+      }
     }
-  }
 
-  &.pinned-top {
-    .bg {
-      top: 0;
-      bottom: auto;
+    &.is-fixed {
+      position: fixed;
     }
   }
 
   &.pinned-bottom {
-    .bg {
+    .btn-centered {
       top: auto;
-      bottom: 0;
-    }
-  }
-
-  .bg {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background: url(../img/bg/circles-m.png) 50% no-repeat;
-    background-size: auto;
-    left: 0;
-    right: 0;
-    z-index: 0;
-
-    .bg-inner {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      z-index: 1;
-
-      &:after {
-        @include bg-green;
-      }
-      @include bg-after(600px, 54px, -336px);
+      bottom: calc(15vh - 48px);
     }
   }
 
@@ -59,37 +51,29 @@
     left: 0;
     top: 0;
     right: 0;
-    z-index: 9 !important;
 
-    .btn-centered {
+    &:before {
+      content: "";
+      background: url(../img/bg/gradient-green.webp) 50% no-repeat;
+      background-size: 100% 100%;
       position: absolute;
+      width: 600px;
+      height: 600px;
+      right: -336px;
+      top: 54px;
+    }
+
+    &:after {
+      content: "";
+      background-image: url(../img/bg/circles-m.png);
+      background-repeat: no-repeat;
+      background-position: 50% 54px;
+      background-size: auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
       left: 0;
-      right: 0;
-      padding: 0 20px;
-      bottom: 10%;
-      z-index: 9;
-
-      .button {
-        width: 163px;
-
-        &:before,
-        &:after {
-          display: none;
-        }
-
-        .btn-wrap {
-          background: #0c283c;
-          &:before,
-          &:after {
-            display: none;
-          }
-        }
-
-        .btn-inner {
-          justify-content: center;
-          color: #0d99ff;
-        }
-      }
+      top: 0;
     }
 
     .h1 {
@@ -102,7 +86,7 @@
     overflow: hidden;
     ul {
       margin: 0 0 0;
-      padding: 50vh 0 0;
+      padding: 50vh 0;
       list-style: none;
 
       li {
@@ -121,11 +105,11 @@
         .txt-lg {
           position: relative;
           z-index: 4;
-          font-size: 9rem;
+          font-size: 8rem;
           font-weight: 400;
           opacity: 0;
           letter-spacing: 0;
-          padding: 0 20px;
+          padding: 0;
           white-space: nowrap;
         }
         p {
@@ -143,33 +127,16 @@
   }
 
   @include media-breakpoint-up(md) {
-    background-image: url(../img/bg/circles.png), url(../img/bg/gradient-green.webp);
-
-    &.pinned {
-      .bg {
-        top: 54px;
-      }
+    .btn-centered {
+      display: none;
     }
 
-    &.pinned-top {
-      .bg {
-        top: 54px;
-      }
-    }
-
-    .bg {
-      background-image: url(../img/bg/circles.png);
-      background-position: 50%;
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      height: calc(100vh - 54px);
-      top: 54px;
-    }
     .text {
-      .btn-wrap {
-        display: none;
+      &:after {
+        background-image: url(../img/bg/circles.png);
       }
     }
+
     .scroller {
       ul {
         li {
@@ -178,6 +145,7 @@
           .txt-lg {
             font-size: 15rem;
             letter-spacing: -0.06em;
+            padding: 0 10px;
           }
         }
       }
@@ -185,21 +153,21 @@
   }
 
   @include media-breakpoint-up(lg) {
-    background-image: url(../img/bg/gradient-green.webp), url(../img/bg/circles.png);
-    background-position: top 12px right -536px, 50% 54px;
-    background-size: 1400px 1400px, 100% auto;
-
-    .bg {
-      .bg-inner {
-        @include bg-after(1400px, 12px, auto);
-        &:after {
-          right: -536px;
-        }
-      }
-    }
-
     .text {
       padding: 54px 0 0;
+
+      &:before {
+        width: 1400px;
+        height: 1400px;
+        right: -536px;
+        top: 108px;
+        z-index: 1;
+      }
+
+      &:after {
+        background-position: 50% 54px;
+        background-size: 100% auto;
+      }
     }
 
     .scroller {
@@ -208,6 +176,7 @@
           margin: 0 0 150px;
 
           .txt-lg {
+            padding: 0 20px;
             font-size: 20rem;
             letter-spacing: -0.06em;
           }

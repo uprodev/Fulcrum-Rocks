@@ -100,7 +100,7 @@ jQuery(document).ready(function ($) {
       trigger: ".block-why-rocks",
       start: "top top",
       end: "bottom bottom",
-      toggleClass: "pinned",
+      toggleClass: { targets: ".block-why-rocks .btn-centered", className: "is-fixed" },
       pin: ".block-why-rocks .text",
       pinSpacing: false,
       onEnter: function () {

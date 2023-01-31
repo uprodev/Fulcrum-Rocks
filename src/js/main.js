@@ -286,6 +286,29 @@ jQuery(document).ready(function ($) {
   });
 
   // forms
+  $(".contact-form-01 .animated-input input").on("blur", function () {
+    if ($(this).attr("aria-invalid") === "true") {
+      $(this).parents(".animated-input").addClass("error");
+    } else {
+      $(this).parents(".animated-input").removeClass("error");
+    }
+  });
+
+  $(".contact-form-01 form button[type=submit]").on("mouseup", function () {
+    console.log("click");
+    setTimeout(() => {
+      $(".contact-form-01 ")
+        .find(".animated-input input")
+        .each(function () {
+          console.log($(this), $(this).attr("aria-invalid"));
+          if ($(this).attr("aria-invalid") === "true") {
+            $(this).parents(".animated-input").addClass("error");
+          } else {
+            $(this).parents(".animated-input").removeClass("error");
+          }
+        });
+    }, 600);
+  });
 
   $.jStyling.createSelect($("select.select"));
 
@@ -410,10 +433,18 @@ jQuery(document).ready(function ($) {
   }
 
   if ($(".switch").length) {
-    switchPos();
+    imagesLoaded("body", function () {
+      switchPos();
+      if ($(window).width() >= 1024) {
+        $(".switch").show();
+      }
+    });
 
     $(window).on("resize", function () {
       switchPos();
+      if ($(window).width() < 1024) {
+        $(".switch").hide();
+      }
     });
 
     $(".switch").on("click", function () {

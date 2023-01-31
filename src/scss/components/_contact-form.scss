@@ -22,7 +22,6 @@
     position: relative;
     margin: 2px 0 16px;
     width: 100%;
-    border-bottom: 1px solid $text-color;
 
     p {
       margin: 0;
@@ -44,31 +43,59 @@
       @include placeholder-text($placeholder-color, 1);
       background: none;
       border: 1px solid transparent;
-      border-radius: 5px;
+      border-bottom: 1px solid $text-color;
+      border-radius: 0;
       resize: none;
       overflow: hidden;
 
-      &:focus {
+      &:focus,
+      &:not(:placeholder-shown) {
         outline: none;
         box-shadow: none;
         border-color: transparent;
+        border-bottom-color: $headline-color;
+        @include placeholder-text($headline-color, 1);
+        color: $headline-color;
       }
 
       &:not(:placeholder-shown) {
         color: $headline-color;
       }
 
-      &.error {
+      &.error,
+      &.wpcf7-not-valid {
         @include placeholder-text($error, 1);
+        border-bottom-color: $error;
 
         & + .error-msg {
           display: block;
         }
       }
+
+      // &[aria-invalid="false"] {
+      //   &:not(:placeholder-shown) {
+      //     color: $success;
+      //     border-bottom-color: $success;
+      //   }
+      // }
     }
 
     textarea {
       padding: 14px 18px 12px;
+    }
+
+    .wpcf7-form-control-wrap {
+      display: block;
+      position: relative;
+    }
+
+    .wpcf7-not-valid-tip {
+      font-size: 10px;
+      position: absolute;
+      top: 100%;
+      line-height: 1.4;
+      margin: 4px 0 0;
+      letter-spacing: 0.01em;
     }
 
     .form-add-file {
