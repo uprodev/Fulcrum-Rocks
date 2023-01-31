@@ -249,7 +249,7 @@ jQuery(document).ready(function ($) {
     cursorborder: "none",
     cursorwidth: "4px",
   };
-  $(".scroller").niceScroll(customScrollOptions);
+  $(".scrollable").niceScroll(customScrollOptions);
 
   function stickMenu() {
     var scrollWin = $(window).scrollTop();

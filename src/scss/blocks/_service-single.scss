@@ -643,7 +643,7 @@
     margin: 0 0 113px;
 
     .txt-lg {
-      margin: -0.12em 0 263px;
+      margin: -0.12em 0 254px;
 
       .word {
         margin: -0.08em 0 0;
@@ -1005,7 +1005,7 @@
     margin-bottom: 0;
 
     .image {
-      margin: 20px 0;
+      margin: 10px 0;
 
       img {
         display: block;
@@ -1090,6 +1090,16 @@
         & + dl,
         & + ul {
           margin: 40px 0 0;
+        }
+      }
+    }
+
+    &--type1 {
+      .block-text {
+        p {
+          & + ul {
+            margin: 80px 0 0;
+          }
         }
       }
     }
@@ -1293,6 +1303,11 @@
         &.vision-circle-04 {
           bottom: 30px;
           right: -167px;
+        }
+
+        span {
+          font-size: 18px;
+          margin: 3px 0 0;
         }
       }
     }
@@ -2174,7 +2189,7 @@
     font-size: 0;
     line-height: 0;
 
-    .scroller {
+    .scrollable {
       padding: 0 0 14px;
     }
 
@@ -2233,7 +2248,7 @@
     }
 
     .list-with-arrows {
-      .scroller {
+      .scrollable {
         padding: 0;
       }
 

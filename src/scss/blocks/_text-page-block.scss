@@ -1,0 +1,258 @@
+.text-page-block {
+  margin: 0 0 60px;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1,
+  .h1 {
+    line-height: 1;
+    margin-bottom: 9px;
+    margin-right: -8px;
+
+    .char {
+      line-height: 1.2;
+    }
+  }
+
+  h5 {
+    margin: 0 0 22px;
+  }
+
+  .block-number {
+    margin: 0 0 17px;
+  }
+  .block-text {
+    margin-bottom: 0;
+
+    p {
+      margin: 0 0 21px;
+      line-height: 1.42;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.txt-gradient {
+          text-decoration: none;
+          border-image: linear-gradient(90deg, rgb(13, 153, 255), rgb(153, 250, 244));
+          border-image-slice: 100%;
+          border-width: 0 0 1px 0;
+          border-style: solid;
+          border-image-slice: 1;
+
+          &:hover {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .block-text {
+      .col {
+        &:last-child {
+          padding-top: 14px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 0 0 120px;
+
+    h1,
+    .h1 {
+      line-height: 0.95;
+      margin-bottom: 9px;
+      margin-right: -8px;
+
+      .char {
+        line-height: 1.1;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    h5 {
+      margin: 0 0 25px;
+      max-width: 560px;
+    }
+
+    .block-text {
+      p {
+        margin: 0 0 23px;
+        line-height: 1.4;
+        max-width: 560px;
+      }
+    }
+  }
+}
+
+.page-privacy {
+  .text-page-block {
+    &:first-child {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, -584px, -432px);
+
+      &:after {
+        @include bg-green;
+      }
+      @include bg-after(600px, 57px, -269px);
+    }
+
+    &:nth-child(2) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, 4px, -460px);
+    }
+
+    &:nth-child(3) {
+      &:after {
+        @include bg-green;
+      }
+      @include bg-after(600px, 377px, -281px);
+    }
+
+    &:nth-child(4) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, 191px, -423px);
+
+      &:after {
+        @include bg-green;
+      }
+      @include bg-after(600px, 954px, -331px);
+    }
+
+    &:nth-child(5) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, -535px, -436px);
+    }
+
+    &:nth-child(6) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, -53px, -233px);
+
+      &:after {
+        @include bg-green;
+      }
+      @include bg-after(600px, 428px, 20px);
+    }
+
+    &:nth-child(7) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, 69px, -165px);
+    }
+
+    &:nth-child(9) {
+      &:after {
+        @include bg-green;
+      }
+      @include bg-after(600px, 194px, 20px);
+    }
+
+    &:nth-child(11) {
+      &:before {
+        @include bg-blue;
+      }
+      @include bg-before(1000px, 427px, -439px);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .text-page-block {
+      &:first-child {
+        @include bg-before(108.4vw, -41vw, -35.5vw);
+
+        @include bg-after(84.34vw, 9vw, -28vw);
+      }
+
+      &:nth-child(2) {
+        @include bg-before(108.4vw, 21.3vw, -35.5vw);
+      }
+
+      &:nth-child(3) {
+        &:after {
+          display: none;
+        }
+      }
+
+      &:nth-child(4) {
+        &:before {
+          display: none;
+        }
+
+        @include bg-after(84.34vw, -18.5vw, -28vw);
+      }
+
+      &:nth-child(5) {
+        @include bg-before(108.4vw, -13.85vw, -35.5vw);
+      }
+
+      &:nth-child(6) {
+        &:before {
+          display: none;
+        }
+
+        @include bg-after(84.34vw, 5vw, -28vw);
+      }
+
+      &:nth-child(7) {
+        &:before {
+          display: none;
+        }
+      }
+
+      &:nth-child(8) {
+        &:before {
+          @include bg-blue;
+        }
+        @include bg-before(108.4vw, -7.8vw, -35.5vw);
+      }
+
+      &:nth-child(9) {
+        &:after {
+          @include bg-green;
+        }
+        @include bg-after(84.34vw, 13.4vw, -28vw);
+      }
+
+      &:nth-child(10) {
+        &:before {
+          @include bg-blue;
+        }
+        @include bg-before(108.4vw, 12vw, -35.5vw);
+      }
+
+      &:nth-child(11) {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
