@@ -473,7 +473,7 @@ jQuery(document).ready(function ($) {
     $(this)
       .parent()
       .hide()
-      .next(".team-more-list")
+      .prev(".team-more-list")
       .slideDown(400, function () {
         ScrollTrigger.refresh();
       });

@@ -36,6 +36,29 @@
       display: block;
       padding: 24px 0 0;
     }
+
+    .swiper-03 {
+      display: none;
+    }
+  }
+}
+
+.team-list {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+
+      .col {
+        width: 25%;
+        padding: 0 10px;
+      }
+    }
   }
 }
 
