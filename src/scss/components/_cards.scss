@@ -108,6 +108,13 @@
         .card-text {
           padding: 0 40px 37px;
         }
+
+        .card-image {
+          top: 100px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
       }
     }
   }
@@ -844,9 +851,6 @@
 
   .card-image {
     margin: 0 0 10px;
-    @include card-borders();
-    background: linear-gradient(#e9eef1 0%, #1e1e1e 100%);
-    padding: 1px;
 
     img {
       display: block;
@@ -888,8 +892,6 @@
 
   .card {
     @include abs;
-    @include card-borders();
-    background: linear-gradient(#e9eef1 0%, #1e1e1e 100%);
 
     .card-image {
       position: absolute;

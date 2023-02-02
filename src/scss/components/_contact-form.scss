@@ -130,6 +130,10 @@
     margin-top: 4px;
   }
 
+  .tab-nav p {
+    margin: 0 !important;
+  }
+
   @include media-breakpoint-up(lg) {
     p {
       max-width: 555px;

@@ -486,7 +486,7 @@
   }
 
   &.page-intro-error {
-    height: calc(100vh - 110px);
+    min-height: calc(100vh - 110px);
     .image {
       margin: 50px -90px 58px 0;
 
@@ -533,7 +533,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-      height: calc(100vh - 140px);
+      min-height: calc(100vh - 140px);
     }
 
     @include media-breakpoint-up(xl) {
