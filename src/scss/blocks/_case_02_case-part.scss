@@ -614,6 +614,7 @@
           margin: 0 0 40px;
           width: 80px;
           height: 80px;
+          border-radius: 20px;
         }
         .title {
           font-size: 28px;
@@ -698,6 +699,91 @@
           .item {
             padding: 40px;
           }
+        }
+      }
+    }
+  }
+
+  .case-icon-list-tech {
+    padding: 40px 0 0;
+
+    h5 {
+      margin: 0;
+    }
+
+    .inner {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px 20px 0;
+
+      .item {
+        width: 60px;
+        margin: 10px 10px 0 0;
+
+        .icon {
+          border: 1px solid #91999e;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+
+          img {
+            display: block;
+          }
+        }
+
+        .text {
+          display: block;
+          font-size: 14px;
+          line-height: 1.4;
+          text-align: center;
+          color: #434343;
+          margin: 4px 0 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .inner {
+        margin: 0 -15px 40px 0;
+
+        .item {
+          width: 80px;
+
+          .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+          }
+          .text {
+            font-size: 16px;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+            margin: 10px 0 0;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 20px 0 0;
+      max-width: 555px;
+
+      h5 {
+        margin: 0 0 10px;
+      }
+
+      .inner {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .item {
+          margin: 0 10px 20px 0;
         }
       }
     }

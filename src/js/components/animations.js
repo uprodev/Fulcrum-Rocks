@@ -236,6 +236,17 @@ jQuery(document).ready(function ($) {
     };
   }
 
+  // case page menu
+
+  if (document.querySelector(".case-main")) {
+    ScrollTrigger.create({
+      trigger: ".case-main",
+      start: "top top",
+      end: "bottom 10%",
+      toggleClass: { targets: ".stick-navigation", className: "stick-navigation--dark" },
+    });
+  }
+
   // footer visibility
   if (document.querySelector(".page-footer")) {
     ScrollTrigger.create({

@@ -31,6 +31,12 @@
   &.cursor-over {
     z-index: 10001;
   }
+
+  &.cursor-dark {
+    .cursor-bg .b {
+      background-color: $dark;
+    }
+  }
 }
 
 .cursor,

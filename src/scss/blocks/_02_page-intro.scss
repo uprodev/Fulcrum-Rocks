@@ -628,6 +628,26 @@
       }
     }
 
+    .video {
+      width: 100%;
+      max-width: 1046px;
+      margin: 0 auto;
+
+      .inner {
+        padding: 62.8% 0 0;
+        position: relative;
+      }
+
+      video,
+      img,
+      iframe {
+        @include abs;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     @include media-breakpoint-up(sm) {
       .txt-lg {
         float: none;

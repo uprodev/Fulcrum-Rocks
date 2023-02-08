@@ -49,6 +49,15 @@ jQuery(document).ready(function ($) {
         });
       });
 
+      document.querySelectorAll(".case-main").forEach(function (el) {
+        el.addEventListener("mouseenter", function (e) {
+          document.querySelector(".cursor").classList.add("cursor-dark");
+        });
+        el.addEventListener("mouseleave", function () {
+          document.querySelector(".cursor").classList.remove("cursor-dark");
+        });
+      });
+
       document.addEventListener("mousemove", function (e) {
         self.endX = e.clientX;
         self.endY = e.clientY;
