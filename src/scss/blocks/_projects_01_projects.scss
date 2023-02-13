@@ -225,6 +225,17 @@
         }
       }
     }
+    .projects-filter {
+      .tab-nav {
+        label {
+          font-size: 14px;
+
+          & > span {
+            padding: 14px 19px;
+          }
+        }
+      }
+    }
   }
 
   @include media-breakpoint-up(lg) {

@@ -497,8 +497,8 @@ jQuery(document).ready(function ($) {
     $(this).toggleClass("accordion-active").next(".accordion-panel").slideToggle(300);
   });
 
-  $(".accordion-toggler-panel .num, .accordion-toggler-panel .title, .accordion-toggler-panel .toggler").on("click", function () {
-    var parent = $(this).closest(".accordion-toggler-panel");
+  $(".accordion-toggler-panel").on("click", function () {
+    var parent = $(this);
     if (parent.hasClass("accordion-active")) {
       parent
         .removeClass("accordion-active")
@@ -514,6 +514,13 @@ jQuery(document).ready(function ($) {
           parent.find(".accordion-panel").slideDown(300);
         });
     }
+  });
+
+  $("button.mgbutton").each(function () {
+    var txt = $(this).text();
+    $(this).text("").addClass("btn-small");
+    var html = '<span class="btn-wrap"><span class="btn-inner">' + txt + '<span class="btn-icon"></span></span></span>';
+    $(this).html(html);
   });
 });
 

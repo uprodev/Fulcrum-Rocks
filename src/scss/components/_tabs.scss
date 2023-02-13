@@ -86,7 +86,8 @@
         }
       }
 
-      &:active {
+      &:active,
+      &.active {
         color: $headline-color;
         &:before {
           background: none;
