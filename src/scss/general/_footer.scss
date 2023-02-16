@@ -204,7 +204,7 @@
 
     span {
       display: inline-block;
-      background: #2a2a2a;
+      border: 1px solid $error;
       border-radius: 14px;
       padding: 6px 9px;
       color: $error;
@@ -312,6 +312,10 @@
 
     .footer-logo-1 {
       margin: 0;
+
+      span {
+        background: #2a2a2a;
+      }
     }
 
     .footer-main {

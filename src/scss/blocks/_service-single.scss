@@ -1215,15 +1215,6 @@
         transition: all 0.3s;
         margin: 4px 0 0;
       }
-
-      &:hover {
-        background-color: var(--color-main);
-
-        strong,
-        span {
-          color: $dark;
-        }
-      }
     }
   }
 
@@ -1255,20 +1246,6 @@
           display: block;
           color: #91999e;
           transition: all 0.3s;
-        }
-
-        &:hover {
-          .icon-arrow {
-            margin: 0 auto 14px;
-            opacity: 1;
-          }
-          strong {
-            display: block;
-            color: #001625;
-          }
-          span {
-            color: #001625;
-          }
         }
       }
     }
@@ -1332,8 +1309,11 @@
       }
 
       .vision-circle {
+        &.vision-circle-01 {
+          left: -95px;
+        }
         &.vision-circle-02 {
-          right: -152px;
+          right: -95px;
         }
         &.vision-circle-03 {
           bottom: 50px;
@@ -1822,8 +1802,18 @@
       display: flex;
       flex-direction: column;
 
-      & > .button {
-        margin-top: auto;
+      .col-left {
+        flex: 0 0 auto;
+      }
+
+      .col-right {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .colored-box-form {
+          margin-top: auto;
+        }
       }
     }
 
@@ -1846,6 +1836,8 @@
 
       .field {
         margin: 0 0 20px;
+        position: relative;
+
         label {
           font-weight: 500;
           font-size: 24px;
@@ -1865,6 +1857,30 @@
           line-height: 120%;
           color: $dark;
           padding: 9px 0;
+          @include placeholder-text($dark, 1);
+        }
+
+        .error-msg {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          color: $error;
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 140%;
+          letter-spacing: 0.01em;
+          display: none;
+          margin: 4px 0 0;
+        }
+
+        &.error {
+          input {
+            @include placeholder-text($error, 1);
+            border-bottom-color: $error;
+          }
+          .error-msg {
+            display: block;
+          }
         }
       }
     }
@@ -1882,6 +1898,7 @@
           input {
             border-color: $headline-color;
             color: $headline-color;
+            @include placeholder-text($headline-color, 1);
           }
         }
       }
@@ -1903,17 +1920,22 @@
   @include media-breakpoint-up(lg) {
     .colored-box {
       .inner {
-        background: url(../img/bg/bg-colored-box.svg) right top no-repeat;
+        background: url(../img/bg/bg-colored-box-new.svg) left -30% top 0 no-repeat;
         background-size: auto 100%;
       }
 
       .column {
-        width: 60%;
+        flex-direction: row;
         height: 500px;
-      }
+        width: auto;
 
-      p {
-        max-width: 515px;
+        .col-left {
+          width: 50.8%;
+        }
+
+        .col-right {
+          width: 49.2%;
+        }
       }
 
       form {
@@ -1938,9 +1960,11 @@
 
   @include media-breakpoint-up(xl) {
     .colored-box {
+      .inner {
+        background-position: 0 0;
+      }
       .column {
-        width: 50.5%;
-        padding: 40px;
+        padding: 42px 40px 38px;
       }
       h2 {
         font-size: 5.11rem;
@@ -1949,14 +1973,21 @@
 
       form {
         .field {
+          padding: 0 30px 0 0;
           label {
             font-size: 28px;
             line-height: 1.2;
-            margin: 0 0 14px;
+            margin: 0 0 11px;
           }
           input {
             font-size: 14px;
-            padding: 9px 0;
+            padding: 11px 0;
+          }
+        }
+
+        .submit {
+          .button {
+            height: 60px;
           }
         }
       }

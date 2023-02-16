@@ -522,6 +522,29 @@ jQuery(document).ready(function ($) {
     var html = '<span class="btn-wrap"><span class="btn-inner">' + txt + '<span class="btn-icon"></span></span></span>';
     $(this).html(html);
   });
+
+  var text;
+  $(".block-service-colored-box .colored-box form .submit .button").on("mousedown", function () {
+    text = $(this).find(".btn-text").text();
+    $(this).find(".btn-text").text("Check your email");
+  });
+  $(".block-service-colored-box .colored-box form ").on("submit", function (e) {
+    var err = false;
+    var form = $(this);
+    form.find("input[type=email]").each(function () {
+      var patternMail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+      if (!patternMail.test($(this).val()) || $(this).val() == "") {
+        err = true;
+        $(this).closest(".field").addClass("error");
+      } else {
+        $(this).closest(".field").removeClass("error");
+      }
+    });
+    $(this).find(".submit .button .btn-text").text(text);
+    if (err) {
+      e.preventDefault();
+    }
+  });
 });
 
 if (document.getElementById("contactFormMessage")) {

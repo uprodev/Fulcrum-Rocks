@@ -560,7 +560,10 @@
                   <span class="txt-gradient" data-delay="0.5">expect?</span>
                 </div>
                 <div class="image">
-                  <img src="assets/img/product-team.svg" alt="" />
+                  <picture>
+                    <source media="(min-width: 1024px)" srcset="assets/img/product-team.svg" />
+                    <img loading="lazy" src="assets/img/product-team-m.svg" alt="" />
+                  </picture>
                 </div>
               </div>
               <div class="col">
@@ -580,21 +583,35 @@
 
         <div class="block-service-colored-box">
           <div class="container">
-            <div class="colored-box colored-box--headline-wide">
+            <div class="colored-box">
               <div class="inner">
                 <div class="column">
-                  <div class="text">
+                  <div class="col-left">
                     <h2>Free “Check your vendor” checklist</h2>
-                    <p>Choosing a vendor can be a nightmare. We’ve made this set of guidelines and questions that you can use to get a perfect match. Leave your email and unlock our Notion-based checklist for free.</p>
                   </div>
-                  <a href="#" class="button">
-                    <span class="btn-wrap">
-                      <span class="btn-inner">
-                        Get for FREE
-                        <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-dark.svg" alt="" /></span>
-                      </span>
-                    </span>
-                  </a>
+                  <div class="col-right">
+                    <p>Choosing a vendor can be a nightmare. We’ve made this set of guidelines and questions that you can use to get a perfect match. Leave your email and unlock our Notion-based checklist for free.</p>
+
+                    <div class="colored-box-form">
+                      <form action="#">
+                        <div class="field">
+                          <label for="email100">Your email here:</label>
+                          <input type="email" id="email100" placeholder="Email*" />
+                          <span class="error-msg">Placeholder</span>
+                        </div>
+                        <div class="submit">
+                          <button type="submit" class="button">
+                            <span class="btn-wrap">
+                              <span class="btn-inner">
+                                <span class="btn-text">Get for FREE</span>
+                                <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-dark.svg" alt="" /></span>
+                              </span>
+                            </span>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
