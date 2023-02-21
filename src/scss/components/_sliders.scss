@@ -126,6 +126,43 @@
   }
 }
 
+.swiper-11 {
+  @include media-breakpoint-down(sm) {
+    .swiper-wrapper {
+      display: block;
+    }
+    .swiper-slide {
+      margin: 0 0 10px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .swiper-slide {
+      width: 340px;
+      margin: 0 0 12px;
+    }
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .swiper-slide {
+      width: 470px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .swiper-slide {
+      width: 555px;
+    }
+  }
+}
+
 .swiper-02 {
   .swiper-slide {
     width: 335px;

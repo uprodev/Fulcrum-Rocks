@@ -360,17 +360,6 @@
   }
 
   @include media-breakpoint-up(lg) {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    opacity: 0;
-
-    &.is-active {
-      opacity: 1;
-    }
-
     .footer-wrapper {
       height: auto;
       padding: 114px 0 20px;
@@ -451,7 +440,7 @@
     }
 
     nav {
-      margin: 0 0 40px;
+      margin: 0 0 35px;
 
       strong {
         font-size: 16px;
@@ -460,8 +449,8 @@
 
       ul {
         li {
-          margin: 22px 0 0;
-          font-size: 0.78rem;
+          margin: 16px 0 0;
+          font-size: 0.9rem;
 
           a {
             letter-spacing: 0.01em;

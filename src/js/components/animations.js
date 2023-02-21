@@ -1,4 +1,16 @@
 jQuery(document).ready(function ($) {
+  function footer() {
+    if ($(window).width() >= 1024) {
+      $(".page-wrapper").css("padding-bottom", $(".footer-wrapper").outerHeight());
+    } else {
+      $(".page-wrapper").removeAttr("style");
+    }
+  }
+  footer();
+  $(window).on("resize", function () {
+    footer();
+  });
+
   // headlines animation
   function animateHeadlines(splits) {
     splits.forEach((spl) => {
@@ -40,7 +52,7 @@ jQuery(document).ready(function ($) {
   }
 
   var splits = document.querySelectorAll(".split");
-  animateHeadlines(splits);
+  // animateHeadlines(splits);
 
   var gradients = document.querySelectorAll(".txt-gradient");
   gsap.utils.toArray(gradients).forEach((gradient, i) => {

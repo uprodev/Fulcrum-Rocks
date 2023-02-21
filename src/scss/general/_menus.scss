@@ -285,6 +285,17 @@
         }
       }
     }
+
+    &.current_page_item,
+    &.current-menu-item {
+      & > a {
+        pointer-events: none;
+        &:before {
+          background-color: $headline-color;
+          opacity: 1;
+        }
+      }
+    }
   }
 
   ul {
