@@ -27,6 +27,14 @@
     }
   }
 
+  .txt-gradient {
+    background-color: $white;
+    background-image: linear-gradient(90deg, var(--color-main) 0%, $headline-color 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   &--green {
     --color-main: #30db74;
 
@@ -155,6 +163,25 @@
       }
     }
 
+    .block-service-colored-box .colored-box {
+      h2,
+      p {
+        color: $headline-color;
+      }
+      form {
+        .field {
+          label {
+            color: $headline-color;
+          }
+          input {
+            border-color: $headline-color;
+            color: $headline-color;
+            @include placeholder-text($headline-color, 1);
+          }
+        }
+      }
+    }
+
     @include media-breakpoint-up(lg) {
       .block-service-cards {
         &:before {
@@ -239,6 +266,25 @@
         content: "";
         top: 173px;
         left: -465px;
+      }
+    }
+
+    .block-service-colored-box .colored-box {
+      h2,
+      p {
+        color: $headline-color;
+      }
+      form {
+        .field {
+          label {
+            color: $headline-color;
+          }
+          input {
+            border-color: $headline-color;
+            color: $headline-color;
+            @include placeholder-text($headline-color, 1);
+          }
+        }
       }
     }
 
@@ -1884,25 +1930,6 @@
         }
       }
     }
-
-    &--text-light {
-      h2,
-      p {
-        color: $headline-color;
-      }
-      form {
-        .field {
-          label {
-            color: $headline-color;
-          }
-          input {
-            border-color: $headline-color;
-            color: $headline-color;
-            @include placeholder-text($headline-color, 1);
-          }
-        }
-      }
-    }
   }
 
   @include media-breakpoint-up(md) {
@@ -1931,6 +1958,7 @@
 
         .col-left {
           width: 50.8%;
+          padding-right: 20px;
         }
 
         .col-right {

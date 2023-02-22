@@ -54,41 +54,41 @@ jQuery(document).ready(function ($) {
   var splits = document.querySelectorAll(".split");
   // animateHeadlines(splits);
 
-  var gradients = document.querySelectorAll(".txt-gradient");
-  gsap.utils.toArray(gradients).forEach((gradient, i) => {
-    var delay = 0;
-    if (gradient.dataset.delay) {
-      delay = gradient.dataset.delay;
-    }
+  // var gradients = document.querySelectorAll(".txt-gradient");
+  // gsap.utils.toArray(gradients).forEach((gradient, i) => {
+  //   var delay = 0;
+  //   if (gradient.dataset.delay) {
+  //     delay = gradient.dataset.delay;
+  //   }
 
-    var bgEnd = "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)";
+  //   var bgEnd = "linear-gradient(90deg, #0d99ff 0%, #99faf4 100%)";
 
-    if ($(".page-services--green").length) {
-      bgEnd = "linear-gradient(90deg, #30db74 0%, #E9EEF1 100%)";
-    }
-    if ($(".page-services--purple").length) {
-      bgEnd = "linear-gradient(90deg, #695cff 0%, #E9EEF1 100%)";
-    }
-    if ($(".page-services--orange").length) {
-      bgEnd = "linear-gradient(90deg, #ffae33 0%, #E9EEF1 100%)";
-    }
-    if ($(".page-services--yellow").length) {
-      bgEnd = "linear-gradient(90deg, #ffd426 0%, #E9EEF1 100%)";
-    }
+  //   if ($(".page-services--green").length) {
+  //     bgEnd = "linear-gradient(90deg, #30db74 0%, #E9EEF1 100%)";
+  //   }
+  //   if ($(".page-services--purple").length) {
+  //     bgEnd = "linear-gradient(90deg, #695cff 0%, #E9EEF1 100%)";
+  //   }
+  //   if ($(".page-services--orange").length) {
+  //     bgEnd = "linear-gradient(90deg, #ffae33 0%, #E9EEF1 100%)";
+  //   }
+  //   if ($(".page-services--yellow").length) {
+  //     bgEnd = "linear-gradient(90deg, #ffd426 0%, #E9EEF1 100%)";
+  //   }
 
-    gsap.to(gradient, {
-      scrollTrigger: {
-        markers: false,
-        trigger: gradient,
-        scrub: false,
-        toggleActions: "play resume resume resume",
-        start: "top bottom",
-      },
-      backgroundImage: bgEnd,
-      duration: 1,
-      delay: delay,
-    });
-  });
+  //   gsap.to(gradient, {
+  //     scrollTrigger: {
+  //       markers: false,
+  //       trigger: gradient,
+  //       scrub: false,
+  //       toggleActions: "play resume resume resume",
+  //       start: "top bottom",
+  //     },
+  //     backgroundImage: bgEnd,
+  //     duration: 1,
+  //     delay: delay,
+  //   });
+  // });
 
   $(".card-effect-05")
     .on("mouseenter", function () {
