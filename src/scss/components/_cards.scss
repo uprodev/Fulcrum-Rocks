@@ -728,10 +728,10 @@
 
       .card-image {
         position: absolute;
-        top: 20px;
-        bottom: 20px;
+        top: 0;
+        bottom: 0;
         right: 0;
-        left: 20px;
+        left: 0;
         z-index: 2;
 
         img {
@@ -763,16 +763,6 @@
 
   @include media-breakpoint-up(lg) {
     padding: 123.07% 0 0;
-
-    .card {
-      .card-inner {
-        .card-image {
-          top: 40px;
-          bottom: 40px;
-          left: 40px;
-        }
-      }
-    }
   }
 
   @include media-breakpoint-up(xl) {

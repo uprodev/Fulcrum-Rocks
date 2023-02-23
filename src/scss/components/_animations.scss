@@ -481,6 +481,10 @@
       @include card-borders();
       transition: opacity 0.3s ease;
       opacity: 0;
+
+      @include media-breakpoint-down(lg) {
+        opacity: 1;
+      }
     }
 
     .card-inner {
@@ -489,31 +493,35 @@
       background: linear-gradient(180deg, #050505 0%, #191919 100%);
       position: relative;
 
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
+      // &:before,
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   opacity: 0;
+      //   transition: opacity 0.3s ease;
+      // }
 
-      &:before {
-        left: 0;
-        top: 0;
-        width: 258px;
-        height: 254px;
-      }
-      &:after {
-        right: 0;
-        bottom: 0;
-        width: 267px;
-        height: 279px;
-      }
+      // &:before {
+      //   left: 0;
+      //   top: 0;
+      //   width: 258px;
+      //   height: 254px;
+      // }
+      // &:after {
+      //   right: 0;
+      //   bottom: 0;
+      //   width: 267px;
+      //   height: 279px;
+      // }
 
       .card-image {
         opacity: 0;
         transition: opacity 0.4s ease;
         mix-blend-mode: screen;
+
+        @include media-breakpoint-down(lg) {
+          opacity: 1;
+        }
       }
     }
 
@@ -522,15 +530,15 @@
         opacity: 1;
       }
 
-      .card-inner {
-        &:before,
-        &:after {
-          opacity: 1;
-        }
-      }
+      // .card-inner {
+      //   &:before,
+      //   &:after {
+      //     opacity: 1;
+      //   }
+      // }
 
       .card-image {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
@@ -539,15 +547,15 @@
         background: $headline-color;
       }
 
-      .card-inner {
-        &:before,
-        &:after {
-          opacity: 1;
-        }
-      }
+      // .card-inner {
+      //   &:before,
+      //   &:after {
+      //     opacity: 1;
+      //   }
+      // }
 
       .card-image {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
@@ -556,15 +564,15 @@
         opacity: 1;
       }
 
-      .card-inner {
-        &:before,
-        &:after {
-          opacity: 1;
-        }
-      }
+      // .card-inner {
+      //   &:before,
+      //   &:after {
+      //     opacity: 1;
+      //   }
+      // }
 
       .card-image {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
@@ -590,135 +598,112 @@
     --gradient-start: #30db74;
     --overlay: #0b2516;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-green-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-green-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-green-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-green-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-blue {
     --gradient-start: #0d99ff;
     --overlay: #061b2a;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-blue-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-blue-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-blue-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-blue-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-purple {
     --gradient-start: #695cff;
     --overlay: #14122a;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-purple-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-purple-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-purple-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-purple-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-orange {
     --gradient-start: #ffae33;
     --overlay: #2a1e0c;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-yellow-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-yellow-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-yellow-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-yellow-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-red {
     --gradient-start: #ff544b;
     --overlay: #2a110f;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-red-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-red-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-red-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-red-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-lightblue {
     --gradient-start: #62d3ff;
     --overlay: #13242a;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-lightblue-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-lightblue-bottom.svg) no-repeat;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-lightblue-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-lightblue-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 
   &--color-yellow {
     --gradient-start: #ffd426;
     --overlay: #2a240a;
 
-    .card {
-      .card-inner {
-        &:before {
-          background: url(../img/bg/service-lightyellow-top.svg) no-repeat;
-        }
-        &:after {
-          background: url(../img/bg/service-lightyellow-bottom.svg) no-repeat;
-        }
-      }
-    }
-  }
-
-  &.card-type-01 {
-    .card-inner {
-      &:before,
-      &:after {
-        display: none;
-      }
-    }
-
-    .card {
-      &:hover {
-        .card-image {
-          opacity: 1;
-        }
-      }
-
-      &:focus {
-        .card-image {
-          opacity: 1;
-        }
-      }
-    }
+    // .card {
+    //   .card-inner {
+    //     &:before {
+    //       background: url(../img/bg/service-lightyellow-top.svg) no-repeat;
+    //     }
+    //     &:after {
+    //       background: url(../img/bg/service-lightyellow-bottom.svg) no-repeat;
+    //     }
+    //   }
+    // }
   }
 }
 
