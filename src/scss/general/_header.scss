@@ -73,9 +73,12 @@
 
   @include media-breakpoint-up(lg) {
     padding: 9px 0;
+    height: 60px;
+    overflow: hidden;
 
     .logo {
       width: 140px;
+      max-width: 140px;
       flex: 0 0 auto;
 
       a {
@@ -85,6 +88,7 @@
 
     .header-buttons {
       width: 140px;
+      max-width: 140px;
       flex: 0 0 auto;
 
       .btn-small {

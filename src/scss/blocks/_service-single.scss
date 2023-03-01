@@ -77,6 +77,22 @@
       }
     }
 
+    .block-service-colored-box {
+      .colored-box {
+        form {
+          .button {
+            &.btn-success {
+              .btn-wrap {
+                &:after {
+                  background: #695cff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     @include media-breakpoint-up(lg) {
       .block-service-cards {
         &:before {
@@ -1880,6 +1896,10 @@
       display: flex;
       flex-direction: column;
 
+      .wpcf7-not-valid-tip {
+        display: none !important;
+      }
+
       .field {
         margin: 0 0 20px;
         position: relative;
@@ -1926,6 +1946,40 @@
           }
           .error-msg {
             display: block;
+          }
+        }
+      }
+
+      .button {
+        &.btn-success {
+          .btn-wrap {
+            &:after {
+              background: #30db74;
+              opacity: 1;
+            }
+          }
+          .btn-inner {
+            color: $dark;
+          }
+          .btn-icon {
+            &:before {
+              width: 30px;
+              height: 30px;
+              background-image: url(../img/icons/ico-success.svg);
+              background-repeat: no-repeat;
+              background-position: 50%;
+            }
+
+            img {
+              display: none;
+            }
+
+            @include media-breakpoint-up(md) {
+              &:before {
+                width: 42px;
+                height: 42px;
+              }
+            }
           }
         }
       }

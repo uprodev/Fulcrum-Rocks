@@ -32,11 +32,6 @@
   .txt-lg {
     position: relative;
     z-index: 1;
-    margin-top: -0.1em;
-
-    .txt-lg-last {
-      margin-top: -0.15em;
-    }
   }
 
   .text {
@@ -669,6 +664,49 @@
       .image {
         transform: translateX(-3.47vw);
         // margin: -123px auto 0;
+      }
+    }
+  }
+
+  &.page-intro-career {
+    padding: 0 0 55px;
+
+    .txt-lg {
+      margin: 0 -13px 114px 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .txt-lg {
+        margin-right: 0;
+        float: none;
+        width: auto;
+      }
+
+      .text {
+        float: none;
+        width: auto;
+        margin: 0;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      .txt-lg {
+        .txt-gradient {
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 0 110px;
+
+      .txt-lg {
+        margin-bottom: 98px;
+      }
+
+      .text {
+        max-width: 555px;
       }
     }
   }

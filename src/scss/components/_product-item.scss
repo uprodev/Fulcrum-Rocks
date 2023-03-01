@@ -1,0 +1,179 @@
+.product-item {
+  .card-type-02 {
+    max-width: 555px;
+  }
+  .product-description {
+    padding: 11px 0 0;
+
+    p {
+      max-width: 555px;
+      margin: 0 0 20px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: flex;
+        height: 54px;
+        align-items: center;
+
+        .line-animated {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+        }
+
+        strong {
+          width: 86px;
+          flex: 0 0 auto;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 100%;
+          letter-spacing: -0.01em;
+          color: $headline-color;
+        }
+      }
+    }
+  }
+
+  .product-review {
+    @include card-border;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    blockquote {
+      @extend .h3;
+      line-height: 1;
+    }
+
+    .review-author {
+      display: flex;
+      position: relative;
+
+      figure {
+        flex: 0 0 auto;
+        width: 37px;
+        height: 37px;
+        margin: 0 11px 0 0;
+
+        img {
+          @include img-fit;
+        }
+      }
+
+      .review-author-text {
+        font-size: 12px;
+        line-height: 140%;
+        width: 100%;
+
+        p {
+          font-weight: 500;
+          font-size: 14px;
+          color: $headline-color;
+          margin: 0;
+        }
+      }
+
+      .card-arrow {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    margin: 0 -10px;
+
+    .col {
+      width: 50%;
+      padding: 0 10px;
+    }
+
+    .product-description {
+      padding: 0;
+    }
+
+    .product-review {
+      height: 340px;
+
+      blockquote {
+        margin: 0 60px 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .product-description {
+      ul {
+        li {
+          strong {
+            width: 5em;
+          }
+        }
+      }
+    }
+
+    .product-review {
+      padding: 40px;
+
+      blockquote {
+        line-height: 1.2;
+        margin: 0 75px 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .product-description {
+      ul {
+        margin: 42px 0 0;
+
+        li {
+          height: 104px;
+
+          strong {
+            width: 157px;
+            font-size: 48px;
+          }
+          span {
+            max-width: 398px;
+          }
+        }
+      }
+    }
+
+    .product-review {
+      margin: 40px 0 0;
+
+      .review-author {
+        margin-right: 36px;
+
+        figure {
+          width: 50px;
+          height: 50px;
+          margin: 0 10px 0 0;
+        }
+
+        .review-author-text {
+          font-size: 14px;
+          letter-spacing: 0.01em;
+          color: $headline-color;
+
+          p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+}

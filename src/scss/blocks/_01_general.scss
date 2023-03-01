@@ -238,3 +238,19 @@
     }
   }
 }
+
+.tab-menu-wrapper {
+  overflow: auto;
+  @include hidescroll;
+  margin-right: -20px;
+
+  .tab-nav {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    li {
+      margin-top: 0;
+    }
+  }
+}

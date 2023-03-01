@@ -394,6 +394,7 @@
 
 .card-effect-04 {
   --rotate: 0deg;
+  position: relative;
   &:before {
     content: "";
     @include abs;
@@ -417,6 +418,7 @@
 
   .card {
     overflow: hidden;
+    display: block;
 
     &:before {
       position: absolute;
@@ -707,6 +709,58 @@
   }
 }
 
+.card-effect-07 {
+  position: relative;
+
+  &:before {
+    content: "";
+    @include abs;
+    @include gradient-y(rgba(#e9eef1, 0.5), rgba(#1e1e1e, 0.5));
+    @include card-borders();
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include gradient-base;
+    @include card-borders();
+  }
+
+  .card {
+    overflow: hidden;
+    display: block;
+    padding: 1px;
+
+    .card-inner {
+      background: linear-gradient(180deg, #050505 0%, #191919 100%);
+      @include card-borders();
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    &:before {
+      opacity: 0;
+    }
+    &:after {
+      opacity: 1;
+    }
+
+    .card {
+      .card-inner {
+        background: $black;
+      }
+    }
+  }
+}
+
 // lines
 .line-animated {
   width: 100%;
@@ -778,6 +832,29 @@
 
   @include media-breakpoint-up(md) {
     font-size: 21vw;
+  }
+}
+
+.plane-animation {
+  .marquee {
+    --offset: 0vw;
+    --move-final: calc(-12.5% + var(--offset));
+    --move-initial: calc(-37.5% + var(--offset));
+    margin: 0;
+
+    .marquee__inner {
+      animation-duration: 10s;
+    }
+
+    span {
+      padding: 0 50px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    span {
+      padding: 0 120px;
+    }
   }
 }
 

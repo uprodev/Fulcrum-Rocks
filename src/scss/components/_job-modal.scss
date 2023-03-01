@@ -1,0 +1,143 @@
+.job-form {
+  .field {
+    position: relative;
+    padding: 10px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23E9EEF180' stroke-width='1' stroke-dasharray='7%2c12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 12px;
+    margin: 0 0 10px;
+    font-size: 12px;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+    }
+
+    p {
+      color: $headline-color;
+      margin: 0;
+      background: url(../img/icons/ico-file-add.svg) 0 50% no-repeat;
+      background-size: 18px auto;
+      padding: 0 0 0 25px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+
+    .submit {
+      width: 250px;
+      flex: 0 0 auto;
+      padding-left: 15px;
+
+      .button {
+        display: flex;
+      }
+    }
+
+    .field {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .submit {
+      width: 315px;
+    }
+
+    .field {
+      padding: 0 20px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .field {
+      font-size: 14px;
+
+      p {
+        letter-spacing: 0.01em;
+        background-size: auto;
+        padding-left: 47px;
+      }
+    }
+  }
+}
+
+.job-options {
+  margin: 0;
+
+  td {
+    vertical-align: middle;
+    padding-bottom: 4px;
+    font-size: 12px;
+  }
+
+  p {
+    font-family: $ff-inter;
+    padding-right: 16px;
+    line-height: 15px;
+    color: $white;
+    margin: 0;
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    line-height: 1.3;
+    color: $text-color;
+  }
+}
+
+.job-data {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  h4 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 30px 0 20px;
+    color: $white;
+  }
+
+  p {
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  ul {
+    margin: 0 0 0 10px;
+    padding: 0;
+    list-style-type: disc;
+    line-height: 1.35;
+    list-style-position: inside;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 26px 0 0 4px;
+
+    & > li {
+      display: flex;
+      margin: 0 0 20px;
+    }
+
+    h4 {
+      flex: 0 0 auto;
+      width: 21%;
+      margin: 2px 0 0;
+    }
+  }
+}

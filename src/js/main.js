@@ -281,6 +281,30 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if ($(".swiper-07").length) {
+    const swiper7 = new Swiper(".swiper-07", {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 160,
+      autoHeight: true,
+      scrollbar: {
+        el: ".swiper-07 .swiper-scrollbar",
+        draggable: true,
+        hide: false,
+      },
+      navigation: {
+        nextEl: ".swiper-07 .swiper-button-next",
+        prevEl: ".swiper-07 .swiper-button-prev",
+      },
+
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+  }
+
   customScrollOptions = {
     touchbehavior: true,
     overflowx: true,
@@ -551,11 +575,6 @@ jQuery(document).ready(function ($) {
     $(this).html(html);
   });
 
-  var text;
-  $(".block-service-colored-box .colored-box form .submit .button").on("mousedown", function () {
-    text = $(this).find(".btn-text").text();
-    $(this).find(".btn-text").text("Check your email");
-  });
   $(".block-service-colored-box .colored-box form ").on("submit", function (e) {
     var err = false;
     var form = $(this);
@@ -568,10 +587,46 @@ jQuery(document).ready(function ($) {
         $(this).closest(".field").removeClass("error");
       }
     });
-    $(this).find(".submit .button .btn-text").text(text);
     if (err) {
       e.preventDefault();
     }
+  });
+
+  $("a[data-modal]").click(function (event) {
+    $(this).modal({
+      showClose: false,
+      fadeDuration: 100,
+    });
+    return false;
+  });
+  $(".modal").on($.modal.BEFORE_BLOCK, function (event, modal) {
+    var scrollbar = getScrollBarWidth();
+    $(".header").css({ right: scrollbar });
+    $(".page-wrapper").css({ "padding-right": scrollbar });
+    $(".stick-navigation").css({ "margin-left": -scrollbar / 2 });
+  });
+  $(".modal").on($.modal.AFTER_CLOSE, function (event, modal) {
+    $(".header").css({ right: 0 });
+    $(".page-wrapper").css({ "padding-right": 0 });
+    $(".stick-navigation").css({ "margin-left": 0 });
+  });
+
+  $("#modalJob").on($.modal.OPEN, function (event, modal) {
+    $(".modal-content").niceScroll({
+      touchbehavior: true,
+      overflowx: false,
+      overflowy: true,
+      cursorcolor: "#373737",
+      cursorborder: "none",
+      cursorwidth: "6px",
+      cursoropacitymin: 1,
+      zindex: 9,
+      railoffset: { top: 0, left: -14 },
+    });
+  });
+
+  $(".job-form input").on("change", function () {
+    // console.log($(this).val());
   });
 });
 
