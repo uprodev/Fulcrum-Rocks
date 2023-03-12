@@ -309,3 +309,26 @@
     }
   }
 }
+
+.swiper-11 {
+  @include media-breakpoint-up(sm) {
+    margin: 0 -13px 0 0;
+    overflow: hidden;
+  }
+  @include media-breakpoint-up(xl) {
+    margin: 0 -40px 0 0;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin: 0 -150px 0 0;
+  }
+}
+
+.swiper-08 {
+  .swiper-slide {
+    width: 335px;
+
+    @include media-breakpoint-up(sm) {
+      width: 340px;
+    }
+  }
+}

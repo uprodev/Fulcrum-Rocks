@@ -710,4 +710,81 @@
       }
     }
   }
+
+  &.page-intro-marketplace {
+    padding: 0 0 52px;
+
+    .wrapper {
+      position: relative;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .txt-lg {
+      margin: 0 0 219px;
+      position: relative;
+      z-index: 2;
+      line-height: 0.93;
+    }
+
+    .image {
+      position: absolute;
+      left: 5px;
+      right: 6px;
+      top: 50px;
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .d-sm-none {
+        display: none;
+      }
+      .d-sm-block {
+        display: block;
+      }
+
+      .txt-lg {
+        float: none;
+        width: auto;
+      }
+
+      .image {
+        left: auto;
+        right: 0;
+        width: 50%;
+      }
+
+      .text {
+        float: none;
+        width: auto;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+      margin: 0 0 110px;
+
+      .image {
+        top: -25px;
+        right: -10px;
+      }
+      .txt-lg {
+        margin: 0 0 272px;
+      }
+      .text {
+        max-width: 555px;
+      }
+    }
+  }
 }

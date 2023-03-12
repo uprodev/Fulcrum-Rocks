@@ -1,0 +1,517 @@
+.page-marketplace {
+  --color-main: #3726ff;
+
+  .txt-gradient {
+    background-color: $white;
+    background-image: linear-gradient(90deg, var(--color-main) 0%, $headline-color 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 5px 0 0;
+  }
+
+  .block-business {
+    padding-bottom: 0;
+  }
+
+  .block-page {
+    .tab-menu-wrapper {
+      @include media-breakpoint-up(md) {
+        overflow: visible;
+
+        .tab-nav {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 10px;
+        }
+      }
+    }
+
+    .card-type-10 {
+      height: 260px;
+
+      .card {
+        .card-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h3 {
+            line-height: 1;
+            margin: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 300px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 400px;
+
+        .card {
+          .card-inner {
+            h3 {
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+
+    .card-type-07 {
+      height: 260px;
+
+      .card {
+        .card-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .card-icon {
+            flex: 0 0 auto;
+            margin: 0;
+          }
+
+          h3 {
+            line-height: 1;
+            margin: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 300px;
+      }
+    }
+
+    .swiper-08 {
+      @include media-breakpoint-up(lg) {
+        .swiper-wrapper {
+          margin: 0 -10px;
+          flex-wrap: wrap;
+          row-gap: 20px;
+          width: auto;
+        }
+        .swiper-slide {
+          padding: 0 10px;
+          width: 25%;
+        }
+      }
+    }
+
+    &.block-page--market1 {
+      .block-text {
+        margin-bottom: 22px;
+      }
+
+      .card-type-10 {
+        .card {
+          p {
+            min-height: 2.8em;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .block-text {
+          margin-bottom: 37px;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .card-type-10 {
+          .card {
+            .card-inner {
+              padding-right: 25px;
+            }
+          }
+        }
+      }
+    }
+
+    &.block-page--market2 {
+      margin: 0 0 51px;
+
+      .block-text {
+        p {
+          margin: 8px 0 21px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .image {
+        padding: 16px 0 0;
+        text-align: center;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 0 77px;
+
+        .block-text {
+          p {
+            margin: 37px 0 -12px;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .image {
+          padding: 18px 115px 0 0;
+        }
+      }
+    }
+
+    &.block-page--market3 {
+      .block-text {
+        margin: 0 0 20px;
+
+        p {
+          margin: 19px 0 11px;
+        }
+      }
+
+      .tab-nav {
+        li {
+          a {
+            & > span {
+              padding-left: 27px;
+              padding-right: 27px;
+            }
+          }
+        }
+      }
+
+      .card-type-10 {
+        .card {
+          .card-inner {
+            p {
+              min-height: 4.2em;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .block-text {
+          margin: 0 0 41px;
+
+          p {
+            margin: 13px 0 19px;
+          }
+        }
+
+        .tab-nav {
+          li {
+            a {
+              & > span {
+                padding-left: 47px;
+                padding-right: 47px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.block-page--market4 {
+      .image {
+        padding: 6px 0;
+        text-align: center;
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      dl {
+        margin: 22px 0 0;
+        padding: 0;
+
+        dt {
+          display: block;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 100%;
+          letter-spacing: -0.01em;
+          color: $headline-color;
+          margin: 0 0 10px;
+        }
+
+        dd {
+          display: block;
+          margin: 0 0 21px;
+          line-height: 1.4;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .image {
+          padding: 107px 0 0;
+        }
+
+        dl {
+          margin: 43px 0 0;
+          max-width: 555px;
+
+          dt {
+            font-size: 28px;
+            margin: 0 0 12px;
+          }
+
+          dd {
+            margin: 0 0 44px;
+          }
+        }
+      }
+    }
+
+    &.block-page--market5 {
+      .block-text {
+        margin: 0 0 20px;
+
+        p {
+          margin: 8px 0 20px;
+        }
+      }
+
+      .tab-nav {
+        li {
+          a {
+            & > span {
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .block-text {
+          margin: 0 0 41px;
+
+          p {
+            margin: 13px 0 18px;
+          }
+        }
+
+        .tab-nav {
+          li {
+            a {
+              & > span {
+                padding-left: 19px;
+                padding-right: 19px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.block-page--market6 {
+      .block-text {
+        margin: 0 0 20px;
+
+        p {
+          margin: 8px 0 0;
+        }
+      }
+
+      .card-type-07 {
+        .card {
+          .card-inner {
+            h3 {
+              white-space: nowrap;
+              margin: 0 0 9px;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .block-text {
+          margin: 0 0 37px;
+
+          p {
+            margin: 12px 0 0;
+          }
+        }
+
+        .swiper-08 {
+          .swiper-wrapper {
+            position: relative;
+            margin: 0;
+            border: 1px solid #434343;
+            @include card-borders();
+            row-gap: 0;
+
+            &:before {
+              content: "";
+              position: absolute;
+              width: 25px;
+              height: 25px;
+              background-color: #434343;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              transform: rotate(45deg) translate3d(56%, 0, 0);
+              opacity: 0.7;
+            }
+          }
+
+          .swiper-slide {
+            padding: 0;
+            width: 32.4%;
+          }
+        }
+
+        .card-type-07 {
+          height: 268px;
+          .card {
+            border: none;
+            border-radius: 0;
+            clip-path: none;
+            &:before {
+              display: none;
+            }
+            .card-inner {
+              h3 {
+                white-space: normal;
+                margin: 0 0 14px;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .swiper-08 {
+          .swiper-wrapper {
+            &:before {
+              width: 40px;
+              height: 40px;
+              transform: rotate(45deg) translate3d(59%, 0, 0);
+            }
+          }
+        }
+      }
+    }
+
+    &.block-page--market7 {
+      margin: 0 0 40px;
+
+      .block-text {
+        margin: 0 0 20px;
+
+        p {
+          margin: 8px 0 20px;
+        }
+      }
+
+      .tab-nav {
+        li {
+          a {
+            & > span {
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+
+      .card-type-02 {
+        .card {
+          .card-inner {
+            .card-image {
+              top: 20px;
+            }
+            .card-top {
+              margin: 0 0 1px;
+              h2 {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        .tab-nav li a > span {
+          padding: 10.6px 15px;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        right: 16px;
+        top: 310px;
+      }
+      .swiper-scrollbar-horizontal {
+        margin: 15px 0 0;
+      }
+
+      @include media-breakpoint-up(md) {
+        .swiper-button-prev,
+        .swiper-button-next {
+          top: 46.8%;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 0 40px;
+
+        .block-text {
+          margin: 0 0 37px;
+
+          p {
+            margin: 12px 0 20px;
+          }
+        }
+
+        .tab-nav {
+          li {
+            a {
+              & > span {
+                padding-left: 19px;
+                padding-right: 19px;
+              }
+            }
+          }
+        }
+
+        .card-type-02 {
+          padding: 0;
+          height: 660px;
+          .card {
+            .card-inner {
+              .card-image {
+                top: 40px;
+              }
+              .card-top {
+                margin: 0 0 7px;
+              }
+            }
+          }
+
+          .tab-nav li a > span {
+            padding: 14px 19px !important;
+          }
+        }
+
+        .swiper-scrollbar-horizontal {
+          margin: 40px 0 0;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+          right: 44px;
+        }
+      }
+    }
+  }
+}

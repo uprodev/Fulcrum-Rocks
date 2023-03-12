@@ -38,9 +38,17 @@
 
     .contact-form {
       p,
-      .form-wrapper,
       .field {
         max-width: 555px;
+      }
+
+      .form-wrapper {
+        max-width: 470px;
+      }
+
+      p {
+        margin: 7px 0 40px;
+        line-height: 1.39;
       }
     }
   }

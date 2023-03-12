@@ -301,7 +301,73 @@ jQuery(document).ready(function ($) {
         init: function () {
           ScrollTrigger.refresh();
         },
+        realIndexChange: function (swiper) {
+          console.log(swiper.realIndex);
+          $(".swiper-07-nav [data-slide]").each(function () {
+            if (parseInt($(this).attr("data-slide")) === swiper.realIndex && !$(this).hasClass("active")) {
+              $(".swiper-07-nav .active").removeClass("active");
+              $(this).parent().addClass("active");
+            }
+          });
+        },
       },
+    });
+
+    $(".swiper-07-nav [data-slide]").on("click", function (e) {
+      e.preventDefault();
+      var slide = parseInt($(this).attr("data-slide"));
+      $(".swiper-07-nav .active").removeClass("active");
+      $(this).parent().addClass("active");
+      swiper7.slideTo(slide, 500);
+    });
+  }
+
+  if ($(".swiper-08").length) {
+    let swiper8Init = false;
+    let swiper8 = new Array();
+
+    function initSwiper8(n) {
+      let winWidth = $(window).width();
+      if (winWidth >= 1024 && swiper8Init) {
+        for (var i = 0; i < swiper8.length; i++) {
+          swiper8[i].destroy();
+        }
+        swiper8Init = false;
+      }
+      if (winWidth < 1024 && !swiper8Init) {
+        document.querySelectorAll(".swiper-08").forEach((el, i) => {
+          swiper8[i] = new Swiper(el, {
+            loop: false,
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            navigation: {
+              nextEl: el.querySelector(".swiper-button-next"),
+              prevEl: el.querySelector(".swiper-button-prev"),
+            },
+            scrollbar: {
+              el: el.querySelector(".swiper-scrollbar"),
+              draggable: true,
+              hide: false,
+            },
+            on: {
+              init: function () {
+                swiper8Init = true;
+                ScrollTrigger.refresh();
+              },
+            },
+            breakpoints: {
+              768: {
+                spaceBetween: 20,
+              },
+            },
+          });
+        });
+      }
+    }
+    initSwiper8();
+
+    $(window).on("resize", function () {
+      initSwiper8();
     });
   }
 
@@ -399,13 +465,16 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
 
     if (!$(this).hasClass("filter-show-more")) {
+      var $parent = $(this).closest(".container").find(".tabs");
+      var $nav = $(this).closest(".tab-menu");
       if (!$(this).parent().hasClass("active")) {
-        var $activeTab = $(".tabs .tab-panel.active");
+        var $activeTab = $parent.find(".tab-panel.active");
         var $nextTab = $($(this).attr("href"));
-        $(".tab-menu li.active").removeClass("active");
+        $nav.find("li.active").removeClass("active");
         $(this).parent().addClass("active");
         $activeTab.removeClass("active").hide();
         $nextTab.addClass("active").fadeIn(400);
+        eqHeight();
       }
     }
   });
@@ -611,22 +680,29 @@ jQuery(document).ready(function ($) {
     $(".stick-navigation").css({ "margin-left": 0 });
   });
 
-  $("#modalJob").on($.modal.OPEN, function (event, modal) {
-    $(".modal-content").niceScroll({
-      touchbehavior: true,
-      overflowx: false,
-      overflowy: true,
-      cursorcolor: "#373737",
-      cursorborder: "none",
-      cursorwidth: "6px",
-      cursoropacitymin: 1,
-      zindex: 9,
-      railoffset: { top: 0, left: -14 },
+  function eqHeight() {
+    $(".eq-height-wrapper").each(function () {
+      var text = $(this).find("p");
+      if ($(this).find(".card-text").length) {
+        text = $(this).find(".card-text");
+      }
+      text.each(function () {
+        $(this).height("auto");
+      });
+      var eH = 0;
+      text.each(function () {
+        if ($(this).height() > eH) {
+          eH = $(this).height();
+        }
+      });
+      text.each(function () {
+        $(this).height(eH);
+      });
     });
-  });
-
-  $(".job-form input").on("change", function () {
-    // console.log($(this).val());
+  }
+  eqHeight();
+  $(window).on("resize", function () {
+    eqHeight();
   });
 });
 

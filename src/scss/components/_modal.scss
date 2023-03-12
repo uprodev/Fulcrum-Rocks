@@ -71,6 +71,21 @@
     .modal-content {
       height: 100%;
       padding: 0 20px;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #373737 transparent;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #373737;
+        border-radius: 3px;
+        border: none;
+      }
     }
   }
 
@@ -124,8 +139,7 @@
     }
   }
 }
-
-#modalJob {
+.modal-job {
   .modal-inner {
     padding: 0 0 185px;
   }
