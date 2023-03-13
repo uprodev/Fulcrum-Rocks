@@ -714,6 +714,17 @@
   &.page-intro-marketplace {
     padding: 0 0 52px;
 
+    .container {
+      &:before {
+        background-image: url(../img/bg/dark-blue.webp);
+        background-size: 150%;
+      }
+      &:after {
+        display: none;
+      }
+      @include bg-before(692px, -271px, -335px);
+    }
+
     .wrapper {
       position: relative;
     }
@@ -774,6 +785,15 @@
     @include media-breakpoint-up(lg) {
       padding: 0;
       margin: 0 0 110px;
+
+      .container {
+        &:after {
+          background-image: url(../img/bg/dark-blue.webp);
+          display: block;
+        }
+        @include bg-before(47.2vw, -17.1vw, -18.75vw);
+        @include bg-after(47.2vw, 29.17vw, -29.17vw);
+      }
 
       .image {
         top: -25px;

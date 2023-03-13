@@ -93,6 +93,17 @@
   background-size: cover;
 }
 
+@mixin bg-dark-blue {
+  background-image: url(../img/bg/dark-blue.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-breakpoint-up(lg) {
+    background-size: 150%;
+  }
+}
+
 @mixin bg-green {
   background-image: url(../img/bg/gradient-green.webp);
   background-position: 50%;

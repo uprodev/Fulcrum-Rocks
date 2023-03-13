@@ -12,6 +12,17 @@
 
   .block-business {
     padding-bottom: 0;
+
+    &:before {
+      @include bg-dark-blue;
+    }
+    @include bg-before(692px, -175px, -475px);
+
+    @include media-breakpoint-up(lg) {
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .block-page {
@@ -101,6 +112,13 @@
     }
 
     &.block-page--market1 {
+      position: relative;
+
+      &:after {
+        @include bg-dark-blue;
+      }
+      @include bg-after(692px, 79px, -359px);
+
       .block-text {
         margin-bottom: 22px;
       }
@@ -114,6 +132,9 @@
       }
 
       @include media-breakpoint-up(lg) {
+        &:after {
+          display: none;
+        }
         .block-text {
           margin-bottom: 37px;
         }
@@ -164,6 +185,11 @@
     }
 
     &.block-page--market3 {
+      &:after {
+        @include bg-dark-blue;
+      }
+      @include bg-after(692px, -191px, -370px);
+
       .block-text {
         margin: 0 0 20px;
 
@@ -194,6 +220,14 @@
       }
 
       @include media-breakpoint-up(lg) {
+        &:after {
+          display: none;
+        }
+        &:before {
+          @include bg-dark-blue;
+        }
+        @include bg-before(47.2vw, -103px, -12.1vw);
+
         .block-text {
           margin: 0 0 41px;
 
@@ -253,6 +287,12 @@
       }
 
       @include media-breakpoint-up(lg) {
+        position: relative;
+        &:after {
+          @include bg-dark-blue;
+        }
+        @include bg-after(47.2vw, -93px, -24vw);
+
         .image {
           padding: 107px 0 0;
         }
@@ -274,6 +314,13 @@
     }
 
     &.block-page--market5 {
+      position: relative;
+
+      &:before {
+        @include bg-dark-blue;
+      }
+      @include bg-before(692px, -358px, -276px);
+
       .block-text {
         margin: 0 0 20px;
 
@@ -294,6 +341,9 @@
       }
 
       @include media-breakpoint-up(lg) {
+        &:before {
+          display: none;
+        }
         .block-text {
           margin: 0 0 41px;
 
@@ -336,6 +386,12 @@
       }
 
       @include media-breakpoint-up(lg) {
+        position: relative;
+        &:before {
+          @include bg-dark-blue;
+        }
+        @include bg-before(47.2vw, -79px, -12vw);
+
         .block-text {
           margin: 0 0 37px;
 
@@ -406,6 +462,12 @@
 
     &.block-page--market7 {
       margin: 0 0 40px;
+      position: relative;
+
+      &:after {
+        @include bg-dark-blue;
+      }
+      @include bg-after(692px, -257px, -395px);
 
       .block-text {
         margin: 0 0 20px;
@@ -464,6 +526,8 @@
 
       @include media-breakpoint-up(lg) {
         margin: 0 0 40px;
+
+        @include bg-after(47.2vw, -33px, -26vw);
 
         .block-text {
           margin: 0 0 37px;
