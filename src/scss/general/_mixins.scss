@@ -98,10 +98,6 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-
-  @include media-breakpoint-up(lg) {
-    background-size: 150%;
-  }
 }
 
 @mixin bg-green {

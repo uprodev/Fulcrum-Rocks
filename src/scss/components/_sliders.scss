@@ -331,4 +331,11 @@
       width: 340px;
     }
   }
+
+  @include media-breakpoint-up(lg) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none !important;
+    }
+  }
 }
