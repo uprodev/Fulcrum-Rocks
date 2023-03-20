@@ -371,6 +371,57 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if ($(".swiper-09").length) {
+    if ($(window).width() >= 768) {
+      if (!$(".swiper-09").find(".empty").length) {
+        $(".swiper-09 .swiper-wrapper").append($('<div class="swiper-slide empty" />'));
+      }
+    } else {
+      if ($(".swiper-09").find(".empty").length) {
+        $(".swiper-09 ").find(".swiper-slide.empty").remove();
+      }
+    }
+
+    const swiper9 = new Swiper(".swiper-09", {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: ".swiper-09 .swiper-button-next",
+        prevEl: ".swiper-09 .swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 40,
+        },
+      },
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+
+    $(window).on("resize", function () {
+      if ($(window).width() >= 768) {
+        if (!$(".swiper-09").find(".empty").length) {
+          $(".swiper-09 .swiper-wrapper").append($('<div class="swiper-slide empty" />'));
+        }
+      } else {
+        if ($(".swiper-09").find(".empty").length) {
+          $(".swiper-09 ").find(".swiper-slide.empty").remove();
+        }
+      }
+    });
+  }
+
   customScrollOptions = {
     touchbehavior: true,
     overflowx: true,

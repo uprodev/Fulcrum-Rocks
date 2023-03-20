@@ -105,93 +105,93 @@ jQuery(document).ready(function ($) {
     });
 
   // block why-rocks animations
-  if (document.querySelector(".block-why-rocks")) {
-    $(".block-why-rocks .button").removeAttr("href");
+  // if (document.querySelector(".block-why-rocks")) {
+  //   $(".block-why-rocks .button").removeAttr("href");
 
-    ScrollTrigger.create({
-      trigger: ".block-why-rocks",
-      start: "top top",
-      end: "bottom bottom",
-      toggleClass: { targets: ".block-why-rocks .btn-centered", className: "is-fixed" },
-      pin: ".block-why-rocks .text",
-      pinSpacing: false,
-      onEnter: function () {
-        document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
-        document.querySelector(".block-why-rocks").classList.remove("pinned-top");
+  //   ScrollTrigger.create({
+  //     trigger: ".block-why-rocks",
+  //     start: "top top",
+  //     end: "bottom bottom",
+  //     toggleClass: { targets: ".block-why-rocks .btn-centered", className: "is-fixed" },
+  //     pin: ".block-why-rocks .text",
+  //     pinSpacing: false,
+  //     onEnter: function () {
+  //       document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
+  //       document.querySelector(".block-why-rocks").classList.remove("pinned-top");
 
-        $(".block-why-rocks .button").bind("click", function (e) {
-          e.preventDefault();
-          var dest = $(".block-why-rocks").next();
-          $("html,body").animate({ scrollTop: dest.offset().top }, 500);
-        });
-      },
-      onEnterBack: function () {
-        document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
-        document.querySelector(".block-why-rocks").classList.add("pinned-top");
+  //       $(".block-why-rocks .button").bind("click", function (e) {
+  //         e.preventDefault();
+  //         var dest = $(".block-why-rocks").next();
+  //         $("html,body").animate({ scrollTop: dest.offset().top }, 500);
+  //       });
+  //     },
+  //     onEnterBack: function () {
+  //       document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
+  //       document.querySelector(".block-why-rocks").classList.add("pinned-top");
 
-        $(".block-why-rocks .button").bind("click", function (e) {
-          e.preventDefault();
-          var dest = $(".block-why-rocks").prev();
-          $("html,body").animate({ scrollTop: dest.offset().top + dest.outerHeight() - $(window).height() }, 500);
-        });
-      },
-      onLeave: function () {
-        document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
-        document.querySelector(".block-why-rocks").classList.remove("pinned-top");
+  //       $(".block-why-rocks .button").bind("click", function (e) {
+  //         e.preventDefault();
+  //         var dest = $(".block-why-rocks").prev();
+  //         $("html,body").animate({ scrollTop: dest.offset().top + dest.outerHeight() - $(window).height() }, 500);
+  //       });
+  //     },
+  //     onLeave: function () {
+  //       document.querySelector(".block-why-rocks").classList.add("pinned-bottom");
+  //       document.querySelector(".block-why-rocks").classList.remove("pinned-top");
 
-        $(".block-why-rocks .button").unbind("click");
-      },
-      onLeaveBack: function () {
-        document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
-        document.querySelector(".block-why-rocks").classList.add("pinned-top");
+  //       $(".block-why-rocks .button").unbind("click");
+  //     },
+  //     onLeaveBack: function () {
+  //       document.querySelector(".block-why-rocks").classList.remove("pinned-bottom");
+  //       document.querySelector(".block-why-rocks").classList.add("pinned-top");
 
-        $(".block-why-rocks .button").unbind("click");
-      },
-    });
+  //       $(".block-why-rocks .button").unbind("click");
+  //     },
+  //   });
 
-    var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
+  //   var listItems = document.querySelectorAll(".block-why-rocks .scroller li");
 
-    gsap.utils.toArray(listItems).forEach((li, i) => {
-      gsap.to(li.querySelector(".txt-lg"), {
-        keyframes: {
-          scale: [1, 1, 1, 1, 1, 1, 1, 1.1, 1.2, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7],
-          opacity: [0, 0.1, 0.2, 0.3, 0.5, 1, 0.6, 0.4, 0, 0, 0, 0, 0, 0, 0],
-        },
-        transformOrigin: "center",
-        ease: "none",
-        scrollTrigger: {
-          trigger: li,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          snap: {
-            snapTo: li,
-            duration: 1,
-            delay: 0,
-          },
-        },
-      });
+  //   gsap.utils.toArray(listItems).forEach((li, i) => {
+  //     gsap.to(li.querySelector(".txt-lg"), {
+  //       keyframes: {
+  //         scale: [1, 1, 1, 1, 1, 1, 1, 1.1, 1.2, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7],
+  //         opacity: [0, 0.1, 0.2, 0.3, 0.5, 1, 0.6, 0.4, 0, 0, 0, 0, 0, 0, 0],
+  //       },
+  //       transformOrigin: "center",
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: li,
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //         scrub: 1,
+  //         snap: {
+  //           snapTo: li,
+  //           duration: 1,
+  //           delay: 0,
+  //         },
+  //       },
+  //     });
 
-      gsap.to(li.querySelector("p"), {
-        keyframes: {
-          opacity: [0, 0.5, 1, 0.8, 0.4, 0.3, 0, 0, 0, 0],
-        },
-        transformOrigin: "center",
-        ease: "none",
-        scrollTrigger: {
-          trigger: li,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          snap: {
-            snapTo: li,
-            duration: 0.1,
-            delay: 0,
-          },
-        },
-      });
-    });
-  }
+  //     gsap.to(li.querySelector("p"), {
+  //       keyframes: {
+  //         opacity: [0, 0.5, 1, 0.8, 0.4, 0.3, 0, 0, 0, 0],
+  //       },
+  //       transformOrigin: "center",
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: li,
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //         scrub: 1,
+  //         snap: {
+  //           snapTo: li,
+  //           duration: 0.1,
+  //           delay: 0,
+  //         },
+  //       },
+  //     });
+  //   });
+  // }
 
   // svg animation
   if (document.getElementById("svg")) {
