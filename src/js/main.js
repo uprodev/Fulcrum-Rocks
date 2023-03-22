@@ -11,6 +11,12 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $(".main-navigation li").each(function () {
+    if ($(this).find(".submenu").length) {
+      $(this).addClass("submenu-parent");
+    }
+  });
+
   // sliders
   if ($(".swiper-01").length) {
     let swiper1Init = false;

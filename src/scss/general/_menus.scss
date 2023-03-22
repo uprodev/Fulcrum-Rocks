@@ -201,6 +201,10 @@
     transform: translateX(0);
   }
 
+  .submenu {
+    display: none;
+  }
+
   @include media-breakpoint-up(lg) {
     position: relative;
     left: 0;
@@ -222,6 +226,32 @@
 
       li {
         margin: 0 25px;
+        display: flex;
+
+        .menu-sticker {
+          display: block;
+          font-size: 12px;
+          line-height: 120%;
+          letter-spacing: 0.01em;
+          padding: 4px 10px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          margin-left: 4px;
+
+          span {
+            background-color: $white;
+            background-image: linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        &:hover {
+          .submenu {
+            display: block;
+          }
+        }
       }
     }
 
@@ -237,6 +267,111 @@
 
     .menu-bottom {
       display: none;
+    }
+
+    .submenu {
+      position: absolute;
+      left: 50%;
+      top: 99%;
+      padding: 30px 0 0;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 900px;
+
+      .inner {
+        background-color: $dark;
+        border: 1px solid $text-color;
+        border-radius: 20px;
+        display: flex;
+        padding: 20px;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          li {
+            width: 50%;
+            margin: 0;
+
+            a {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .submenu-link {
+        display: inline-flex;
+        align-items: center;
+        background-color: $white;
+        background-image: linear-gradient(90deg, #0d99ff 0%, #99faf4 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        margin: 0 0 4px;
+
+        &:after {
+          content: "";
+          width: 12px;
+          height: 12px;
+          display: block;
+          background: url(../img/icons/menu-arrow.svg) 50% no-repeat;
+          margin-left: 13px;
+        }
+      }
+
+      .submenu-link-text {
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        color: $text-color;
+        display: block;
+      }
+
+      .card-wrapper {
+        flex: 0 0 auto;
+        margin: 0 20px 0 0;
+        position: relative;
+      }
+
+      .card {
+        width: 190px;
+        border-radius: 10px 10px 31px 10px;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+        padding: 1px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(90deg, #0d99ff, #99faf4);
+          background-color: #0d99ff;
+          border-radius: 10px 10px 31px 10px;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+        }
+
+        .card-inner {
+          width: 100%;
+          height: 100%;
+          background: $dark url(../img/bg/bg-menu-card.svg) right bottom no-repeat;
+          border-radius: 10px 10px 31px 10px;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+          padding: 0 19px 10px;
+        }
+
+        figure {
+          margin: 0 0 5px;
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -281,6 +416,36 @@
           &:before {
             @include gradient-base(90deg);
             opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      & > a {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.submenu-parent {
+      & > a {
+        &:after {
+          content: "";
+          width: 10px;
+          height: 6px;
+          background: url(../img/icons/menu-chevron.svg) no-repeat;
+          margin: 0 0 0 8px;
+          display: block;
+          transition: all 0.2s;
+        }
+      }
+
+      &:hover {
+        & > a {
+          &:after {
+            transform: rotate(180deg);
           }
         }
       }
