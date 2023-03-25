@@ -1,0 +1,247 @@
+.page-handbook {
+  --color-main: #3726ff;
+
+  .txt-gradient {
+    background-color: $white;
+    background-image: linear-gradient(90deg, var(--color-main) 0%, $headline-color 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .block-service-colored-box {
+    .colored-box {
+      background-image: linear-gradient(90deg, var(--color-main) 0%, $headline-color 130%);
+
+      form {
+        .field {
+          label {
+            margin: 0 0 -2px;
+          }
+
+          &.success {
+            label {
+              color: $headline-color;
+            }
+            input {
+              color: $headline-color;
+              border-color: $headline-color;
+            }
+          }
+        }
+        .button {
+          &.btn-success {
+            .btn-wrap {
+              &:after {
+                background: #30db74;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .block-service-colored-box {
+      .colored-box {
+        form {
+          .field label {
+            margin: 0 0 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-handbook-slider {
+  .card-type-20 {
+    &:after {
+      display: none;
+    }
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+    .card {
+      .card-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        background: url(../img/bg/bg-handbook-m.png) no-repeat;
+        background-size: cover;
+
+        img {
+          float: right;
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .card-inner {
+        background: $dark;
+        height: 300px;
+        justify-content: flex-end;
+        padding: 23px 23px 21px;
+
+        h2 {
+          position: relative;
+          z-index: 5;
+          line-height: 1;
+          font-size: 2.75rem;
+        }
+      }
+    }
+  }
+
+  .swiper-10 {
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 328px;
+      transform: none;
+      right: 15px;
+    }
+
+    .slide-text {
+      h3 {
+        margin: 11px 0 0;
+        font-size: 2.6rem;
+        line-height: 1;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -0.01em;
+
+        li {
+          margin: 20px 0 0;
+        }
+
+        a {
+          color: $headline-color;
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .swiper-10 {
+      .swiper-slide {
+        width: 400px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .card-type-20 {
+      width: 50%;
+      max-width: 335px;
+      flex: 0 0 auto;
+    }
+
+    .swiper-10 {
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 50%;
+        right: 30px;
+      }
+
+      .swiper-slide {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .slide-text {
+        width: 50%;
+        padding: 0 50px 0 10px;
+
+        h3 {
+          margin: 5px 0 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .card-type-20 {
+      width: 50%;
+      max-width: 555px;
+
+      .card {
+        .card-image {
+          background-image: url(../img/bg/bg-handbook.png);
+        }
+        .card-inner {
+          height: 498px;
+          padding: 36px 40px;
+
+          h2 {
+            font-size: 3.55rem;
+          }
+        }
+      }
+    }
+
+    .swiper-10 {
+      margin: 0 -40px 0 0;
+      padding: 0 40px 0 0;
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 49%;
+        right: 83px;
+      }
+
+      .swiper-slide {
+        justify-content: space-between;
+      }
+
+      .slide-text {
+        width: 50%;
+        padding: 0 10px;
+
+        h3 {
+          margin-bottom: 38px;
+        }
+
+        ul {
+          font-size: 28px;
+          line-height: 1.2;
+
+          li {
+            margin: 0 0 42px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    .swiper-10 {
+      margin: 0 -140px 0 0;
+      padding: 0 140px 0 0;
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        right: 183px;
+      }
+    }
+  }
+}

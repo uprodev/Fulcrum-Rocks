@@ -808,4 +808,102 @@
       }
     }
   }
+
+  &.page-intro-handbook {
+    padding: 0 0 55px;
+
+    .container {
+      &:before {
+        background-image: url(../img/bg/dark-blue.webp);
+      }
+      &:after {
+        display: none;
+      }
+      @include bg-before(692px, -321px, -340px);
+    }
+
+    .wrapper {
+      position: relative;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+    .txt-lg {
+      margin: 0 -13px 153px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image {
+      position: absolute;
+      right: -167px;
+      top: 55px;
+      img {
+        display: block;
+        width: 449px;
+        height: auto;
+      }
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .d-sm-none {
+        display: none;
+      }
+      .d-sm-block {
+        display: block;
+      }
+
+      .txt-lg {
+        float: none;
+        width: auto;
+        max-width: none;
+      }
+
+      .image {
+        right: -100px;
+      }
+
+      .text {
+        float: none;
+        width: auto;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 0 45px;
+      margin: 0 0 65px;
+
+      .container {
+        &:after {
+          background-image: url(../img/bg/dark-blue.webp);
+          display: block;
+        }
+        @include bg-before(47.2vw, -17.1vw, -18.75vw);
+        @include bg-after(47.2vw, 29.17vw, -29.17vw);
+      }
+
+      .image {
+        top: auto;
+        bottom: -45px;
+        right: -32px;
+
+        img {
+          width: auto;
+        }
+      }
+      .txt-lg {
+        margin: 0 0 282px;
+      }
+      .text {
+        max-width: 555px;
+      }
+    }
+  }
 }

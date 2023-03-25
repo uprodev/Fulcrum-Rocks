@@ -428,6 +428,51 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if ($(".swiper-10").length) {
+    const swiper10 = new Swiper(".swiper-10", {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 20,
+
+      navigation: {
+        nextEl: ".swiper-10 .swiper-button-next",
+        prevEl: ".swiper-10 .swiper-button-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        1440: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        1660: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      },
+
+      on: {
+        init: function () {
+          ScrollTrigger.refresh();
+        },
+      },
+    });
+
+    $(".swiper-07-nav [data-slide]").on("click", function (e) {
+      e.preventDefault();
+      var slide = parseInt($(this).attr("data-slide"));
+      $(".swiper-07-nav .active").removeClass("active");
+      $(this).parent().addClass("active");
+      swiper7.slideTo(slide, 500);
+    });
+  }
+
   customScrollOptions = {
     touchbehavior: true,
     overflowx: true,
@@ -715,6 +760,16 @@ jQuery(document).ready(function ($) {
     });
     if (err) {
       e.preventDefault();
+    }
+  });
+
+  $(".page-handbook .block-service-colored-box .colored-box form input ").on("keyup", function (e) {
+    var patternMail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!patternMail.test($(this).val()) || $(this).val() == "") {
+      err = true;
+      $(this).closest(".field").removeClass("success");
+    } else {
+      $(this).closest(".field").addClass("success");
     }
   });
 

@@ -74,7 +74,11 @@
   @include media-breakpoint-up(lg) {
     padding: 9px 0;
     height: 60px;
-    // overflow: hidden;
+    overflow: hidden;
+
+    &:hover {
+      overflow: visible;
+    }
 
     .logo {
       width: 140px;
