@@ -111,9 +111,10 @@
   right: 0;
   top: 0;
   height: 100vh;
+  overflow: auto;
   background: $dark url(../img/bg/bg-menu.jpg) right bottom no-repeat;
   background-size: 100% auto;
-  padding: 0 20px 50px;
+  padding: 0 20px 26px;
   transform: translateX(-100%);
   transition: transform 0.25s linear;
   display: flex;
@@ -205,6 +206,71 @@
     display: none;
   }
 
+  @include media-breakpoint-down(lg) {
+    ul {
+      li {
+        .menu-sticker {
+          display: none;
+        }
+      }
+    }
+
+    .submenu {
+      .inner {
+        .card-wrapper {
+          display: none;
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0;
+          margin: 0;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 1.1;
+          letter-spacing: 0;
+
+          li {
+            width: 50%;
+            margin: 30px 0 0;
+
+            a {
+              color: $headline-color;
+
+              .submenu-link {
+                display: inline-flex;
+                align-items: center;
+
+                &:after {
+                  content: "";
+                  width: 14px;
+                  height: 14px;
+                  display: block;
+                  background: url(../img/icons/btn-arrow-nav.svg) 50% no-repeat;
+                  background-size: cover;
+                  margin-left: 13px;
+                  transition: all 0.2s;
+                }
+              }
+
+              .submenu-link-text {
+                display: none;
+              }
+
+              &:hover {
+                .submenu-link {
+                  &:after {
+                    transform: translate3d(50%, -50%, 0);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     position: relative;
     left: 0;
@@ -216,6 +282,7 @@
     transform: none;
     transition: none;
     width: 100%;
+    overflow: visible;
 
     ul {
       font-size: 14px;
@@ -247,9 +314,13 @@
           }
         }
 
+        .submenu {
+          display: none !important;
+        }
+
         &:hover {
           .submenu {
-            display: block;
+            display: block !important;
           }
         }
       }
@@ -293,6 +364,10 @@
           li {
             width: 50%;
             margin: 0;
+
+            &:first-child {
+              display: none;
+            }
 
             a {
               display: block;
@@ -439,6 +514,24 @@
           margin: 0 0 0 8px;
           display: block;
           transition: all 0.2s;
+        }
+
+        @include media-breakpoint-down(lg) {
+          .arrow-icon-wrapper {
+            display: none;
+          }
+
+          &:after {
+            width: 14px;
+            height: 9px;
+            background-size: cover;
+          }
+
+          &.opened {
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
         }
       }
 

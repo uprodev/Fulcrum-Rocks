@@ -16,6 +16,12 @@ jQuery(document).ready(function ($) {
       $(this).addClass("submenu-parent");
     }
   });
+  $(".submenu-parent > a").on("click", function (e) {
+    if ($(window).width() < 1024) {
+      e.preventDefault();
+      $(this).toggleClass("opened").next(".submenu").slideToggle(300);
+    }
+  });
 
   // sliders
   if ($(".swiper-01").length) {
