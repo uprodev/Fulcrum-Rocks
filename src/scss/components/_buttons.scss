@@ -523,4 +523,17 @@ button {
       }
     }
   }
+
+  &.btn-gradient {
+    .btn-inner {
+      @include gradient-base(90deg);
+      color: $dark;
+    }
+
+    .btn-icon {
+      &:before {
+        background-color: $dark;
+      }
+    }
+  }
 }

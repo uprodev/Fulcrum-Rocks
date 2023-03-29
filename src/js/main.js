@@ -11,12 +11,12 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".main-navigation li").each(function () {
+  $(".main-navigation li, .stick-navigation li").each(function () {
     if ($(this).find(".submenu").length) {
       $(this).addClass("submenu-parent");
     }
   });
-  $(".submenu-parent > a").on("click", function (e) {
+  $(".main-navigation .submenu-parent > a").on("click", function (e) {
     if ($(window).width() < 1024) {
       e.preventDefault();
       $(this).toggleClass("opened").next(".submenu").slideToggle(300);
