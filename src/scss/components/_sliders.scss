@@ -164,6 +164,19 @@
 }
 
 .swiper-02 {
+  margin-right: -13px;
+  padding-right: 13px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(xl) {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-right: -150px;
+    padding-right: 150px;
+  }
+
   .swiper-slide {
     width: 335px;
 
@@ -184,13 +197,40 @@
 }
 
 .swiper-04 {
+  margin-right: -13px;
+  padding-right: 13px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(xl) {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-right: -150px;
+    padding-right: 150px;
+  }
+
   .swiper-slide {
     width: 325px;
   }
 }
 
 .swiper-05,
-.swiper-051 {
+.swiper-051,
+.swiper-052 {
+  margin-right: -13px;
+  padding-right: 13px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(xl) {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-right: -150px;
+    padding-right: 150px;
+  }
+
   .swiper-slide {
     width: 335px;
 
@@ -235,6 +275,15 @@
   }
 
   @include media-breakpoint-up(lg) {
+    margin-right: 0;
+    padding-right: 0;
+    overflow: visible;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+
     .swiper-wrapper {
       display: flex;
       border: 1px solid #434343;
@@ -305,6 +354,75 @@
             padding: 40px 60px 40px 40px;
           }
         }
+      }
+    }
+  }
+}
+
+.swiper-052 {
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+    padding-right: 0;
+    overflow: visible;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      border: 1px solid #434343;
+      @include card-borders();
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #434343;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: rotate(45deg) translate3d(45%, 0, 0);
+
+        @include media-breakpoint-up(xl) {
+          width: 40px;
+          height: 40px;
+          transform: rotate(45deg) translate3d(58%, 0, 0);
+        }
+      }
+
+      .swiper-slide {
+        margin: 0;
+        width: 25%;
+
+        .card-effect-06 {
+          .card {
+            border: none;
+            clip-path: none;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.swiper-06 {
+  @include media-breakpoint-up(md) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none !important;
+    }
+
+    .swiper-slide {
+      &.swiper-slide-duplicate {
+        display: none !important;
       }
     }
   }

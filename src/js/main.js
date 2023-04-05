@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".main-navigation li, .stick-navigation li").each(function () {
+  $(".main-navigation li").each(function () {
     if ($(this).find(".submenu").length) {
       $(this).addClass("submenu-parent");
     }
@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
       }
       if (winWidth >= 640 && !swiper1Init) {
         swiper1 = new Swiper(".swiper-01", {
-          loop: false,
+          loop: true,
           slidesPerView: "auto",
           spaceBetween: 10,
           navigation: {
@@ -107,7 +107,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-02").length) {
     document.querySelectorAll(".swiper-02").forEach((el) => {
       const swiper2 = new Swiper(el, {
-        loop: false,
+        loop: true,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -135,7 +135,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-03").length) {
     const swiper3 = new Swiper(".swiper-03", {
-      loop: false,
+      loop: true,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -168,7 +168,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-04").length) {
     const swiper4 = new Swiper(".swiper-04", {
-      loop: false,
+      loop: true,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -200,7 +200,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-05").length) {
     document.querySelectorAll(".swiper-05").forEach((el) => {
       const swiper5 = new Swiper(el, {
-        loop: false,
+        loop: true,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -232,7 +232,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-06").length) {
     const swiper6 = new Swiper(".swiper-06", {
-      loop: false,
+      loop: true,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -263,7 +263,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-051").length) {
     document.querySelectorAll(".swiper-051").forEach((el) => {
       const swiper51 = new Swiper(el, {
-        loop: false,
+        loop: true,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -280,7 +280,46 @@ jQuery(document).ready(function ($) {
             spaceBetween: 20,
           },
           1024: {
+            scrollbar: false,
+            navigation: false,
+            loop: false,
             slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        },
+        on: {
+          init: function () {
+            ScrollTrigger.refresh();
+          },
+        },
+      });
+    });
+  }
+
+  if ($(".swiper-052").length) {
+    document.querySelectorAll(".swiper-052").forEach((el) => {
+      const swiper52 = new Swiper(el, {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        scrollbar: {
+          el: el.querySelector(".swiper-scrollbar"),
+          draggable: true,
+          hide: false,
+        },
+        navigation: {
+          nextEl: el.querySelector(".swiper-button-next"),
+          prevEl: el.querySelector(".swiper-button-prev"),
+        },
+        breakpoints: {
+          768: {
+            spaceBetween: 20,
+          },
+          1024: {
+            scrollbar: false,
+            navigation: false,
+            loop: false,
+            slidesPerView: 4,
             spaceBetween: 0,
           },
         },
@@ -295,7 +334,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-07").length) {
     const swiper7 = new Swiper(".swiper-07", {
-      loop: false,
+      loop: true,
       slidesPerView: 1,
       spaceBetween: 160,
       autoHeight: true,
@@ -349,7 +388,7 @@ jQuery(document).ready(function ($) {
       if (winWidth < 1024 && !swiper8Init) {
         document.querySelectorAll(".swiper-08").forEach((el, i) => {
           swiper8[i] = new Swiper(el, {
-            loop: false,
+            loop: true,
             slidesPerView: "auto",
             spaceBetween: 10,
             navigation: {
@@ -395,7 +434,7 @@ jQuery(document).ready(function ($) {
     }
 
     const swiper9 = new Swiper(".swiper-09", {
-      loop: false,
+      loop: true,
       slidesPerView: 1,
       spaceBetween: 40,
       navigation: {
@@ -436,7 +475,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-10").length) {
     const swiper10 = new Swiper(".swiper-10", {
-      loop: false,
+      loop: true,
       slidesPerView: 1,
       spaceBetween: 20,
 
@@ -786,17 +825,19 @@ jQuery(document).ready(function ($) {
     });
     return false;
   });
-  $(".modal").on($.modal.BEFORE_BLOCK, function (event, modal) {
-    var scrollbar = getScrollBarWidth();
-    $(".header").css({ right: scrollbar });
-    $(".page-wrapper").css({ "padding-right": scrollbar });
-    $(".stick-navigation").css({ "margin-left": -scrollbar / 2 });
-  });
-  $(".modal").on($.modal.AFTER_CLOSE, function (event, modal) {
-    $(".header").css({ right: 0 });
-    $(".page-wrapper").css({ "padding-right": 0 });
-    $(".stick-navigation").css({ "margin-left": 0 });
-  });
+  if ($(".modal").length) {
+    $(".modal").on($.modal.BEFORE_BLOCK, function (event, modal) {
+      var scrollbar = getScrollBarWidth();
+      $(".header").css({ right: scrollbar });
+      $(".page-wrapper").css({ "padding-right": scrollbar });
+      $(".stick-navigation").css({ "margin-left": -scrollbar / 2 });
+    });
+    $(".modal").on($.modal.AFTER_CLOSE, function (event, modal) {
+      $(".header").css({ right: 0 });
+      $(".page-wrapper").css({ "padding-right": 0 });
+      $(".stick-navigation").css({ "margin-left": 0 });
+    });
+  }
 
   function eqHeight() {
     $(".eq-height-wrapper").each(function () {
@@ -821,6 +862,15 @@ jQuery(document).ready(function ($) {
   eqHeight();
   $(window).on("resize", function () {
     eqHeight();
+  });
+
+  // btn-anchor
+  $(".btn-anchor").on("click", function (e) {
+    e.preventDefault();
+    var dest = $($(this).attr("href"));
+    if (dest.length) {
+      $("html, body").animate({ scrollTop: dest.offset().top }, 800);
+    }
   });
 });
 

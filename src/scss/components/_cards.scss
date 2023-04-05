@@ -1100,7 +1100,10 @@
   }
 
   .card-icons {
-    margin-top: auto;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
     display: flex;
 
     span {
@@ -1118,6 +1121,11 @@
     }
     ul {
       padding: 0 0 0 15px;
+    }
+    .card-icons {
+      left: 40px;
+      right: 40px;
+      bottom: 32px;
     }
   }
 }

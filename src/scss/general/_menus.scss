@@ -32,6 +32,10 @@
     }
   }
 
+  .sub-menu {
+    display: none !important;
+  }
+
   nav {
     position: relative;
     z-index: 1;
@@ -535,17 +539,19 @@
         }
       }
 
-      &:hover {
-        & > a {
-          &:after {
-            transform: rotate(180deg);
+      @include media-breakpoint-up(lg) {
+        &:hover {
+          & > a {
+            &:after {
+              transform: rotate(180deg);
+            }
           }
         }
       }
     }
 
-    &.current_page_item,
-    &.current-menu-item {
+    &.current_page_item:not(.submenu-parent),
+    &.current-menu-item:not(.submenu-parent) {
       & > a {
         pointer-events: none;
         &:before {
