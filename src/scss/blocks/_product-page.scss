@@ -15,6 +15,20 @@
     position: relative;
     padding: 10px 0 60px;
 
+    &:before {
+      @include bg-pink;
+    }
+    @include bg-before(1000px, -595px, -550px);
+
+    &:after {
+      @include bg-lightblue;
+    }
+    @include bg-after(1000px, 160px, -600px);
+
+    .container {
+      position: relative;
+    }
+
     h1 {
       letter-spacing: -0.04em;
       line-height: 0.9;
@@ -96,6 +110,16 @@
     }
 
     @include media-breakpoint-up(lg) {
+      @include bg-before(964px, -525px, -450px);
+      @include bg-after(964px, 580px, -466px);
+
+      .container {
+        &:before {
+          @include bg-orange;
+        }
+        @include bg-before(680px, 0, -450px);
+      }
+
       .wrapper {
         width: auto;
       }
@@ -303,6 +327,17 @@
   }
 
   .block-product-tweets {
+    position: relative;
+
+    &:before {
+      @include bg-pink;
+    }
+    @include bg-before(1000px, 0px, -640px);
+
+    .container {
+      position: relative;
+    }
+
     .block-text {
       margin-bottom: 18px;
     }
@@ -440,6 +475,14 @@
     }
 
     @include media-breakpoint-up(lg) {
+      @include bg-before(1036px, 218px, -477px);
+
+      @include bg-after(807px, 688px, auto);
+      &:after {
+        @include bg-pink;
+        right: -335px;
+      }
+
       .block-text {
         margin-bottom: 38px;
       }
@@ -504,6 +547,22 @@
   }
 
   .block-product-speed {
+    position: relative;
+
+    &:before {
+      @include bg-orange;
+    }
+    @include bg-before(1000px, 99px, -600px);
+
+    &:after {
+      @include bg-pink;
+    }
+    @include bg-after(1000px, -321px, -600px);
+
+    .container {
+      position: relative;
+    }
+
     .block-text {
       .tab-menu-wrapper {
         margin: 9px 0 0;
@@ -571,6 +630,10 @@
     }
 
     @include media-breakpoint-up(lg) {
+      @include bg-before(1036px, 200px, -477px);
+
+      @include bg-after(943px, -104px, -392px);
+
       .block-text .tab-menu-wrapper {
         margin: 20px 0 0;
       }
@@ -610,6 +673,12 @@
   }
 
   .block-product-cta {
+    position: relative;
+
+    .container {
+      position: relative;
+    }
+
     .cta-wrapper {
       @include card-borders;
       background-image: linear-gradient(90deg, var(--color-main) 0%, var(--color-secondary) 100%);
@@ -654,6 +723,13 @@
         width: 50%;
         max-width: 600px;
       }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:after {
+        @include bg-pink;
+      }
+      @include bg-after(979px, -494px, -508px);
     }
 
     @include media-breakpoint-up(xl) {

@@ -107,6 +107,27 @@
   background-size: cover;
 }
 
+@mixin bg-lightblue {
+  background-image: url(../img/bg/p-blue.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin bg-pink {
+  background-image: url(../img/bg/p-pink.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin bg-orange {
+  background-image: url(../img/bg/p-orange.webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @mixin bg-before($size, $top, $right) {
   &:before {
     content: "";
