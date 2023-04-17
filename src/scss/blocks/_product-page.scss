@@ -39,6 +39,10 @@
       position: absolute;
       top: -32px;
       right: 0;
+
+      .animation {
+        display: none;
+      }
     }
 
     .form {
@@ -125,7 +129,7 @@
       }
 
       h1 {
-        margin: 0 0 6px;
+        margin: 0 0 94px;
       }
 
       .image {
@@ -135,6 +139,41 @@
           display: block;
           width: 100%;
           height: auto;
+        }
+
+        .animation {
+          display: block;
+          width: 38.9%;
+          position: absolute;
+          top: -10.82%;
+          animation: cassete 4.5s linear 0s infinite forwards;
+
+          @keyframes cassete {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          &--left {
+            left: 3.38%;
+          }
+
+          &--right {
+            right: 3.38%;
+          }
+
+          span {
+            display: block;
+            padding: 100% 0 0;
+            position: relative;
+
+            img {
+              @include img-abs;
+            }
+          }
         }
       }
 
@@ -234,6 +273,7 @@
         font-size: 78px;
         line-height: 0.96;
         letter-spacing: -0.03em;
+        margin: 0 0 105px;
       }
       .form {
         .inner {

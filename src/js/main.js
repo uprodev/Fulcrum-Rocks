@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
       }
       if (winWidth >= 640 && !swiper1Init) {
         swiper1 = new Swiper(".swiper-01", {
-          loop: true,
+          loop: false,
           slidesPerView: "auto",
           spaceBetween: 10,
           navigation: {
@@ -106,8 +106,12 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-02").length) {
     document.querySelectorAll(".swiper-02").forEach((el) => {
+      var loop = false;
+      if (el.dataset.loop === "true") {
+        loop = true;
+      }
       const swiper2 = new Swiper(el, {
-        loop: true,
+        loop: loop,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -135,7 +139,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-03").length) {
     const swiper3 = new Swiper(".swiper-03", {
-      loop: true,
+      loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -168,7 +172,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-04").length) {
     const swiper4 = new Swiper(".swiper-04", {
-      loop: true,
+      loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -200,7 +204,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-05").length) {
     document.querySelectorAll(".swiper-05").forEach((el) => {
       const swiper5 = new Swiper(el, {
-        loop: true,
+        loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -232,7 +236,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-06").length) {
     const swiper6 = new Swiper(".swiper-06", {
-      loop: true,
+      loop: false,
       slidesPerView: "auto",
       spaceBetween: 10,
       scrollbar: {
@@ -263,7 +267,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-051").length) {
     document.querySelectorAll(".swiper-051").forEach((el) => {
       const swiper51 = new Swiper(el, {
-        loop: true,
+        loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -299,7 +303,7 @@ jQuery(document).ready(function ($) {
   if ($(".swiper-052").length) {
     document.querySelectorAll(".swiper-052").forEach((el) => {
       const swiper52 = new Swiper(el, {
-        loop: true,
+        loop: false,
         slidesPerView: "auto",
         spaceBetween: 10,
         scrollbar: {
@@ -388,7 +392,7 @@ jQuery(document).ready(function ($) {
       if (winWidth < 1024 && !swiper8Init) {
         document.querySelectorAll(".swiper-08").forEach((el, i) => {
           swiper8[i] = new Swiper(el, {
-            loop: true,
+            loop: false,
             slidesPerView: "auto",
             spaceBetween: 10,
             navigation: {
@@ -434,7 +438,7 @@ jQuery(document).ready(function ($) {
     }
 
     const swiper9 = new Swiper(".swiper-09", {
-      loop: true,
+      loop: false,
       slidesPerView: 1,
       spaceBetween: 40,
       navigation: {
@@ -475,7 +479,7 @@ jQuery(document).ready(function ($) {
 
   if ($(".swiper-10").length) {
     const swiper10 = new Swiper(".swiper-10", {
-      loop: true,
+      loop: false,
       slidesPerView: 1,
       spaceBetween: 20,
 
