@@ -207,77 +207,57 @@
               </div>
             </div>
 
-            <div class="wrapper">
-              <div class="txt-lg">
-                <span class="split">Let's talk business.</span><br />
-                <span class="txt-gradient" data-delay="1">But you first.</span>
-              </div>
+            <div class="txt-lg">
+              <span class="split">Let's talk business.</span><br />
+              <span class="txt-gradient" data-delay="1">But you first.</span>
             </div>
 
-            <div class="contact-form-01">
-              <form id="contactForm" action="#" novalidate>
-                <div class="form-wrapper">
-                  <div class="col">
-                    <div class="field field-input">
-                      <label for="name">Hello, my name is:</label>
-                      <div class="animated-input">
-                        <input type="text" id="name" placeholder="Enter your name*" required />
-                        <span class="error-msg">Please complete this required field.</span>
+            <div class="contact-form-wrapper">
+              <div class="contact-form-01">
+                <form id="contactForm" action="#" novalidate>
+                  <div class="form-wrapper">
+                    <div class="col">
+                      <div class="field">
+                        <label for="name">Hello, my name is:</label>
+                        <input type="text" id="name" placeholder="Full name*" required />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="field">
+                        <label for="email">Here is my email:</label>
+                        <input type="email" id="email" placeholder="Email address*" required />
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="field field-input">
-                      <label for="email">Here is my email:</label>
-                      <div class="animated-input">
-                        <input type="email" id="email" placeholder="Enter your email*" required />
-                        <span class="error-msg">Please complete this required field.</span>
-                      </div>
-                    </div>
+                  <div class="field">
+                    <label for="desc">About project:</label>
+                    <textarea id="desc" placeholder="Your project description"></textarea>
                   </div>
-                </div>
-                <div class="field field-tabs">
-                  <div class="label">I have the following budget:</div>
-                  <ul class="tab-nav">
-                    <li>
-                      <input type="checkbox" id="b01" value="5-10k" />
-                      <label for="b01">
-                        <span><span>5-10k</span></span>
-                      </label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="b02" value="10-50k" />
-                      <label for="b02">
-                        <span><span>10-50k</span></span>
-                      </label>
-                    </li>
-                    <li>
-                      <input type="checkbox" id="b03" value="More 50k" />
-                      <label for="b03">
-                        <span><span>More 50k</span></span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-                <div class="field field-message">
-                  <label for="desc">And I’m looking to:</label>
-                  <div class="contact-message">
-                    <div class="animated-input">
-                      <input type="text" id="desc" placeholder="Enter your project description*" required />
-                      <span class="error-msg">Please complete this required field.</span>
-                    </div>
+                  <div class="field field-file">
+                    <input type="file" class="file" accept="application/msword, application/pdf" />
+                    <p>Please upload a file with the following extension: .pdf, .img, .docx, .odt, .ods, .txt</p>
                   </div>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-                </div>
-                <button type="submit" class="button">
-                  <span class="btn-wrap">
-                    <span class="btn-inner">
-                      Get a quote
-                      <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-dark.svg" alt="" /></span>
+                  <button type="submit" class="button btn-gradient">
+                    <span class="btn-wrap">
+                      <span class="btn-inner">
+                        Send
+                        <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-light.svg" alt="" /></span>
+                      </span>
                     </span>
-                  </span>
-                </button>
-              </form>
+                  </button>
+                </form>
+              </div>
+
+              <div class="contact-info">
+                <dl>
+                  <dt>Mail:</dt>
+                  <dd><a href="mailto:hello@fulcrum.rocks">hello@fulcrum.rocks</a></dd>
+                  <dt>Phone:</dt>
+                  <dd><a href="tel:">+1 (646) 980-42-36</a></dd>
+                  <dt>Adress:</dt>
+                  <dd><a href="#">Kyiv, Peremohy Avenue 46 </a></dd>
+                </dl>
+              </div>
             </div>
           </div>
         </div>

@@ -1,224 +1,244 @@
-.contact-form-01 {
+.contact-form-wrapper {
   position: relative;
   z-index: 1;
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    margin: 0 -10px;
+  }
+}
 
+.contact-form-01 {
   .wpcf7-form-control-wrap {
     position: static !important;
   }
 
   .wpcf7-not-valid-tip {
+    display: block;
     font-size: 10px;
-    position: absolute;
-    top: 58%;
     line-height: 1.4;
     letter-spacing: 0.01em;
-    display: none !important;
+    margin: 4px 0 0;
   }
 
   .field {
-    display: flex;
-    align-items: center;
-
-    &.field-input {
-      height: 51px;
-    }
-
-    &.field-tabs {
-      display: block;
-      padding: 10px 0;
-      position: relative;
-      z-index: 9;
-
-      li {
-        &:last-child {
-          margin-right: 0;
-          margin-left: -2px;
-        }
-      }
-
-      label {
-        margin: 0;
-      }
-    }
-
-    &.field-message {
-      display: block;
-      padding: 10px 0;
-    }
-  }
-
-  .contact-message {
-    height: 34px;
-    display: flex;
-    align-items: center;
+    position: relative;
+    margin: 0 0 11px;
   }
 
   label,
   .label {
-    font-size: 1.714rem;
+    display: block;
+    font-size: 14px;
     font-weight: 500;
-    color: $headline-color;
     line-height: 1;
-    letter-spacing: -0.01em;
-    flex: 0 0 auto;
     white-space: nowrap;
-    margin: 0 10px 0 0;
+    margin: 0 0 6px;
   }
 
-  .animated-input {
+  input,
+  textarea {
+    display: block;
     width: 100%;
-    position: relative;
-    padding: 10px 0 0;
+    padding: 15px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: none;
+    color: $text-color;
+    -webkit-appearance: none;
+    appearance: none;
+    @include placeholder-text();
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
 
-    p {
-      margin: 0;
-    }
-
-    svg {
-      transform: scale(1.5, 0.7) !important;
-
-      & > g {
-        width: 100%;
-        height: 100%;
-        clip-path: none !important;
-
-        & > g {
-          &:nth-child(1),
-          &:nth-child(3),
-          &:nth-child(4) {
-            display: none !important;
-          }
-        }
-      }
-    }
-
-    input {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      padding: 0;
-      background: none;
-      border: none;
-      color: $text-color;
-      @include placeholder-text();
-      z-index: 2;
-      transform: translateY(-100%);
-      font-size: 12px;
-
-      &:focus {
-        outline: none;
-        box-shadow: none;
-        border-color: transparent;
-      }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: transparent;
     }
 
     &.error {
-      svg {
-        path {
-          stroke: $error !important;
-        }
-      }
-
-      input {
-        @include placeholder-text($error, 1);
-        color: $error;
-      }
-
-      .wpcf7-not-valid-tip {
-        display: block !important;
-      }
+      @include placeholder-text($error);
     }
+  }
+
+  textarea {
+    height: 100px;
   }
 
   .button {
     margin: 7px 0 0;
   }
 
+  .field-file {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0 30px 0 10px;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+  }
+
+  .jstyling-file {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    flex: 0 0 auto;
+
+    .jstyling-file-f {
+      overflow: hidden;
+      white-space: nowrap;
+      display: none;
+    }
+    .jstyling-file-b {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.1) url(../img/icons/file1.svg) 11px 50% no-repeat;
+      border-radius: 5px;
+      padding: 0 18px 0 40px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      color: $headline-color;
+      height: 40px;
+    }
+
+    input[type="file"] {
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      filter: alpha(opacity = 0);
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
   @include media-breakpoint-up(md) {
-    .field {
-      &.field-input {
-        height: 51px;
-      }
+    .form-wrapper {
+      display: flex;
+      margin: 0 -10px;
 
-      &.field-tabs {
-        display: flex;
-        padding: 0;
-        height: 44px;
-
-        .tab-nav {
-          li {
-            margin-top: 0;
-
-            label {
-              font-size: 14px;
-
-              & > span {
-                padding: 14px 19px;
-              }
-            }
-          }
-        }
-      }
-
-      &.field-message {
-        display: flex;
-        padding: 0;
-        height: 44px;
+      .col {
+        padding: 0 10px;
+        width: 50%;
       }
     }
 
+    .field {
+      margin: 0 0 20px;
+
+      &.field-file {
+        margin: 0 0 39px;
+      }
+    }
+
+    label,
+    .label {
+      font-size: 18px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+
+    input,
+    textarea {
+      font-size: 14px;
+    }
+
+    textarea {
+      height: 140px;
+    }
+
     .button {
-      margin: 27px 0 0;
+      margin: 0;
+    }
+
+    .field-file {
+      p {
+        max-width: 300px;
+        margin: 0 0 0 20px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+
+    .jstyling-file {
+      .jstyling-file-b {
+        background-position: 16px 50%;
+        padding: 0 24px 0 47px;
+        font-size: 14px;
+        height: 50px;
+      }
     }
   }
 
   @include media-breakpoint-up(lg) {
-    label,
-    .label {
-      font-size: 48px;
+    width: 50%;
+    padding: 0 10px;
+  }
+}
+
+.contact-info {
+  padding: 16px 0 0;
+
+  dl {
+    margin: 0;
+    padding: 0;
+
+    dt {
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.1;
+      margin: 0 0 2px;
     }
 
-    .field {
-      height: 68px !important;
+    dd {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      margin: 0 0 14px;
+      color: $headline-color;
+      letter-spacing: -0.01em;
+
+      &:last-child {
+        margin: 0;
+      }
     }
 
-    .animated-input {
-      max-width: 510px;
-      padding: 25px 0 0;
+    a {
+      color: inherit;
+    }
+  }
 
-      input {
-        transform: translateY(-80%);
-        font-size: 16px;
+  @include media-breakpoint-up(md) {
+    padding: 25px 0 0;
+
+    dl {
+      dt {
+        font-size: 18px;
+        line-height: 1.2;
+        margin: 0 0 11px;
+      }
+
+      dd {
+        font-size: 28px;
+        line-height: 1.2;
+        margin: 0 0 20px;
       }
     }
   }
 
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+    padding: 0 10px 0 50px;
+  }
+
   @include media-breakpoint-up(xl) {
-    .form-wrapper {
-      display: flex;
-
-      .col {
-        width: calc(50% - 20px);
-        overflow: hidden;
-
-        &:first-child {
-          margin-right: 20px;
-        }
-
-        &:last-child {
-          margin-left: 20px;
-        }
-      }
-    }
-
-    .animated-input {
-      padding: 30px 0 0;
-
-      input {
-        font-size: 18px;
-        transform: translateY(-70%);
-      }
-    }
+    padding-left: 125px;
   }
 }

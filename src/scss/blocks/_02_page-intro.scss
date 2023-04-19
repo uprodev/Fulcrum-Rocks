@@ -561,10 +561,12 @@
   }
 
   &.page-intro-contact {
+    padding: 0;
+
     .txt-lg {
       margin-top: -3px;
-      margin-bottom: 8px;
-      line-height: 0.915;
+      margin-bottom: 17px;
+      line-height: 0.9;
 
       .word {
         margin: -2rem 0;
@@ -583,11 +585,7 @@
       padding-bottom: 60px;
 
       .txt-lg {
-        margin-bottom: 117px;
-
-        .txt-gradient {
-          margin-left: 6.4rem;
-        }
+        margin-bottom: 40px;
       }
     }
   }

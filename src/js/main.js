@@ -555,31 +555,31 @@ jQuery(document).ready(function ($) {
   });
 
   // forms
-  $(".contact-form-01 .animated-input input").on("blur", function () {
+  $(".contact-form-01 input").on("blur", function () {
     if ($(this).attr("aria-invalid") === "true") {
-      $(this).parents(".animated-input").addClass("error");
+      $(this).addClass("error");
     } else {
-      $(this).parents(".animated-input").removeClass("error");
+      $(this).removeClass("error");
     }
   });
 
   $(".contact-form-01 form button[type=submit]").on("mouseup", function () {
-    console.log("click");
     setTimeout(() => {
       $(".contact-form-01 ")
-        .find(".animated-input input")
+        .find("input")
         .each(function () {
-          console.log($(this), $(this).attr("aria-invalid"));
-          if ($(this).attr("aria-invalid") === "true") {
-            $(this).parents(".animated-input").addClass("error");
+          if ($(this).attr("aria-invalid") === "true" || $(this).val() === "") {
+            $(this).addClass("error");
           } else {
-            $(this).parents(".animated-input").removeClass("error");
+            $(this).removeClass("error");
           }
         });
     }, 600);
   });
 
   $.jStyling.createSelect($("select.select"));
+  $.jStyling({ fileButtonText: "Attach a file" });
+  $.jStyling.createFileInput($("input.file"));
 
   $("[type=tel]").mask("+1 (999)-999-99-99");
 
