@@ -610,6 +610,46 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  console.log($('.contact-form-01 input[type="file"]').get(0).files[0]);
+  $('.contact-form-01 input[type="file"]').on("change", function () {
+    if ($(this).val() !== "") {
+      var name = $(this).get(0).files[0].name;
+      var size = $(this).get(0).files[0].size;
+      var fSExt = new Array("Bytes", "KB", "MB", "GB"),
+        i = 0;
+      while (size > 900) {
+        size /= 1024;
+        i++;
+      }
+      var exactSize = Math.round(size * 100) / 100 + " " + fSExt[i];
+
+      $("#fileName").text(name);
+      $("#fileSize").text(exactSize);
+      $(".contact-form-01 .field-file").hide();
+      $(".contact-form-01 .field-file-result").show();
+    }
+  });
+
+  $(".contact-form-01 .field-file-result .file-delete").on("click", function () {
+    $('.contact-form-01 input[type="file"]').val("");
+    $(".contact-form-01 .field-file").show();
+    $(".contact-form-01 .field-file-result").hide();
+  });
+
+  $(".page-intro-product .form input").on("keyup", function () {
+    var url = $(this).val();
+    var regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    if (url != "") {
+      if (regexp.test(url)) {
+        $(".page-intro-product .animation").addClass("active");
+      } else {
+        $(".page-intro-product .animation").removeClass("active");
+      }
+    } else {
+      $(".page-intro-product .animation").removeClass("active");
+    }
+  });
+
   //tabs
   $(".tabs .tab-panel.active").show();
   $(".tab-menu a").on("click", function (e) {
