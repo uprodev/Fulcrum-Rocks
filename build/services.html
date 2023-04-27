@@ -11,23 +11,6 @@
   </head>
 
   <body>
-    <div class="stick-navigation">
-      <nav>
-        <div class="logo">
-          <a href="#"><img loading="lazy" src="assets/img/logo-sm.svg" alt="" /></a>
-        </div>
-        <ul>
-          <li><a href="#">Projects</a></li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Estimate App</a></li>
-        </ul>
-      </nav>
-    </div>
-
     <div class="page-wrapper">
       <!-- start header-->
       <header id="header" class="header">
@@ -182,11 +165,11 @@
               </div>
             </nav>
             <div class="header-buttons">
-              <a href="#" class="btn-small btn-gradient">
+              <a href="#" class="button btn-medium">
                 <span class="btn-wrap">
                   <span class="btn-inner">
                     Start a project
-                    <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-light.svg" alt="" /></span>
+                    <span class="btn-icon"></span>
                   </span>
                 </span>
               </a>
@@ -222,7 +205,7 @@
                   <span class="btn-wrap">
                     <span class="btn-inner">
                       Get a quote
-                      <span class="btn-icon"><img loading="lazy" src="assets/img/icons/btn-arrow-dark.svg" alt="" /></span>
+                      <span class="btn-icon"></span>
                     </span>
                   </span>
                 </a>
@@ -323,11 +306,50 @@
             </div>
 
             <div class="graph">
+              <div class="overlay">
+                <div class="inner">
+                  <svg id="graphAnimation" width="1267" height="625" viewBox="0 0 1267 625" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M49 610V530" stroke="#E9EEF1" class="svg-elem-1"></path>
+                    <path
+                      d="M48.8027 610.403C54.4789 605.287 58.3029 601.426 70.4732 597.256C88.5319 591.068 95.7553 595.115 112.008 589.719C125.787 585.145 131.873 581.626 146.691 569.814C151.89 565.67 156.703 561.392 170.699 558.245C189.661 545.628 210.522 542.143 230.744 545.628C253.743 549.592 299.367 560.942 326.49 545.628C342.702 536.475 358.544 500.977 377.576 495.861C396.607 490.744 420.036 490.799 437.065 490.799C454.093 490.799 484.754 478.186 491.265 474.93C497.776 471.675 548.606 445.013 566.636 442.687C584.666 440.361 665.055 443.768 686.591 437.721C708.127 431.675 716.594 364.977 761.67 362.651C806.745 360.325 809.003 366.837 828.035 362.651C847.067 358.465 859.857 333.083 871.376 329.827C882.895 326.572 906.958 327.023 916.975 325.163C926.991 323.302 961.888 302.306 973.408 291.608C984.927 280.91 1011.33 285.313 1034.36 270.924C1049.21 261.64 1061.82 227.665 1076.34 216.968C1090.87 206.27 1110.65 196.284 1124.65 180.547C1133.75 170.31 1155.72 171.088 1170.25 158.065C1184.77 145.041 1183.79 135.583 1198.94 127.023C1207.64 122.111 1224.99 115.86 1233 114"
+                      stroke="url(#paint0_linear_7628_89815)"
+                      stroke-width="6"
+                      class="svg-elem-2"
+                    ></path>
+                    <path
+                      d="M1.764 502.98L1.764 523H5.096V502.98H1.764ZM18.2814 502.98V510.428H18.2254C17.4694 509.336 16.0694 508.3 13.8574 508.3C10.1894 508.3 7.47337 511.156 7.47337 515.86C7.47337 520.564 10.1894 523.42 13.8574 523.42C16.0694 523.42 17.4694 522.328 18.2254 521.348H18.2814V523H21.2214V502.98H18.2814ZM14.3614 521.012C11.7854 521.012 10.4134 518.66 10.4134 515.86C10.4134 513.06 11.7854 510.708 14.3614 510.708C16.7694 510.708 18.2534 512.668 18.2534 515.86C18.2534 519.024 16.7694 521.012 14.3614 521.012ZM30.0821 521.012C27.4781 521.012 25.9381 519.024 25.9381 516.616H36.9141C36.9141 511.52 34.6461 508.3 30.0261 508.3C25.7141 508.3 22.9981 511.212 22.9981 515.86C22.9981 520.34 25.7141 523.42 30.1661 523.42C33.8341 523.42 35.9621 521.348 36.6901 518.632H33.7501C33.4981 519.5 32.5181 521.012 30.0821 521.012ZM30.0261 510.624C32.4061 510.624 33.9741 512.22 33.9741 514.432H25.9381C25.9381 512.22 27.6461 510.624 30.0261 510.624ZM47.3018 512.444C47.3018 513.816 45.9578 514.096 43.7458 514.516C40.1618 515.216 37.8378 516.196 37.8378 519.332C37.8378 521.74 39.6298 523.42 42.5418 523.42C44.7538 523.42 46.3778 522.552 47.2738 521.292H47.3298C47.6098 522.692 48.3378 523.252 49.9058 523.252C50.4658 523.252 50.9418 523.196 51.6138 522.944V521.544C50.4658 521.656 50.2418 521.124 50.2418 520.116V513.312C50.2418 509.504 47.8898 508.3 44.7258 508.3C40.4138 508.3 38.6498 510.456 38.5098 513.2H41.3658C41.5058 511.352 42.3738 510.624 44.7258 510.624C46.6858 510.624 47.3018 511.408 47.3018 512.444ZM43.1858 521.096C41.5898 521.096 40.8058 520.368 40.8058 519.052C40.8058 517.596 41.8698 516.896 44.3058 516.364C45.6778 516.084 46.8258 515.748 47.3018 515.412V517.568C47.3018 519.892 45.6218 521.096 43.1858 521.096ZM59.612 511.1V508.692H56.924V504.184H53.956V508.692H51.884V511.1H53.956V519.108C53.956 522.132 55.244 523.196 57.596 523.196C58.38 523.196 59.024 523.112 59.612 522.972V520.564C57.708 520.676 56.924 520.48 56.924 518.856V511.1H59.612ZM63.1207 506.284C63.9887 506.284 64.8007 505.724 64.8007 504.716C64.8007 503.708 63.9887 503.176 63.1207 503.176C62.3087 503.176 61.4687 503.708 61.4687 504.716C61.4687 505.724 62.3087 506.284 63.1207 506.284ZM61.6647 508.692V523H64.6047V508.692H61.6647ZM73.7537 523.42C69.2737 523.42 66.5577 520.312 66.5577 515.86C66.5577 511.408 69.2737 508.3 73.7537 508.3C78.2338 508.3 80.9497 511.408 80.9497 515.86C80.9497 520.312 78.2338 523.42 73.7537 523.42ZM73.7537 521.012C76.5538 521.012 78.0098 518.8 78.0098 515.86C78.0098 512.892 76.5538 510.708 73.7537 510.708C70.9537 510.708 69.4977 512.892 69.4977 515.86C69.4977 518.8 70.9537 521.012 73.7537 521.012ZM90.4017 508.3C87.9377 508.3 86.4537 509.42 85.6977 510.54H85.6417V508.692H82.7017V523H85.6417V514.292C85.6417 512.164 87.0977 510.792 89.3657 510.792C91.3817 510.792 92.1937 512.024 92.1937 513.956V523H95.1617V513.116C95.1617 509.84 93.0617 508.3 90.4017 508.3Z"
+                      fill="#E9EEF1"
+                      class="svg-elem-3"
+                    ></path>
+                    <path d="M336.708 415H339.956V399.824H340.012L345.304 415H347.964L353.256 399.824H353.312V415H356.56V394.98H352.248L346.676 410.38H346.62L341.02 394.98H336.708V415ZM358.158 394.98L364.99 415H368.602L375.434 394.98H371.906L366.81 411.36H366.782L361.686 394.98H358.158ZM377.027 415H380.359V406.992H385.539C389.375 406.992 392.147 405.172 392.147 400.972C392.147 396.772 389.375 394.98 385.539 394.98H377.027V415ZM380.359 397.808H385.399C387.639 397.808 388.815 398.788 388.815 400.972C388.815 403.184 387.639 404.136 385.399 404.136H380.359V397.808Z" fill="white" class="svg-elem-4"></path>
+                    <path
+                      d="M580.708 343H584.04V334.992H589.22C593.056 334.992 595.828 333.172 595.828 328.972C595.828 324.772 593.056 322.98 589.22 322.98H580.708V343ZM584.04 325.808H589.08C591.32 325.808 592.496 326.788 592.496 328.972C592.496 331.184 591.32 332.136 589.08 332.136H584.04V325.808ZM604.26 328.356C602.384 328.356 601.208 329.588 600.452 331.38H600.396V328.692H597.456V343H600.396V335.692C600.396 332.64 602.664 330.736 605.492 331.212H605.548V328.44C605.128 328.384 604.764 328.356 604.26 328.356ZM613.132 343.42C608.652 343.42 605.936 340.312 605.936 335.86C605.936 331.408 608.652 328.3 613.132 328.3C617.612 328.3 620.328 331.408 620.328 335.86C620.328 340.312 617.612 343.42 613.132 343.42ZM613.132 341.012C615.932 341.012 617.388 338.8 617.388 335.86C617.388 332.892 615.932 330.708 613.132 330.708C610.332 330.708 608.876 332.892 608.876 335.86C608.876 338.8 610.332 341.012 613.132 341.012ZM632.132 322.98V330.428H632.076C631.32 329.336 629.92 328.3 627.708 328.3C624.04 328.3 621.324 331.156 621.324 335.86C621.324 340.564 624.04 343.42 627.708 343.42C629.92 343.42 631.32 342.328 632.076 341.348H632.132V343H635.072V322.98H632.132ZM628.212 341.012C625.636 341.012 624.264 338.66 624.264 335.86C624.264 333.06 625.636 330.708 628.212 330.708C630.62 330.708 632.104 332.668 632.104 335.86C632.104 339.024 630.62 341.012 628.212 341.012ZM647.012 328.692V337.4C647.012 339.528 645.556 340.9 643.288 340.9C641.272 340.9 640.46 339.668 640.46 337.736V328.692H637.492V338.576C637.492 341.852 639.592 343.392 642.252 343.392C644.716 343.392 646.2 342.272 646.956 341.152H647.012V343H649.952V328.692H647.012ZM662.329 333.928H665.269C664.905 330.68 662.469 328.3 658.745 328.3C654.489 328.3 651.717 331.38 651.717 335.86C651.717 340.34 654.489 343.42 658.773 343.42C662.497 343.42 665.045 340.984 665.269 337.68H662.329C662.217 339.276 661.293 341.012 658.773 341.012C655.861 341.012 654.657 338.548 654.657 335.86C654.657 333.172 655.889 330.708 658.773 330.708C661.293 330.708 662.217 332.472 662.329 333.928ZM673.763 331.1V328.692H671.075V324.184H668.107V328.692H666.035V331.1H668.107V339.108C668.107 342.132 669.395 343.196 671.747 343.196C672.531 343.196 673.175 343.112 673.763 342.972V340.564C671.859 340.676 671.075 340.48 671.075 338.856V331.1H673.763ZM675.009 334.516V337.26H682.541V334.516H675.009ZM700.456 328.3C698.244 328.3 696.844 329.392 695.78 330.764H695.724C695.136 329.224 693.932 328.3 691.916 328.3C689.76 328.3 688.416 329.42 687.66 330.54H687.604V328.692H684.664V343H687.604V334.292C687.604 332.164 688.864 330.792 690.824 330.792C692.868 330.792 693.26 332.024 693.26 333.956V343H696.228V334.292C696.228 332.164 697.46 330.792 699.448 330.792C701.464 330.792 701.856 332.024 701.856 333.956V343H704.824V333.116C704.824 330.036 703.34 328.3 700.456 328.3ZM715.923 332.444C715.923 333.816 714.579 334.096 712.367 334.516C708.783 335.216 706.459 336.196 706.459 339.332C706.459 341.74 708.251 343.42 711.163 343.42C713.375 343.42 714.999 342.552 715.895 341.292H715.951C716.231 342.692 716.959 343.252 718.527 343.252C719.087 343.252 719.563 343.196 720.235 342.944V341.544C719.087 341.656 718.863 341.124 718.863 340.116V333.312C718.863 329.504 716.511 328.3 713.347 328.3C709.035 328.3 707.271 330.456 707.131 333.2H709.987C710.127 331.352 710.995 330.624 713.347 330.624C715.307 330.624 715.923 331.408 715.923 332.444ZM711.807 341.096C710.211 341.096 709.427 340.368 709.427 339.052C709.427 337.596 710.491 336.896 712.927 336.364C714.299 336.084 715.447 335.748 715.923 335.412V337.568C715.923 339.892 714.243 341.096 711.807 341.096ZM728.478 328.356C726.602 328.356 725.426 329.588 724.67 331.38H724.614V328.692H721.674V343H724.614V335.692C724.614 332.64 726.882 330.736 729.71 331.212H729.766V328.44C729.346 328.384 728.982 328.356 728.478 328.356ZM731.375 322.98V343H734.315V337.82L736.303 335.944L740.811 343H744.339L738.319 334.012L743.751 328.692H740.139L734.315 334.432V322.98H731.375ZM750.821 341.012C748.217 341.012 746.677 339.024 746.677 336.616H757.653C757.653 331.52 755.385 328.3 750.765 328.3C746.453 328.3 743.737 331.212 743.737 335.86C743.737 340.34 746.453 343.42 750.905 343.42C754.573 343.42 756.701 341.348 757.429 338.632H754.489C754.237 339.5 753.257 341.012 750.821 341.012ZM750.765 330.624C753.145 330.624 754.713 332.22 754.713 334.432H746.677C746.677 332.22 748.385 330.624 750.765 330.624ZM765.947 331.1V328.692H763.259V324.184H760.291V328.692H758.219V331.1H760.291V339.108C760.291 342.132 761.579 343.196 763.931 343.196C764.715 343.196 765.359 343.112 765.947 342.972V340.564C764.043 340.676 763.259 340.48 763.259 338.856V331.1H765.947ZM779.604 325.388V322.98C779.016 322.868 778.372 322.784 777.644 322.784C775.292 322.784 774.004 323.848 774.004 326.872V328.692H771.96V331.1H774.004V343H776.972V331.1H779.604V328.692H776.972V327.124C776.972 325.5 777.7 325.304 779.604 325.388ZM782.924 326.284C783.792 326.284 784.604 325.724 784.604 324.716C784.604 323.708 783.792 323.176 782.924 323.176C782.112 323.176 781.272 323.708 781.272 324.716C781.272 325.724 782.112 326.284 782.924 326.284ZM781.468 328.692V343H784.408V328.692H781.468ZM793.949 331.1V328.692H791.261V324.184H788.293V328.692H786.221V331.1H788.293V339.108C788.293 342.132 789.581 343.196 791.933 343.196C792.717 343.196 793.361 343.112 793.949 342.972V340.564C792.045 340.676 791.261 340.48 791.261 338.856V331.1H793.949Z"
+                      fill="white"
+                      class="svg-elem-5"
+                    ></path>
+                    <path
+                      d="M1208.3 15.072C1205.5 14.372 1203.62 13.98 1203.62 11.796C1203.62 10.312 1205.05 9.416 1207.43 9.416C1210.2 9.416 1211.66 10.648 1211.96 12.972H1215.3C1215.02 8.856 1211.82 6.56 1207.43 6.56C1203.06 6.56 1200.32 8.548 1200.32 12.104C1200.32 15.912 1203.7 17.116 1206.84 17.9C1210.79 18.88 1212.5 19.328 1212.5 21.708C1212.5 23.248 1211.35 24.564 1208.38 24.564C1204.8 24.564 1203.06 22.884 1202.89 20.336H1199.56C1199.76 24.872 1203.48 27.42 1208.38 27.42C1213.42 27.42 1215.83 24.76 1215.83 21.568C1215.83 17.088 1212.58 16.164 1208.3 15.072ZM1227.75 17.928H1230.69C1230.33 14.68 1227.89 12.3 1224.17 12.3C1219.91 12.3 1217.14 15.38 1217.14 19.86C1217.14 24.34 1219.91 27.42 1224.19 27.42C1227.92 27.42 1230.47 24.984 1230.69 21.68H1227.75C1227.64 23.276 1226.71 25.012 1224.19 25.012C1221.28 25.012 1220.08 22.548 1220.08 19.86C1220.08 17.172 1221.31 14.708 1224.19 14.708C1226.71 14.708 1227.64 16.472 1227.75 17.928ZM1241.28 16.444C1241.28 17.816 1239.93 18.096 1237.72 18.516C1234.14 19.216 1231.81 20.196 1231.81 23.332C1231.81 25.74 1233.61 27.42 1236.52 27.42C1238.73 27.42 1240.35 26.552 1241.25 25.292H1241.31C1241.59 26.692 1242.31 27.252 1243.88 27.252C1244.44 27.252 1244.92 27.196 1245.59 26.944V25.544C1244.44 25.656 1244.22 25.124 1244.22 24.116V17.312C1244.22 13.504 1241.87 12.3 1238.7 12.3C1234.39 12.3 1232.63 14.456 1232.49 17.2H1235.34C1235.48 15.352 1236.35 14.624 1238.7 14.624C1240.66 14.624 1241.28 15.408 1241.28 16.444ZM1237.16 25.096C1235.57 25.096 1234.78 24.368 1234.78 23.052C1234.78 21.596 1235.85 20.896 1238.28 20.364C1239.65 20.084 1240.8 19.748 1241.28 19.412V21.568C1241.28 23.892 1239.6 25.096 1237.16 25.096ZM1247.08 6.98V27H1250.05V6.98H1247.08ZM1258.96 25.012C1256.35 25.012 1254.81 23.024 1254.81 20.616H1265.79C1265.79 15.52 1263.52 12.3 1258.9 12.3C1254.59 12.3 1251.87 15.212 1251.87 19.86C1251.87 24.34 1254.59 27.42 1259.04 27.42C1262.71 27.42 1264.84 25.348 1265.56 22.632H1262.62C1262.37 23.5 1261.39 25.012 1258.96 25.012ZM1258.9 14.624C1261.28 14.624 1262.85 16.22 1262.85 18.432H1254.81C1254.81 16.22 1256.52 14.624 1258.9 14.624Z"
+                      fill="white"
+                      class="svg-elem-6"
+                    ></path>
+                    <circle cx="49" cy="610" r="15" fill="#129DFF" class="svg-elem-7"></circle>
+                    <path d="M364 503V423" stroke="#E9EEF1" class="svg-elem-8"></path>
+                    <path d="M687 436V356" stroke="#E9EEF1" class="svg-elem-9"></path>
+                    <path d="M1233 114V34" stroke="#E9EEF1" class="svg-elem-10"></path>
+                    <circle cx="364" cy="503" r="15" fill="#36B5FC" class="svg-elem-11"></circle>
+                    <circle cx="687" cy="436" r="15" fill="#58CDF9" class="svg-elem-12"></circle>
+                    <circle cx="1233" cy="114" r="15" fill="#97F9F5" class="svg-elem-13"></circle>
+                    <defs>
+                      <linearGradient id="paint0_linear_7628_89815" x1="33.0014" y1="247.488" x2="1233" y2="247.488" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#0D99FF"></stop>
+                        <stop offset="1" stop-color="#99FAF4"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
               <figure>
-                <picture>
-                  <source media="(min-width: 640px)" srcset="assets/img/services01.png" />
-                  <img loading="lazy" src="assets/img/services01-m.png" alt="" />
-                </picture>
+                <img loading="lazy" src="assets/img/services01-m.png" alt="" />
               </figure>
               <div class="legend">
                 <div class="legend-text legend-text-ideation"><span>Ideation</span></div>
@@ -667,7 +689,7 @@
 
             <div class="block-text">
               <div class="col">
-                <div class="h1"><span class="split">Industries we</span><br /><span class="split">know by </span><span class="txt-gradient" data-delay="1">heart</span></div>
+                <div class="h1">Industries we<br />know by <span class="txt-gradient">heart</span></div>
               </div>
               <div class="col">
                 <p>Our Product Teams take full responsibility for understanding your exact needs and creating a product that brings value to the market.</p>
@@ -675,37 +697,32 @@
                   <ul class="tab-nav">
                     <li class="active">
                       <a href="#tab1">
-                        <span><span>EdTech</span></span>
+                        <span><span>Marketplaces</span></span>
                       </a>
                     </li>
                     <li>
                       <a href="#tab2">
-                        <span><span>eCommerce</span></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tab3">
-                        <span><span>HR &amp; Recruitment</span></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tab4">
                         <span><span>Healthcare</span></span>
                       </a>
                     </li>
                     <li>
-                      <a href="#tab5">
-                        <span><span>Automotive</span></span>
+                      <a href="#tab3">
+                        <span><span>EdTech</span></span>
                       </a>
                     </li>
                     <li>
-                      <a href="#tab6">
+                      <a href="#tab4">
                         <span><span>Gaming</span></span>
                       </a>
                     </li>
                     <li>
-                      <a href="#tab7">
-                        <span><span>Media</span></span>
+                      <a href="#tab5">
+                        <span><span>Employment</span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tab6">
+                        <span><span>Social</span></span>
                       </a>
                     </li>
                   </ul>
@@ -713,65 +730,371 @@
               </div>
             </div>
 
-            <div class="wrapper">
-              <div class="industries-tabs tabs">
-                <div class="tab-panel active" id="tab1">
-                  <h2>EdTech</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab2">
-                  <h2>eCommerce</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab3">
-                  <h2>HR &amp; Recruitment</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab4">
-                  <h2>Healthcare</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab5">
-                  <h2>Automotive</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab6">
-                  <h2>Gaming</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
-                </div>
-                <div class="tab-panel" id="tab7">
-                  <h2>Media</h2>
-                  <p>Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences. use cases: Bloss, VUC^IT, Kor, doit, sound garden Social Networking</p>
+            <div class="industries-tabs tabs">
+              <div class="tab-panel active" id="tab1">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <div class="card-top">
+                            <h2>Kör</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <p>The first-ever educational platform for drivers in Norway.</p>
+                          </div>
+                          <div class="card-image">
+                            <img loading="lazy" src="assets/img/card-kor.png" alt="" />
+                          </div>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>Marketplace</h3>
+                      <p>
+                        Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically, we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences.<br />
+                        Use cases: Bloss, VUC^IT, Kör, doit, Sound Garden
+                      </p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">FlipMD</a></li>
+                        <li><a href="#">Kor</a></li>
+                        <li><a href="#">Launch</a></li>
+                        <li><a href="#">Bloss</a></li>
+                        <li><a href="#">Finpeace</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="image">
-                <div class="image-inner">
-                  <img loading="lazy" src="assets/img/services02.png" alt="" />
-                  <svg id="svg" class="svg" width="270" height="180" viewBox="0 0 270 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_f_2857_11495)">
-                      <circle r="9.18359" transform="matrix(0.999465 -0.0326982 -0.0326982 -0.999465 243.769 84.4807)" fill="#99FAF4" fill-opacity="0.5" class="svg-elem-1"></circle>
-                    </g>
-                    <circle cx="243.769" cy="84.4812" r="3.0612" transform="rotate(-1.8738 243.769 84.4812)" fill="#99FAF4" class="svg-elem-2"></circle>
-                    <path
-                      d="M14.2036 97.4343L45.9383 95.6439C46.386 95.6186 46.7958 95.8945 46.9409 96.3189L49.9246 105.048C50.2719 106.064 51.7584 105.893 51.8658 104.825L54.112 82.4924C54.2228 81.3908 55.7764 81.2591 56.0709 82.3264L59.5729 95.0147C59.8207 95.9124 61.0531 96.0139 61.4443 95.1688L62.8294 92.1772C63.2524 91.2635 64.6081 91.4445 64.7325 92.4437C66.4762 106.442 73.0857 158.179 75.5079 158.042C78.3089 157.884 69.9421 19.545 72.7431 19.387C75.3596 19.2394 82.6215 84.0485 83.5672 92.5901C83.6257 93.1187 84.0854 93.4917 84.6164 93.4617L90.1605 93.149C93.9831 92.9333 97.7591 93.8864 101.473 94.8159C104.061 95.4635 106.902 95.7418 109.036 94.894C113.983 92.9289 116.721 91.6504 119.522 91.4924L131.262 90.8301C131.623 90.8097 131.967 90.9862 132.162 91.2915L139.016 102.06C139.516 102.846 140.724 102.582 140.85 101.659L143.267 84.0482C143.396 83.1025 144.651 82.8589 145.125 83.6872L147.31 87.503C147.771 88.3087 148.986 88.1055 149.16 87.1936L153.12 66.4498C153.333 65.3329 154.952 65.3722 155.099 66.4996C157.814 87.2321 166.527 152.907 167.942 152.827C169.623 152.733 165.177 14.172 167.418 14.0456C169.594 13.9228 179.435 83.8764 179.999 87.8986C180.015 88.0092 180.11 88.0741 180.222 88.0678V88.0678C184.779 87.8107 189.209 89.5597 193.557 90.95C196.131 91.7732 199.136 92.1473 202.126 91.328C209.874 89.2049 214.197 86.151 220.359 85.8034L243.328 84.5075"
-                      stroke="url(#paint0_linear_2857_11495)"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="svg-elem-3"
-                    ></path>
-                    <defs>
-                      <filter id="filter0_f_2857_11495" x="219.585" y="60.2971" width="48.3672" height="48.3674" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-                        <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_2857_11495"></feGaussianBlur>
-                      </filter>
-                      <linearGradient id="paint0_linear_2857_11495" x1="15.7225" y1="124.356" x2="244.847" y2="111.429" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#0D99FF"></stop>
-                        <stop offset="1" stop-color="#99FAF4"></stop>
-                      </linearGradient>
-                    </defs>
-                  </svg>
+              <div class="tab-panel" id="tab2">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <div class="card-top">
+                            <h2>FlipMD</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <p>A competitive marketplace of physicians offering their consulting services.</p>
+                          </div>
+                          <div class="card-image">
+                            <img loading="lazy" src="assets/img/card-flip.png" alt="" />
+                          </div>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>Healthcare</h3>
+                      <p>Healthcare is a sensitive matter and should be approached as such. The most challenging bit is to match the user’s expectations, provide a flawless, trustworthy UX/UI experience, manage the Big Data, and provide the highest standards of privacy and security. That’s what we do here.</p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">FlipMD</a></li>
+                        <li><a href="#">NextStop</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab3">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <div class="card-top">
+                            <h2>Bloss</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <p>An expert-driven education web & mobile platform for parents.</p>
+                          </div>
+                          <div class="card-image">
+                            <img loading="lazy" src="assets/img/card-bloss.png" alt="" />
+                          </div>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>EdTech</h3>
+                      <p>
+                        Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically, we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences.<br />
+                        Use cases: Bloss, VUC^IT, Kör, doit, Sound Garden
+                      </p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">Bloss</a></li>
+                        <li><a href="#">Kor</a></li>
+                        <li><a href="#">Vuc.it</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab4">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <a href="#" class="card-top">
+                            <h2>Buff</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </a>
+                          <a href="#" class="card-text">
+                            <p>A custom-developed 7 million-user gaming platform which rewards users just for playing.</p>
+                          </a>
+                          <a href="#" class="card-image">
+                            <img loading="lazy" src="assets/img/card-buff.png" alt="" />
+                          </a>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>Gaming</h3>
+                      <p>Gamers are a passionate bunch, that’s why we tend to onboard only gamers for our gaming industry projects. In addition to engineering expertise to handle a high load of users, research-based UX, and meticulous product management that guarantees complex cross-platform integrations, we also offer a team of people that truly care about your product and know exactly what gamers want. It takes one to know one, check out our project Buff that got a $9M IPO back in 2021.</p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">Buff</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab5">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <div class="card-top">
+                            <h2>Launch</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <p>A matchmaking platform that connects young professionals with their dream employers.</p>
+                          </div>
+                          <div class="card-image">
+                            <img loading="lazy" src="assets/img/card-launch.png" alt="" />
+                          </div>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>Employment</h3>
+                      <p>
+                        Fulcrum knows how to create bite-sized learning apps, just like corporate learning tools. Typically, we invest in UX, create fun gamified experiences, and focus on analytics to deliver exceptional learning experiences.<br />
+                        Use cases: Bloss, VUC^IT, Kör, doit, Sound Garden
+                      </p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">Launch</a></li>
+                        <li><a href="#">FlipMD</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab6">
+                <div class="wrapper">
+                  <div class="col">
+                    <div class="card-type-02 card-effect-02 card-cursor">
+                      <div class="card">
+                        <div class="card-inner">
+                          <div class="card-top">
+                            <h2>Plannly</h2>
+                            <div class="card-arrow arrow-icon-wrapper">
+                              <span class="arrow-icon">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                              <span class="arrow-icon arrow-icon-hover">
+                                <img loading="lazy" src="assets/img/icons/btn-arrow.svg" alt="" />
+                              </span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <p>Cross-platform mobile app that would allow users to plan their social gatherings & events in 3 simple steps.</p>
+                          </div>
+                          <div class="card-image">
+                            <img loading="lazy" src="assets/img/card-plannly.png" alt="" />
+                          </div>
+                          <div class="card-tabs">
+                            <ul class="tab-nav">
+                              <li>
+                                <a href="#">
+                                  <span><span>EdTech</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>UI/UX</span></span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <span><span>JS</span></span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tab-text">
+                      <h3>Social</h3>
+                      <p>Platforms for the media industry are usually niche products. Thus, they require deep research and understanding of the subject to connect with the audience and deliver seamless UX/UI. Involving huge traffic, it’s crucial to optimise resource management and allocation on the platform. What does it mean? WEBSITE LOADS FAST. And that’s what our engineering and DevOps teams do.</p>
+                      <h3>Use cases:</h3>
+                      <ul>
+                        <li><a href="#">ReechR</a></li>
+                        <li><a href="#">Plannly</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

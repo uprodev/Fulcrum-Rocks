@@ -29,75 +29,71 @@
   }
 
   .industries-tabs {
-    h2 {
-      margin: 0 0 8px;
-
-      @include media-breakpoint-down(sm) {
-        letter-spacing: -0.01em;
-        font-size: 1.714rem;
-      }
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .button {
-      display: none;
-    }
-
     .tab-panel {
       display: none;
     }
-  }
 
-  .image {
-    padding: 0 25px;
-    margin: 29px 0 0;
-    display: flex;
-
-    .image-inner {
-      position: relative;
-      width: 100%;
-      max-width: 448px;
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+    .wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: 26px;
     }
 
-    .svg {
-      position: absolute;
-      left: 35%;
-      top: 18.29%;
-      width: 52%;
-      height: auto;
+    .card-type-02 {
+      max-width: 555px;
+    }
+
+    .tab-text {
+      h3 {
+        margin: 0 0 10px;
+      }
+      p {
+        margin: 0 0 20px;
+        max-width: 555px;
+      }
+      ul {
+        margin: 6px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 22px;
+        row-gap: 15px;
+
+        a {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          color: $text-color;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: -0.01em;
+
+          &:after {
+            content: "";
+            display: block;
+            margin-left: 12px;
+            width: 12px;
+            height: 12px;
+            background: url(../img/icons/btn-arrow-gray.svg) 0 0 no-repeat;
+            background-size: cover;
+          }
+        }
+      }
     }
   }
 
   @include media-breakpoint-up(md) {
     .industries-tabs {
-      padding: 0 10px;
-      width: 50%;
+      .wrapper {
+        flex-direction: row;
+        margin: 0 -10px;
 
-      .button {
-        display: inline-block;
-        margin: 20px 0 0;
+        .col {
+          width: 50%;
+          padding: 0 10px;
+        }
       }
-    }
-
-    .image {
-      padding: 0 40px;
-      width: 50%;
-      order: -1;
-      margin: 0;
-    }
-
-    .wrapper {
-      display: flex;
-      margin: 0 -10px;
     }
   }
 
@@ -120,13 +116,19 @@
     }
 
     .industries-tabs {
-      .tab-panel {
-        max-width: 555px;
-      }
-    }
+      .tab-text {
+        p {
+          margin: 0 0 80px;
+        }
+        ul {
+          margin: 11px 0 0;
 
-    .image {
-      padding: 0 140px 0 40px;
+          a {
+            font-size: 28px;
+            line-height: 1.2;
+          }
+        }
+      }
     }
   }
 
@@ -137,14 +139,6 @@
 
     .industries-tabs {
       padding-top: 25px;
-
-      .button {
-        margin: 38px 0 0;
-      }
-    }
-
-    .image {
-      padding: 0 53px;
     }
   }
 }

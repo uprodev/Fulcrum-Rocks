@@ -108,31 +108,6 @@ button {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     border-radius: 5px 5px 16px 5px;
     z-index: 1;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      background: linear-gradient(90deg, #050505 0%, #1e1e1e 100%);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-      border-radius: 5px 5px 16px 5px;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      background: #050505;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-      border-radius: 5px 5px 16px 5px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
   }
 
   .btn-inner {
@@ -149,7 +124,7 @@ button {
     font-size: 14px;
     line-height: 140%;
     letter-spacing: 0.01em;
-    color: $white;
+    color: $dark;
   }
 
   .btn-icon {
@@ -164,17 +139,13 @@ button {
       transform: translate3d(-50%, -50%, 0);
       width: 6px;
       height: 6px;
-      background: #e9eef1;
+      background-color: $dark;
+      background-image: url(../img/icons/btn-arrow-light.svg);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 0 0;
       border-radius: 100%;
       transition: all 0.5s ease;
-    }
-
-    img {
-      display: block;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.5s ease;
     }
   }
 
@@ -198,35 +169,30 @@ button {
 
     .btn-icon {
       &:before {
-        width: 30px;
-        height: 30px;
-      }
-
-      img {
-        opacity: 1;
+        width: 34px;
+        height: 34px;
+        background-size: 8px 8px;
       }
     }
   }
 
   &:focus {
-    .btn-wrap {
-      &:after {
-        opacity: 1;
-      }
+    &:before,
+    &:after {
+      opacity: 0;
     }
   }
 
   &:active {
-    .btn-wrap {
-      &:after {
-        opacity: 1;
-      }
+    &:before,
+    &:after {
+      opacity: 0;
     }
-
     .btn-icon {
       &:before {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
+        background-size: 8px 8px;
       }
 
       img {
@@ -238,80 +204,106 @@ button {
   &.disabled,
   &[disabled] {
     pointer-events: none;
-    &:before {
+    &:before,
+    &:after {
       display: none;
     }
-
     .btn-wrap {
-      background: linear-gradient(180deg, #dadada 0%, #5a5a5a 100%);
+      background: #434343;
 
       &:before {
-        background: #2a2a2a;
-      }
-      &:after {
-        display: none;
-      }
-    }
-
-    .btn-inner {
-      color: #91999e;
-    }
-
-    .btn-icon {
-      display: block;
-      position: relative;
-
-      &:before {
-        background: #91999e;
-      }
-
-      img {
-        display: none;
+        background: #434343;
       }
     }
   }
 
-  &.btn-gradient {
+  &.btn-secondary {
     .btn-wrap {
-      &:before,
-      &:after {
-        display: none;
-      }
-    }
-    .btn-inner {
-      color: $dark;
-    }
-    .btn-icon {
       &:before {
-        background: $dark;
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        background: #050505;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+        border-radius: 5px 5px 16px 5px;
       }
     }
 
-    &:hover {
+    .btn-inner {
+      color: $white;
+    }
+
+    .btn-icon {
+      &:before {
+        background-color: $headline-color;
+        background-image: url(../img/icons/btn-arrow-dark.svg);
+      }
+    }
+
+    &.disabled,
+    &[disabled] {
+      pointer-events: none;
+      .btn-wrap {
+        background: $dark;
+
+        &:before {
+          background: #434343;
+        }
+      }
       .btn-inner {
         color: $dark;
+      }
+      .btn-icon {
+        &:before {
+          background-color: $dark;
+          background-image: url(../img/icons/btn-arrow-light.svg);
+        }
+      }
+    }
+  }
+
+  &.btn-medium {
+    height: 42px;
+    width: auto;
+    min-width: 140px;
+
+    .btn-inner {
+      font-size: 12px;
+      padding: 0 20px 0 15px;
+    }
+
+    .btn-icon {
+      width: 4px;
+      height: 4px;
+    }
+
+    &:hover {
+      .btn-icon {
+        &:before {
+          width: 32px;
+          height: 32px;
+          background-size: 8px 8px;
+        }
+      }
+    }
+
+    &:active {
+      .btn-icon {
+        &:before {
+          width: 32px;
+          height: 32px;
+          background-size: 8px 8px;
+        }
       }
     }
   }
 
   @include media-breakpoint-up(md) {
     width: 300px;
-    height: 62px;
-
-    // &:before {
-    //   border-radius: 10px 10px 22px 10px;
-    // }
-
-    // .btn-wrap {
-    //   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
-    //   border-radius: 10px 10px 18px 10px;
-
-    //   &:before,
-    //   &:after {
-    //     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
-    //     border-radius: 10px 10px 18px 10px;
-    //   }
-    // }
+    height: 60px;
 
     .btn-inner {
       font-size: 16px;
@@ -323,6 +315,7 @@ button {
         &:before {
           width: 42px;
           height: 42px;
+          background-size: 12px 12px;
         }
       }
     }
@@ -332,230 +325,8 @@ button {
         &:before {
           width: 42px;
           height: 42px;
+          background-size: 12px 12px;
         }
-      }
-    }
-  }
-
-  &.button-gradient {
-    .btn-wrap {
-      background: $white;
-
-      &:before {
-        background: linear-gradient(90deg, #0d99ff 0%, #e9eef1 100%);
-      }
-
-      &:after {
-        background: #e9eef1;
-      }
-    }
-
-    .btn-inner {
-      color: $dark;
-    }
-
-    .btn-icon {
-      &:before {
-        background-color: $dark;
-      }
-    }
-  }
-}
-
-.btn-small {
-  display: inline-block;
-  position: relative;
-  font-size: 0;
-  line-height: 0;
-  background: none;
-  border: none;
-  padding: 0;
-  width: 140px;
-  height: 42px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-  border-radius: 5px 5px 12px 5px;
-
-  &:before {
-    display: none;
-  }
-
-  .btn-wrap {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    position: relative;
-    @include gradient-base(90deg);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-    border-radius: 5px 5px 12px 5px;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      background: linear-gradient(90deg, #050505 0%, #242424 100%);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-      border-radius: 5px 5px 12px 5px;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 1px;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      background: #050505;
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-      border-radius: 5px 5px 12px 5px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-  }
-
-  .btn-inner {
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    letter-spacing: 0.01em;
-    color: $white;
-    font-size: 12px;
-    line-height: 1.2;
-    font-weight: 400;
-    padding: 13px 15px 13px 14px;
-  }
-
-  .btn-icon {
-    display: block;
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0);
-      background: #e9eef1;
-      border-radius: 100%;
-      transition: all 0.5s ease;
-      width: 4px;
-      height: 4px;
-    }
-
-    img {
-      display: block;
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      width: 7px;
-      height: 7px;
-    }
-  }
-
-  &:hover {
-    &:before {
-      opacity: 0.7;
-      filter: blur(8px);
-    }
-
-    .btn-wrap {
-      &:after {
-        opacity: 1;
-      }
-    }
-
-    .btn-icon {
-      &:before {
-        width: 24px;
-        height: 24px;
-      }
-
-      img {
-        opacity: 1;
-      }
-    }
-  }
-
-  &:focus {
-    .btn-wrap {
-      &:after {
-        opacity: 1;
-      }
-    }
-  }
-
-  &:active {
-    .btn-wrap {
-      &:after {
-        opacity: 1;
-      }
-    }
-
-    .btn-icon {
-      &:before {
-        width: 24px;
-        height: 24px;
-      }
-
-      img {
-        opacity: 1;
-      }
-    }
-  }
-
-  &.disabled {
-    pointer-events: none;
-    &:before {
-      display: none;
-    }
-
-    .btn-wrap {
-      background: linear-gradient(180deg, #dadada 0%, #5a5a5a 100%);
-
-      &:before {
-        background: #2a2a2a;
-      }
-      &:after {
-        display: none;
-      }
-    }
-
-    .btn-inner {
-      color: #91999e;
-    }
-
-    .btn-icon {
-      display: block;
-      position: relative;
-
-      &:before {
-        background: #91999e;
-      }
-
-      img {
-        display: none;
-      }
-    }
-  }
-
-  &.btn-gradient {
-    .btn-inner {
-      @include gradient-base(90deg);
-      color: $dark;
-    }
-
-    .btn-icon {
-      &:before {
-        background-color: $dark;
       }
     }
   }

@@ -156,6 +156,8 @@
           width: 100%;
           height: auto;
           object-position: center;
+          will-change: transform;
+          transition: transform 0.5s ease;
         }
       }
 
@@ -198,6 +200,18 @@
 
         .tab-nav li a > span {
           background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .card {
+      .card-inner {
+        .card-image {
+          img {
+            transform: scale(1.1);
+          }
         }
       }
     }

@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     $(".header").toggleClass("mob-menu-opened");
     $(".main-navigation").toggleClass("active");
   });
-  $(".main-navigation li, .stick-navigation li").each(function () {
+  $(".main-navigation li").each(function () {
     if ($(this).find(".dropdown").length) {
       $(this).addClass("parent");
     }
@@ -532,28 +532,6 @@ jQuery(document).ready(function ($) {
   };
   $(".scrollable").niceScroll(customScrollOptions);
 
-  function stickMenu() {
-    var scrollWin = $(window).scrollTop();
-    var top = $(".page-intro").outerHeight() + $(".header").outerHeight();
-
-    if (scrollWin > top) {
-      $(".stick-navigation").addClass("active");
-    } else {
-      $(".stick-navigation").removeClass("active");
-    }
-
-    if (scrollWin > 0) {
-      $(".header").addClass("fixed");
-    } else {
-      $(".header").removeClass("fixed");
-    }
-  }
-  stickMenu();
-
-  $(window).on("scroll", function () {
-    stickMenu();
-  });
-
   // forms
   $(".contact-form-01 input").on("blur", function () {
     if ($(this).attr("aria-invalid") === "true") {
@@ -610,7 +588,6 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  console.log($('.contact-form-01 input[type="file"]').get(0).files[0]);
   $('.contact-form-01 input[type="file"]').on("change", function () {
     if ($(this).val() !== "") {
       var name = $(this).get(0).files[0].name;
@@ -874,12 +851,10 @@ jQuery(document).ready(function ($) {
       var scrollbar = getScrollBarWidth();
       $(".header").css({ right: scrollbar });
       $(".page-wrapper").css({ "padding-right": scrollbar });
-      $(".stick-navigation").css({ "margin-left": -scrollbar / 2 });
     });
     $(".modal").on($.modal.AFTER_CLOSE, function (event, modal) {
       $(".header").css({ right: 0 });
       $(".page-wrapper").css({ "padding-right": 0 });
-      $(".stick-navigation").css({ "margin-left": 0 });
     });
   }
 
@@ -918,32 +893,32 @@ jQuery(document).ready(function ($) {
   });
 });
 
-if (document.getElementById("contactFormMessage")) {
-  var observe;
-  if (window.attachEvent) {
-    observe = function (element, event, handler) {
-      element.attachEvent("on" + event, handler);
-    };
-  } else {
-    observe = function (element, event, handler) {
-      element.addEventListener(event, handler, false);
-    };
-  }
-  function initTextarea() {
-    var text = document.getElementById("contactFormMessage");
-    function resize() {
-      text.style.height = "auto";
-      text.style.height = text.scrollHeight + "px";
-    }
-    function delayedResize() {
-      window.setTimeout(resize, 0);
-    }
-    observe(text, "change", resize);
-    observe(text, "cut", delayedResize);
-    observe(text, "paste", delayedResize);
-    observe(text, "drop", delayedResize);
-    observe(text, "keydown", delayedResize);
-    resize();
-  }
-  initTextarea();
-}
+// if (document.getElementById("contactFormMessage")) {
+//   var observe;
+//   if (window.attachEvent) {
+//     observe = function (element, event, handler) {
+//       element.attachEvent("on" + event, handler);
+//     };
+//   } else {
+//     observe = function (element, event, handler) {
+//       element.addEventListener(event, handler, false);
+//     };
+//   }
+//   function initTextarea() {
+//     var text = document.getElementById("contactFormMessage");
+//     function resize() {
+//       text.style.height = "auto";
+//       text.style.height = text.scrollHeight + "px";
+//     }
+//     function delayedResize() {
+//       window.setTimeout(resize, 0);
+//     }
+//     observe(text, "change", resize);
+//     observe(text, "cut", delayedResize);
+//     observe(text, "paste", delayedResize);
+//     observe(text, "drop", delayedResize);
+//     observe(text, "keydown", delayedResize);
+//     resize();
+//   }
+//   initTextarea();
+// }

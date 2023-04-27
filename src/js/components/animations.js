@@ -203,6 +203,15 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if (document.getElementById("graphAnimation")) {
+    ScrollTrigger.create({
+      trigger: "#graphAnimation",
+      start: "top 50%",
+      end: "bottom top",
+      toggleClass: "active",
+    });
+  }
+
   // lines animations
   var lines = document.querySelectorAll(".line-animated");
   if (lines) {
