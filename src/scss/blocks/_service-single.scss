@@ -83,7 +83,7 @@
           .button {
             &.btn-success {
               .btn-wrap {
-                &:after {
+                &:before {
                   background: #695cff;
                 }
               }
@@ -1953,7 +1953,7 @@
       .button {
         &.btn-success {
           .btn-wrap {
-            &:after {
+            &:before {
               background: #30db74;
               opacity: 1;
             }
@@ -1968,10 +1968,7 @@
               background-image: url(../img/icons/ico-success.svg);
               background-repeat: no-repeat;
               background-position: 50%;
-            }
-
-            img {
-              display: none;
+              background-size: auto;
             }
 
             @include media-breakpoint-up(md) {

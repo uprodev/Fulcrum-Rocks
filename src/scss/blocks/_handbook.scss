@@ -32,8 +32,29 @@
         .button {
           &.btn-success {
             .btn-wrap {
-              &:after {
+              &:before {
                 background: #30db74;
+                opacity: 1;
+              }
+            }
+            .btn-inner {
+              color: $dark;
+            }
+            .btn-icon {
+              &:before {
+                width: 30px;
+                height: 30px;
+                background-image: url(../img/icons/ico-success.svg);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: auto;
+              }
+
+              @include media-breakpoint-up(md) {
+                &:before {
+                  width: 42px;
+                  height: 42px;
+                }
               }
             }
           }
@@ -107,37 +128,6 @@
       transform: none;
       right: 15px;
     }
-
-    // .slide-text {
-    //   h3 {
-    //     margin: 11px 0 0;
-    //     font-size: 2.6rem;
-    //     line-height: 1;
-    //   }
-
-    //   ul {
-    //     margin: 0;
-    //     padding: 0;
-    //     list-style: none;
-    //     font-size: 24px;
-    //     font-weight: 500;
-    //     line-height: 1;
-    //     letter-spacing: -0.01em;
-
-    //     li {
-    //       margin: 20px 0 0;
-    //     }
-
-    //     a {
-    //       color: $headline-color;
-    //       text-decoration: underline;
-
-    //       &:hover {
-    //         text-decoration: none;
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   @include media-breakpoint-up(sm) {
@@ -149,33 +139,12 @@
   }
 
   @include media-breakpoint-up(md) {
-    // .card-type-20 {
-    // width: 50%;
-    // max-width: 335px;
-    // flex: 0 0 auto;
-    // }
-
     .swiper-02 {
       .swiper-button-prev,
       .swiper-button-next {
         top: 50%;
         right: 30px;
       }
-
-      // .swiper-slide {
-      //   display: flex;
-      //   align-items: flex-start;
-      //   justify-content: space-between;
-      // }
-
-      // .slide-text {
-      //   width: 50%;
-      //   padding: 0 50px 0 10px;
-
-      //   h3 {
-      //     margin: 5px 0 0;
-      //   }
-      // }
     }
   }
 
@@ -186,9 +155,6 @@
       }
     }
     .card-type-20 {
-      // width: 50%;
-      // max-width: 555px;
-
       .card {
         .card-image {
           background-image: url(../img/bg/bg-handbook.png);
@@ -213,28 +179,6 @@
         top: 49%;
         right: 83px;
       }
-
-      // .swiper-slide {
-      //   justify-content: space-between;
-      // }
-
-      // .slide-text {
-      //   width: 50%;
-      //   padding: 0 10px;
-
-      //   h3 {
-      //     margin-bottom: 38px;
-      //   }
-
-      //   ul {
-      //     font-size: 28px;
-      //     line-height: 1.2;
-
-      //     li {
-      //       margin: 0 0 42px;
-      //     }
-      //   }
-      // }
     }
   }
 

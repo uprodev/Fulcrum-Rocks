@@ -829,7 +829,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".page-handbook .block-service-colored-box .colored-box form input ").on("keyup", function (e) {
+  $(".page-handbook .block-service-colored-box .colored-box form input ").on("keyup, change, blur", function (e) {
     var patternMail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
     if (!patternMail.test($(this).val()) || $(this).val() == "") {
       err = true;
