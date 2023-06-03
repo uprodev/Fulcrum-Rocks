@@ -524,3 +524,14 @@
     }
   }
 }
+
+.swiper-12 {
+  margin-right: -13px;
+  padding-right: 13px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}

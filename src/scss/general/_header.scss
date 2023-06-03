@@ -9,6 +9,12 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 
+  @include media-breakpoint-down(lg) {
+    &.color-dark {
+      background: rgba($dark, 0.5);
+    }
+  }
+
   .header-wrapper {
     display: flex;
     align-items: center;

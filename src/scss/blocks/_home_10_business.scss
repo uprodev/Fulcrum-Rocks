@@ -39,11 +39,14 @@
     .contact-form {
       p {
         max-width: 555px;
-      }
-
-      p {
         margin: 7px 0 40px;
         line-height: 1.39;
+      }
+
+      .field {
+        p {
+          max-width: none;
+        }
       }
     }
   }

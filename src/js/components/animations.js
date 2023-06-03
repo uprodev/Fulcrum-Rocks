@@ -391,4 +391,41 @@ jQuery(document).ready(function ($) {
       blackout.style.top = e.clientY + "px";
     });
   }
+
+  if ($(".reviews-list").length) {
+    var container = document.querySelector(".reviews-row");
+    ScrollTrigger.create({
+      trigger: ".block-page--wp-4",
+      start: "bottom bottom",
+      end: () => `+=${container.scrollWidth - container.offsetWidth + 200}`,
+      pin: true,
+    });
+
+    gsap.utils.toArray(".reviews-row").forEach((row, index) => {
+      const [x, xEnd] = index % 2 ? [(row.scrollWidth - row.offsetWidth) * -1, 0] : [0, (row.scrollWidth - row.offsetWidth) * -1];
+      gsap.fromTo(
+        row,
+        { x },
+        {
+          x: xEnd,
+          scrollTrigger: {
+            trigger: ".reviews-list",
+            start: "bottom bottom",
+            scrub: true,
+          },
+        }
+      );
+    });
+  }
+
+  if ($(".case-main").length) {
+    console.log("case");
+    var caseContainer = document.querySelector(".case-main");
+    ScrollTrigger.create({
+      trigger: caseContainer,
+      start: "top top",
+      end: "bottom top",
+      toggleClass: { targets: ".header", className: "color-dark" },
+    });
+  }
 });

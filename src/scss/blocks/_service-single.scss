@@ -1859,7 +1859,7 @@
     }
 
     .column {
-      padding: 20px 20px 15px;
+      padding: 20px 20px 25px;
       height: 440px;
       display: flex;
       flex-direction: column;
@@ -2030,8 +2030,13 @@
 
         .submit {
           flex: 0 0 auto;
-          width: 300px;
+          width: 50%;
+          max-width: 300px;
           margin: 0 0 -5px;
+
+          .button {
+            width: 100%;
+          }
         }
       }
     }

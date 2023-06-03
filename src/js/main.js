@@ -323,6 +323,7 @@ jQuery(document).ready(function ($) {
             scrollbar: false,
             navigation: false,
             loop: false,
+            allowTouchMove: false,
             slidesPerView: 4,
             spaceBetween: 0,
           },
@@ -357,7 +358,6 @@ jQuery(document).ready(function ($) {
           ScrollTrigger.refresh();
         },
         realIndexChange: function (swiper) {
-          console.log(swiper.realIndex);
           $(".swiper-07-nav [data-slide]").each(function () {
             if (parseInt($(this).attr("data-slide")) === swiper.realIndex && !$(this).hasClass("active")) {
               $(".swiper-07-nav .active").removeClass("active");
@@ -559,7 +559,7 @@ jQuery(document).ready(function ($) {
   $.jStyling({ fileButtonText: "Attach a file" });
   $.jStyling.createFileInput($("input.file"));
 
-  $("[type=tel]").mask("+1 (999)-999-99-99");
+  // $("[type=tel]").mask("+1 (999)-999-99-99");
 
   $("#contactForm").on("submit", function (e) {
     var err = false;
@@ -643,6 +643,7 @@ jQuery(document).ready(function ($) {
         $activeTab.removeClass("active").hide();
         $nextTab.addClass("active").fadeIn(400);
         eqHeight();
+        ScrollTrigger.refresh();
       }
     }
   });
@@ -829,13 +830,15 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".page-handbook .block-service-colored-box .colored-box form input ").on("keyup, change, blur", function (e) {
+  $(".page-handbook .block-service-colored-box .colored-box form input ").on("input", function (e) {
     var patternMail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
     if (!patternMail.test($(this).val()) || $(this).val() == "") {
       err = true;
       $(this).closest(".field").removeClass("success");
+      $(this).parents("form").find("[type=submit] .btn-text").text("Get the checklist");
     } else {
       $(this).closest(".field").addClass("success");
+      $(this).parents("form").find("[type=submit] .btn-text").text("Get for FREE");
     }
   });
 
@@ -867,20 +870,46 @@ jQuery(document).ready(function ($) {
       text.each(function () {
         $(this).height("auto");
       });
-      var eH = 0;
-      text.each(function () {
-        if ($(this).height() > eH) {
-          eH = $(this).height();
+      var eh = 0,
+        eh1 = 0;
+      text.each(function (i) {
+        if (i < 4) {
+          if ($(this).height() > eh) {
+            eh = $(this).height();
+          }
+        } else {
+          if ($(this).height() > eh1) {
+            eh1 = $(this).height();
+          }
         }
       });
-      text.each(function () {
-        $(this).height(eH);
+      text.each(function (i) {
+        if (i < 4) {
+          $(this).height(eh);
+        } else {
+          $(this).height(eh1);
+        }
       });
     });
   }
+  function eqHeight1() {
+    var eH = 0;
+    $(".page-wp .block-page--wp-3 .card .text").each(function () {
+      $(this).height("auto");
+
+      if ($(this).height() > eH) {
+        eH = $(this).height();
+      }
+    });
+    $(".page-wp .block-page--wp-3 .card .text").each(function () {
+      $(this).height(eH);
+    });
+  }
   eqHeight();
+  eqHeight1();
   $(window).on("resize", function () {
     eqHeight();
+    eqHeight1();
   });
 
   // btn-anchor

@@ -604,6 +604,10 @@
       margin-bottom: 0;
       line-height: 0.9;
 
+      @media (max-width: 459px) {
+        font-size: 17vw;
+      }
+
       .word {
         margin: -2rem 0;
       }
@@ -901,6 +905,136 @@
       }
       .text {
         max-width: 555px;
+      }
+    }
+  }
+
+  &.page-intro-wp {
+    padding: 0 0 55px;
+    position: relative;
+
+    .container {
+      &:before {
+        background-image: url(../img/bg/oval-blue.webp);
+        width: 1000px;
+        height: 1000px;
+        right: -500px;
+        top: -500px;
+      }
+      &:after {
+        background-image: url(../img/bg/oval-green.webp);
+        width: 1000px;
+        height: 1000px;
+        left: auto;
+        right: -550px;
+        top: -250px;
+      }
+    }
+
+    .wrapper {
+      position: relative;
+    }
+
+    .txt-lg {
+      margin: 0 -13px 50px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image {
+      overflow: hidden;
+      margin: 0 -13px 55px 0;
+
+      img {
+        display: block;
+        width: 395px;
+        height: auto;
+      }
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 400px) {
+      .image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .txt-lg {
+        float: none;
+        width: auto;
+        max-width: none;
+      }
+
+      .text {
+        float: none;
+        width: auto;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .txt-lg {
+        margin: 0 0 180px;
+      }
+
+      .image {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        margin: 0 -13px 0 0;
+        width: 65%;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 0 113px;
+
+      .container {
+        &:before {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          right: -800px;
+          top: -1000px;
+        }
+        &:after {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          right: -1000px;
+          top: -500px;
+        }
+      }
+
+      .image {
+        top: auto;
+        bottom: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+      .txt-lg {
+        margin: 0 0 282px;
+      }
+      .text {
+        max-width: 555px;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .txt-lg {
+        margin: 0 0 307px;
+      }
+      .image {
+        width: auto;
+        margin: 0 -150px 0 0;
       }
     }
   }

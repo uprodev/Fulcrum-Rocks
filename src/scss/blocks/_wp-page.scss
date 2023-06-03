@@ -1,0 +1,1091 @@
+.page-wp {
+  --color-main: #00a3ff;
+  --color-secondary: #8dff48;
+  overflow: hidden;
+
+  .txt-gradient {
+    background-color: $white;
+    background-image: linear-gradient(90deg, var(--color-main) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 5px 0 0;
+  }
+
+  .block-page {
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    &--wp-1 {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg/oval-blue.webp);
+        width: 1000px;
+        height: 1000px;
+        left: -500px;
+        top: -150px;
+      }
+
+      .block-text {
+        margin-bottom: 18px;
+      }
+
+      .card-type-10 {
+        height: 260px;
+
+        .card-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h3 {
+            line-height: 1;
+            margin: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 0 100px;
+
+        &:before {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          left: -800px;
+          top: 0;
+        }
+
+        .swiper-05,
+        .swiper-052 {
+          .swiper-wrapper {
+            flex-wrap: wrap;
+            width: auto;
+            margin: 0 -10px;
+            border: none;
+            border-radius: 0;
+            clip-path: none;
+
+            &:before,
+            &:after {
+              display: none;
+            }
+
+            .swiper-slide {
+              margin: 0 !important;
+              padding: 0 10px 20px;
+              width: 25% !important;
+            }
+          }
+
+          .swiper-button-next,
+          .swiper-button-prev,
+          .swiper-05-scrollbar {
+            display: none !important;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .block-text {
+          margin-bottom: 37px;
+        }
+
+        .card-type-10 {
+          height: 400px;
+
+          .card-inner {
+            h3 {
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+
+    &--wp-2 {
+      .block-text {
+        margin-bottom: 20px;
+      }
+
+      .wrapper {
+        position: relative;
+        padding: 120px 0 133px;
+
+        .image {
+          overflow: hidden;
+          margin: 0 -13px 0 0;
+
+          img {
+            display: block;
+            width: 560px;
+            height: auto;
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          width: 129px;
+          height: 129px;
+          padding: 1px;
+          background-image: linear-gradient(90deg, var(--color-main) 0%, var(--color-secondary) 100%);
+          border-radius: 100%;
+
+          .overlay-inner {
+            background-color: $dark;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
+            position: relative;
+            z-index: 2;
+
+            span {
+              display: block;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 120%;
+              text-align: center;
+              color: $headline-color;
+            }
+          }
+
+          &.overlay-01 {
+            left: 0;
+            top: 0;
+          }
+          &.overlay-02 {
+            left: 0;
+            bottom: 0;
+          }
+          &.overlay-03 {
+            right: 0;
+            top: 0;
+          }
+          &.overlay-04 {
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        .wrapper {
+          padding: 50px 0 80px;
+
+          .image {
+            margin: 0 70px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .overlay {
+            &:after {
+              content: "";
+              position: absolute;
+            }
+
+            &.overlay-01 {
+              &:after {
+                width: 102.5%;
+                height: 40%;
+                left: 65%;
+                top: 50%;
+                background: url(../img/bg/line1.svg) 0 / cover no-repeat;
+              }
+            }
+            &.overlay-02 {
+              left: 30px;
+              &:after {
+                width: 113%;
+                height: 49%;
+                left: 48%;
+                bottom: 42%;
+                background: url(../img/bg/line2.svg) 0 / cover no-repeat;
+              }
+            }
+            &.overlay-03 {
+              &:after {
+                width: 81.4%;
+                height: 19.6%;
+                right: 51%;
+                top: 52%;
+                background: url(../img/bg/line3.svg) 0 / cover no-repeat;
+              }
+            }
+            &.overlay-04 {
+              right: 30px;
+              &:after {
+                width: 102.1%;
+                height: 40%;
+                right: 59%;
+                bottom: 51%;
+                background: url(../img/bg/line4.svg) 0 / cover no-repeat;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .wrapper {
+          padding: 60px 0 120px;
+
+          .overlay {
+            width: 200px;
+            height: 200px;
+
+            &.overlay-02 {
+              left: 30px;
+            }
+
+            &.overlay-04 {
+              right: 30px;
+            }
+
+            .overlay-inner {
+              padding: 0 20px;
+
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .block-text {
+          margin-bottom: 37px;
+        }
+
+        .wrapper {
+          padding: 99px 0 149px;
+
+          .overlay {
+            width: 280px;
+            height: 280px;
+
+            &.overlay-02 {
+              left: 117px;
+            }
+
+            &.overlay-04 {
+              right: 115px;
+              bottom: 6px;
+            }
+
+            .overlay-inner {
+              padding: 0 25px;
+
+              span {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--wp-3 {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg/oval-green.webp);
+        width: 1000px;
+        height: 1000px;
+        right: -400px;
+        top: -250px;
+      }
+
+      .block-text {
+        margin-bottom: 20px;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        .card {
+          position: relative;
+          padding: 104.5% 0 0;
+
+          .card-arrow {
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 5;
+          }
+
+          .image {
+            @include abs;
+
+            img {
+              @include img-fit;
+              border-radius: 10px 10px 12px 12px;
+            }
+            &:after {
+              content: "";
+              @include abs;
+              background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, #050505 100%);
+              border-radius: 10px;
+            }
+          }
+
+          .text {
+            @include abs;
+            top: auto;
+            padding: 10px;
+            z-index: 5;
+            color: $headline-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            p {
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 100%;
+              letter-spacing: -0.01em;
+              color: #e9eef1;
+              margin: 0 0 5px;
+            }
+
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              font-size: 12px;
+              line-height: 130%;
+
+              li {
+                margin: 5px 0 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        .wrapper {
+          flex-direction: row;
+          margin: 0 -10px;
+
+          .column {
+            width: 50%;
+            padding: 0 10px;
+          }
+
+          .card {
+            .text-right {
+              min-height: 124px;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:before {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          right: -850px;
+          top: -600px;
+        }
+
+        .wrapper {
+          .card {
+            .text {
+              padding: 20px 10px;
+              flex-direction: row;
+              justify-content: unset;
+            }
+
+            .text-right,
+            .text-left {
+              width: 50%;
+              padding: 0 10px;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .block-text {
+          margin-bottom: 37px;
+        }
+
+        .wrapper {
+          .card {
+            .text {
+              min-height: 205px;
+
+              p {
+                font-size: 28px;
+                line-height: 120%;
+              }
+
+              ul {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 120%;
+
+                li {
+                  margin: 0 0 15px;
+
+                  &:last-child {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--wp-4 {
+      margin: 0;
+      padding: 0 0 60px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg/oval-green.webp);
+        width: 1000px;
+        height: 1000px;
+        right: -400px;
+        top: 0;
+      }
+
+      .block-text {
+        margin-bottom: 20px;
+      }
+
+      .reviews-list {
+        margin: 0 -13px;
+        width: 100vw;
+        padding: 0 13px;
+      }
+
+      .reviews-row {
+        margin: 0 0 10px;
+        display: flex;
+      }
+
+      .reviews-card {
+        flex: 0 0 auto;
+        width: 249px;
+        margin: 0 10px 0 0;
+        @include card-border;
+        background-color: $dark;
+
+        .inner {
+          display: flex;
+          padding: 10px 10px 19px;
+          height: 100%;
+        }
+
+        .card-image {
+          flex: 0 0 auto;
+          width: 30px;
+          height: 30px;
+          margin: 0 10px 0 0;
+
+          img {
+            @include img-fit;
+            border-radius: 5px;
+          }
+        }
+
+        .card-main {
+          display: flex;
+          height: 100%;
+          flex-direction: column;
+        }
+
+        .card-text {
+          margin: 0 0 8px;
+
+          .card-author {
+            font-size: 12px;
+            line-height: 130%;
+            margin: 0 0 2px;
+
+            strong {
+              margin: 0 12px 0 0;
+              font-weight: 500;
+              font-size: 14px;
+              color: $headline-color;
+            }
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 140%;
+            margin: 0;
+          }
+        }
+
+        .card-footer {
+          margin-top: auto;
+          display: flex;
+
+          span {
+            display: block;
+            margin: 0 4px 0 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            font-size: 14px;
+            line-height: 140%;
+            padding: 4px 12px;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        .reviews-row {
+          margin: 0 0 20px;
+        }
+
+        .reviews-card {
+          width: 555px;
+          margin: 0 20px 0 0;
+
+          .inner {
+            padding: 20px 20px 30px;
+          }
+
+          .card-image {
+            width: 50px;
+            height: 50px;
+
+            img {
+              border-radius: 10px;
+            }
+          }
+
+          .card-main {
+            height: auto;
+          }
+
+          .card-text {
+            margin: 0 0 10px;
+
+            .card-author {
+              font-size: 14px;
+              line-height: 140%;
+              margin: 0 0 6px;
+
+              strong {
+                font-size: 16px;
+              }
+            }
+
+            p {
+              font-size: 18px;
+            }
+          }
+
+          .card-footer {
+            margin-top: 0;
+            span {
+              margin: 0 10px 0 0;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:before {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          right: -900px;
+          top: -200px;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        padding: 0 0 100px;
+
+        .block-text {
+          margin-bottom: 37px;
+        }
+
+        .reviews-list {
+          margin: 0 -150px;
+          padding: 0 150px;
+        }
+
+        .reviews-card {
+          .card-text {
+            p {
+              font-size: 22px;
+              line-height: 1.2;
+            }
+          }
+        }
+      }
+    }
+
+    &--wp-5 {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg/oval-blue.webp);
+        width: 1000px;
+        height: 1000px;
+        left: -500px;
+        top: 150px;
+      }
+
+      .block-text {
+        margin-bottom: 18px;
+      }
+
+      .wrapper {
+        position: relative;
+        padding: 50px 0 52px;
+
+        .image {
+          overflow: hidden;
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          width: 129px;
+          height: 129px;
+          padding: 1px;
+          background-image: linear-gradient(90deg, var(--color-main) 0%, var(--color-secondary) 100%);
+          border-radius: 100%;
+
+          .overlay-inner {
+            background-color: $dark;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+
+            span {
+              display: block;
+              font-size: 10px;
+              line-height: 120%;
+              text-align: center;
+            }
+
+            strong {
+              display: block;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 14px;
+              margin: 0 0 4px;
+              text-align: center;
+              color: $headline-color;
+            }
+          }
+
+          &.overlay-01 {
+            left: 0;
+            top: 0;
+          }
+          &.overlay-02 {
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        .wrapper {
+          padding: 0 100px 0 140px;
+
+          .overlay {
+            &:after {
+              content: "";
+              position: absolute;
+              width: 81.4%;
+              height: 19.6%;
+            }
+
+            &.overlay-01 {
+              top: 50%;
+              transform: translateY(-50%);
+
+              &:after {
+                left: 90%;
+                top: 54%;
+                background: url(../img/bg/line5.svg) 0 / cover no-repeat;
+              }
+            }
+            &.overlay-02 {
+              top: 50%;
+              transform: translateY(-50%);
+
+              &:after {
+                right: 94%;
+                bottom: 45%;
+                background: url(../img/bg/line6.svg) 0 / cover no-repeat;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:before {
+          background-size: cover;
+          width: 2000px;
+          height: 2000px;
+          left: auto;
+          right: -900px;
+          top: -200px;
+        }
+
+        .wrapper {
+          padding: 0 180px 0 230px;
+
+          .overlay {
+            width: 200px;
+            height: 200px;
+
+            .overlay-inner {
+              padding: 0 20px;
+
+              span {
+                font-size: 14px;
+              }
+
+              strong {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        .block-text {
+          margin-bottom: -40px;
+        }
+
+        .wrapper {
+          padding: 0 263px 0 310px;
+
+          .overlay {
+            width: 280px;
+            height: 280px;
+
+            .overlay-inner {
+              padding: 0 20px;
+
+              span {
+                font-size: 18px;
+                line-height: 140%;
+                margin: 0 25px;
+              }
+
+              strong {
+                font-size: 20px;
+                line-height: 120%;
+                margin: 0 0 10px;
+              }
+            }
+
+            &.overlay-02 {
+              .overlay-inner {
+                span {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .block-wp-cta {
+    position: relative;
+    margin: 0 0 60px;
+
+    .container {
+      position: relative;
+      z-index: 5;
+    }
+
+    .cta-wrapper {
+      @include card-borders;
+      background-image: linear-gradient(90deg, var(--color-main) 0%, var(--color-secondary) 100%);
+      padding: 1px;
+    }
+
+    .inner {
+      @include card-borders;
+      background: $dark url(../img/bg/bg-hunt-m.svg) right bottom no-repeat;
+      background-size: 100% auto;
+      padding: 25px 19px 14px;
+    }
+
+    .h1 {
+      font-size: 41px;
+      line-height: 1;
+
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      margin: 10px 0 135px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .inner {
+        background-image: url(../img/bg/bg-hunt.svg);
+        background-size: auto 100%;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .h1 {
+        br {
+          display: block;
+        }
+      }
+
+      p {
+        width: 50%;
+        max-width: 600px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 0 120px;
+
+      .inner {
+        padding: 45px 39px 32px;
+      }
+
+      .h1 {
+        font-size: 92px;
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+      }
+
+      p {
+        margin: 12px 0 147px;
+      }
+    }
+  }
+
+  .block-wp-accordion {
+    .block-text {
+      margin-bottom: 25px;
+    }
+
+    .accordion-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      & > li {
+        position: relative;
+        padding: 24px 0 10px;
+        min-height: 84px;
+
+        .line-animated {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+
+        .accordion-panel {
+          display: none;
+          padding: 0 0 10px;
+
+          p {
+            margin: 0 0 1.4em;
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          }
+        }
+
+        .accordion-toggler {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 0 10px;
+
+          .toggler {
+            flex: 0 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 100%;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            transform: rotate(0) translateY(-9px);
+            will-change: transform;
+            transition: transform 0.3s ease;
+
+            svg {
+              display: block;
+              margin: auto;
+            }
+          }
+
+          &.accordion-active {
+            .toggler {
+              transform: rotate(-180deg) translateY(-9px);
+            }
+          }
+        }
+
+        .num {
+          font-size: 10px;
+          line-height: 1;
+          position: absolute;
+          left: 0;
+          top: 6px;
+          color: #434343;
+        }
+
+        .title {
+          padding: 0 30px 0 0;
+          width: 100%;
+
+          h2 {
+            letter-spacing: -0.01em;
+            font-weight: 500;
+
+            @include media-breakpoint-down(xl) {
+              font-size: 1.714rem;
+            }
+            @include media-breakpoint-down(lg) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-image: url(../img/bg/oval-blue.webp);
+        background-size: cover;
+        width: 2000px;
+        height: 2000px;
+        left: -1000px;
+        top: -1000px;
+      }
+
+      .accordion-list {
+        & > li {
+          min-height: 103px;
+          padding: 37px 0 7px;
+
+          .num {
+            font-size: 12px;
+            top: 14px;
+          }
+
+          .accordion-panel {
+            padding: 0 10px 8px;
+            display: none;
+            padding: 10px;
+            width: 50%;
+            margin-left: 50%;
+
+            p,
+            ul {
+              max-width: 555px;
+            }
+          }
+
+          .accordion-toggler {
+            padding: 0 0 32px;
+
+            .toggler {
+              width: 36px;
+              height: 36px;
+              transform: none;
+            }
+
+            &.accordion-active {
+              .toggler {
+                transform: rotate(-180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .block-text {
+        margin-bottom: 38px;
+      }
+
+      .accordion-list {
+        & > li {
+          .title {
+            h2 {
+              font-size: 36px;
+              letter-spacing: -0.02em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

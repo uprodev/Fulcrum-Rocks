@@ -302,7 +302,7 @@
       letter-spacing: 0.01em;
     }
 
-    a {
+    a:not(.rating-wrapper) {
       color: $text-color;
       letter-spacing: 0.01em;
       display: inline-block;
@@ -387,7 +387,7 @@
         color: $text-color;
       }
 
-      a {
+      a:not(.rating-wrapper) {
         color: $text-color;
         text-decoration: none;
       }
@@ -425,7 +425,7 @@
       }
 
       p,
-      a {
+      a:not(.rating-wrapper) {
         font-size: 0.78rem;
       }
 
