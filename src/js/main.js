@@ -602,14 +602,16 @@ jQuery(document).ready(function ($) {
 
       $("#fileName").text(name);
       $("#fileSize").text(exactSize);
-      $(".contact-form-01 .field-file").hide();
+      $(".contact-form-01 .field-file .jstyling-file").hide();
+      $(".contact-form-01 .field-file .field-file-info").hide();
       $(".contact-form-01 .field-file-result").show();
     }
   });
 
   $(".contact-form-01 .field-file-result .file-delete").on("click", function () {
     $('.contact-form-01 input[type="file"]').val("");
-    $(".contact-form-01 .field-file").show();
+    $(".contact-form-01 .field-file .jstyling-file").show();
+    $(".contact-form-01 .field-file .field-file-info").show();
     $(".contact-form-01 .field-file-result").hide();
   });
 

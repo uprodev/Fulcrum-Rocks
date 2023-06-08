@@ -216,10 +216,6 @@
                     <label for="desc">About project:</label>
                     <textarea id="desc" placeholder="Your project description"></textarea>
                   </div>
-                  <div class="field field-file">
-                    <input type="file" class="file" accept="application/msword, application/pdf" />
-                    <p>Please upload a file with the following extension: .pdf, .img, .docx, .odt, .ods, .txt</p>
-                  </div>
                   <div class="field field-file-result">
                     <div class="inner">
                       <span id="fileName"></span>
@@ -227,6 +223,11 @@
                       <button type="button" class="file-delete"><img src="assets/img/icons/del.svg" alt="" /></button>
                     </div>
                   </div>
+                  <div class="field field-file">
+                    <input type="file" class="file" accept="application/msword, application/pdf" />
+                    <div class="field-file-info">Please upload a file with the following extension: .pdf, .img, .docx, .odt, .ods, .txt</div>
+                  </div>
+
                   <button type="submit" class="button">
                     <span class="btn-wrap">
                       <span class="btn-inner">

@@ -601,7 +601,7 @@
 
     .txt-lg {
       margin-top: -3px;
-      margin-bottom: 0;
+      margin-bottom: 60px;
       line-height: 0.9;
 
       @media (max-width: 459px) {
@@ -980,7 +980,7 @@
 
     @include media-breakpoint-up(md) {
       .txt-lg {
-        margin: 0 0 180px;
+        margin: 0 0 180px !important;
       }
 
       .image {
@@ -1021,7 +1021,7 @@
         }
       }
       .txt-lg {
-        margin: 0 0 282px;
+        margin: 0 0 282px !important;
       }
       .text {
         max-width: 555px;
@@ -1030,7 +1030,7 @@
 
     @include media-breakpoint-up(xl) {
       .txt-lg {
-        margin: 0 0 307px;
+        margin: 0 0 307px !important;
       }
       .image {
         width: auto;

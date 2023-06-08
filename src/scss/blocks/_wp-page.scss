@@ -116,6 +116,8 @@
       .wrapper {
         position: relative;
         padding: 120px 0 133px;
+        max-width: 1360px;
+        margin: auto;
 
         .image {
           overflow: hidden;
@@ -207,7 +209,7 @@
             &.overlay-02 {
               left: 30px;
               &:after {
-                width: 113%;
+                width: 115%;
                 height: 49%;
                 left: 48%;
                 bottom: 42%;
@@ -417,8 +419,11 @@
 
             .text-right,
             .text-left {
-              width: 50%;
+              width: 45%;
               padding: 0 10px;
+            }
+            .text-right {
+              width: 55%;
             }
           }
         }
@@ -509,7 +514,7 @@
 
           img {
             @include img-fit;
-            border-radius: 5px;
+            border-radius: 6px;
           }
         }
 
@@ -580,7 +585,7 @@
             height: 50px;
 
             img {
-              border-radius: 10px;
+              border-radius: 11px;
             }
           }
 
@@ -854,7 +859,7 @@
 
     .inner {
       @include card-borders;
-      background: $dark url(../img/bg/bg-hunt-m.svg) right bottom no-repeat;
+      background: $dark url(../img/bg/bg-wp-m.svg) right bottom no-repeat;
       background-size: 100% auto;
       padding: 25px 19px 14px;
     }
@@ -874,7 +879,7 @@
 
     @include media-breakpoint-up(sm) {
       .inner {
-        background-image: url(../img/bg/bg-hunt.svg);
+        background-image: url(../img/bg/bg-wp.svg);
         background-size: auto 100%;
       }
     }

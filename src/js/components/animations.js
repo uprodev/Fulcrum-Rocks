@@ -428,4 +428,11 @@ jQuery(document).ready(function ($) {
       toggleClass: { targets: ".header", className: "color-dark" },
     });
   }
+
+  if (screen.orientation) {
+    console.log(screen.orientation);
+    screen.orientation.addEventListener("change", function () {
+      ScrollTrigger.refresh();
+    });
+  }
 });
