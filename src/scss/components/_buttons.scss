@@ -31,71 +31,59 @@ button {
   &:before {
     content: "";
     position: absolute;
-    background: #99faf4;
-    filter: blur(40px);
-    width: 150px;
-    height: 30px;
-    bottom: 0;
-    right: 0;
+    background: url(../img/bg/bg-btn-01.svg) no-repeat;
+    width: 350px;
+    height: 230px;
+    bottom: -100px;
+    right: -100px;
     opacity: 0;
     will-change: transform;
   }
   &:after {
     content: "";
     position: absolute;
-    background: #0d99ff;
-    filter: blur(40px);
-    width: 50%;
-    height: 30px;
-    top: 0;
-    left: 0;
+    background: url(../img/bg/bg-btn-02.svg) no-repeat;
+    width: 350px;
+    height: 230px;
+    top: -100px;
+    left: -100px;
     opacity: 0;
     will-change: transform;
   }
 
   @keyframes rotateBtn2 {
     0% {
-      top: 0;
-      left: 0;
+      transform: translate3d(0, 0, 0);
     }
     25% {
-      top: 0;
-      left: 50%;
+      transform: translate3d(50%, 0, 0);
     }
     50% {
-      top: 50%;
-      left: 50%;
+      transform: translate3d(50%, 30px, 0);
     }
     75% {
-      top: 50%;
-      left: 0;
+      transform: translate3d(0, 30px, 0);
     }
     100% {
-      top: 0;
-      left: 0;
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes rotateBtn1 {
     0% {
-      bottom: 0;
-      right: 0;
+      transform: translate3d(0, 0, 0);
     }
     25% {
-      bottom: 0;
-      right: 50%;
+      transform: translate3d(-50%, 0, 0);
     }
     50% {
-      bottom: 50%;
-      right: 50%;
+      transform: translate3d(-50%, -30px, 0);
     }
     75% {
-      bottom: 50%;
-      right: 0;
+      transform: translate3d(0, -30px, 0);
     }
     100% {
-      bottom: 0;
-      right: 0;
+      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -150,7 +138,9 @@ button {
   }
 
   &:hover {
-    &:before,
+    &:before {
+      opacity: 1;
+    }
     &:after {
       opacity: 1;
     }

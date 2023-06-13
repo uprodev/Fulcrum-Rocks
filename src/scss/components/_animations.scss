@@ -4,23 +4,19 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  // .char {
-  //   transform: none !important;
-  // }
 }
 
-.txt-gradient-static {
-  @include gradient-base(90deg);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+// .txt-gradient-static {
+//   @include gradient-base(90deg);
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   -webkit-text-fill-color: transparent;
+// }
 
 .arrow-icon-wrapper {
   overflow: hidden;
   background: rgba(255, 251, 251, 0.2);
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   will-change: transform;
   border-radius: 100%;
   width: 24px;
@@ -60,8 +56,6 @@
     }
   }
 }
-
-// cards
 
 .card {
   &:hover {
@@ -118,6 +112,7 @@
   }
 }
 
+// cards
 .card-effect-01 {
   .card {
     --border-angle: 0turn;
@@ -453,7 +448,7 @@
 
     .card {
       &:before {
-        filter: blur(50px);
+        // filter: blur(50px);
         opacity: 1;
         // animation: spin 2.5s linear infinite;
       }
@@ -840,7 +835,7 @@
     display: flex;
     position: relative;
     transform: translate3d(var(--move-initial), 0, 0);
-    animation: marquee 7s linear infinite;
+    // animation: marquee 7s linear infinite;
     animation-play-state: running;
     white-space: nowrap;
     text-align: center;
@@ -883,7 +878,7 @@
     margin: 0;
 
     .marquee__inner {
-      animation: plane 10s linear infinite;
+      // animation: plane 10s linear infinite;
     }
 
     span {
@@ -897,20 +892,6 @@
     }
   }
 }
-
-// .scroller {
-//   overflow: hidden;
-//   ul {
-//     li {
-//       .txt-lg {
-//         opacity: 0;
-//       }
-//       p {
-//         opacity: 0;
-//       }
-//     }
-//   }
-// }
 
 .page-footer {
   @include media-breakpoint-up(lg) {
